@@ -9,7 +9,7 @@ It contains **Dart** examples for all classic GoF design patterns.
     - [ ] Abstract Factory
     - [ ] Builder
     - [ ] Factory Method
-    - [ ] Prototype
+    - [x] Prototype
     - [ ] Singleton
 - [ ]  **Behavioral**
     - [ ] Chain of Responsibility
@@ -24,13 +24,13 @@ It contains **Dart** examples for all classic GoF design patterns.
     - [ ] Visitor
     - [ ] Strategy
 - [ ] **Structural**
-  - [ ] Adapter
-  - [ ] Bridge
-  - [ ] Composite
-  - [ ] Decorator
-  - [ ] Facade
-  - [ ] Flyweight
-  - [ ] Proxy
+    - [ ] Adapter
+    - [ ] Bridge
+    - [ ] Composite
+    - [ ] Decorator
+    - [ ] Facade
+    - [ ] Flyweight
+    - [ ] Proxy
 
 ## Requirements
 
