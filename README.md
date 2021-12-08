@@ -50,9 +50,7 @@ Here's a style guide which might help you to keep your changes consistent with o
 
 4. File names should match following convention: `some_class_name.dart`
 
-5. Places classes into separate files.
-
-6. Comments may or may not have language tags in them, such as this:
+5. Comments may or may not have language tags in them, such as this:
 
     ```dart
     /**
