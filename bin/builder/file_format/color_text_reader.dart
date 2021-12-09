@@ -33,6 +33,6 @@ abstract class TextFormat {
 
   @override
   String toString() => '$runtimeType(\n'
-      '  $content'
+      '$content'
       '\n)';
 }

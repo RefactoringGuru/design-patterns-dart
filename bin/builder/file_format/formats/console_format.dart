@@ -1,7 +1,7 @@
 import '../color_text_reader.dart';
 
 class ConsoleFormat extends TextFormat {
-  final _buff = <String>[];
+  final _buff = <String>[' '];
 
   static const colors = {
     'red': '\x1b[31m',

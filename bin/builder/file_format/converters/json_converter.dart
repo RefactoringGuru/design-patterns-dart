@@ -3,15 +3,26 @@ import '../color_text_reader.dart';
 
 class JsonConverter extends Converter<JsonFormat> {
   @override
-  final result = JsonFormat();
+  JsonFormat get result => _json;
+
+  final _json = JsonFormat();
 
   @override
   void writeColor(String color) {
-    throw UnimplementedError();
+    if (_textBuffer.isNotEmpty) {
+      _json.add({
+        'text': _textBuffer.toString(),
+      });
+      _textBuffer.clear();
+    }
+    _json.add({
+      'text': color,
+      'color': color,
+    });
   }
 
+  final _textBuffer = StringBuffer();
+
   @override
-  void writeWord(String text) {
-    throw UnimplementedError();
-  }
+  void writeWord(String text) => _textBuffer.write('$text ');
 }
