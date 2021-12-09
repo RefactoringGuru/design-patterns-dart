@@ -7,7 +7,7 @@ It contains **Dart** examples for all classic GoF design patterns.
 # Implementation checklist:
 - [ ] **Creation**
     - [ ] Abstract Factory
-    - [ ] Builder
+    - [x] Builder
     - [ ] Factory Method
     - [x] Prototype
     - [ ] Singleton
