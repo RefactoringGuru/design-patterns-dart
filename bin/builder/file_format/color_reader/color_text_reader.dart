@@ -4,7 +4,7 @@ class ColorTextReader {
 
   ColorTextReader({required this.text});
 
-  TextFormat convert(Converter converter) {
+  T convert<T extends TextFormat>(Converter<T> converter) {
     for (final word in text.split(' ')) {
       if (supportedColors.contains(word)) {
         converter.writeColor(word);

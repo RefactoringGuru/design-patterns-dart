@@ -1,5 +1,5 @@
 import '../formats/console_format.dart';
-import '../color_text_reader.dart';
+import '../color_reader/color_text_reader.dart';
 
 class ConsoleConverter extends Converter<ConsoleFormat> {
   @override

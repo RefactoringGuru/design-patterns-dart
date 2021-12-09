@@ -1,5 +1,5 @@
 import '../formats/html_format.dart';
-import '../color_text_reader.dart';
+import '../color_reader/color_text_reader.dart';
 
 /// Builder
 class HtmlConverter extends Converter<HtmlFormat> {

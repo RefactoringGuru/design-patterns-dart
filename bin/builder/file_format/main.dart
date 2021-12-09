@@ -1,7 +1,7 @@
 import 'converters/html_converter.dart';
 import 'converters/json_converter.dart';
-import 'color_text_reader.dart';
 import 'converters/console_converter.dart';
+import 'color_reader/color_text_reader.dart';
 
 void main() {
   final reader = ColorTextReader(

@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import '../color_text_reader.dart';
+import '../color_reader/color_text_reader.dart';
 
 class JsonFormat extends TextFormat {
   final _list = <Map<String, String>>[];
