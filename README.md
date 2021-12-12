@@ -24,7 +24,7 @@ It contains **Dart** examples for all classic GoF design patterns.
     - [ ] Visitor
     - [ ] Strategy
 - [ ] **Structural**
-    - [ ] Adapter
+    - [x] Adapter
     - [ ] Bridge
     - [ ] Composite
     - [ ] Decorator
