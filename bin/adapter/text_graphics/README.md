@@ -1,4 +1,4 @@
-![image](https://user-images.githubusercontent.com/8049534/145682370-a2cd3dfa-bac0-428e-8b6e-b16b85df27ac.png)
+![image](https://user-images.githubusercontent.com/8049534/145695548-ef1a0632-f11e-4f6d-aae5-db0a4e81838c.png)
 
 **Output:**
 ```
