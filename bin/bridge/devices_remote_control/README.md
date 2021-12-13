@@ -2,8 +2,11 @@
 This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/bridge/example)
 But removed the ability to use null for devices. Instead, the EmptyDevice class is used.
 
+**Diagram:**
+![image](https://user-images.githubusercontent.com/8049534/145878324-3cbc52f5-51f4-4642-921d-69fbe2886f8c.png)
+
 **Description:**
-https://refactoring.guru/design-patterns/adapter?#pseudocode
+https://refactoring.guru/design-patterns/bridge?#pseudocode
 
 **Output:**
 
