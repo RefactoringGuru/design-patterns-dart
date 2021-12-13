@@ -1,3 +1,6 @@
+## 0.7.0
+- Add bridge pattern. Clock example
+
 ## 0.6.5
 - Add bridge pattern. Device remote control
 
