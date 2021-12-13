@@ -7,19 +7,17 @@ The idea for the bridge pattern example is taken from [here](https://habr.com/ru
 **Client code:**
 ```dart
 void main() {
-  final onceMelody = Once(seconds: 1, bell: Melody());
-  final onceSignal = Once(seconds: 2, bell: Signal());
-  final intervalMelody = Interval(seconds: 5, bell: Melody());
-  final intervalSignal = Interval(seconds: 3, bell: Signal());
-  startAlarm([
-    onceMelody,
-    onceSignal,
-    intervalMelody,
-    intervalSignal,
+  final melody = Melody();
+  final signal = Signal();
+  startClocks([
+    Once(seconds: 1, bell: melody),
+    Once(seconds: 2, bell: signal),
+    Interval(seconds: 5, bell: melody),
+    Interval(seconds: 3, bell: signal),
   ]);
 }
 
-void startAlarm(List<Clock> clocks) {
+void startClocks(List<Clock> clocks) {
   for (var i = 0; i < clocks.length; i++) {
     clocks[i].start();
   }
