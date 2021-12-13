@@ -18,8 +18,8 @@ void main() {
 }
 
 void startClocks(List<Clock> clocks) {
-  for (var i = 0; i < clocks.length; i++) {
-    clocks[i].start();
+  for (final clock in clocks) {
+    clock.start();
   }
 }
 ```
