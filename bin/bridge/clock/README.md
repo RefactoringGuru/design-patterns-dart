@@ -2,6 +2,7 @@
 The idea for the bridge pattern example is taken from [here](https://habr.com/ru/post/85137/).
 
 **Diagram:**
+
 ![image](https://user-images.githubusercontent.com/8049534/145851578-f6e95355-e2b3-4f94-bda2-c2d1d0de8935.png)
 
 **Client code:**
