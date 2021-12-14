@@ -1,6 +1,24 @@
-# Builder pattern using different text formats as an example
+# Builder pattern
+Using different text formats
 
 ![image](https://user-images.githubusercontent.com/8049534/145697044-7d3e59a9-9f28-4955-a9a2-fcb815f6fb71.png)
+
+**Client code:**
+```dart
+  final reader = ColorTextReader(
+    text: 'I love looking at the blue sky, '
+        'eating red apples, '
+        'sitting on the green grass.',
+  );
+  final html = reader.convert(HtmlConverter());
+  final json = reader.convert(JsonConverter());
+  final console = reader.convert(ConsoleConverter());
+  print(
+    '$html,n\n'
+    '$json,\n\n'
+    '$console,\n\n',
+  );
+```
 
 **Output:**
 ```
