@@ -1,3 +1,6 @@
+import '../converters/converter.dart';
+import '../formats/text_format.dart';
+
 /// Director
 class ColorTextReader {
   final String text;
@@ -16,23 +19,4 @@ class ColorTextReader {
   }
 
   final supportedColors = Set.unmodifiable(['red', 'green', 'blue']);
-}
-
-/// Builder
-abstract class Converter<T extends TextFormat> {
-  void writeWord(String text);
-
-  void writeColor(String color);
-
-  T get result;
-}
-
-/// Product
-abstract class TextFormat {
-  String get content;
-
-  @override
-  String toString() => '$runtimeType(\n'
-      '$content'
-      '\n)';
 }

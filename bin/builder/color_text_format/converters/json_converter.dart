@@ -1,5 +1,5 @@
 import '../formats/json_format.dart';
-import '../color_reader/color_text_reader.dart';
+import 'converter.dart';
 
 class JsonConverter extends Converter<JsonFormat> {
   @override

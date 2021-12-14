@@ -1,6 +1,5 @@
 import 'dart:collection';
-
-import '../color_reader/color_text_reader.dart';
+import 'text_format.dart';
 
 // product
 class HtmlFormat extends TextFormat {
