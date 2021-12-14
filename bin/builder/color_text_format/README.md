@@ -1,7 +1,7 @@
 # Builder pattern
 Using different text formats
 
-![image](https://user-images.githubusercontent.com/8049534/145697044-7d3e59a9-9f28-4955-a9a2-fcb815f6fb71.png)
+![image](https://user-images.githubusercontent.com/8049534/146023073-5d7644a4-d3b9-4420-bffe-f72ac3fd83dd.png))
 
 **Client code:**
 ```dart
