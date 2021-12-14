@@ -5,13 +5,13 @@ import 'graph_element.dart';
 
 class Wave extends GraphElement {
   Wave({
-    required final int waveHeight,
-    final int points = 50,
+    required final int height,
+    final int length = 50,
     final double waveStep = .8,
   }) {
     final list = <int>[];
-    for (var x = 0; x < points; x++) {
-      final y = (waveHeight + cos(x / pi / waveStep) * waveHeight).toInt();
+    for (var x = 0; x < length; x++) {
+      final y = (height + cos(x / pi / waveStep) * height).toInt();
       list.addAll([x, y]);
     }
     _points = Int32List.fromList(list);

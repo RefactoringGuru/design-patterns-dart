@@ -1,7 +1,7 @@
 import 'engine/primitives.dart';
 import 'engine/shape_engine.dart';
-import 'shape/shape.dart';
-import 'shape/shape_adapter.dart';
+import 'shapes/shape.dart';
+import 'shapes/shape_adapter.dart';
 import 'third_party_graphics_lib/star.dart' as third_party;
 import 'third_party_graphics_lib/wave.dart' as third_party;
 
@@ -32,13 +32,13 @@ void main() {
         color: Color.grey,
       ),
       // EN: Graphics primitives from a third party library
-      ShapeAdapter(
+      GraphElementAdapter(
         x: 11,
         y: 20,
         color: Color.dark,
-        graphElement: third_party.Wave(waveHeight: 5, points: 25),
+        graphElement: third_party.Wave(height: 5, length: 25),
       ),
-      ShapeAdapter(
+      GraphElementAdapter(
         x: 23,
         y: 1,
         color: Color.black,

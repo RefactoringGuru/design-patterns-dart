@@ -1,3 +1,8 @@
+## 0.7.8
+- Update diagram for text_graphics, clock, remote_control, color_text_format
+- Code match with diagram in clock
+
+
 ## 0.7.0
 - Add bridge pattern. Clock example
 

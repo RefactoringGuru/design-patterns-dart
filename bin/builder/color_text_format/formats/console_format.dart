@@ -1,4 +1,4 @@
-import '../color_reader/color_text_reader.dart';
+import 'text_format.dart';
 
 class ConsoleFormat extends TextFormat {
   final _buff = <String>[' '];
