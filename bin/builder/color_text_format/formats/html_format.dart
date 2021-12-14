@@ -80,5 +80,3 @@ class Tag {
     return '<$name$cls>$text';
   }
 }
-
-mixin MixinTag {}
