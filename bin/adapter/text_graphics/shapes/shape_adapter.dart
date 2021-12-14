@@ -3,10 +3,10 @@ import '../engine/primitives.dart';
 import '../third_party_graphics_lib/graph_element.dart' as third_party;
 import 'shape.dart';
 
-class ShapeAdapter extends Shape {
+class GraphElementAdapter extends Shape {
   final third_party.GraphElement graphElement;
 
-  ShapeAdapter({
+  GraphElementAdapter({
     required int x,
     required int y,
     required Color color,

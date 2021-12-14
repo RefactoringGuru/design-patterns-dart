@@ -1,4 +1,4 @@
-import '../shape/shape.dart';
+import '../shapes/shape.dart';
 import 'canvas.dart';
 import 'primitives.dart';
 
