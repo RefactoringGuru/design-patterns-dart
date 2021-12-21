@@ -8,5 +8,8 @@ issue_tracker: https://github.com/RefactoringGuru/design-patterns-dart/issue
 environment:
   sdk: '>=2.15.0-68.0.dev <3.0.0'
 
+dependencies:
+  collection: ^1.15.0
+
 dev_dependencies:
   lints: ^1.0.0

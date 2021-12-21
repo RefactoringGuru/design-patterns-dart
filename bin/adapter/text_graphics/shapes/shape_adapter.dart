@@ -1,5 +1,5 @@
-import '../engine/canvas.dart';
-import '../engine/primitives.dart';
+import 'package:design_patterns_dart/text_canvas.dart';
+
 import '../third_party_graphics_lib/graph_element.dart' as third_party;
 import 'shape.dart';
 

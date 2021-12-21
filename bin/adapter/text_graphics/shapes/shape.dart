@@ -1,5 +1,4 @@
-import '../engine/canvas.dart';
-import '../engine/primitives.dart';
+import 'package:design_patterns_dart/text_canvas.dart';
 
 abstract class Shape {
   final int x;

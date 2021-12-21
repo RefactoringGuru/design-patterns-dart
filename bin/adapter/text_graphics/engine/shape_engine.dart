@@ -1,6 +1,6 @@
+import 'package:design_patterns_dart/text_canvas.dart';
+
 import '../shapes/shape.dart';
-import 'canvas.dart';
-import 'primitives.dart';
 
 class ShapeEngine {
   final List<Shape> shapes;

@@ -1,4 +1,5 @@
-import 'engine/primitives.dart';
+import 'package:design_patterns_dart/text_canvas.dart';
+
 import 'engine/shape_engine.dart';
 import 'shapes/shape.dart';
 import 'shapes/shape_adapter.dart';
