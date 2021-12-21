@@ -138,7 +138,17 @@ class Canvas {
     }
   }
 
-  void text(String text, {int widthCenter = -1, int heightCenter = -1}) {}
+  void text(String text, {int widthCenter = -1, int heightCenter = -1}) {
+    widthCenter = widthCenter < 0 ? text.length : widthCenter;
+    heightCenter = heightCenter < 0 ? 1 : heightCenter;
+
+    var x = (widthCenter - text.length) ~/ 2;
+    var y = heightCenter ~/ 2;
+
+    for (final c in text.split('')) {
+      char(x++, y, c);
+    }
+  }
 
   @override
   String toString() {
