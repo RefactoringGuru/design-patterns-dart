@@ -25,7 +25,7 @@ class Canvas {
   var translate = Point(0, 0);
   var penColor = Color.black;
 
-  void setPixel(int x, int y) {
+  void setPixel(int x, int y, [int? colorCode]) {
     x += translate.x;
     y += translate.y;
 
@@ -38,6 +38,17 @@ class Canvas {
     for (var i = 0; i < lineStretch; i++) {
       _pixel[realY][realX + i] = penColor.code;
     }
+  }
+
+  void char(int x, int y, String char) {
+    x += translate.x;
+    y += translate.y;
+
+    if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+      return;
+    }
+
+    _pixel[y][x] = char.codeUnits[0];
   }
 
   var _currPos = Point(0, 0);
@@ -100,6 +111,34 @@ class Canvas {
       if (radius <= y) err += ++y * 2 + 1;
     } while (x < 0);
   }
+
+  void border(int width, int height, BorderStyle borderStyle) {
+    assert(width >= 4);
+    assert(height >= 4);
+
+    char(0, 0, borderStyle.topLeft);
+    char(width - 1, 0, borderStyle.topRight);
+    char(width - 1, height - 1, borderStyle.bottomRight);
+    char(0, height - 1, borderStyle.bottomLeft);
+
+    for (var x = 1; x < width - 1; x++) {
+      char(x, 0, borderStyle.top);
+    }
+
+    for (var y = 1; y < height - 1; y++) {
+      char(width - 1, y, borderStyle.right);
+    }
+
+    for (var y = 1; y < height - 1; y++) {
+      char(0, y, borderStyle.right);
+    }
+
+    for (var x = 1; x < width - 1; x++) {
+      char(x, height - 1, borderStyle.bottom);
+    }
+  }
+
+  void text(String text, {int widthCenter = -1, int heightCenter = -1}) {}
 
   @override
   String toString() {
