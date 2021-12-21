@@ -44,7 +44,7 @@ class Canvas {
     x += translate.x;
     y += translate.y;
 
-    if (x < 0 || x > width - 1 || y < 0 || y > height - 1) {
+    if (x < 0 || x > width * lineStretch - 1 || y < 0 || y > height - 1) {
       return;
     }
 
@@ -113,8 +113,8 @@ class Canvas {
   }
 
   void border(int width, int height, BorderStyle borderStyle) {
-    assert(width >= 4);
-    assert(height >= 4);
+    assert(width >= 2);
+    assert(height >= 2);
 
     char(0, 0, borderStyle.topLeft);
     char(width - 1, 0, borderStyle.topRight);
