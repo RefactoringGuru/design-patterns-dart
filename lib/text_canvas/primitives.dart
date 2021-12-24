@@ -1,9 +1,11 @@
+import 'package:collection/collection.dart';
+
 class Color {
-  final int code;
+  final List<int> units;
 
   Color(String symbol)
       : assert(symbol.length == 1),
-        code = symbol.codeUnitAt(0);
+        units = symbol.codeUnits;
 
   static final Color black = Color('█');
   static final Color dark = Color('▓');
@@ -11,6 +13,16 @@ class Color {
   static final Color light = Color('░');
   static final Color white = Color(' ');
   static final Color point = Color('■');
+  static final Color transparent = Color('`');
+
+  @override
+  bool operator ==(Object other) {
+    return other is Color && ListEquality().equals(other.units, units);
+  }
+
+  @override
+  int get hashCode => ListEquality().hash(units);
+
 }
 
 class Point {
@@ -41,8 +53,8 @@ class BorderStyle {
 
   static final BorderStyle round = BorderStyle.fromBorderText(
     '╭━━╮'
-    '    '
-    '    ',
+    '`  `'
+    '````',
   );
 
   final String topLeft;

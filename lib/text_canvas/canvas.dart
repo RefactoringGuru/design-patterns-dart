@@ -8,14 +8,21 @@ class Canvas {
 
   Canvas(
     this.width,
-    this.height, [
+    this.height, {
     this.lineStretch = 3,
-  ]) {
+    Color? fillColor,
+  }) {
     final realWidth = width * lineStretch;
+
+    fillColor ??= Color.light;
+    if (fillColor ==  Color.transparent) {
+      fillColor = Color.white;
+    }
+
     _pixel = [
       for (var i = 0; i < height; i++)
         List.from(
-          List.filled(realWidth, Color.light.units),
+          List.filled(realWidth, fillColor.units),
         ),
     ];
   }

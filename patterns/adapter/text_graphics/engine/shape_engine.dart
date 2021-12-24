@@ -14,7 +14,7 @@ class ShapeEngine {
   });
 
   String render() {
-    final can = Canvas(width, height, 3);
+    final can = Canvas(width, height, lineStretch: 3);
     for (final Shape shape in shapes) {
       can
         ..translate = Point(shape.x, shape.y)
