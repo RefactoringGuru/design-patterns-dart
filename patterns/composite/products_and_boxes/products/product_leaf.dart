@@ -1,21 +1,17 @@
-import 'package:design_patterns_dart/text_canvas.dart';
-
-import '../node/node.dart';
+import '../diagram/diagram.dart';
 import 'product.dart';
 
 class ProductLeaf implements Product {
+  @override
   final String content;
+
+  @override
+  int get size => 1;
 
   ProductLeaf(this.content);
 
   @override
-  Node toNode() {
-    return Node(
-      text: content,
-      borderStyle: BorderStyle.round,
-    );
+  Diagram toDiagram() {
+    return Diagram.node(this);
   }
-
-  @override
-  int get size => 1;
 }

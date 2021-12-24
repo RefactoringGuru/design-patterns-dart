@@ -1,7 +1,9 @@
-import '../node/node.dart';
+import '../diagram/diagram.dart';
 
 abstract class Product {
-  Node toNode();
+  String get content;
 
   int get size;
+
+  Diagram toDiagram();
 }

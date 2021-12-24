@@ -1,32 +1,74 @@
 import 'package:design_patterns_dart/text_canvas.dart';
 
+import '../products/product.dart';
+import 'render_text.dart';
+import 'render_column.dart';
 import 'render_element.dart';
-
-class PositionRenderElement {
-  final int x;
-  final int y;
-  final RenderElement renderElement;
-
-  PositionRenderElement(this.x, this.y, this.renderElement);
-}
+import 'render_row.dart';
 
 class Diagram extends RenderElement {
-  final _graph = <PositionRenderElement>[];
+  final RenderElement _rootRenderElement;
 
-  var _w = 0;
-  void addRenderElement(int x, int y, RenderElement renderElement) {
-    final w = x + renderElement.width;
-    if (w > _w) {
-      _w = w;
-    }
-    _graph.add(PositionRenderElement(x, y, renderElement));
+  Diagram(RenderElement root)
+      : _rootRenderElement = (root is Diagram) ? root._rootRenderElement : root;
+
+  @override
+  int get width => _rootRenderElement.width;
+
+  @override
+  int get height => _rootRenderElement.height;
+
+  @override
+  void render(Canvas dc) => _rootRenderElement.render(dc);
+
+  String renderToText() {
+    final dc = Canvas(_rootRenderElement.width, 10);
+    render(dc);
+    return dc.toString();
   }
 
-  @override
-  int get width => _w;
+  factory Diagram.node(Product product) {
+    return Diagram(
+      product.toRenderElement(),
+    );
+  }
 
-  @override
-  String render(Canvas dc) {
-    return '';
+  factory Diagram.parentNode(Product product, List<Product> children) {
+    return Diagram(
+      RenderColumn(
+        children: [
+          // Root node
+          product.toRenderElement(),
+
+          // Children nodes
+          RenderRow(
+            children: [
+              for (final child in children) child.toRenderElement(),
+            ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+extension ExtConvertProductToRenderElement on Product {
+  RenderElement toRenderElement() {
+    return RenderText(
+      content,
+      borderStyleBySize(size),
+    );
+  }
+
+  static BorderStyle borderStyleBySize(int size) {
+    if (size > 4) {
+      return BorderStyle.bold;
+    } else if (size >= 2) {
+      return BorderStyle.double;
+    } else if (size == 1) {
+      return BorderStyle.single;
+    } else {
+      return BorderStyle.single; // todo:
+    }
   }
 }
