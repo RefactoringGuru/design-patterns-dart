@@ -1,11 +1,9 @@
-import 'dart:typed_data';
-
 import 'primitives.dart';
 
 class Canvas {
   final int width;
   final int height;
-  late List<Int16List> _pixel;
+  late List<List<List<int>>> _pixel;
   final int lineStretch;
 
   Canvas(
@@ -16,8 +14,8 @@ class Canvas {
     final realWidth = width * lineStretch;
     _pixel = [
       for (var i = 0; i < height; i++)
-        Int16List.fromList(
-          List.filled(realWidth, Color.light.code),
+        List.from(
+          List.filled(realWidth, Color.light.units),
         ),
     ];
   }
@@ -33,10 +31,14 @@ class Canvas {
       return;
     }
 
+    if (penColor == Color.transparent) {
+      return;
+    }
+
     final realY = y;
     final realX = (x * lineStretch) ~/ 1;
     for (var i = 0; i < lineStretch; i++) {
-      _pixel[realY][realX + i] = penColor.code;
+      _pixel[realY][realX + i] = penColor.units;
     }
   }
 
@@ -48,7 +50,11 @@ class Canvas {
       return;
     }
 
-    _pixel[y][x] = char.codeUnits[0];
+    if (Color(char) == Color.transparent) {
+      return;
+    }
+
+    _pixel[y][x] = char.codeUnits;
   }
 
   var _currPos = Point(0, 0);
@@ -155,7 +161,7 @@ class Canvas {
     return _pixel
         .map((e) => e
             .map(
-              (e) => String.fromCharCode(e),
+              (e) => String.fromCharCodes(e),
             )
             .join(''))
         .join('\n');
