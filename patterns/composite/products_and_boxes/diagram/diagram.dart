@@ -22,7 +22,11 @@ class Diagram extends RenderElement {
   void render(Canvas dc) => _rootRenderElement.render(dc);
 
   String renderToText() {
-    final dc = Canvas(_rootRenderElement.width, 10);
+    final dc = Canvas(
+      (_rootRenderElement.width / 3).ceil(),
+      _rootRenderElement.height,
+      fillColor: Color.white,
+    );
     render(dc);
     return dc.toString();
   }
