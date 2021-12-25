@@ -56,7 +56,7 @@ extension ExtConvertProductToRenderElement on Product {
   RenderElement toRenderElement() {
     return RenderText(
       content,
-      borderStyleBySize(size),
+      borderStyle: borderStyleBySize(size),
     );
   }
 

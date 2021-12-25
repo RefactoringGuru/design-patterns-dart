@@ -6,7 +6,7 @@ class RenderText extends RenderElement {
   final String text;
   final BorderStyle? borderStyle;
 
-  RenderText(this.text, [this.borderStyle]);
+  RenderText(this.text, {this.borderStyle});
 
   @override
   int get width => text.length + 2 + 2;
