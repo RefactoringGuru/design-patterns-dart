@@ -1,6 +1,7 @@
 import 'package:design_patterns_dart/text_canvas.dart';
 
 import '../products/product.dart';
+import '../products/product_leaf.dart';
 import 'render_text.dart';
 import 'render_column.dart';
 import 'render_element.dart';
@@ -60,17 +61,17 @@ extension ExtConvertProductToRenderElement on Product {
   RenderElement toRenderElement() {
     return RenderText(
       content,
-      borderStyle: borderStyleBySize(size),
+      borderStyle: borderStyleBySize(),
     );
   }
 
-  static BorderStyle borderStyleBySize(int size) {
+  BorderStyle? borderStyleBySize() {
     if (size > 4) {
       return BorderStyle.bold;
     } else if (size >= 2) {
       return BorderStyle.double;
-    } else if (size == 1) {
-      return BorderStyle.single;
+    } else if (this is ProductLeaf) {
+      return null;
     } else {
       return BorderStyle.single; // todo:
     }
