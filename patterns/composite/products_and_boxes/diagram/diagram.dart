@@ -43,7 +43,7 @@ class Diagram extends RenderElement {
           // Children nodes
           RenderRow(
             children: [
-              for (final child in children) child.toRenderElement(),
+              for (final child in children) child.toDiagram(),
             ],
           ),
         ],
