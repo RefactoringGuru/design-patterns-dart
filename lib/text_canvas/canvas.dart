@@ -49,7 +49,7 @@ class Canvas {
     }
   }
 
-  void char(int x, int y, String char) {
+  void char(int x, int y, Color char) {
     x += translate.x;
     y += translate.y;
 
@@ -57,11 +57,11 @@ class Canvas {
       return;
     }
 
-    if (Color(char) == Color.transparent) {
+    if (char == Color.transparent) {
       return;
     }
 
-    _pixel[y][x] = char.codeUnits;
+    _pixel[y][x] = char.units;
   }
 
   var _currPos = Point(0, 0);
@@ -159,7 +159,7 @@ class Canvas {
     var y = heightCenter ~/ 2;
 
     for (final c in text.split('')) {
-      char(x++, y, c);
+      char(x++, y, Color(c));
     }
   }
 

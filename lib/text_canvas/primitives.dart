@@ -13,7 +13,7 @@ class Color {
   static final Color light = Color('░');
   static final Color white = Color(' ');
   static final Color point = Color('■');
-  static final Color transparent = Color('`');
+  static final Color transparent = Color(' ');
 
   @override
   bool operator ==(Object other) {
@@ -22,6 +22,12 @@ class Color {
 
   @override
   int get hashCode => ListEquality().hash(units);
+
+  @override
+  String toString() {
+    final symbol = String.fromCharCodes(units);
+    return '$runtimeType(symbol: "$symbol", unit: $units)';
+  }
 
 }
 
@@ -53,20 +59,20 @@ class BorderStyle {
 
   static final BorderStyle round = BorderStyle.fromBorderText(
     '╭━━╮'
-    '`  `'
-    '````',
+    '    '
+    '    ',
   );
 
-  final String topLeft;
-  final String topRight;
-  final String bottomRight;
-  final String bottomLeft;
+  final Color topLeft;
+  final Color topRight;
+  final Color bottomRight;
+  final Color bottomLeft;
 
-  final String top;
-  final String bottom;
+  final Color top;
+  final Color bottom;
 
-  final String left;
-  final String right;
+  final Color left;
+  final Color right;
 
   BorderStyle._(
     this.topLeft,
@@ -81,14 +87,14 @@ class BorderStyle {
 
   factory BorderStyle.fromBorderText(String text) {
     return BorderStyle._(
-      text[0],
-      text[3],
-      text[11],
-      text[8],
-      text[1],
-      text[9],
-      text[4],
-      text[7],
+      Color(text[0]),
+        Color(text[3]),
+        Color(text[11]),
+        Color(text[8]),
+        Color(text[1]),
+        Color(text[9]),
+        Color(text[4]),
+        Color(text[7]),
     );
   }
 }
