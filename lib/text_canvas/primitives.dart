@@ -42,19 +42,19 @@ class BorderStyle {
   static final BorderStyle bold = BorderStyle.fromBorderText(
     '▄▄▄▄'
     '█  █'
-    '▀▀▀▀',
+    '▀▀█▀',
   );
 
   static final BorderStyle double = BorderStyle.fromBorderText(
     '╔══╗'
     '║  ║'
-    '╚══╝',
+    '╚═╦╝',
   );
 
   static final BorderStyle single = BorderStyle.fromBorderText(
     '┌──┐'
     '│  │'
-    '└──┘',
+    '└─┬┘',
   );
 
   static final BorderStyle round = BorderStyle.fromBorderText(
@@ -74,7 +74,9 @@ class BorderStyle {
   final Color left;
   final Color right;
 
-  BorderStyle._(
+  final Color bottomConnect;
+
+  const BorderStyle._(
     this.topLeft,
     this.topRight,
     this.bottomRight,
@@ -83,18 +85,20 @@ class BorderStyle {
     this.bottom,
     this.left,
     this.right,
+    this.bottomConnect,
   );
 
   factory BorderStyle.fromBorderText(String text) {
     return BorderStyle._(
       Color(text[0]),
-        Color(text[3]),
-        Color(text[11]),
-        Color(text[8]),
-        Color(text[1]),
-        Color(text[9]),
-        Color(text[4]),
-        Color(text[7]),
+      Color(text[3]),
+      Color(text[11]),
+      Color(text[8]),
+      Color(text[1]),
+      Color(text[9]),
+      Color(text[4]),
+      Color(text[7]),
+      Color(text[10]),
     );
   }
 }
