@@ -30,7 +30,7 @@ class Canvas {
   var translate = Point(0, 0);
   var penColor = Color.black;
 
-  void setPixel(int x, int y, [int? colorCode]) {
+  void setPixel(int x, int y) {
     x += translate.x;
     y += translate.y;
 
