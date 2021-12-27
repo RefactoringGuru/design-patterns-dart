@@ -40,17 +40,10 @@ class Diagram extends RenderElement {
 
   factory Diagram.parentNode(Product product, List<Product> children) {
     return Diagram(
-      RenderColumn(
+      RenderConnectingLines(
+        parent: product.toRenderElement(),
         children: [
-          // Root node
-          product.toRenderElement(),
-
-          // Children nodes
-          RenderRow(
-            children: [
-              for (final child in children) child.toDiagram(),
-            ],
-          ),
+          for (final child in children) child.toDiagram()._rootRenderElement,
         ],
       ),
     );
