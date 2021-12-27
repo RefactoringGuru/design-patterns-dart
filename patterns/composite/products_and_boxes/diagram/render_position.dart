@@ -23,7 +23,7 @@ class RenderPosition extends RenderElement {
   @override
   void render(Canvas dc) {
     final oldTranslate = dc.translate;
-    dc.translate = Point(x, y);
+    dc.translate = Point(oldTranslate.x + x, oldTranslate.y + y);
     child.render(dc);
     dc.translate = oldTranslate;
   }

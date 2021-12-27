@@ -1,7 +1,6 @@
-import 'package:design_patterns_dart/text_canvas.dart';
-
 import 'layout_render.dart';
 import 'render_element.dart';
+import 'render_position.dart';
 
 class RenderRow extends RenderLayout {
   RenderRow({
@@ -10,23 +9,25 @@ class RenderRow extends RenderLayout {
   }) : super(children: children, space: space);
 
   @override
-  void render(Canvas dc) {
-    final restoreTranslate = dc.translate;
-    var x = dc.translate.x;
-    for (final child in children) {
-      child.render(dc);
-      x += child.width + space;
-      dc.translate = Point(x, restoreTranslate.y);
-    }
-    dc.translate = restoreTranslate;
-  }
-
-  @override
-  int get width {
-    return childWidth + spacesSum;
-  }
+  int get width => childWidth + spacesSum;
 
   @override
   int get height =>
-      children.reduce((a, b) => a.width > b.height ? a : b).height;
+      children.reduce((a, b) => a.height > b.height ? a : b).height;
+
+  @override
+  List<RenderPosition> get positions {
+    final result = <RenderPosition>[];
+    var x = 0;
+    final y = 0;
+
+    for (final child in children) {
+      result.add(
+        RenderPosition(x: x, y: y, child: child),
+      );
+      x += child.width + space;
+    }
+
+    return result;
+  }
 }
