@@ -126,6 +126,10 @@ class Canvas {
   }
 
   void border(int width, int height, BorderStyle borderStyle) {
+    if (borderStyle == BorderStyle.empty) {
+      return;
+    }
+
     assert(width >= 2);
     assert(height >= 2);
 
