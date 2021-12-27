@@ -28,7 +28,6 @@ class Color {
     final symbol = String.fromCharCodes(units);
     return '$runtimeType(symbol: "$symbol", unit: $units)';
   }
-
 }
 
 class Point {
@@ -63,6 +62,11 @@ class BorderStyle {
     '    ',
   );
 
+  static final BorderStyle empty = BorderStyle.fromBorderText(
+    '    '
+    '    '
+    '    ',
+  );
   final Color topLeft;
   final Color topRight;
   final Color bottomRight;

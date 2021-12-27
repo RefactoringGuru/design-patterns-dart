@@ -65,13 +65,13 @@ extension ExtConvertProductToRenderElement on Product {
     );
   }
 
-  BorderStyle? borderStyleBySize() {
+  BorderStyle borderStyleBySize() {
     if (size > 4) {
       return BorderStyle.bold;
     } else if (size >= 2) {
       return BorderStyle.double;
     } else if (this is ProductLeaf) {
-      return null;
+      return BorderStyle.empty;
     } else {
       return BorderStyle.single; // todo:
     }
