@@ -6,7 +6,9 @@ import 'render_element.dart';
 import 'render_position.dart';
 
 abstract class RenderLayout extends RenderElement {
-  List<RenderPosition> get positions;
+  late final List<RenderPosition> positions = compute();
+
+  List<RenderPosition> compute();
 
   final List<RenderElement> children;
   final int space;
@@ -26,7 +28,7 @@ abstract class RenderLayout extends RenderElement {
 
   @override
   void render(Canvas dc) {
-    for(final child in positions) {
+    for (final child in positions) {
       child.render(dc);
     }
   }

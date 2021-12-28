@@ -1,4 +1,4 @@
-import 'layout_render.dart';
+import 'render_layout.dart';
 import 'render_element.dart';
 import 'render_position.dart';
 
@@ -15,7 +15,7 @@ class RenderColumn extends RenderLayout {
   int get height => childHeight + spacesSum;
 
   @override
-  List<RenderPosition> get positions {
+  List<RenderPosition> compute() {
     final result = <RenderPosition>[];
     var y = 0;
 

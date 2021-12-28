@@ -1,4 +1,4 @@
-import 'layout_render.dart';
+import 'render_layout.dart';
 import 'render_element.dart';
 import 'render_position.dart';
 
@@ -16,7 +16,7 @@ class RenderRow extends RenderLayout {
       children.reduce((a, b) => a.height > b.height ? a : b).height;
 
   @override
-  List<RenderPosition> get positions {
+  List<RenderPosition> compute() {
     final result = <RenderPosition>[];
     var x = 0;
     final y = 0;
