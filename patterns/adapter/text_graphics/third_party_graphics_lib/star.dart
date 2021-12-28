@@ -19,11 +19,9 @@ class Star extends GraphElement {
     list.addAll([0, p3]);
     list.addAll([p8, p3]);
     list.addAll([p1, p9]);
-    _points = Int32List.fromList(list);
+    points = Int32List.fromList(list);
   }
 
-  late Int32List _points;
-
   @override
-  Int32List get points => _points;
+  late Int32List points;
 }

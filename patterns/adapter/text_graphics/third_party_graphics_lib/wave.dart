@@ -14,11 +14,9 @@ class Wave extends GraphElement {
       final y = (height + cos(x / pi / waveStep) * height).toInt();
       list.addAll([x, y]);
     }
-    _points = Int32List.fromList(list);
+    points = Int32List.fromList(list);
   }
 
-  late Int32List _points;
-
   @override
-  Int32List get points => _points;
+  late Int32List points;
 }
