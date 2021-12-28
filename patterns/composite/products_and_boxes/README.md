@@ -3,13 +3,14 @@
 ![problem-en](https://user-images.githubusercontent.com/8049534/147579298-0c60c4a7-6acb-4ab3-a973-e06524c5a061.png)
 
 **Problem description:**
+
 https://refactoring.guru/design-patterns/composite?#problem
 
 **Folder description:**
 
-`/products` - represent product and box (composite pattern)
-`/diagramm` - convert products to render elements
-`/render_elements` - classes for visualization (real-world composite pattern)
+- `/products` - represent product and box (composite pattern)
+- `/diagram` - convert products to render elements
+- `/render_elements` - classes for visualization (real-world composite pattern)
 
 **Diagram:**
 
