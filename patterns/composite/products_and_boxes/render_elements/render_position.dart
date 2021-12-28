@@ -1,5 +1,6 @@
+import 'dart:math';
+
 import 'package:design_patterns_dart/text_canvas/canvas.dart';
-import 'package:design_patterns_dart/text_canvas/primitives.dart';
 
 import 'render_element.dart';
 

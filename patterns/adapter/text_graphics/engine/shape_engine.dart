@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:design_patterns_dart/text_canvas.dart';
 
 import '../shapes/shape.dart';
