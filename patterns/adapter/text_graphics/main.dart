@@ -2,7 +2,7 @@ import 'package:design_patterns_dart/text_canvas.dart';
 
 import 'engine/shape_engine.dart';
 import 'shapes/shape.dart';
-import 'shapes/shape_adapter.dart';
+import 'shapes/graph_element_adapter.dart';
 import 'third_party_graphics_lib/star.dart' as third_party;
 import 'third_party_graphics_lib/wave.dart' as third_party;
 
