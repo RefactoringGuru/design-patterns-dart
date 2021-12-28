@@ -2,9 +2,10 @@ import 'package:design_patterns_dart/text_canvas.dart';
 import 'package:design_patterns_dart/text_canvas/primitives.dart';
 
 import '../products/product.dart';
+import '../render_elements/render_connecting_lines.dart';
+import '../render_elements/render_element.dart';
 import 'convert_product_to_render_element.dart';
-import 'render_connecting_lines.dart';
-import 'render_element.dart';
+
 
 class Diagram {
   final RenderElement rootRenderElement;

@@ -1,41 +1,36 @@
-import 'package:design_patterns_dart/text_canvas.dart';
-
-import 'diagram/render_element.dart';
 import 'products/box.dart';
 import 'products/product.dart';
 import 'products/product_leaf.dart';
 
 void main() {
-  final dc = Canvas(6, 6);
-print(
-     BorderText('Node', BorderStyle.single).render(dc)
-);
+  final diagram = createParcel().toDiagram();
+  print(diagram.renderToText());
 }
 
 Product createParcel() {
   return Box(
     children: [
       Box.single(
-        ProductLeaf('🔨'),
+        ProductLeaf('Molot', 9),
       ),
       Box(
         children: [
           Box(
             children: [
               Box.single(
-                ProductLeaf('📱'),
+                ProductLeaf('Phone', 450),
               ),
               Box.single(
-                ProductLeaf('🎧'),
+                ProductLeaf('Hidrophone', 30),
               ),
             ],
           ),
           Box.single(
-            ProductLeaf('🔌'),
+            ProductLeaf('Lamp', 25),
           ),
         ],
       ),
-      ProductLeaf('🧾'),
+      ProductLeaf('Paychak', 0),
     ],
   );
 }
