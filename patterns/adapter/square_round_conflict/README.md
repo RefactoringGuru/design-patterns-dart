@@ -7,6 +7,31 @@
 **Description:**
 https://refactoring.guru/design-patterns/adapter?#pseudocode
 
+**Client code:**
+
+```dart
+void main() {
+  final hole = RoundHole(5);
+  final peg = RoundPeg(5);
+  if (hole.fits(peg)) {
+    print("Round peg r5 fits round hole r5.");
+  }
+
+  final smallSqPeg = SquarePeg(2);
+  final largeSqPeg = SquarePeg(20);
+
+  final smallSqPegAdapter = SquarePegAdapter(smallSqPeg);
+  final largeSqPegAdapter = SquarePegAdapter(largeSqPeg);
+
+  if (hole.fits(smallSqPegAdapter)) {
+    print("Square peg w2 fits round hole r5.");
+  }
+  if (!hole.fits(largeSqPegAdapter)) {
+    print("Square peg w20 does not fit into round hole r5.");
+  }
+}
+```
+
 **Output:**
 
 ```

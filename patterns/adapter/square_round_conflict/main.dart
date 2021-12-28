@@ -6,8 +6,8 @@ void main() {
   //
   // RU: Круглое к круглому — всё работает.
   final hole = RoundHole(5);
-  final rpeg = RoundPeg(5);
-  if (hole.fits(rpeg)) {
+  final peg = RoundPeg(5);
+  if (hole.fits(peg)) {
     print("Round peg r5 fits round hole r5.");
   }
 
