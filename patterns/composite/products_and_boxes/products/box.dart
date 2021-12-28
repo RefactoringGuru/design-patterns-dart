@@ -7,7 +7,11 @@ class Box implements Product {
   Box({required this.children});
 
   @override
-  String get content => 'Box($size)';
+  String get content {
+    final places = size > 1 ? "places: $size, " : "";
+    final _price = size > 1 ? "price: $price\$" : "$price\$";
+    return 'Box($places$_price)';
+  }
 
   @override
   Diagram toDiagram() {
@@ -16,6 +20,9 @@ class Box implements Product {
       children,
     );
   }
+
+  @override
+  int get price => children.fold(0, (sum, product) => sum + product.price);
 
   @override
   int get size => children.fold(0, (sum, product) => sum + product.size);

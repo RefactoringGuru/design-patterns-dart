@@ -5,5 +5,7 @@ abstract class Product {
 
   int get size;
 
+  int get price;
+
   Diagram toDiagram();
 }

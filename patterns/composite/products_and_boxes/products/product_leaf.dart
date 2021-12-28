@@ -3,12 +3,17 @@ import 'product.dart';
 
 class ProductLeaf implements Product {
   @override
-  final String content;
+  String get content => '$name($price\$)';
+
+  final String name;
+
+  @override
+  final int price;
 
   @override
   int get size => 1;
 
-  ProductLeaf(this.content);
+  ProductLeaf(this.name, this.price);
 
   @override
   Diagram toDiagram() {
