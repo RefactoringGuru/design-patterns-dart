@@ -1,7 +1,10 @@
+## 0.8.5
+- Add composite pattern "products_and_boxes"
+- Created a Canvas helper tool for visual presentation of patterns
+
 ## 0.7.8
 - Update diagram for text_graphics, clock, remote_control, color_text_format
 - Code match with diagram in clock
-
 
 ## 0.7.0
 - Add bridge pattern. Clock example
