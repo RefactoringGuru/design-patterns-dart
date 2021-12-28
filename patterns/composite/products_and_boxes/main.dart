@@ -11,7 +11,7 @@ Product createParcel() {
   return Box(
     children: [
       Box.single(
-        ProductLeaf('Molot', 9),
+        ProductLeaf('Hammer', 9),
       ),
       Box(
         children: [
@@ -21,16 +21,16 @@ Product createParcel() {
                 ProductLeaf('Phone', 450),
               ),
               Box.single(
-                ProductLeaf('Hidrophone', 30),
+                ProductLeaf('Headphones', 30),
               ),
             ],
           ),
           Box.single(
-            ProductLeaf('Lamp', 25),
+            ProductLeaf('Charger', 25),
           ),
         ],
       ),
-      ProductLeaf('Paychak', 0),
+      ProductLeaf('Receipt', 0),
     ],
   );
 }
