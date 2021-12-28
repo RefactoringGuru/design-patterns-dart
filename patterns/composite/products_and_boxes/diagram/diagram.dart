@@ -1,34 +1,28 @@
 import 'package:design_patterns_dart/text_canvas.dart';
+import 'package:design_patterns_dart/text_canvas/primitives.dart';
 
 import '../products/product.dart';
-import '../products/product_leaf.dart';
-import 'render_text.dart';
-import 'render_column.dart';
+import 'convert_product_to_render_element.dart';
+import 'render_connecting_lines.dart';
 import 'render_element.dart';
-import 'render_row.dart';
 
-class Diagram extends RenderElement {
-  final RenderElement _rootRenderElement;
+class Diagram {
+  final RenderElement rootRenderElement;
 
-  Diagram(RenderElement root)
-      : _rootRenderElement = (root is Diagram) ? root._rootRenderElement : root;
-
-  @override
-  int get width => _rootRenderElement.width;
-
-  @override
-  int get height => _rootRenderElement.height;
-
-  @override
-  void render(Canvas dc) => _rootRenderElement.render(dc);
+  Diagram(this.rootRenderElement);
 
   String renderToText() {
+    const pixelWidth = 3;
+    final width = (rootRenderElement.width / pixelWidth).ceil();
+    final height = rootRenderElement.height;
     final dc = Canvas(
-      (_rootRenderElement.width / 3).ceil(),
-      _rootRenderElement.height,
+      width,
+      height,
+      lineStretch: pixelWidth,
       fillColor: Color.white,
     );
-    render(dc);
+    rootRenderElement.render(dc);
+
     return dc.toString();
   }
 
@@ -43,30 +37,11 @@ class Diagram extends RenderElement {
       RenderConnectingLines(
         parent: product.toRenderElement(),
         children: [
-          for (final child in children) child.toDiagram()._rootRenderElement,
+          for (final child in children) child.toDiagram().rootRenderElement,
         ],
       ),
     );
   }
 }
 
-extension ExtConvertProductToRenderElement on Product {
-  RenderElement toRenderElement() {
-    return RenderText(
-      content,
-      borderStyle: borderStyleBySize(),
-    );
-  }
 
-  BorderStyle borderStyleBySize() {
-    if (size > 4) {
-      return BorderStyle.bold;
-    } else if (size >= 2) {
-      return BorderStyle.double;
-    } else if (this is ProductLeaf) {
-      return BorderStyle.empty;
-    } else {
-      return BorderStyle.single; // todo:
-    }
-  }
-}
