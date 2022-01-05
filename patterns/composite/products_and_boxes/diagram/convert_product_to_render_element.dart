@@ -15,13 +15,6 @@ extension ConvertProductToDiagram on Product {
   }
 
   BorderStyle borderStyleBySize() {
-    // if (size > 4) {
-    //   return BorderStyle.bold;
-    // } else
-    // if (size >= 2) {
-    //   return BorderStyle.bold;
-    // } else
-
     if (this is ProductLeaf) {
       return BorderStyle.empty;
     } else {
