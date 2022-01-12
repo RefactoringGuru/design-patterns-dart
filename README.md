@@ -27,7 +27,7 @@ It contains **Dart** examples for all classic GoF design patterns.
     - [x] Adapter
     - [x] Bridge
     - [x] Composite
-    - [ ] Decorator
+    - [x] Decorator
     - [ ] Facade
     - [ ] Flyweight
     - [ ] Proxy
