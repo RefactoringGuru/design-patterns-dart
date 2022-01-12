@@ -1,5 +1,9 @@
+# 0.10.0
+- Add composite template from official book, rewritten from Java example
+
 ## 0.9.0
-- Add pattern Decorator. Translate from official book java example.
+- Add decorator pattern. Translate from official book java example
+
 ## 0.8.5
 - Add composite pattern "products_and_boxes"
 - Created a Canvas helper tool for visual presentation of patterns
@@ -32,5 +36,5 @@
   
 ## 0.0.1
 
-- Initial project structure.
+- Initial project structure
 - Add README
