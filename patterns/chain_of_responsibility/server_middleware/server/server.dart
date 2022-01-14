@@ -3,13 +3,13 @@ library server;
 part 'middleware.dart';
 
 class Server {
-  final Map<String, String> users;
+  final Map<String, String> _users;
   final Middleware middleware;
 
   Server({
-    required this.users,
+    required Map<String, String> users,
     required this.middleware,
-  }) {
+  }) : _users = Map.of(users) {
     _applyServerToAllMiddleware();
   }
 
@@ -26,9 +26,9 @@ class Server {
     }
   }
 
-  bool hasEmail(String email) => users.containsKey(email);
+  bool hasEmail(String email) => _users.containsKey(email);
 
   bool isValidPassword(String email, String password) {
-    return users[email] == password;
+    return _users[email] == password;
   }
 }
