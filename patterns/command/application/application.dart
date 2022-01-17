@@ -1,6 +1,6 @@
 import '../commands/command.dart';
 import '../commands/copy_command.dart';
-import '../commands/input_keyboard_command.dart';
+import '../commands/input_command.dart';
 import '../commands/move_command.dart';
 import '../commands/past_command.dart';
 import '../commands/select_command.dart';
