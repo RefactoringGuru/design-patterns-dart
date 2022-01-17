@@ -20,12 +20,12 @@ class PastCommand extends Command {
     _selectText = app.editor.selectedText;
     _text = app.clipboard;
     app.editor.inputText(_text);
-    _textCursorPosition = app.editor.textCursorPosition;
+    _textCursorPosition = app.editor.cursor.position;
   }
 
   @override
   void undo() {
-    if(_text.isEmpty) {
+    if (_text.isEmpty) {
       return;
     }
 

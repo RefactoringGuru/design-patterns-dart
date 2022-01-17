@@ -52,8 +52,6 @@ class Editor {
     _cursor = TextCursor.fromPosition(newPosition);
   }
 
-  int get textCursorPosition => _cursor.position;
-
   void _replaceSelection(String replaceText) {
     _text = _text.replaceRange(
       cursor.startSelection,
@@ -71,6 +69,6 @@ class Editor {
       cursor.position,
       insertText,
     );
-    textCursorPosition += insertText.length;
+    textCursorPosition = cursor.position + insertText.length;
   }
 }

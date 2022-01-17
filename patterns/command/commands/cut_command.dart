@@ -17,7 +17,7 @@ class CutCommand extends CopyCommand {
     }
 
     app.editor.removeSelected();
-    _textCursorPosition = app.editor.textCursorPosition;
+    _textCursorPosition = app.editor.cursor.position;
   }
 
   @override
