@@ -57,7 +57,7 @@ class Application {
 
   bool get isHistoryNotEmpty => _history.isNotEmpty;
 
-  void undo() {
+  void ctrlZ() {
     if (_history.isNotEmpty) {
       final command = _history.pop();
       command.undo();

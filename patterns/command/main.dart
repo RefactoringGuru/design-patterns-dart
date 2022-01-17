@@ -21,7 +21,7 @@ void main() {
   print('\nUndo steps\n');
 
   while (app.isHistoryNotEmpty) {
-    app.undo();
+    app.ctrlZ();
   }
 }
 
