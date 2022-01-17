@@ -6,7 +6,7 @@ void main() {
   app.addListenerExecuteCommand(log);
   app
     ..keyboardInput('Hello world')
-    ..textCursorMove(position: 6)
+    ..moveCursor(position: 6)
     ..keyboardInput('Refactring GuBu ')
     ..selectText(start: 17, end: 19)
     ..ctrlX()
@@ -14,9 +14,9 @@ void main() {
     ..keyboardInput('Guru')
     ..selectText(start: 4, end: 5)
     ..ctrlC()
-    ..textCursorMove(position: 12)
+    ..moveCursor(position: 12)
     ..ctrlV()
-    ..textCursorMove(position: 28);
+    ..moveCursor(position: 28);
 
   print('\nUndo steps\n');
 

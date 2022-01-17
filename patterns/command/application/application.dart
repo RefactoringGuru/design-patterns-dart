@@ -25,7 +25,7 @@ class Application {
     );
   }
 
-  void textCursorMove({required int position}) {
+  void moveCursor({required int position}) {
     _executeAndPushHistory(
       MoveCommand(this, position),
     );
@@ -55,8 +55,6 @@ class Application {
     );
   }
 
-  bool get isHistoryNotEmpty => _history.isNotEmpty;
-
   void ctrlZ() {
     if (_history.isNotEmpty) {
       final command = _history.pop();
@@ -68,6 +66,8 @@ class Application {
       );
     }
   }
+
+  bool get isHistoryNotEmpty => _history.isNotEmpty;
 
   void _executeAndPushHistory(Command command) {
     command.execute();
