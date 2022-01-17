@@ -25,8 +25,12 @@ void main() {
   }
 }
 
-void log(Command command, bool isUndo, String textAfter) {
+void log({
+  required Command command,
+  required bool isUndo,
+  required String editorText,
+}) {
   final addOrUndo = isUndo ? 'Undo_' : '[➕] ';
   final description = '$addOrUndo$command';
-  print(description.padRight(72, '_') + '"$textAfter"');
+  print(description.padRight(72, '_') + '"$editorText"');
 }
