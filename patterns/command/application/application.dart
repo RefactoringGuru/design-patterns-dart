@@ -62,7 +62,7 @@ class Application {
       _executeListener?.call(
         command: command,
         isUndo: true,
-        editorText: editor.text,
+        editorText: editor.toString(),
       );
     }
   }
@@ -71,7 +71,7 @@ class Application {
 
   void _executeAndPushHistory(Command command) {
     command.execute();
-    final textAfter = editor.text;
+    final textAfter = editor.toString();
     _executeListener?.call(
       command: command,
       isUndo: false,

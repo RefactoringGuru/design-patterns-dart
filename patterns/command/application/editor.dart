@@ -3,19 +3,7 @@ import 'text_cursor.dart';
 class Editor {
   var _text = '';
 
-  String get text {
-    return cursor.isTextSelected
-        ? _text.replaceRange(
-            cursor.startSelection,
-            cursor.endSelection,
-            '[$selectedText]',
-          )
-        : _text.replaceRange(
-            cursor.position,
-            cursor.position,
-            '|',
-          );
-  }
+  String get text => _text;
 
   void inputText(String addText) {
     if (cursor.isTextSelected) {
@@ -70,5 +58,20 @@ class Editor {
       insertText,
     );
     cursorPosition = cursor.position + insertText.length;
+  }
+
+  @override
+  String toString() {
+    return cursor.isTextSelected
+        ? _text.replaceRange(
+            cursor.startSelection,
+            cursor.endSelection,
+            '[$selectedText]',
+          )
+        : _text.replaceRange(
+            cursor.position,
+            cursor.position,
+            '|',
+          );
   }
 }
