@@ -20,7 +20,7 @@ void main() {
 
   print('\nUndo steps\n');
 
-  while (app.history.isNotEmpty) {
+  while (app.isHistoryNotEmpty) {
     app.undo();
   }
 }

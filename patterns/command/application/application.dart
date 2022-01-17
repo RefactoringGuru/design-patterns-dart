@@ -15,62 +15,64 @@ typedef ExecuteCommandListener = Function(
 
 class Application {
   final editor = Editor();
-  final history = CommandHistory();
+  final _history = CommandHistory();
 
   String clipboard = '';
 
   void keyboardInput(String text) {
-    executeAndPushHistoryAnd(
+    executeAndPushHistory(
       InputCommand(this, text),
     );
   }
 
   void textCursorMove({required int position}) {
-    executeAndPushHistoryAnd(
+    executeAndPushHistory(
       MoveCommand(this, position),
     );
   }
 
   void selectText({required int start, required int end}) {
-    executeAndPushHistoryAnd(
+    executeAndPushHistory(
       SelectCommand(this, start, end),
     );
   }
 
   void ctrlC() {
-    executeAndPushHistoryAnd(
+    executeAndPushHistory(
       CopyCommand(this),
     );
   }
 
   void ctrlX() {
-    executeAndPushHistoryAnd(
+    executeAndPushHistory(
       CutCommand(this),
     );
   }
 
   void ctrlV() {
-    executeAndPushHistoryAnd(
+    executeAndPushHistory(
       PastCommand(this),
     );
   }
 
+  bool get isHistoryNotEmpty => _history.isNotEmpty;
+
   void undo() {
-    if (history.isNotEmpty) {
-      final command = history.pop();
+    if (_history.isNotEmpty) {
+      final command = _history.pop();
       command.undo();
       final textAfter = editor.text;
       _executeListener(command, true, textAfter);
     }
   }
 
-  void executeAndPushHistoryAnd(Command command) {
+  void executeAndPushHistory(Command command) {
     command.execute();
     final textAfter = editor.text;
     _executeListener(command, false, textAfter);
 
     if (command.isSaveHistory) {
-      history.push(command);
+      _history.push(command);
     }
   }
 
