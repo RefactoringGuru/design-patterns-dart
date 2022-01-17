@@ -4,7 +4,7 @@ class Editor {
   var _text = '';
 
   String get text {
-    return isTextSelected
+    return cursor.isTextSelected
         ? _text.replaceRange(
             cursor.startSelection,
             cursor.endSelection,
@@ -18,7 +18,7 @@ class Editor {
   }
 
   void inputText(String addText) {
-    if (isTextSelected) {
+    if (cursor.isTextSelected) {
       _replaceSelection(addText);
     } else {
       _insertText(addText);
@@ -32,7 +32,7 @@ class Editor {
   }
 
   void removeSelected() {
-    if (isTextSelected) {
+    if (cursor.isTextSelected) {
       _replaceSelection('');
     }
   }
@@ -49,8 +49,6 @@ class Editor {
   TextCursor get cursor => _cursor;
 
   int? get startSelection => cursor.startSelection;
-
-  bool get isTextSelected => cursor.isTextSelected;
 
   set textCursorPosition(int newPosition) {
     _cursor = TextCursor.fromPosition(newPosition);

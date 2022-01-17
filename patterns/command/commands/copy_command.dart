@@ -15,7 +15,7 @@ class CopyCommand extends Command {
 
   @override
   void execute() {
-    if (!app.editor.isTextSelected) {
+    if (!app.editor.cursor.isTextSelected) {
       return;
     }
 

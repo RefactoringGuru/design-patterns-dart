@@ -31,7 +31,7 @@ class SelectCommand extends Command {
     if (noSelection) {
       app.editor.textCursorPosition = _oldEnd!;
     } else {
-      app.editor.selectText(_oldStart!, _oldEnd);
+      app.editor.selectText(_oldStart!, _oldEnd!);
     }
   }
 
