@@ -4,7 +4,7 @@ import 'command.dart';
 class PastCommand extends Command {
   String _text = '';
   String _selectText = '';
-  int? _textCursorPosition;
+  int? _cursorPosition;
 
   PastCommand(Application app) : super(app);
 
@@ -20,7 +20,7 @@ class PastCommand extends Command {
     _selectText = app.editor.selectedText;
     _text = app.clipboard;
     app.editor.inputText(_text);
-    _textCursorPosition = app.editor.cursor.position;
+    _cursorPosition = app.editor.cursor.position;
   }
 
   @override
@@ -31,8 +31,8 @@ class PastCommand extends Command {
 
     app.editor
       ..selectText(
-        _textCursorPosition! - _text.length,
-        _textCursorPosition!,
+        _cursorPosition! - _text.length,
+        _cursorPosition!,
       )
       ..inputText(_selectText);
   }
@@ -40,7 +40,7 @@ class PastCommand extends Command {
   @override
   String toString() {
     return 'Past( '
-        'cursorPosition: $_textCursorPosition, '
+        'cursorPosition: $_cursorPosition, '
         'text: "$_text", '
         'pevRestore: "$_selectText" )';
   }
