@@ -1,16 +1,18 @@
+import 'text_cursor.dart';
+
 class Editor {
   var _text = '';
 
   String get text {
     return isTextSelected
         ? _text.replaceRange(
-            _startSelection!,
-            _textCursorPosition,
+            cursor.startSelection,
+            cursor.endSelection,
             '[$selectedText]',
           )
         : _text.replaceRange(
-            _textCursorPosition,
-            _textCursorPosition,
+            cursor.position,
+            cursor.position,
             '|',
           );
   }
@@ -23,11 +25,10 @@ class Editor {
     }
   }
 
-  void selectText(int start, int? end) {
-    end = end ?? _text.length;
+  void selectText(int start, int end) {
+    assert(end <= _text.length, ' end: $end, textLength: ${_text.length}');
     assert(start < end, 'start: $start, end: $end');
-    _startSelection = start;
-    _textCursorPosition = end;
+    _cursor = TextCursor.fromSelection(start, end);
   }
 
   void removeSelected() {
@@ -37,44 +38,41 @@ class Editor {
   }
 
   String get selectedText {
-    if (_textCursorPosition > _text.length) {
-      return '';
-    }
-
     return _text.substring(
-      _startSelection ?? _textCursorPosition,
-      _textCursorPosition,
+      cursor.startSelection,
+      cursor.endSelection,
     );
   }
 
-  int? _startSelection;
+  var _cursor = TextCursor.fromPosition(0);
 
-  int? get startSelection => _startSelection;
+  TextCursor get cursor => _cursor;
 
-  bool get isTextSelected => _startSelection != null;
+  int? get startSelection => cursor.startSelection;
 
-  int _textCursorPosition = 0;
+  bool get isTextSelected => cursor.isTextSelected;
 
   set textCursorPosition(int newPosition) {
-    _startSelection = null;
-    _textCursorPosition = newPosition;
+    _cursor = TextCursor.fromPosition(newPosition);
   }
 
-  int get textCursorPosition => _textCursorPosition;
+  int get textCursorPosition => _cursor.position;
 
   void _replaceSelection(String replaceText) {
     _text = _text.replaceRange(
-      _startSelection!,
-      _textCursorPosition,
+      cursor.startSelection,
+      cursor.endSelection,
       replaceText,
     );
-    textCursorPosition = _startSelection! + replaceText.length;
+    _cursor = TextCursor.fromPosition(
+      cursor.startSelection + replaceText.length,
+    );
   }
 
   void _insertText(String insertText) {
     _text = _text.replaceRange(
-      _textCursorPosition,
-      _textCursorPosition,
+      cursor.position,
+      cursor.position,
       insertText,
     );
     textCursorPosition += insertText.length;
