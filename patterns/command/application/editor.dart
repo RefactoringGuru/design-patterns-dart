@@ -77,6 +77,6 @@ class Editor {
       _textCursorPosition,
       insertText,
     );
-    _textCursorPosition += insertText.length;
+    textCursorPosition += insertText.length;
   }
 }
