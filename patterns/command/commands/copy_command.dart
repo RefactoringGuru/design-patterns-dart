@@ -15,12 +15,11 @@ class CopyCommand extends Command {
 
   @override
   void execute() {
-    _copyText = app.editor.selectedText;
-
-    if (_copyText.isEmpty) {
+    if (app.editor.selectedText.isEmpty) {
       return;
     }
 
+    _copyText = app.editor.selectedText;
     app.clipboard = _copyText;
   }
 
