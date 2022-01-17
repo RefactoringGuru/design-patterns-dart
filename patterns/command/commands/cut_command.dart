@@ -1,7 +1,7 @@
 part of copy_past;
 
 class CutCommand extends CopyCommand {
-  int? _textCursorPosition;
+  int? _cursorPosition;
 
   CutCommand(Application app) : super(app);
 
@@ -10,14 +10,13 @@ class CutCommand extends CopyCommand {
 
   @override
   void execute() {
-    super.execute();
-
-    if (_copyText.isEmpty) {
+    if (!app.editor.cursor.isTextSelected) {
       return;
     }
 
+    super.execute();
     app.editor.removeSelected();
-    _textCursorPosition = app.editor.cursor.position;
+    _cursorPosition = app.editor.cursor.position;
   }
 
   @override
@@ -27,14 +26,14 @@ class CutCommand extends CopyCommand {
     }
 
     app.editor
-      ..cursorPosition = _textCursorPosition!
+      ..cursorPosition = _cursorPosition!
       ..inputText(_copyText);
   }
 
   @override
   String toString() {
     return 'Cut( '
-        'cursorPosition: $_textCursorPosition, '
+        'cursorPosition: $_cursorPosition, '
         'cutText: "$_copyText" )';
   }
 }
