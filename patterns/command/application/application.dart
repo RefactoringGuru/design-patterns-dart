@@ -20,37 +20,37 @@ class Application {
   String clipboard = '';
 
   void keyboardInput(String text) {
-    executeAndPushHistory(
+    _executeAndPushHistory(
       InputCommand(this, text),
     );
   }
 
   void textCursorMove({required int position}) {
-    executeAndPushHistory(
+    _executeAndPushHistory(
       MoveCommand(this, position),
     );
   }
 
   void selectText({required int start, required int end}) {
-    executeAndPushHistory(
+    _executeAndPushHistory(
       SelectCommand(this, start, end),
     );
   }
 
   void ctrlC() {
-    executeAndPushHistory(
+    _executeAndPushHistory(
       CopyCommand(this),
     );
   }
 
   void ctrlX() {
-    executeAndPushHistory(
+    _executeAndPushHistory(
       CutCommand(this),
     );
   }
 
   void ctrlV() {
-    executeAndPushHistory(
+    _executeAndPushHistory(
       PastCommand(this),
     );
   }
@@ -65,7 +65,7 @@ class Application {
     }
   }
 
-  void executeAndPushHistory(Command command) {
+  void _executeAndPushHistory(Command command) {
     command.execute();
     final textAfter = editor.text;
     _executeListener(command, false, textAfter);
