@@ -1,12 +1,12 @@
 import '../application/application.dart';
+import '../application/text_cursor.dart';
 import 'command.dart';
 
 class SelectCommand extends Command {
   final int _start;
   final int _end;
 
-  int? _oldStart;
-  int? _oldEnd;
+  TextCursor? _previousCursor;
 
   SelectCommand(Application app, this._start, this._end) : super(app);
 
@@ -15,24 +15,20 @@ class SelectCommand extends Command {
 
   @override
   void execute() {
-    _oldStart = app.editor.cursor.startSelection;
-    _oldEnd = app.editor.cursor.endSelection;
+    _previousCursor = app.editor.cursor;
     app.editor.selectText(_start, _end);
   }
 
   @override
   void undo() {
-    if (_oldEnd == null) {
+    if (_previousCursor == null) {
       return;
     }
 
-    final noSelection = _oldStart == null;
-
-    if (noSelection) {
-      app.editor.cursorPosition = _oldEnd!;
-    } else {
-      app.editor.selectText(_oldStart!, _oldEnd!);
-    }
+    app.editor.selectText(
+      _previousCursor!.startSelection,
+      _previousCursor!.endSelection,
+    );
   }
 
   @override
