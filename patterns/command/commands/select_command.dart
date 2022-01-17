@@ -15,7 +15,7 @@ class SelectCommand extends Command {
 
   @override
   void execute() {
-    _oldStart = app.editor.startSelection;
+    _oldStart = app.editor.cursor.startSelection;
     _oldEnd = app.editor.textCursorPosition;
     app.editor.selectText(_start, _end);
   }

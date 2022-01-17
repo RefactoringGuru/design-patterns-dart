@@ -14,7 +14,7 @@ class InputCommand extends Command {
   @override
   void execute() {
     _prevSelectText = app.editor.selectedText;
-    _startPosition = app.editor.startSelection ?? app.editor.textCursorPosition;
+    _startPosition = app.editor.cursor.startSelection;
     app.editor.inputText(_addText);
   }
 

@@ -48,8 +48,6 @@ class Editor {
 
   TextCursor get cursor => _cursor;
 
-  int? get startSelection => cursor.startSelection;
-
   set textCursorPosition(int newPosition) {
     _cursor = TextCursor.fromPosition(newPosition);
   }
