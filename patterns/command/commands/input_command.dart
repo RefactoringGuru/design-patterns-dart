@@ -9,7 +9,7 @@ class InputCommand extends Command {
   InputCommand(Application app, this._addText) : super(app);
 
   @override
-  bool get isSaveHistory => _startPosition != null || _addText.isNotEmpty;
+  bool get isSaveHistory => _addText.isNotEmpty;
 
   @override
   void execute() {
@@ -20,10 +20,6 @@ class InputCommand extends Command {
 
   @override
   void undo() {
-    if (_startPosition == null) {
-      return;
-    }
-
     app.editor
       ..selectText(_startPosition!, _startPosition! + _addText.length)
       ..inputText(_prevSelectText);
@@ -34,6 +30,5 @@ class InputCommand extends Command {
     return 'Input( '
         'cursorPosition: $_startPosition, '
         'addText: "$_addText" )';
-
   }
 }
