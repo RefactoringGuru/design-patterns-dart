@@ -9,9 +9,9 @@ class TextCursor {
 
   final int _position;
 
-  int? _startSelection;
+  final int? _startSelection;
 
-  TextCursor.fromPosition(this._position);
+  TextCursor.fromPosition(this._position) : _startSelection = null;
 
   TextCursor.fromSelection(this._startSelection, this._position);
 }
