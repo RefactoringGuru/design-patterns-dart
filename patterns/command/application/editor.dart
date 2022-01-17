@@ -16,26 +16,11 @@ class Editor {
   }
 
   void inputText(String addText) {
-    if (_startSelection == null) {
-      _insertText(addText);
-    } else {
+    if (isTextSelected) {
       _replaceSelection(addText);
+    } else {
+      _insertText(addText);
     }
-  }
-
-  void _replaceSelection(String replaceText) {
-    _text = _text.replaceRange(
-      _startSelection!,
-      _textCursorPosition,
-      replaceText,
-    );
-    textCursorPosition = _startSelection! + replaceText.length;
-  }
-
-  void _insertText(String insertText) {
-    _text = _text.replaceRange(
-        _textCursorPosition, _textCursorPosition, insertText);
-    _textCursorPosition += insertText.length;
   }
 
   void selectText(int start, int? end) {
@@ -46,12 +31,10 @@ class Editor {
   }
 
   void removeSelected() {
-    if (_startSelection != null) {
+    if (isTextSelected) {
       _replaceSelection('');
     }
   }
-
-  bool get isTextSelected => _startSelection != null;
 
   String get selectedText {
     if (_textCursorPosition > _text.length) {
@@ -68,6 +51,8 @@ class Editor {
 
   int? get startSelection => _startSelection;
 
+  bool get isTextSelected => _startSelection != null;
+
   int _textCursorPosition = 0;
 
   set textCursorPosition(int newPosition) {
@@ -76,4 +61,22 @@ class Editor {
   }
 
   int get textCursorPosition => _textCursorPosition;
+
+  void _replaceSelection(String replaceText) {
+    _text = _text.replaceRange(
+      _startSelection!,
+      _textCursorPosition,
+      replaceText,
+    );
+    textCursorPosition = _startSelection! + replaceText.length;
+  }
+
+  void _insertText(String insertText) {
+    _text = _text.replaceRange(
+      _textCursorPosition,
+      _textCursorPosition,
+      insertText,
+    );
+    _textCursorPosition += insertText.length;
+  }
 }

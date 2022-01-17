@@ -15,7 +15,7 @@ class CopyCommand extends Command {
 
   @override
   void execute() {
-    if (app.editor.selectedText.isEmpty) {
+    if (!app.editor.isTextSelected) {
       return;
     }
 
