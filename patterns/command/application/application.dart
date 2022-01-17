@@ -61,8 +61,7 @@ class Application {
     if (_history.isNotEmpty) {
       final command = _history.pop();
       command.undo();
-      final textAfter = editor.text;
-      _executeListener(command, true, textAfter);
+      _executeListener(command, true, editor.text);
     }
   }
 
