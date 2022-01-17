@@ -8,7 +8,10 @@ import 'command_history.dart';
 import 'editor.dart';
 
 typedef ExecuteCommandListener = Function(
-    Command command, bool isUndo, String textBefore, String textAfter);
+  Command command,
+  bool isUndo,
+  String textAfter,
+);
 
 class Application {
   final editor = Editor();
@@ -55,18 +58,16 @@ class Application {
   void undo() {
     if (history.isNotEmpty) {
       final command = history.pop();
-      final textBefore = editor.text;
       command.undo();
       final textAfter = editor.text;
-      _executeListener(command, true, textBefore, textAfter);
+      _executeListener(command, true, textAfter);
     }
   }
 
   void executeAndPushHistoryAnd(Command command) {
-    final textBefore = editor.text;
     command.execute();
     final textAfter = editor.text;
-    _executeListener(command, false, textBefore, textAfter);
+    _executeListener(command, false, textAfter);
 
     if (command.isSaveHistory) {
       history.push(command);
@@ -74,7 +75,7 @@ class Application {
   }
 
   // ignore: prefer_function_declarations_over_variables
-  ExecuteCommandListener _executeListener = (_, __, ___, ____) {};
+  ExecuteCommandListener _executeListener = (_, __, ___) {};
 
   void addListenerExecuteCommand(ExecuteCommandListener listener) {
     _executeListener = listener;

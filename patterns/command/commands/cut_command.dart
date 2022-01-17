@@ -18,7 +18,6 @@ class CutCommand extends CopyCommand {
 
     app.editor.removeSelected();
     _textCursorPosition = app.editor.textCursorPosition;
-
   }
 
   @override
@@ -37,6 +36,5 @@ class CutCommand extends CopyCommand {
     return 'Cut( '
         'cursorPosition: $_textCursorPosition, '
         'cutText: "$_copyText" )';
-;
   }
 }
