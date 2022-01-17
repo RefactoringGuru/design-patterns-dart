@@ -27,7 +27,7 @@ class CutCommand extends CopyCommand {
     }
 
     app.editor
-      ..textCursorPosition = _textCursorPosition!
+      ..cursorPosition = _textCursorPosition!
       ..inputText(_copyText);
   }
 

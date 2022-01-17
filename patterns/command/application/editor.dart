@@ -48,7 +48,7 @@ class Editor {
 
   TextCursor get cursor => _cursor;
 
-  set textCursorPosition(int newPosition) {
+  set cursorPosition(int newPosition) {
     _cursor = TextCursor.fromPosition(newPosition);
   }
 
@@ -69,6 +69,6 @@ class Editor {
       cursor.position,
       insertText,
     );
-    textCursorPosition = cursor.position + insertText.length;
+    cursorPosition = cursor.position + insertText.length;
   }
 }

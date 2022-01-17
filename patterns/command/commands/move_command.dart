@@ -13,7 +13,7 @@ class MoveCommand extends Command {
   @override
   void execute() {
     _positionFrom = app.editor.cursor.position;
-    app.editor.textCursorPosition = _positionTo;
+    app.editor.cursorPosition = _positionTo;
   }
 
   @override
@@ -22,7 +22,7 @@ class MoveCommand extends Command {
       return;
     }
 
-    app.editor.textCursorPosition = _positionFrom!;
+    app.editor.cursorPosition = _positionFrom!;
   }
 
   @override
