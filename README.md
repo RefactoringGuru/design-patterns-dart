@@ -13,7 +13,7 @@ It contains **Dart** examples for all classic GoF design patterns.
     - [ ] Singleton
 - [ ]  **Behavioral**
     - [x] Chain of Responsibility
-    - [ ] Command
+    - [x] Command
     - [ ] Interpreter
     - [ ] Iterator
     - [ ] Mediator

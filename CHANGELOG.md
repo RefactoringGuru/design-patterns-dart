@@ -1,5 +1,8 @@
+## 0.12.0
+- Add "Command" pattern from official book, rewritten from Java example.
+
 ## 0.11.0
-- Add chain of responsibility template from official book, rewritten from Java example
+- Add "Chain of Responsibility" pattern from official book, rewritten from Java example
 
 ## 0.10.0
 - Add composite template from official book, rewritten from Java example

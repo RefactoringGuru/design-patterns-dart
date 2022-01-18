@@ -71,11 +71,11 @@ class Application {
 
   void _executeAndPushHistory(Command command) {
     command.execute();
-    final textAfter = editor.toString();
+    final textAfterExecute = editor.toString();
     _executeListener?.call(
       command: command,
       isUndo: false,
-      editorText: textAfter,
+      editorText: textAfterExecute,
     );
 
     if (command.isSaveHistory) {
