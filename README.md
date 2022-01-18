@@ -6,7 +6,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 - [ ] **Creation**
     - [ ] [**Abstract Factory**](https://refactoring.guru/design-patterns/abstract-factory)
     - [x] [**Builder**](https://refactoring.guru/design-patterns/builder) - [[Color Text Formats](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/builder/color_text_formats)]
-    - [ ] ![image](https://user-images.githubusercontent.com/8049534/149951271-27c95d06-99bd-420c-9d34-3ae184c51fb0.png) [**Factory Method**](https://refactoring.guru/design-patterns/factory-method)
+    - [ ] [**Factory Method**](https://refactoring.guru/design-patterns/factory-method)
     - [x] [**Prototype**](https://refactoring.guru/design-patterns/prototype) - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/prototype/shapes)] 
     - [ ] [**Singleton**](https://refactoring.guru/design-patterns/singleton)
 - [ ]  **Behavioral**
