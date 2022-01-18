@@ -1,36 +1,34 @@
 # Design Patterns in Dart
-
-This repository is part of the [Refactoring.Guru](https://refactoring.guru/design-patterns) project.
-
-It contains **Dart** examples for all classic GoF design patterns.
+This repository is part of the [**Refactoring.Guru**](https://refactoring.guru/design-patterns) project.
+It contains **Dart** examples for all classic **GoF** design patterns.
 
 # Implementation checklist:
 - [ ] **Creation**
-    - [ ] Abstract Factory
-    - [x] Builder
-    - [ ] Factory Method
-    - [x] Prototype
-    - [ ] Singleton
+    - [ ] [**Abstract Factory**](https://refactoring.guru/design-patterns/abstract-factory)
+    - [x] [**Builder**](https://refactoring.guru/design-patterns/builder) - [[Color Text Formats](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/builder/color_text_formats)]
+    - [ ] ![image](https://user-images.githubusercontent.com/8049534/149951271-27c95d06-99bd-420c-9d34-3ae184c51fb0.png) [**Factory Method**](https://refactoring.guru/design-patterns/factory-method)
+    - [x] [**Prototype**](https://refactoring.guru/design-patterns/prototype) - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/prototype/shapes)] 
+    - [ ] [**Singleton**](https://refactoring.guru/design-patterns/singleton)
 - [ ]  **Behavioral**
-    - [x] Chain of Responsibility
-    - [x] Command
+    - [x] [**Chain of Responsibility**](https://refactoring.guru/design-patterns/chain-of-esponsibility) - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/chain_of_esponsibility/server_middleware)]
+    - [x] [**Command**](https://refactoring.guru/design-patterns/command) - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/command/text_editor)] 
     - [ ] Interpreter
-    - [ ] Iterator
-    - [ ] Mediator
-    - [ ] Memento
-    - [ ] Observer
-    - [ ] State
-    - [ ] Template Method
-    - [ ] Visitor
-    - [ ] Strategy
+    - [ ] [**Iterator**](https://refactoring.guru/design-patterns/iterator)
+    - [ ] [**Mediator**](https://refactoring.guru/design-patterns/mediator)
+    - [ ] [**Memento**](https://refactoring.guru/design-patterns/memento)
+    - [ ] [**Observer**](https://refactoring.guru/design-patterns/observer)
+    - [ ] [**State**](https://refactoring.guru/design-patterns/state)
+    - [ ] [**Template Method**](https://refactoring.guru/design-patterns/template-method)
+    - [ ] [**Visitor**](https://refactoring.guru/design-patterns/visitor)
+    - [ ] [**Strategy**](https://refactoring.guru/design-patterns/strategy)
 - [ ] **Structural**
-    - [x] Adapter
-    - [x] Bridge
-    - [x] Composite
-    - [x] Decorator
-    - [ ] Facade
-    - [ ] Flyweight
-    - [ ] Proxy
+    - [x] [**Adapter**](https://refactoring.guru/design-patterns/adapter) - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/square_round_conflict)] 
+    - [x] [**Bridge**](https://refactoring.guru/design-patterns/bridge) - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/bridge/clock)] 
+    - [x] [**Composite**](https://refactoring.guru/design-patterns/composite) - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/composite/products_and_boxes)] 
+    - [x] [**Decorator**](https://refactoring.guru/design-patterns/decorator) - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/decorator/data_source_decoder)]
+    - [ ] [**Facade**](https://refactoring.guru/design-patterns/facade)
+    - [ ] [**Flyweight**](https://refactoring.guru/design-patterns/flyweight)
+    - [ ] [**Proxy**](https://refactoring.guru/design-patterns/proxy)
 
 ## Requirements
 
