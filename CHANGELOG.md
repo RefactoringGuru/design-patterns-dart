@@ -1,4 +1,10 @@
-# 0.10.0
+## 0.12.0
+- Add "Command" pattern from official book, rewritten from Java example.
+
+## 0.11.0
+- Add "Chain of Responsibility" pattern from official book, rewritten from Java example
+
+## 0.10.0
 - Add composite template from official book, rewritten from Java example
 
 ## 0.9.0

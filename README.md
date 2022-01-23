@@ -12,8 +12,8 @@ It contains **Dart** examples for all classic GoF design patterns.
     - [x] Prototype
     - [ ] Singleton
 - [ ]  **Behavioral**
-    - [ ] Chain of Responsibility
-    - [ ] Command
+    - [x] Chain of Responsibility
+    - [x] Command
     - [ ] Interpreter
     - [ ] Iterator
     - [ ] Mediator
