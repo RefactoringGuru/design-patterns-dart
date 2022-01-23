@@ -1,3 +1,7 @@
+## 0.12.5
+- Put "Shapes" prototype pattern to "Shapes" folder.
+- The list of patterns has been updated. Added links to projects.
+
 ## 0.12.0
 - Add "Command" pattern from official book, rewritten from Java example.
 
