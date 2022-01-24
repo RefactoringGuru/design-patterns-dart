@@ -2,6 +2,8 @@ import '../diagram/diagram.dart';
 import 'product.dart';
 
 class ProductLeaf implements Product {
+  ProductLeaf(this.name, this.price);
+
   @override
   String get content => '$name($price\$)';
 
@@ -12,8 +14,6 @@ class ProductLeaf implements Product {
 
   @override
   int get size => 1;
-
-  ProductLeaf(this.name, this.price);
 
   @override
   Diagram toDiagram() {

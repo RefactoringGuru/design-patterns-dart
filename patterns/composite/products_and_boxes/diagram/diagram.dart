@@ -7,9 +7,9 @@ import '../render_elements/render_element.dart';
 import 'convert_product_to_render_element.dart';
 
 class Diagram {
-  final RenderElement rootRenderElement;
-
   Diagram(this.rootRenderElement);
+
+  final RenderElement rootRenderElement;
 
   String renderToText() {
     const pixelWidth = 3;

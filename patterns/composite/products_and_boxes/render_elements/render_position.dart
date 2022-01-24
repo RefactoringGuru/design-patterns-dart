@@ -5,15 +5,15 @@ import 'package:design_patterns_dart/text_canvas/canvas.dart';
 import 'render_element.dart';
 
 class RenderPosition extends RenderElement {
-  final int x;
-  final int y;
-  final RenderElement child;
-
   RenderPosition({
     required this.x,
     required this.y,
     required this.child,
   });
+
+  final int x;
+  final int y;
+  final RenderElement child;
 
   @override
   int get height => child.height;
