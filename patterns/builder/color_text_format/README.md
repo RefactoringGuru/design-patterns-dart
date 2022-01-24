@@ -58,22 +58,22 @@ main() {
     "text": "I love looking at the "
   },
   {
-    "text": "blue",
     "color": "blue"
   },
   {
     "text": "sky, eating "
   },
   {
-    "text": "red",
     "color": "red"
   },
   {
     "text": "apples, sitting on the "
   },
   {
-    "text": "green",
     "color": "green"
+  },
+  {
+    "text": "grass. "
   }
 ]
 ```
