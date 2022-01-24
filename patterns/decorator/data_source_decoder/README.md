@@ -1,13 +1,14 @@
 # Pattern Decorator
 Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 
-## Diagram:
-![image](https://user-images.githubusercontent.com/8049534/148954932-edc22d7b-becd-4e2f-bae8-d0d8200d8918.png)
-
-## Description:
+## Example Description:
 https://refactoring.guru/design-patterns/decorator?#pseudocode
 
-## Client code:
+### Diagram:
+![image](https://user-images.githubusercontent.com/8049534/148954932-edc22d7b-becd-4e2f-bae8-d0d8200d8918.png)
+
+
+### Client code:
 ```dart
 void main() {
   final records = 'Name,Salary\nJohn Smith,100000\nSteven Jobs,912000';
@@ -30,7 +31,7 @@ void main() {
 }
 ```
 
-## Output:
+**Output:**
 ```
 - Input ----------------
 Name,Salary

@@ -2,9 +2,9 @@ import '../diagram/diagram.dart';
 import 'product.dart';
 
 class Box implements Product {
-  final List<Product> children;
-
   Box({required this.children});
+
+  final List<Product> children;
 
   @override
   String get content {

@@ -4,10 +4,10 @@ import 'package:design_patterns_dart/text_canvas/primitives.dart';
 import 'render_element.dart';
 
 class RenderText extends RenderElement {
+  RenderText(this.text, {required this.borderStyle});
+
   final String text;
   final BorderStyle borderStyle;
-
-  RenderText(this.text, {required this.borderStyle});
 
   @override
   int get width => text.length + 2 + 2;

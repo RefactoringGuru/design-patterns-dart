@@ -10,9 +10,6 @@ import 'render_layout.dart';
 import 'render_text.dart';
 
 class RenderConnectingLines extends RenderElement {
-  late final RenderLayout _child;
-  late final _Lines _lines;
-
   RenderConnectingLines({
     required RenderElement parent,
     required List<RenderElement> children,
@@ -29,6 +26,9 @@ class RenderConnectingLines extends RenderElement {
     );
     _lines = _Lines(_child.positions.first, row.positions);
   }
+
+  late final RenderLayout _child;
+  late final _Lines _lines;
 
   @override
   int get height => _child.height;

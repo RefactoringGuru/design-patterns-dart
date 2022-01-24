@@ -1,5 +1,6 @@
 import 'shape/circle.dart';
 import 'shape/rectangle.dart';
+import 'shape/shape.dart';
 
 void main() {
   final originalShapes = [
@@ -18,6 +19,10 @@ void main() {
     ),
   ];
 
+  businessLogic(originalShapes);
+}
+
+void businessLogic(List<Shape> originalShapes) {
   final cloningShapes = [
     for (final shape in originalShapes) shape.clone(),
   ];

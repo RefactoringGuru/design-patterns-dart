@@ -9,9 +9,11 @@ void main() {
         'eating red apples, '
         'sitting on the green grass.',
   );
+
   final html = reader.convert(HtmlConverter());
   final json = reader.convert(JsonConverter());
   final console = reader.convert(ConsoleConverter());
+
   print(
     '$html,\n\n'
     '$json,\n\n'

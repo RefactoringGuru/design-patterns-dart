@@ -6,17 +6,17 @@ import 'render_element.dart';
 import 'render_position.dart';
 
 abstract class RenderLayout extends RenderElement {
+  RenderLayout({
+    required this.children,
+    this.space = 3,
+  });
+
   late final List<RenderPosition> positions = compute();
 
   List<RenderPosition> compute();
 
   final List<RenderElement> children;
   final int space;
-
-  RenderLayout({
-    required this.children,
-    this.space = 3,
-  });
 
   int get childWidth => children.fold<int>(
       0, (width, renderElement) => width + renderElement.width);

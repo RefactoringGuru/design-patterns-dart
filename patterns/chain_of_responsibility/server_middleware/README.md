@@ -4,16 +4,16 @@ Chain of Responsibility is a behavioral design pattern that lets you pass reques
 ## Server middleware example 
 ![image](https://user-images.githubusercontent.com/8049534/149480179-ba06640c-0858-4ff9-8957-f2c4aa22ccc4.png)
 
-## Problem description:
+### Problem description:
 https://refactoring.guru/design-patterns/chain-of-responsibility?#problem
 
-## Origin source code:
+### Origin source code:
 This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/chain_of_responsibility/example)
 
-## Diagram:
+### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/149488654-7ff5f659-4086-4d1a-ae44-326c71fb880a.png)
 
-## Client code:
+### Client code:
 ```dart
 void main() {
   final server = Server(

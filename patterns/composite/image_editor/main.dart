@@ -13,7 +13,8 @@ void main() {
     CompoundShape([
       Circle(12, 12, 6, Color.dark),
       Dot(12 + 6, 12 + 6, Color.dark),
-    ])..select(),
+    ])
+      ..select(),
     CompoundShape([
       Rectangle(31, 31, 10, 10, Color.black),
       Dot(28, 28, Color.grey),
@@ -22,4 +23,5 @@ void main() {
       Dot(28, 41, Color.grey),
     ]),
   ]);
+  print(editor.render());
 }

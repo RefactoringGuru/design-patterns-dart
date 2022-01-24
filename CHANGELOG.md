@@ -1,3 +1,6 @@
+## 0.12.19
+- Refactoring: reformatting and minor changes
+
 ## 0.12.5
 - Put "Shapes" prototype pattern to "Shapes" folder.
 - The list of patterns has been updated. Added links to projects.

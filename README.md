@@ -5,12 +5,12 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 # Implementation checklist:
 - [ ] **Creation**
     - [ ] [**Abstract Factory**](https://refactoring.guru/design-patterns/abstract-factory)
-    - [x] [**Builder**](https://refactoring.guru/design-patterns/builder) - [[Color Text Formats](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/builder/color_text_formats)]
+    - [x] [**Builder**](https://refactoring.guru/design-patterns/builder) - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/builder/color_text_format)]
     - [ ] [**Factory Method**](https://refactoring.guru/design-patterns/factory-method)
     - [x] [**Prototype**](https://refactoring.guru/design-patterns/prototype) - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/prototype/shapes)] 
     - [ ] [**Singleton**](https://refactoring.guru/design-patterns/singleton)
 - [ ]  **Behavioral**
-    - [x] [**Chain of Responsibility**](https://refactoring.guru/design-patterns/chain-of-esponsibility) - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/chain_of_esponsibility/server_middleware)]
+    - [x] [**Chain of Responsibility**](https://refactoring.guru/design-patterns/chain-of-esponsibility) - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/chain_of_responsibility/server_middleware)]
     - [x] [**Command**](https://refactoring.guru/design-patterns/command) - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/command/text_editor)] 
     - [ ] Interpreter
     - [ ] [**Iterator**](https://refactoring.guru/design-patterns/iterator)

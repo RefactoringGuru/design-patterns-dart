@@ -46,6 +46,6 @@ void main() {
         graphElement: third_party.Star(size: 20),
       ),
     ],
-  ).render();
-  print(renderContent);
+  );
+  print(renderContent.render());
 }

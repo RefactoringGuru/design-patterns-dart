@@ -1,11 +1,14 @@
 # Bridge pattern
+Bridge is a structural design pattern that lets you split a large class or a set of closely related 
+classes into two separate hierarchies—abstraction and implementation—which can be developed independently of each other.
+
+## Example
 The idea for the bridge pattern example is taken from [here](https://habr.com/ru/post/85137/).
 
-**Diagram:**
-
+### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/145851578-f6e95355-e2b3-4f94-bda2-c2d1d0de8935.png)
 
-**Client code:**
+### Client code:
 ```dart
 void main() {
   final melody = Melody();
