@@ -1,8 +1,14 @@
 # Adapter pattern
+Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+**General description of the pattern:** https://refactoring.guru/design-patterns/adapter
 
+## Example: 
+Adding shapes from a third-party library.
+
+### Class Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/146028651-1262b66d-b0ac-4fc9-9487-76a2d588f97e.png)
 
-**Client code:**
+### Client code:
 ```dart
 final renderContent = ShapeEngine(
     width: 42,
