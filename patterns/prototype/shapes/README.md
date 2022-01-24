@@ -2,7 +2,9 @@
 Prototype is a creational design pattern that lets you copy existing objects without making your 
 code dependent on their classes.
 
-## Copies of geometric objects. Example.
+## Example
+Copies of geometric objects.
+
 **Description:**
 https://refactoring.guru/design-patterns/prototype?#pseudocode
 
