@@ -1,9 +1,16 @@
 # Builder pattern
-Using different text formats
+Builder is a creational design pattern that lets you construct complex objects step by step.
 
+**General description of the pattern:**
+https://refactoring.guru/design-patterns/builder
+
+## Example 
+Using different text formats. 
+
+### Class diagram
 ![image](https://user-images.githubusercontent.com/8049534/146023073-5d7644a4-d3b9-4420-bffe-f72ac3fd83dd.png)
 
-**Client code:**
+### Client code:
 ```dart
 main() {
   final reader = ColorTextReader(
@@ -11,9 +18,11 @@ main() {
         'eating red apples, '
         'sitting on the green grass.',
   );
+
   final html = reader.convert(HtmlConverter());
   final json = reader.convert(JsonConverter());
   final console = reader.convert(ConsoleConverter());
+
   print(
     '$html,n\n'
     '$json,\n\n'
@@ -23,8 +32,7 @@ main() {
 ```
 
 **Output:**
-```
-HtmlFormat(
+```html
 <!DOCTYPE html>
   <html>
   <head>
@@ -43,9 +51,8 @@ HtmlFormat(
    <span class="green">green</span> grass. </p>
   </body>
 </html>
-),
-
-JsonFormat(
+```
+```json
 [
   {
     "text": "I love looking at the "
@@ -69,9 +76,6 @@ JsonFormat(
     "color": "green"
   }
 ]
-),
-
-ConsoleFormat(
-  I love looking at the blue sky, eating red apples, sitting on the green grass.
-),
 ```
+![image](https://user-images.githubusercontent.com/8049534/150763802-9d21f8b7-011d-4ff5-bb53-5d8a3d6d1d4c.png)
+
