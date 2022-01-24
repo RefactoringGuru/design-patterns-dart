@@ -1,22 +1,21 @@
 # Composite pattern
+Composite is a structural design pattern that lets you compose objects into tree structures and then
+work with these structures as if they were individual objects.
 
+## Problem description:
 ![problem-en](https://user-images.githubusercontent.com/8049534/147579298-0c60c4a7-6acb-4ab3-a973-e06524c5a061.png)
-
-**Problem description:**
-
 https://refactoring.guru/design-patterns/composite?#problem
 
-**Folder description:**
-
+### Folder description:
 - `/products` - represent product and box (composite pattern)
 - `/diagram` - convert products to render elements
 - `/render_elements` - classes for visualization (real-world composite pattern)
 
-**Diagram:**
+### Diagram:
 
 ![image](https://user-images.githubusercontent.com/8049534/147579175-f5ce6191-a76a-4f1f-8ac9-fae1a26f87bb.png)
 
-**Client code:**
+### Client code:
 ```dart
 main() {
   Box(
