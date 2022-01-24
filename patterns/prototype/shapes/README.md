@@ -8,7 +8,11 @@ Copies of geometric objects.
 **Description:**
 https://refactoring.guru/design-patterns/prototype?#pseudocode
 
-## Client code:
+### Class Diagram:
+![image](https://user-images.githubusercontent.com/8049534/150781031-52c8c32a-e94b-4f1b-86b9-eb0012427682.png)
+
+
+### Client code:
 ```dart
 void main() {
   final originalShapes = [
