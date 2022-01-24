@@ -1,6 +1,8 @@
 # Adapter pattern
 Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
-**General description of the pattern:** https://refactoring.guru/design-patterns/adapter
+
+**General description of the pattern:** 
+https://refactoring.guru/design-patterns/adapter
 
 ## Example: 
 Adding shapes from a third-party library.
