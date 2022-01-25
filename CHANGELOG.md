@@ -1,3 +1,6 @@
+## 0.13.0
+- Add "Observer" pattern from official book, rewritten from Java example.
+
 ## 0.12.19
 - Refactoring: reformatting and minor changes
 
