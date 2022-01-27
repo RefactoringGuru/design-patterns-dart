@@ -1,15 +1,18 @@
+## 0.14.0
+- Add "Memento" conceptual pattern
+
 ## 0.13.0
-- Add "Observer" pattern from official book, rewritten from Java example.
+- Add "Observer" pattern from official book, rewritten from Java example
 
 ## 0.12.19
 - Refactoring: reformatting and minor changes
 
 ## 0.12.5
-- Put "Shapes" prototype pattern to "Shapes" folder.
-- The list of patterns has been updated. Added links to projects.
+- Put "Shapes" prototype pattern to "Shapes" folder
+- The list of patterns has been updated. Added links to projects
 
 ## 0.12.0
-- Add "Command" pattern from official book, rewritten from Java example.
+- Add "Command" pattern from official book, rewritten from Java example
 
 ## 0.11.0
 - Add "Chain of Responsibility" pattern from official book, rewritten from Java example
@@ -35,7 +38,7 @@
 - Add bridge pattern. Device remote control
 
 ## 0.5.5
-- Add example "graphics engine" and "square round conflict"  for adapter pattern
+- Add example "graphics engine" and "square round conflict"  for adapter patter
 - Add description to prototype pattern
 - Fix class diagram for text graph
 - Add description Builder pattern, text formats
