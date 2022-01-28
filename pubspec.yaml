@@ -10,6 +10,10 @@ environment:
 
 dependencies:
   collection: ^1.15.0
+  flutter:
+    sdk: flutter
 
 dev_dependencies:
   lints: ^1.0.0
+
+
