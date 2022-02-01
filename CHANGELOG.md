@@ -1,3 +1,6 @@
+## 0.15.0
+- Add second "Observer" example. This example was created to be used in a more complex example.
+
 ## 0.14.0
 - Add "Memento" conceptual pattern
 

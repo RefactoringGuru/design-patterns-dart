@@ -15,8 +15,8 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] Interpreter
     - [ ] [**Iterator**](https://refactoring.guru/design-patterns/iterator)
     - [ ] [**Mediator**](https://refactoring.guru/design-patterns/mediator)
-    - [x] [**Memento**](https://refactoring.guru/design-patterns/memento) [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/memento/conceptual)]
-    - [x] [**Observer**](https://refactoring.guru/design-patterns/observer) - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)]
+    - [x] [**Memento**](https://refactoring.guru/design-patterns/memento) - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/memento/conceptual)]
+    - [x] [**Observer**](https://refactoring.guru/design-patterns/observer) - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)]
     - [ ] [**State**](https://refactoring.guru/design-patterns/state)
     - [ ] [**Template Method**](https://refactoring.guru/design-patterns/template-method)
     - [ ] [**Visitor**](https://refactoring.guru/design-patterns/visitor)
