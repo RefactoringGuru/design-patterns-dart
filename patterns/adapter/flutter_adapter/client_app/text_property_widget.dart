@@ -5,20 +5,20 @@ import '../../../observer/app_observer/observer/app_observer.dart';
 import '../adapter/classic_app.dart';
 import 'app.dart';
 
-class FlutterTextPropertyWidget extends StatefulWidget {
+class TextPropertyWidget extends StatefulWidget {
   final App classicApp;
 
-  const FlutterTextPropertyWidget({
+  const TextPropertyWidget({
     Key? key,
     required this.classicApp,
   }) : super(key: key);
 
   @override
-  State<FlutterTextPropertyWidget> createState() =>
-      _FlutterTextPropertyWidgetState();
+  State<TextPropertyWidget> createState() =>
+      _TextPropertyWidgetState();
 }
 
-class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
+class _TextPropertyWidgetState extends State<TextPropertyWidget> {
   @override
   Widget build(BuildContext context) {
     final app = widget.classicApp;

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'adapter/classic_app_widget_adapter.dart';
 import 'client_app/app.dart';
-import 'client_app/flutter_text_property_widget.dart';
+import 'client_app/text_property_widget.dart';
 
 class FlutterAdapterApp extends StatefulWidget {
   @override
@@ -16,7 +16,7 @@ class _FlutterAdapterAppState extends State<FlutterAdapterApp> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        FlutterTextPropertyWidget(
+        TextPropertyWidget(
           classicApp: app,
         ),
         Expanded(
