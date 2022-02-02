@@ -30,7 +30,7 @@ class TextColoring {
     if (_textColor == newColor) {
       return;
     }
-    print(newColor);
+
     _textColor = newColor;
     app.repaint();
   }
