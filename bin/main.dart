@@ -1,20 +1,19 @@
 import 'package:flutter/material.dart';
+import '../patterns/adapter/flutter_adapter/main.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Refactoring Guru: Flutter launcher',
-      theme: ThemeData(
-          primarySwatch: Colors.pink
+      theme: ThemeData(primarySwatch: Colors.pink),
+      home: Scaffold(
+        body: FlutterAdapterApp(),
       ),
-      home: Container(),
     );
   }
 }
