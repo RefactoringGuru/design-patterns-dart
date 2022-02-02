@@ -29,6 +29,7 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
       ],
     );
   }
+
   final colors = [
     Colors.black,
     Colors.pink.shade600,
@@ -47,16 +48,16 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
     );
 
     _nextColorEvent = widget.classicApp.events.subscribe(
-      (NextTextColorEvent e) => setState(() {
-        final currColor =  widget.classicApp.textColoring.textColor;
-        var nextIndex = colors.indexOf(currColor)+1;
+      (NextTextColorEvent e) {
+        final currColor = widget.classicApp.textColoring.textColor;
+        var nextIndex = colors.indexOf(currColor) + 1;
 
         if (nextIndex >= colors.length) {
           nextIndex = 0;
         }
 
         widget.classicApp.textColoring.textColor = colors[nextIndex];
-      }),
+      },
     );
     super.initState();
   }
