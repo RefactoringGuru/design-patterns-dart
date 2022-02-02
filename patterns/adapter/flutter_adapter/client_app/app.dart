@@ -15,7 +15,7 @@ class App extends ClassicAppBase {
 
   @override
   void onWheel(double deltaX, double deltaY) {
-    textColoring.textSize += deltaY ~/ 10;
+    textColoring.size += deltaY ~/ 10;
   }
 
   @override
