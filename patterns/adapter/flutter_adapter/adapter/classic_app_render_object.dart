@@ -24,6 +24,7 @@ class ClassicAppRenderObject extends RenderBox {
   @override
   void paint(PaintingContext context, Offset offset) {
     context.canvas.translate(offset.dx, offset.dy);
+    context.canvas.clipRect(offset & size);
     _classicApp.onPaint(context.canvas, size);
   }
 
