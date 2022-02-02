@@ -1,4 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:flutter/material.dart' as material;
+import 'package:flutter/widgets.dart';
 
 import '../../../observer/app_observer/observer/app_observer.dart';
 import '../adapter/classic_app.dart';
@@ -31,11 +32,11 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
   }
 
   final colors = [
-    Colors.black,
-    Colors.pink.shade600,
-    Colors.deepPurple.shade600,
-    Colors.blue.shade600,
-    Colors.green.shade600,
+    material.Colors.black,
+    material.Colors.pink.shade600,
+    material.Colors.deepPurple.shade600,
+    material.Colors.blue.shade600,
+    material.Colors.green.shade600,
   ];
 
   late EventFunction<ClassicAppRepaint> _classicAppRepaintEvent;
@@ -48,16 +49,16 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
     );
 
     _nextColorEvent = widget.classicApp.events.subscribe(
-      (NextTextColorEvent e) {
-        final currColor = widget.classicApp.textColoring.textColor;
+      (NextTextColorEvent e) => setState(() {
+        final currColor = widget.classicApp.textColoring.color;
         var nextIndex = colors.indexOf(currColor) + 1;
 
         if (nextIndex >= colors.length) {
           nextIndex = 0;
         }
 
-        widget.classicApp.textColoring.textColor = colors[nextIndex];
-      },
+        widget.classicApp.textColoring.color = colors[nextIndex];
+      }),
     );
     super.initState();
   }
@@ -76,18 +77,18 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
         SizedBox(
           width: 31,
           child: Text(
-            app.textColoring.textSize.toString(),
+            app.textColoring.size.toString(),
             textAlign: TextAlign.right,
           ),
         ),
         SizedBox(
           width: 200,
-          child: Slider(
-            value: app.textColoring.textSize.toDouble(),
+          child: material.Slider(
+            value: app.textColoring.size.toDouble(),
             max: app.textColoring.maxTextSize.toDouble(),
             min: 1,
             onChanged: (newVal) {
-              app.textColoring.textSize = newVal.toInt();
+              app.textColoring.size = newVal.toInt();
             },
           ),
         ),
@@ -108,10 +109,10 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
   }
 
   Widget _buildColorButton(Color color, App app) {
-    final isColorSelect = (color == app.textColoring.textColor);
+    final isColorSelect = (color == app.textColoring.color);
     return GestureDetector(
       onTap: () {
-        app.textColoring.textColor = color;
+        app.textColoring.color = color;
       },
       child: Container(
         width: 20,
@@ -127,7 +128,7 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
       child: Container(
         width: 4,
         height: 4,
-        color: Colors.white.withOpacity(0.8),
+        color: material.Colors.white.withOpacity(0.8),
       ),
     );
   }
