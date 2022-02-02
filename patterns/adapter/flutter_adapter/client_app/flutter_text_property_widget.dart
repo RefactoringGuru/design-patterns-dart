@@ -48,14 +48,14 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
 
     _nextColorEvent = widget.classicApp.events.subscribe(
       (NextTextColorEvent e) => setState(() {
-        final currColor =  widget.classicApp.textColor;
+        final currColor =  widget.classicApp.textColoring.textColor;
         var nextIndex = colors.indexOf(currColor)+1;
 
         if (nextIndex >= colors.length) {
           nextIndex = 0;
         }
 
-        widget.classicApp.textColor = colors[nextIndex];
+        widget.classicApp.textColoring.textColor = colors[nextIndex];
       }),
     );
     super.initState();
@@ -75,18 +75,18 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
         SizedBox(
           width: 31,
           child: Text(
-            app.textSize.toString(),
+            app.textColoring.textSize.toString(),
             textAlign: TextAlign.right,
           ),
         ),
         SizedBox(
           width: 200,
           child: Slider(
-            value: app.textSize.toDouble(),
-            max: app.maxTextSize.toDouble(),
+            value: app.textColoring.textSize.toDouble(),
+            max: app.textColoring.maxTextSize.toDouble(),
             min: 1,
             onChanged: (newVal) {
-              app.textSize = newVal.toInt();
+              app.textColoring.textSize = newVal.toInt();
             },
           ),
         ),
@@ -107,10 +107,10 @@ class _FlutterTextPropertyWidgetState extends State<FlutterTextPropertyWidget> {
   }
 
   Widget _buildColorButton(Color color, App app) {
-    final isColorSelect = (color == app.textColor);
+    final isColorSelect = (color == app.textColoring.textColor);
     return GestureDetector(
       onTap: () {
-        app.textColor = color;
+        app.textColoring.textColor = color;
       },
       child: Container(
         width: 20,
