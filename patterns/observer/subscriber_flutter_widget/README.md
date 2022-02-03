@@ -12,10 +12,10 @@ the previously implemented AppObserver template, which you can see
 [Online demo](https://ilopx.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget)
 
 ### Diagram:
-???
+TODO: ???
 
 ### Sequence
-???
+TODO: ???
 
 ### Client code:
 ```dart
