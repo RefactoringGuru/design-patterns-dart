@@ -22,20 +22,21 @@ class SubscriberWidget<T extends Event> extends StatefulWidget {
 class _SubscriberWidgetState<T extends Event>
     extends State<SubscriberWidget<T>> {
   T? _event;
-  late EventFunction<T> _saveSubscriber;
 
   @override
   void initState() {
-    _saveSubscriber = widget.observer.subscribe<T>(
-      (event) => setState(() => _event = event),
-    );
+    widget.observer.subscribe<T>(update);
     super.initState();
   }
 
   @override
   void dispose() {
-    widget.observer.unsubscribe(_saveSubscriber);
+    widget.observer.unsubscribe(update);
     super.dispose();
+  }
+
+  void update(T event) {
+    setState(() => _event = event);
   }
 
   @override
