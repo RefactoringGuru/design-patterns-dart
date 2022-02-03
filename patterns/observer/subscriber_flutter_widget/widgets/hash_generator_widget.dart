@@ -17,10 +17,12 @@ class HashGeneratorWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       child: Text('Generate new hash'),
-      onPressed: () {
-        final hash = Random().nextDouble().hashCode.toString();
-        observer.notify(NewHashEvent(hash));
-      },
+      onPressed: onHashGenerate,
     );
+  }
+
+  void onHashGenerate() {
+    final hash = Random().nextDouble().hashCode.toString();
+    observer.notify(NewHashEvent(hash));
   }
 }
