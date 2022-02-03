@@ -15,7 +15,7 @@ class HashUserWidget extends StatelessWidget {
       observer: observer,
       builder: (context, event) {
         return Text(
-          (event == null) ? 'Hash no generated' : event.newHash,
+          event?.newHash ?? 'Hash no generated',
         );
       },
     );
