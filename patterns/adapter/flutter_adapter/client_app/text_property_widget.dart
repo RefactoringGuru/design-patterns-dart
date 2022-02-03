@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import '../../../observer/app_observer/observer/app_observer.dart';
 import '../adapter/classic_app.dart';
+import '../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
 import 'app.dart';
 
 class TextPropertyWidget extends StatefulWidget {
@@ -14,20 +15,24 @@ class TextPropertyWidget extends StatefulWidget {
   }) : super(key: key);
 
   @override
-  State<TextPropertyWidget> createState() =>
-      _TextPropertyWidgetState();
+  State<TextPropertyWidget> createState() => _TextPropertyWidgetState();
 }
 
 class _TextPropertyWidgetState extends State<TextPropertyWidget> {
   @override
   Widget build(BuildContext context) {
     final app = widget.classicApp;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        _buildTextSizeSlider(app),
-        _buildTextColorButtons(app),
-      ],
+    return SubscriberWidget<ClassicAppRepaint>(
+      observer: app.events,
+      builder: (context, event) {
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            _buildTextSizeSlider(app),
+            _buildTextColorButtons(app),
+          ],
+        );
+      },
     );
   }
 
@@ -44,9 +49,9 @@ class _TextPropertyWidgetState extends State<TextPropertyWidget> {
 
   @override
   void initState() {
-    _classicAppRepaintEvent = widget.classicApp.events.subscribe(
-      (ClassicAppRepaint e) => setState(() {}),
-    );
+    // _classicAppRepaintEvent = widget.classicApp.events.subscribe(
+    //   (ClassicAppRepaint e) => setState(() {}),
+    // );
 
     _nextColorEvent = widget.classicApp.events.subscribe(
       (NextTextColorEvent e) => setState(() {
@@ -60,6 +65,7 @@ class _TextPropertyWidgetState extends State<TextPropertyWidget> {
         widget.classicApp.textColoring.color = colors[nextIndex];
       }),
     );
+
     super.initState();
   }
 
