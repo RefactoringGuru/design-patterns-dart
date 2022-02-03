@@ -16,7 +16,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] [**Iterator**](https://refactoring.guru/design-patterns/iterator)
     - [ ] [**Mediator**](https://refactoring.guru/design-patterns/mediator)
     - [x] [**Memento**](https://refactoring.guru/design-patterns/memento) - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/memento/conceptual)]
-    - [x] [**Observer**](https://refactoring.guru/design-patterns/observer) - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)]
+    - [x] [**Observer**](https://refactoring.guru/design-patterns/observer) - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
     - [ ] [**State**](https://refactoring.guru/design-patterns/state)
     - [ ] [**Template Method**](https://refactoring.guru/design-patterns/template-method)
     - [ ] [**Visitor**](https://refactoring.guru/design-patterns/visitor)
@@ -33,6 +33,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 ## Requirements
 
 The examples were written in **Dart 2.15**.
+Some complex examples require **Flutter 2.15.0**.
 
 ## Contributor's Guide
 
@@ -64,6 +65,12 @@ Here's a style guide which might help you to keep your changes consistent with o
 
     Don't be scared and ignore the non-English part of such comments. If you want to change something in a comment like this, then do it. Even if you do it wrong, we'll tell you how to fix it during the Pull Request.
 
+
+### Build Flutter examples
+```batch
+cd root directory
+flutter build web -t bin\main.dart --web-renderer html
+```
 
 ## License
 

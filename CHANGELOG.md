@@ -1,3 +1,7 @@
+## 0.16.0
+- Add complex example of an Observer pattern, connected to a Flutter application.
+- Add new branch "web-demos" for online examples.
+
 ## 0.15.0
 - Add second "Observer" example. This example was created to be used in a more complex example.
 
