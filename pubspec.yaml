@@ -1,6 +1,6 @@
 name: design_patterns_dart
 description: Dart examples for all classic GoF design patterns.
-version: 0.15.0
+version: 0.16.0
 homepage: https://refactoring.guru/design-patterns
 repository: https://github.com/RefactoringGuru/design-patterns-dart
 issue_tracker: https://github.com/RefactoringGuru/design-patterns-dart/issue

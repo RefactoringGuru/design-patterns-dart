@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import '../patterns/observer/subscriber_flutter_widget/main.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -11,10 +12,11 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Refactoring Guru: Flutter launcher',
-      theme: ThemeData(
-          primarySwatch: Colors.pink
-      ),
-      home: Container(),
+      theme: ThemeData(primarySwatch: Colors.pink),
+      initialRoute: '/observer/subscriber_flutter_widget',
+      routes: {
+        '/observer/subscriber_flutter_widget': (_) => SubscriberFlutterApp(),
+      },
     );
   }
 }
