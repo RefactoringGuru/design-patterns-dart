@@ -8,32 +8,6 @@ void main() async {
   clear();
 }
 
-void pushToOrigin() {
-  cmd('git add .', tmpDir);
-  cmd('git commit -m \'auto_commit\'', tmpDir, showOut: true);
-  cmd('git push origin web-demos', tmpDir, showOut: true);
-}
-
-void updateFiles() {
-  final webDir = Directory(thisPath(r'..\build\web\'));
-  copyDirectory(webDir, tmpDir);
-}
-
-void cloneRemoteRepository() {
-  final repository = 'https://github.com/ilopX/design-patterns-dart.git';
-  cmd(
-    'git clone -b web-demos --single-branch $repository .',
-    tmpDir,
-    showOut: true,
-  );
-}
-
-late final tmpDir = Directory.systemTemp.createTempSync();
-
-void clear() {
-  tmpDir.deleteSync(recursive: true);
-}
-
 void buildWebProject() {
   print('Build web app ...');
   final projectPath = thisPath(r'..\');
@@ -43,7 +17,33 @@ void buildWebProject() {
   );
 }
 
-void cmd(String command, Directory workingDirectory, {bool showOut = false}) {
+void cloneRemoteRepository() {
+  final repository = originRemoteUrl();
+  cmd(
+    'git clone -b web-demos --single-branch $repository .',
+    tmpDir,
+    showOut: true,
+  );
+}
+
+void updateFiles() {
+  final webDir = Directory(thisPath(r'..\build\web\'));
+  copyDirectory(webDir, tmpDir);
+}
+
+void pushToOrigin() {
+  cmd('git add .', tmpDir);
+  cmd('git commit -m \'auto_commit\'', tmpDir, showOut: true);
+  cmd('git push origin web-demos', tmpDir, showOut: true);
+}
+
+late final tmpDir = Directory.systemTemp.createTempSync();
+
+void clear() {
+  tmpDir.deleteSync(recursive: true);
+}
+
+String cmd(String command, Directory workingDirectory, {bool showOut = false}) {
   var process = Process.runSync(
     command,
     [],
@@ -57,8 +57,26 @@ void cmd(String command, Directory workingDirectory, {bool showOut = false}) {
 
   if (process.exitCode != 0) {
     print(process.stderr);
+    clear();
     exit(process.exitCode);
   }
+
+  return process.stdout;
+}
+
+String originRemoteUrl() {
+  final raw = cmd(
+    'git remote show origin',
+    Directory(thisPath(r'..\')),
+    showOut: true,
+  );
+  final url = RegExp('Push  URL: (.+)\n').firstMatch(raw)?.group(1);
+
+  if (url == null) {
+    throw Exception('Empty Remote repository');
+  }
+
+  return url;
 }
 
 String thisPath(String name) =>
