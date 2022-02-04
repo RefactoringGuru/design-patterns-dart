@@ -72,6 +72,11 @@ cd root directory
 flutter build web -t bin\main.dart --web-renderer html
 ```
 
+### Deploy Flutter examples
+```batch
+dart bin\depoly_flutter_demos.dart
+```
+
 ## License
 
 This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
