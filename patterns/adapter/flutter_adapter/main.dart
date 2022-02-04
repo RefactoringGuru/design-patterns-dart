@@ -14,17 +14,19 @@ class _FlutterAdapterAppState extends State<FlutterAdapterApp> {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        TextPropertyWidget(
-          classicApp: app,
-        ),
-        Expanded(
-          child: ClassicAppWidgetAdapter(
+    return Scaffold(
+      body: Column(
+        children: [
+          TextPropertyWidget(
             classicApp: app,
           ),
-        ),
-      ],
+          Expanded(
+            child: ClassicAppWidgetAdapter(
+              classicApp: app,
+            ),
+          ),
+        ],
+      ),
     );
   }
 }
