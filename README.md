@@ -72,13 +72,19 @@ cd root directory
 flutter build web -t bin\main.dart --web-renderer html
 ```
 
-## License
+### Deploy flutter demos
+1. Fork this repo: https://github.com/RefactoringGuru/design-patterns-dart
+2. Apply your changes.
+3. Run the script `dart bin\deploy_flutter_demos.dart`.
+This script will build a web platform flutter app and push the changes to your **web-demos** branch on github.
+4. You can now make a pull request on the **web-demos** branch.
+5. Once approved for the merge, the web app will be available at https://refactoringguru.github.io/design-patterns-dart .
 
+## License
 This work is licensed under a Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International License.
 
 <a rel="license" href="http://creativecommons.org/licenses/by-nc-nd/4.0/"><img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-nd/4.0/80x15.png" /></a>
 
 
 ## Credits
-
 Authors: Alexander Shvets ([@neochief](https://github.com/neochief)), ilopX ([@ilopX](https://github.com/ilopX))
