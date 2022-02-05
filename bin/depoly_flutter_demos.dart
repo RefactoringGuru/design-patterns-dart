@@ -59,7 +59,11 @@ Future<void> pushToOrigin() async {
   );
 
   print('Push to origin: [web-demos] $originUrl');
-  await cmd('git push origin web-demos', workingDirectory: tmpDir, showOut: true);
+  await cmd(
+    'git push origin web-demos',
+    workingDirectory: tmpDir,
+    showOut: true,
+  );
 }
 
 late final tmpDir = Directory.systemTemp.createTempSync();
