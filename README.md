@@ -75,7 +75,7 @@ flutter build web -t bin\main.dart --web-renderer html
 ### Deploy flutter demos
 1. Fork this repo: https://github.com/RefactoringGuru/design-patterns-dart
 2. Apply your changes.
-3. Run the script `dart bin\depoly_flutter_demos.dart`.
+3. Run the script `dart bin\deploy_flutter_demos.dart`.
 This script will build a web platform flutter app and push the changes to your **web-demos** branch on github.
 4. You can now make a pull request on the **web-demos** branch.
 5. Once approved for the merge, the web app will be available at https://refactoringguru.github.io/design-patterns-dart .
