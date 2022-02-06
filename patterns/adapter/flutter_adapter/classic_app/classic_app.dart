@@ -4,17 +4,17 @@ import '../../../observer/app_observer/observer/app_observer.dart';
 import 'classic_app_events.dart';
 import 'repaint_compatible.dart';
 
-  void onMoseEnter();
+abstract class ClassicApp implements RepaintCompatible {
+  final events = AppObserver();
 
-  void onMouseLeave();
+  void onMouseDown() {}
 
-  void onKeyDown();
+  void onPointerWheel(double deltaX, double deltaY) {}
 
-  void onKeyUp();
+  @override
+  void repaint() {
+    events.notify(ClassicAppRepaint());
+  }
 
-  void onWheel(double deltaX, double deltaY);
-
-  void onPaint(Canvas canvas, Size size);
-
-  void repaint();
+  void onPaint(Canvas canvas, Size canvasSize);
 }
