@@ -6,7 +6,6 @@ import '../app.dart';
 import 'color_buttons_widget.dart';
 import 'slider_widget.dart';
 
-
 class TextPropertyWidget extends StatelessWidget {
   final App classicApp;
 
@@ -15,37 +14,34 @@ class TextPropertyWidget extends StatelessWidget {
     required this.classicApp,
   }) : super(key: key);
 
-
   @override
   Widget build(BuildContext context) {
     final app = classicApp;
     return SubscriberWidget<ClassicAppRepaint>(
       observer: app.events,
       builder: (context, event) {
-        return Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SliderWidget(
-              current: app.textColoring.size,
-              max: app.textColoring.maxTextSize,
-              onChange: (newVal) {
-                app.textColoring.size = newVal;
-              },
-            ),
-            ColorButtonsWidget(
-              currentColor: app.textColoring.color,
-              colors: app.colorRules.colors,
-              onColorSelect: (color) {
-                app.textColoring.color = color;
-              },
-            ),
-          ],
+        return Container(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SliderWidget(
+                current: app.textColoring.size,
+                max: app.textColoring.maxTextSize,
+                onChange: (newVal) {
+                  app.textColoring.size = newVal;
+                },
+              ),
+              ColorButtonsWidget(
+                currentColor: app.textColoring.color,
+                colors: app.colorRules.colors,
+                onColorSelect: (color) {
+                  app.textColoring.color = color;
+                },
+              ),
+            ],
+          ),
         );
       },
     );
   }
 }
-
-
-
-
