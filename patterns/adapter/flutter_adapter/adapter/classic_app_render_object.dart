@@ -2,6 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 
 import 'classic_app.dart';
+import 'classic_app_events.dart';
 
 class ClassicAppRenderObject extends RenderBox {
   ClassicAppRenderObject(ClassicApp classicApp) {
@@ -65,11 +66,10 @@ class ClassicAppRenderObject extends RenderBox {
     } else if (event is PointerDownEvent) {
       if (event.buttons == kPrimaryMouseButton) {
         _classicApp.onMouseDown();
-      } else if (event.buttons == kSecondaryMouseButton) {
-      } else if (event.buttons == kMiddleMouseButton) {}
+      } else if (event.buttons == kSecondaryMouseButton) {}
+      else if (event.buttons == kMiddleMouseButton) {}
     } else if (event is PointerScrollEvent) {
       _classicApp.onWheel(event.scrollDelta.dx, event.scrollDelta.dy);
-
     }
   }
 
