@@ -1,9 +1,11 @@
 import 'dart:ui';
 
-class TextColoring {
-  final void Function() _repaintSignal;
+import '../../classic_app/repaint_compatible.dart';
 
-  final String text;
+class TextColoring {
+  final RepaintCompatible _repaintContext;
+
+  TextColoring(this._repaintContext);
 
   TextColoring(this.text, this._repaintSignal);
 

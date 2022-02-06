@@ -1,15 +1,8 @@
 import 'dart:ui';
 
 import '../../../observer/app_observer/observer/app_observer.dart';
-
-abstract class ClassicApp {
-  AppObserver get events;
-
-  void onMouseDown();
-
-  void onMouseUp();
-
-  void onMouseMove();
+import 'classic_app_events.dart';
+import 'repaint_compatible.dart';
 
   void onMoseEnter();
 
