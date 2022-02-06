@@ -18,7 +18,10 @@ class SliderWidget extends StatelessWidget {
       children: [
         SizedBox(
           width: 31,
-          child: Text('$current', textAlign: TextAlign.right),
+          child: Text(
+            '$current',
+            textAlign: TextAlign.right,
+          ),
         ),
         SizedBox(
           width: 200,
