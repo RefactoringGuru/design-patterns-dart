@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'adapter/classic_app_adapter_widget.dart';
+import 'adapter/classic_app_adapter_widget.dart' as adapter;
 import 'client_app/app.dart';
 import 'client_app/widgets/text_property_widget.dart';
 
@@ -21,7 +21,7 @@ class _FlutterAdapterAppState extends State<FlutterAdapterApp> {
             classicApp: app,
           ),
           Expanded(
-            child: ClassicAppAdapterWidget(
+            child: adapter.ClassicAppAdapterWidget(
               classicApp: app,
             ),
           ),
