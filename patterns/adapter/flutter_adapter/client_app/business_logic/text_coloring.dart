@@ -1,13 +1,11 @@
 import 'dart:ui';
 
-import '../app.dart';
-
 class TextColoring {
-  final App app;
+  final void Function() _repaintSignal;
 
   final String text;
 
-  TextColoring(this.text, this.app);
+  TextColoring(this.text, this._repaintSignal);
 
   final maxTextSize = 200;
 
@@ -21,7 +19,7 @@ class TextColoring {
     }
 
     _size = newVal;
-    app.repaint();
+    _repaintSignal();
   }
 
   var _color = Color(0xffd81b60);
@@ -34,7 +32,7 @@ class TextColoring {
     }
 
     _color = newColor;
-    app.repaint();
+    _repaintSignal();
   }
 
   void paint(Canvas canvas, Size canvasSize) {

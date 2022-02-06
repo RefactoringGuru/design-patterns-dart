@@ -8,7 +8,7 @@ import 'business_logic/text_coloring.dart';
 
 class App extends ClassicAppBase {
   App() {
-    textColoring = TextColoring('Flutter Adapter', this);
+    textColoring = TextColoring('Flutter Adapter', repaint);
   }
 
   late final TextColoring textColoring;
