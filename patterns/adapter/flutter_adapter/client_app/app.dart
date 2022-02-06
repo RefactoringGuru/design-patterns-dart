@@ -5,13 +5,13 @@ import 'business_rules/color_rules.dart';
 import 'business_rules/text_coloring.dart';
 
 class App extends ClassicApp {
+  late final TextColoring textColoring;
+  late final ColorRules colorRules;
+
   App() {
     textColoring = TextColoring(this);
     colorRules = ColorRules();
   }
-
-  late final TextColoring textColoring;
-  late final ColorRules colorRules;
 
   @override
   void onPointerWheel(double deltaX, double deltaY) {
