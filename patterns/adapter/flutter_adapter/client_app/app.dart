@@ -1,17 +1,16 @@
 import 'dart:ui';
 
-import '../../../observer/app_observer/observer/event.dart';
-import '../adapter/classic_app.dart';
-import 'text_coloring.dart';
-
-class NextTextColorEvent extends Event {}
+import '../adapter/classic_app_base.dart';
+import 'business_logic/color_rules.dart';
+import 'business_logic/text_coloring.dart';
 
 class App extends ClassicAppBase {
   App() {
-    textColoring = TextColoring(this);
+    textColoring = TextColoring('Flutter Adapter', this);
   }
 
   late final TextColoring textColoring;
+  late final ColorRules colorRules;
 
   @override
   void onWheel(double deltaX, double deltaY) {
@@ -20,11 +19,13 @@ class App extends ClassicAppBase {
 
   @override
   void onMouseDown() {
-    events.notify(NextTextColorEvent());
+    textColoring.color = colorRules.nextColor(textColoring.color);
   }
 
   @override
   void onPaint(Canvas canvas, Size size) {
-    textColoring.paint('Flutter Adapter', canvas, size);
+    textColoring.paint(canvas, size);
   }
 }
+
+
