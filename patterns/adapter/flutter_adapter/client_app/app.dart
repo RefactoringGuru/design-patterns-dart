@@ -1,21 +1,20 @@
 import 'dart:ui';
 
-import 'package:flutter/material.dart';
+import '../classic_app/classic_app.dart';
+import 'business_rules/color_rules.dart';
+import 'business_rules/text_coloring.dart';
 
-import '../adapter/classic_app_base.dart';
-import 'business_logic/color_rules.dart';
-import 'business_logic/text_coloring.dart';
-
-class App extends ClassicAppBase {
+class App extends ClassicApp {
   App() {
-    textColoring = TextColoring('Flutter Adapter', repaint);
+    textColoring = TextColoring(this);
+    colorRules = ColorRules();
   }
 
   late final TextColoring textColoring;
-  final colorRules = ColorRules();
+  late final ColorRules colorRules;
 
   @override
-  void onWheel(double deltaX, double deltaY) {
+  void onPointerWheel(double deltaX, double deltaY) {
     textColoring.size += deltaY ~/ 10;
   }
 
@@ -25,7 +24,52 @@ class App extends ClassicAppBase {
   }
 
   @override
-  void onPaint(Canvas canvas, Size size) {
-    textColoring.paint(canvas, size);
+  void onPaint(Canvas canvas, Size canvasSize) {
+    paintText(
+      canvas,
+      'Flutter Adapter',
+      canvasSize,
+      textColoring.size.toDouble(),
+      textColoring.color,
+    );
+
+    paintText(
+      canvas,
+      'Click on the text to change the text color.\n'
+      'Scroll the mouse wheel to change the text size.',
+      canvasSize,
+      16,
+      Color(0xff848484),
+      Offset(0, canvasSize.height - 50),
+    );
   }
+}
+
+void paintText(
+  Canvas canvas,
+  String text,
+  Size boxSize,
+  double textSize,
+  Color color, [
+  Offset? pos,
+]) {
+  final builder = ParagraphBuilder(
+    ParagraphStyle(
+      textAlign: TextAlign.center,
+      fontSize: textSize,
+    ),
+  )
+    ..pushStyle(
+      TextStyle(
+        fontFamily: 'Arial',
+        color: color,
+      ),
+    )
+    ..addText(text);
+
+  final paragraph = builder.build()
+    ..layout(ParagraphConstraints(width: boxSize.width));
+
+  pos ??= Offset(0, (boxSize.height - paragraph.height) / 2);
+  canvas.drawParagraph(paragraph, pos);
 }
