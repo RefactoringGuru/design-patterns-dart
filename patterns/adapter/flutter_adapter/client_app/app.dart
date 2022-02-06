@@ -1,5 +1,7 @@
 import 'dart:ui';
 
+import 'package:flutter/material.dart';
+
 import '../adapter/classic_app_base.dart';
 import 'business_logic/color_rules.dart';
 import 'business_logic/text_coloring.dart';
@@ -10,7 +12,7 @@ class App extends ClassicAppBase {
   }
 
   late final TextColoring textColoring;
-  late final ColorRules colorRules;
+  final colorRules = ColorRules();
 
   @override
   void onWheel(double deltaX, double deltaY) {
@@ -27,5 +29,3 @@ class App extends ClassicAppBase {
     textColoring.paint(canvas, size);
   }
 }
-
-
