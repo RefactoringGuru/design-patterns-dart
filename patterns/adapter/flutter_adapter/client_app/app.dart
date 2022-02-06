@@ -68,7 +68,11 @@ void paintText(
     ..addText(text);
 
   final paragraph = builder.build()
-    ..layout(ParagraphConstraints(width: boxSize.width));
+    ..layout(
+      ParagraphConstraints(
+        width: boxSize.width,
+      ),
+    );
 
   pos ??= Offset(0, (boxSize.height - paragraph.height) / 2);
   canvas.drawParagraph(paragraph, pos);
