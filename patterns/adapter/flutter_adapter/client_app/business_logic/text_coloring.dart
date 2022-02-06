@@ -1,11 +1,13 @@
 import 'dart:ui';
 
-import 'app.dart';
+import '../app.dart';
 
 class TextColoring {
   final App app;
 
-  TextColoring(this.app);
+  final String text;
+
+  TextColoring(this.text, this.app);
 
   final maxTextSize = 200;
 
@@ -35,7 +37,7 @@ class TextColoring {
     app.repaint();
   }
 
-  void paint(String text, Canvas canvas, Size canvasSize) {
+  void paint(Canvas canvas, Size canvasSize) {
     final builder = ParagraphBuilder(
       ParagraphStyle(
         textAlign: TextAlign.center,
