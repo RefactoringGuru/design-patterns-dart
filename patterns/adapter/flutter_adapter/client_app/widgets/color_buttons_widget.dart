@@ -15,13 +15,7 @@ class ColorButtonsWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      children: [
-        ...colors.map(
-              (Color color) {
-            return _buildColorButton(color);
-          },
-        ).toList(),
-      ],
+      children: colors.map(_buildColorButton).toList(),
     );
   }
 
