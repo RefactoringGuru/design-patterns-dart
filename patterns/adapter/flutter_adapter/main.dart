@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'adapter/classic_app_widget_adapter.dart';
 import 'client_app/app.dart';
-import 'client_app/text_property_widget.dart';
+import 'client_app/widgets/text_property_widget.dart';
 
 class FlutterAdapterApp extends StatefulWidget {
   @override
