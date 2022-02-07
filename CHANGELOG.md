@@ -1,3 +1,9 @@
+## 0.17.0
+Add "Adapter" pattern: adapt a non-reactive classic type application for Flutter.
+
+## 0.16.5
+Add deploy_flutter_demos script.
+
 ## 0.16.0
 - Add complex example of an Observer pattern, connected to a Flutter application.
 - Add new branch "web-demos" for online examples.
