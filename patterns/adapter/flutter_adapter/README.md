@@ -14,6 +14,7 @@ This complex example includes these implementations:
 
 ### Online demo:
 Click on the picture to see a [demo](https://refactoringguru.github.io/design-patterns-dart/#/adapter/flutter_adapter).
+
 [![image](https://user-images.githubusercontent.com/8049534/152689272-d4bed484-e216-4eda-8833-928ada7d4051.png)](https://refactoringguru.github.io/design-patterns-dart/#/adapter/flutter_adapter)
 
 ### Diagram:
