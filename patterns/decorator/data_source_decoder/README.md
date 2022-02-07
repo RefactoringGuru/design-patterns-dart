@@ -1,12 +1,14 @@
 # Pattern Decorator
 Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
 
-## Example Description:
-https://refactoring.guru/design-patterns/decorator?#pseudocode
+## Data source decoder example
+In this example, the Decorator pattern lets you compress and encrypt sensitive data independently 
+from the code that actually uses this data.
+
+Full description can be found [here](https://refactoring.guru/design-patterns/decorator?#pseudocode)
 
 ### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/148954932-edc22d7b-becd-4e2f-bae8-d0d8200d8918.png)
-
 
 ### Client code:
 ```dart
