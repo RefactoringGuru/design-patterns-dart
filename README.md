@@ -50,20 +50,16 @@ Here's a style guide which might help you to keep your changes consistent with o
 4. File names should match following convention: `some_class_name.dart`
 
 5. Comments may or may not have language tags in them, such as this:
-
     ```dart
-    /**
-     * EN: All products families have the same varieties (MacOS/Windows).
-     *
-     * This is a MacOS variant of a button.
-     *
-     * RU: Все семейства продуктов имеют одни и те же вариации (MacOS/Windows).
-     *
-     * Это вариант кнопки под MacOS.
-     */
+    // EN: All products families have the same varieties (MacOS/Windows).
+    // This is a MacOS variant of a button.
+    
+    // RU: Все семейства продуктов имеют одни и те же вариации (MacOS/Windows).
+    // Это вариант кнопки под MacOS.
     ```
-
-    Don't be scared and ignore the non-English part of such comments. If you want to change something in a comment like this, then do it. Even if you do it wrong, we'll tell you how to fix it during the Pull Request.
+    Don't be scared and ignore the non-English part of such comments. If you want to change 
+    something in a comment like this, then do it. Even if you do it wrong, we'll tell you how 
+    to fix it during the Pull Request.
 
 
 ### Build Flutter examples
