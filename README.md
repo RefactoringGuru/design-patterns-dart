@@ -5,27 +5,27 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 # Implementation checklist:
 - [ ] **Creation**
     - [ ] [**Abstract Factory**](https://refactoring.guru/design-patterns/abstract-factory)
-    - [x] [**Builder**](https://refactoring.guru/design-patterns/builder) - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/builder/color_text_format)]
+    - [x] [**Builder**](https://refactoring.guru/design-patterns/builder) - [[Color Text Format](./design-patterns-dart/tree/master/patterns/builder/color_text_format)]
     - [ ] [**Factory Method**](https://refactoring.guru/design-patterns/factory-method)
-    - [x] [**Prototype**](https://refactoring.guru/design-patterns/prototype) - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/prototype/shapes)] 
+    - [x] [**Prototype**](https://refactoring.guru/design-patterns/prototype) - [[Shapes](./design-patterns-dart/tree/master/patterns/prototype/shapes)] 
     - [ ] [**Singleton**](https://refactoring.guru/design-patterns/singleton)
 - [ ]  **Behavioral**
-    - [x] [**Chain of Responsibility**](https://refactoring.guru/design-patterns/chain-of-esponsibility) - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/chain_of_responsibility/server_middleware)]
-    - [x] [**Command**](https://refactoring.guru/design-patterns/command) - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/command/text_editor)] 
+    - [x] [**Chain of Responsibility**](https://refactoring.guru/design-patterns/chain-of-esponsibility) - [[Server Middleware](./design-patterns-dart/tree/master/patterns/chain_of_responsibility/server_middleware)]
+    - [x] [**Command**](https://refactoring.guru/design-patterns/command) - [[Text Editor](./design-patterns-dart/tree/master/patterns/command/text_editor)] 
     - [ ] Interpreter
     - [ ] [**Iterator**](https://refactoring.guru/design-patterns/iterator)
     - [ ] [**Mediator**](https://refactoring.guru/design-patterns/mediator)
-    - [x] [**Memento**](https://refactoring.guru/design-patterns/memento) - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/memento/conceptual)]
-    - [x] [**Observer**](https://refactoring.guru/design-patterns/observer) - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
+    - [x] [**Memento**](https://refactoring.guru/design-patterns/memento) - [[Conceptual](./design-patterns-dart/tree/master/patterns/memento/conceptual)]
+    - [x] [**Observer**](https://refactoring.guru/design-patterns/observer) - [[Open-Close Editor Events](./design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)] [[AppObserver](./design-patterns-dart/tree/master/patterns/observer/app_observer)] [[Subscriber Flutter Widget](./design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
     - [ ] [**State**](https://refactoring.guru/design-patterns/state)
     - [ ] [**Template Method**](https://refactoring.guru/design-patterns/template-method)
     - [ ] [**Visitor**](https://refactoring.guru/design-patterns/visitor)
     - [ ] [**Strategy**](https://refactoring.guru/design-patterns/strategy)
 - [ ] **Structural**
-    - [x] [**Adapter**](https://refactoring.guru/design-patterns/adapter) - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/square_round_conflict)] [[Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/flutter_adapter)] 
-    - [x] [**Bridge**](https://refactoring.guru/design-patterns/bridge) - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/bridge/clock)] 
-    - [x] [**Composite**](https://refactoring.guru/design-patterns/composite) - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/composite/products_and_boxes)] 
-    - [x] [**Decorator**](https://refactoring.guru/design-patterns/decorator) - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/decorator/data_source_decoder)]
+    - [x] [**Adapter**](https://refactoring.guru/design-patterns/adapter) - [[Text Graphics](./design-patterns-dart/tree/master/patterns/adapter/text_graphics)] [[Square Round conflict](./design-patterns-dart/tree/master/patterns/adapter/square_round_conflict)] [[Flutter Adapter](./design-patterns-dart/tree/master/patterns/adapter/flutter_adapter)] 
+    - [x] [**Bridge**](https://refactoring.guru/design-patterns/bridge) - [[Remote Device Control](./design-patterns-dart/tree/master/patterns/bridge/devices_remote_control)] [[Clock](./design-patterns-dart/tree/master/patterns/bridge/clock)] 
+    - [x] [**Composite**](https://refactoring.guru/design-patterns/composite) - [[Image Editor](./design-patterns-dart/tree/master/patterns/composite/image_editor)] [[Products and Boxes](./design-patterns-dart/tree/master/patterns/composite/products_and_boxes)] 
+    - [x] [**Decorator**](https://refactoring.guru/design-patterns/decorator) - [[Data Source Decoder](./design-patterns-dart/tree/master/patterns/decorator/data_source_decoder)]
     - [ ] [**Facade**](https://refactoring.guru/design-patterns/facade)
     - [ ] [**Flyweight**](https://refactoring.guru/design-patterns/flyweight)
     - [ ] [**Proxy**](https://refactoring.guru/design-patterns/proxy)
@@ -51,11 +51,11 @@ Here's a style guide which might help you to keep your changes consistent with o
 
 5. Comments may or may not have language tags in them, such as this:
     ```dart
-    // EN: All products families have the same varieties (MacOS/Windows).
-    // This is a MacOS variant of a button.
-    
-    // RU: Все семейства продуктов имеют одни и те же вариации (MacOS/Windows).
-    // Это вариант кнопки под MacOS.
+        // EN: All products families have the same varieties (MacOS/Windows).
+        // This is a MacOS variant of a button.
+        
+        // RU: Все семейства продуктов имеют одни и те же вариации (MacOS/Windows).
+        // Это вариант кнопки под MacOS.
     ```
     Don't be scared and ignore the non-English part of such comments. If you want to change 
     something in a comment like this, then do it. Even if you do it wrong, we'll tell you how 
