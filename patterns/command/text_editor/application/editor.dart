@@ -62,16 +62,10 @@ class Editor {
 
   @override
   String toString() {
-    return cursor.isTextSelected
-        ? _text.replaceRange(
-            cursor.startSelection,
-            cursor.endSelection,
-            '[$selectedText]',
-          )
-        : _text.replaceRange(
-            cursor.position,
-            cursor.position,
-            '|',
-          );
+    return _text.replaceRange(
+      cursor.startSelection,
+      cursor.endSelection,
+      cursor.isTextSelected ? '[$selectedText]' : '|',
+    );
   }
 }
