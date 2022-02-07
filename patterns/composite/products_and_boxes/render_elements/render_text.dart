@@ -1,5 +1,4 @@
 import 'package:design_patterns_dart/text_canvas.dart';
-import 'package:design_patterns_dart/text_canvas/primitives.dart';
 
 import 'render_element.dart';
 
