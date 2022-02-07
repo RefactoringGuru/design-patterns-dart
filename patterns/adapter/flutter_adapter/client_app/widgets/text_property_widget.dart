@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
-import '../../classic_app/classic_app_events.dart';
+import '../../classic_app/repaint_event.dart';
 import '../app.dart';
 import 'color_buttons_widget.dart';
 import 'slider_widget.dart';
@@ -17,7 +17,7 @@ class TextPropertyWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final app = classicApp;
-    return SubscriberWidget<ClassicAppRepaint>(
+    return SubscriberWidget<RepaintEvent>(
       observer: app.events,
       builder: (context, event) {
         return Container(

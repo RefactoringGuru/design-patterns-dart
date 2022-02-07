@@ -1,7 +1,7 @@
 import 'dart:ui';
 
 import '../../../observer/app_observer/observer/app_observer.dart';
-import 'classic_app_events.dart';
+import 'repaint_event.dart';
 import 'repaint_compatible.dart';
 
 abstract class ClassicApp implements RepaintCompatible {
@@ -13,7 +13,7 @@ abstract class ClassicApp implements RepaintCompatible {
 
   @override
   void repaint() {
-    events.notify(ClassicAppRepaint());
+    events.notify(RepaintEvent());
   }
 
   void onPaint(Canvas canvas, Size canvasSize);

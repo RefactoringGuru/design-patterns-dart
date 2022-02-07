@@ -2,7 +2,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/rendering.dart';
 
 import '../classic_app/classic_app.dart';
-import '../classic_app/classic_app_events.dart';
+import '../classic_app/repaint_event.dart';
 
 class ClassicAppRenderObject extends RenderBox {
   ClassicAppRenderObject(ClassicApp classicApp) {
@@ -58,7 +58,7 @@ class ClassicAppRenderObject extends RenderBox {
     _isSubscribe = true;
   }
 
-  void _clientAppRepaint(ClassicAppRepaint e) => markNeedsPaint();
+  void _clientAppRepaint(RepaintEvent e) => markNeedsPaint();
 
   @override
   void handleEvent(PointerEvent event, covariant BoxHitTestEntry entry) {
