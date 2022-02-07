@@ -20,26 +20,24 @@ class TextPropertyWidget extends StatelessWidget {
     return SubscriberWidget<RepaintEvent>(
       observer: app.events,
       builder: (context, event) {
-        return Container(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SliderWidget(
-                current: app.textColoring.size,
-                max: app.textColoring.maxTextSize,
-                onChange: (newVal) {
-                  app.textColoring.size = newVal;
-                },
-              ),
-              ColorButtonsWidget(
-                currentColor: app.textColoring.color,
-                colors: app.colorRules.colors,
-                onColorSelect: (color) {
-                  app.textColoring.color = color;
-                },
-              ),
-            ],
-          ),
+        return Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            SliderWidget(
+              current: app.textColoring.size,
+              max: app.textColoring.maxTextSize,
+              onChange: (newVal) {
+                app.textColoring.size = newVal;
+              },
+            ),
+            ColorButtonsWidget(
+              currentColor: app.textColoring.color,
+              colors: app.colorRules.colors,
+              onColorSelect: (color) {
+                app.textColoring.color = color;
+              },
+            ),
+          ],
         );
       },
     );
