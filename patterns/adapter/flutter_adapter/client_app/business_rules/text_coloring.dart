@@ -19,7 +19,7 @@ class TextColoring {
     }
 
     if (newVal > maxTextSize) {
-      _size = newVal;
+      _size = maxTextSize;
     } else if (newVal < 1) {
       _size = 1;
     } else {
