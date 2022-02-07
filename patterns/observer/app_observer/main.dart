@@ -14,7 +14,6 @@ void main() {
     print('First');
   });
 
-
   observer.subscribe((SecondEvent e) {
     print('Second');
   });
