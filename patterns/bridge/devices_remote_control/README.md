@@ -11,8 +11,7 @@ Example describe this: https://refactoring.guru/design-patterns/bridge?#pseudoco
 ![image](https://user-images.githubusercontent.com/8049534/145878324-3cbc52f5-51f4-4642-921d-69fbe2886f8c.png)
 
 ### Client code:
-
-```batch
+```dart
 void main() {
   testDevice(Tv());
   testDevice(Radio());
