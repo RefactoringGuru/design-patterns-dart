@@ -10,7 +10,7 @@ the previously implemented **AppObserver** example pattern,
 which you can see [here](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer).
 
 ### Online demo:
-Click on the picture to see a [demo](https://ilopx.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget).
+Click on the picture to see a [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget).
 
 [![image](https://user-images.githubusercontent.com/8049534/152419178-f40a07fd-728d-4f99-befa-0935bbdd7b71.png)](https://refactoringguru.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget)
 
