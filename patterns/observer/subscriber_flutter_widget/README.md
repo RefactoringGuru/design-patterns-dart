@@ -4,27 +4,24 @@ multiple objects about any events that happen to the object they’re observing.
 
 Tutorial: [here](https://refactoring.guru/design-patterns/observer).
 
-## Subscriber Flutter Widget example 
+## Subscriber flutter widget example 
 This is a complex example of an Observer pattern, connected to a Flutter application. The example includes,
-the previously implemented **AppObserver** example pattern, which you can see [here](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer).
+the previously implemented **AppObserver** example pattern, 
+which you can see [here](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer).
 
-### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/152418114-f040bcb4-3bf5-4581-8b9b-a264e103ff76.png)
+### Online demo:
+Click on the picture to see a [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget).
 
-### Sequence
-![image](https://user-images.githubusercontent.com/8049534/152418299-3f6f3e5d-7132-42bc-9b27-11ed53ca6434.png)
+[![image](https://user-images.githubusercontent.com/8049534/152419178-f40a07fd-728d-4f99-befa-0935bbdd7b71.png)](https://refactoringguru.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget)
 
 ### Client code:
 ```dart
 void main() {
-    // widget that generates a new event
-    ElevatedButton(
-      child: Text('Generate new hash'),
-      onPressed: () {
-        final hash = 'some hash';
+    // generates a new event
+      void onHashGenerate() {
+        final hash = '...';
         observer.notify(NewHashEvent(hash));
-      },
-    );
+      }
     
     // widget event consumer NewHashEvent
     SubscriberWidget<NewHashEvent>(
@@ -38,7 +35,8 @@ void main() {
 }
 ```
 
-### Online demo:
-Click on the picture to see a [demo](https://ilopx.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget).
+### Diagram:
+![image](https://user-images.githubusercontent.com/8049534/152789070-cc53b0c0-bb5c-4191-ac96-f542ce75c1d7.png)
 
-[![image](https://user-images.githubusercontent.com/8049534/152419178-f40a07fd-728d-4f99-befa-0935bbdd7b71.png)](https://ilopx.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget)
+### Sequence
+![image](https://user-images.githubusercontent.com/8049534/152791540-d6ec1d24-a3a1-4340-8805-10df6de12067.png)

@@ -17,7 +17,7 @@ But slightly changed, see the class diagram.
 ## Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/149918792-fccae912-2e67-4068-88d1-5cf824f0df2c.png)
 
-## Client code:
+### Client code:
 ```dart
 void main() {
   final app = Application();

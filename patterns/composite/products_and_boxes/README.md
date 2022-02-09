@@ -2,9 +2,14 @@
 Composite is a structural design pattern that lets you compose objects into tree structures and then
 work with these structures as if they were individual objects.
 
-## Problem description:
+## Example: Products and boxes
 ![problem-en](https://user-images.githubusercontent.com/8049534/147579298-0c60c4a7-6acb-4ab3-a973-e06524c5a061.png)
-https://refactoring.guru/design-patterns/composite?#problem
+
+For example, imagine that you have two types of objects: Products and Boxes. A Box can contain 
+several Products as well as a number of smaller Boxes. These little Boxes can also hold some 
+Products or even smaller Boxes, and so on.
+
+Full description can be found [here](https://refactoring.guru/design-patterns/composite?#problem)
 
 ### Folder description:
 - `/products` - represent product and box (composite pattern)

@@ -2,13 +2,37 @@
 This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/bridge/example)
 But removed the ability to use null for devices. Instead, the EmptyDevice class is used.
 
-**Diagram:**
+### Remote device example
+
+Example describe this: https://refactoring.guru/design-patterns/bridge?#pseudocode
+
+### Diagram:
 
 ![image](https://user-images.githubusercontent.com/8049534/145878324-3cbc52f5-51f4-4642-921d-69fbe2886f8c.png)
 
-**Description:**
+### Client code:
+```dart
+void main() {
+  testDevice(Tv());
+  testDevice(Radio());
+  testDevice(EmptyDevice());
+}
 
-https://refactoring.guru/design-patterns/bridge?#pseudocode
+void testDevice(Device device) {
+  print(''.padRight(36, '='));
+  print(device.runtimeType);
+  print("Tests with basic remote.");
+  final basicRemote = BasicRemote.fromDevice(device);
+  basicRemote.power();
+  device.printStatus();
+
+  print("Tests with advanced remote.");
+  final advancedRemote = AdvancedRemote.fromDevice(device);
+  advancedRemote.power();
+  advancedRemote.mute();
+  device.printStatus();
+}
+```
 
 **Output:**
 

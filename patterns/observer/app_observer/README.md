@@ -9,7 +9,7 @@ This example was created to be used in a more complex example.
 A complex example will be implemented later.
 
 ### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/152049751-b111e02a-1d33-4796-810c-b7ed069cecdc.png)
+![image](https://user-images.githubusercontent.com/8049534/152783537-0c39c119-2e5b-44fb-9be1-a88840c7f7a1.png)
 
 ### Sequence
 ![image](https://user-images.githubusercontent.com/8049534/152049996-72131655-402d-4b92-b5d0-10e3f2dd0e79.png)

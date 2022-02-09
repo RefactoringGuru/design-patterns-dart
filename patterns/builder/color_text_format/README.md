@@ -8,7 +8,7 @@ https://refactoring.guru/design-patterns/builder
 Using different text formats. 
 
 ### Class diagram
-![image](https://user-images.githubusercontent.com/8049534/146023073-5d7644a4-d3b9-4420-bffe-f72ac3fd83dd.png)
+![image](https://user-images.githubusercontent.com/8049534/152780645-4eed27fc-a483-432e-99b0-4a77f2adbd5d.png)
 
 ### Client code:
 ```dart

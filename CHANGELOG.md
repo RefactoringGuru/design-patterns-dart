@@ -1,3 +1,21 @@
+## 0.17.16 - refactoring
+- Simplifying the ternary construction.
+- Remove multiline comment from main README.
+- Replace repository urls to relative.
+- Fix relative urls.
+- Fix name on diagram "Builder", rename JsonFormat to JsonConverter.
+- Select pattern "Command" at the diagram.
+- Add client code to "Bridge" pattern.
+- Fix url position & add example name to ProductsAndBoxes example.
+- Add example name to Decorator pattern.
+- Format app_observer.dart.
+- Connect Application to events on the AppObserver diagram.
+- Split into separate files the "Memento" project.
+- Remover unnecessary import.
+- Move hash generator to application.
+- Update SubscriberWidget diagram.
+- Fix url position in FlutterAdapter README.md.
+
 ## 0.17.0
 Add "Adapter" pattern: adapt a non-reactive classic type application for Flutter.
 
