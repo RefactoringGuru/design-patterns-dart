@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 
 import '../../../adapter/flutter_adapter/classic_app/repaint_event.dart';
 import '../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
-import '../editor/editor.dart';
+import '../application.dart';
 import 'colors_widget.dart';
 
 class RightPanelWidget extends StatelessWidget {
-  final Editor editor;
+  final MementoEditorApplication app;
 
-  RightPanelWidget({Key? key, required this.editor}) : super(key: key);
+  RightPanelWidget({Key? key, required this.app}) : super(key: key);
 
   final colors = [
     Color(0xFF000000),
@@ -30,7 +30,7 @@ class RightPanelWidget extends StatelessWidget {
           Padding(
             padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 10),
             child: SubscriberWidget<RepaintEvent>(
-                observer: editor.events,
+                observer: app.editor.events,
                 builder: (buildContext, event) {
                   return Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -45,13 +45,16 @@ class RightPanelWidget extends StatelessWidget {
                       SizedBox(height: 20),
                       Row(
                         children: [
-                          _buildNumberField('x:', editor.selectedShape?.x),
+                          _buildNumberField('x:', app.editor.selectedShape?.x),
                           SizedBox(width: 20),
-                          _buildNumberField('y:', editor.selectedShape?.y),
+                          _buildNumberField('y:', app.editor.selectedShape?.y),
                         ],
                       ),
                       SizedBox(height: 20),
-                      _buildNumberField('size:', editor.selectedShape?.size),
+                      _buildNumberField(
+                        'size:',
+                        app.editor.selectedShape?.size,
+                      ),
                       SizedBox(height: 10),
                       Padding(
                         padding: EdgeInsets.symmetric(vertical: 14),
@@ -61,17 +64,17 @@ class RightPanelWidget extends StatelessWidget {
                               'color:',
                               style: TextStyle(
                                 color: Colors.black.withOpacity(
-                                  editor.selectedShape == null ? 0.5 : 1.0,
+                                  app.editor.selectedShape == null ? 0.5 : 1.0,
                                 ),
                               ),
                             ),
                             SizedBox(width: 10),
                             ColorsWidget(
-                              currentColor: editor.selectedShape?.color,
+                              currentColor: app.editor.selectedShape?.color,
                               colors: colors,
                               onColorSelect: (newColor) {
-                                editor.selectedShape?.color = newColor;
-                                editor.repaint();
+                                app.editor.selectedShape?.color = newColor;
+                                app.editor.repaint();
                               },
                             ),
                           ],
@@ -125,7 +128,10 @@ class RightPanelWidget extends StatelessWidget {
                     children: [
                       OutlinedButton(
                         child: Text('Save state'),
-                        onPressed: () {},
+                        onPressed: () {
+                          app.snapshots.add(app.editor.backup());
+                          app.editor.repaint();
+                        },
                       ),
                     ],
                   ),
@@ -135,24 +141,35 @@ class RightPanelWidget extends StatelessWidget {
                       color: Colors.white,
                       child: Material(
                         type: MaterialType.transparency,
-                        child: ListView(
-                          padding: EdgeInsets.all(5),
-                          children: [
-                            ColoredBox(
-                              color: Colors.black.withOpacity(0.02),
-                              child: ListTile(
-                                leading: Container(
-                                  color: Colors.green,
-                                  width: 50,
-                                  height: double.infinity,
-                                  child: Icon(Icons.animation),
-                                ),
-                                title: Text('Snapshot 1'),
-                                subtitle: Text('fefefefsfsdfas'),
-                                onTap: () {},
+                        child: SubscriberWidget<RepaintEvent>(
+                          observer: app.editor.events,
+                          builder: (_, __) => ListView(
+                            padding: EdgeInsets.all(5),
+                            children: [
+                              ...app.snapshots.map(
+                                (e) {
+                                  return Container(
+                                    margin: EdgeInsets.only(bottom: 4),
+                                    color: Colors.black.withOpacity(0.02),
+                                    child: ListTile(
+                                      leading: Container(
+                                        color: Colors.green,
+                                        width: 50,
+                                        height: double.infinity,
+                                        child: Icon(Icons.animation),
+                                      ),
+                                      title: Text('Snapshot'),
+                                      subtitle: SingleChildScrollView(
+                                        child: Text(e),
+                                        scrollDirection: Axis.horizontal,
+                                      ),
+                                      onTap: () {},
+                                    ),
+                                  );
+                                },
                               ),
-                            )
-                          ],
+                            ],
+                          ),
                         ),
                       ),
                     ),

@@ -5,6 +5,7 @@ import '../../adapter/flutter_adapter/adapter/classic_app_adapter_widget.dart'
 import 'application.dart';
 import 'widgets/right_panel_widget.dart';
 
+
 class FlutterMementoEditorApp extends StatefulWidget {
   @override
   State<FlutterMementoEditorApp> createState() =>
@@ -24,7 +25,7 @@ class _FlutterMementoEditorAppState extends State<FlutterMementoEditorApp> {
               classicApp: app.editor,
             ),
           ),
-          RightPanelWidget(editor: app.editor),
+          RightPanelWidget(app: app),
         ],
       ),
     );
