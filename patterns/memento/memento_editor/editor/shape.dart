@@ -3,8 +3,8 @@ import 'dart:ui';
 class Shape {
   double x;
   double y;
-  var color = Color(0xFFFFFFFF);
-  var _size = 60.0;
+  Color color;
+  double _size;
 
   double get size => _size;
 
@@ -17,7 +17,12 @@ class Shape {
     _size = newSize;
   }
 
-  Shape(this.x, this.y);
+  Shape(
+    this.x,
+    this.y, [
+    this.color = const Color(0xFFFFFFFF),
+    this._size = 60.0,
+  ]);
 
   static final paintStroke = Paint()
     ..style = PaintingStyle.stroke
