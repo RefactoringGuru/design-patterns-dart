@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import '../../../bridge/devices_remote_control/devices/radio.dart';
-
 class ColorsWidget extends StatelessWidget {
   final Color? currentColor;
   final List<Color> colors;
