@@ -7,7 +7,11 @@ import 'repaint_compatible.dart';
 abstract class ClassicApp implements RepaintCompatible {
   final events = AppObserver();
 
-  void onMouseDown() {}
+  void onMouseDown(double x, double y) {}
+
+  void onMouseUp() {}
+
+  void onMouseMove(double x, double y) {}
 
   void onPointerWheel(double deltaX, double deltaY) {}
 

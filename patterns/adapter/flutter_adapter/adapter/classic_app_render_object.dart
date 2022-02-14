@@ -63,13 +63,16 @@ class ClassicAppRenderObject extends RenderBox {
   @override
   void handleEvent(PointerEvent event, covariant BoxHitTestEntry entry) {
     if (event is PointerHoverEvent || event is PointerMoveEvent) {
-    } else if (event is PointerDownEvent) {
-      if (event.buttons == kPrimaryMouseButton) {
-        _classicApp.onMouseDown();
-      } else if (event.buttons == kSecondaryMouseButton) {}
-      else if (event.buttons == kMiddleMouseButton) {}
+      _classicApp.onMouseMove(event.position.dx, event.position.dy);
     } else if (event is PointerScrollEvent) {
       _classicApp.onPointerWheel(event.scrollDelta.dx, event.scrollDelta.dy);
+    } else if (event is PointerDownEvent) {
+      if (event.buttons == kPrimaryMouseButton) {
+        _classicApp.onMouseDown(event.position.dx, event.position.dy);
+      } else if (event.buttons == kSecondaryMouseButton) {
+      } else if (event.buttons == kMiddleMouseButton) {}
+    } else if (event is PointerUpEvent) {
+      _classicApp.onMouseUp();
     }
   }
 

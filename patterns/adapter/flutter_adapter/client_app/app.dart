@@ -19,7 +19,7 @@ class App extends ClassicApp {
   }
 
   @override
-  void onMouseDown() {
+  void onMouseDown(_, __) {
     textColoring.color = colorRules.nextColor(textColoring.color);
   }
 
