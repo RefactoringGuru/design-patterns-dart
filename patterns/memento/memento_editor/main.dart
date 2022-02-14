@@ -19,7 +19,7 @@ class _FlutterMementoEditorAppState extends State<FlutterMementoEditorApp> {
         children: [
           Expanded(
             child: adapter.ClassicAppAdapterWidget(
-              classicApp: app,
+              classicApp: app.editor,
             ),
           ),
           RightPanelWidget(),
