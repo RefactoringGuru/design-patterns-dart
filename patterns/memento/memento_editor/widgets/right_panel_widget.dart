@@ -1,8 +1,14 @@
-
 import 'package:flutter/material.dart';
 
+import '../../../adapter/flutter_adapter/classic_app/repaint_event.dart';
+import '../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
+import '../editor/editor.dart';
+import 'colors_widget.dart';
+
 class RightPanelWidget extends StatelessWidget {
-  RightPanelWidget({Key? key}) : super(key: key);
+  final Editor editor;
+
+  RightPanelWidget({Key? key, required this.editor}) : super(key: key);
 
   final colors = [
     Color(0xFF000000),
@@ -10,6 +16,7 @@ class RightPanelWidget extends StatelessWidget {
     Color(0xFF5E35B1),
     Color(0xFF1E88E5),
     Color(0xFF43A047),
+    Color(0xFFFFFFFF),
   ];
 
   static const rowHeight = 60.0;
@@ -22,47 +29,57 @@ class RightPanelWidget extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(left: 20, right: 20, top: 20, bottom: 10),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'SHAPE PROPERTIES',
-                  style: TextStyle(
-                    fontSize: 12,
-                    fontWeight: FontWeight.bold,
-                  ),
-                ),
-                SizedBox(height: 20),
-                Row(
-                  children: [
-                    _buildNumberField('x:'),
-                    SizedBox(width: 20),
-                    _buildNumberField('y:'),
-                  ],
-                ),
-                SizedBox(height: 20),
-                _buildNumberField('size:'),
-                SizedBox(height: 20),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 14),
-                  child: Row(
+            child: SubscriberWidget<RepaintEvent>(
+                observer: editor.events,
+                builder: (buildContext, event) {
+                  return Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text('color:'),
-                      SizedBox(width: 10),
-                      ...colors
-                          .map(
-                            (color) => Container(
-                              color: color,
-                              width: 20,
-                              height: 20,
+                      Text(
+                        'SHAPE PROPERTIES',
+                        style: TextStyle(
+                          fontSize: 12,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Row(
+                        children: [
+                          _buildNumberField('x:', editor.selectedShape?.x),
+                          SizedBox(width: 20),
+                          _buildNumberField('y:', editor.selectedShape?.y),
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                      _buildNumberField('size:', editor.selectedShape?.size),
+                      SizedBox(height: 10),
+                      Padding(
+                        padding: EdgeInsets.symmetric(vertical: 14),
+                        child: Row(
+                          children: [
+                            Text(
+                              'color:',
+                              style: TextStyle(
+                                color: Colors.black.withOpacity(
+                                  editor.selectedShape == null ? 0.5 : 1.0,
+                                ),
+                              ),
                             ),
-                          )
-                          .toList(),
+                            SizedBox(width: 10),
+                            ColorsWidget(
+                              currentColor: editor.selectedShape?.color,
+                              colors: colors,
+                              onColorSelect: (newColor) {
+                                editor.selectedShape?.color = newColor;
+                                editor.repaint();
+                              },
+                            ),
+                          ],
+                        ),
+                      ),
                     ],
-                  ),
-                ),
-              ],
-            ),
+                  );
+                }),
           ),
           Container(
             height: 2,
@@ -104,7 +121,7 @@ class RightPanelWidget extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       OutlinedButton(
                         child: Text('Save state'),
@@ -143,24 +160,32 @@ class RightPanelWidget extends StatelessWidget {
                 ],
               ),
             ),
-          )
+          ),
         ],
       ),
     );
   }
 
-  Widget _buildNumberField(String name) {
+  Widget _buildNumberField(String name, double? value) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        Text(name),
+        Text(
+          name,
+          style: TextStyle(
+            color: Colors.black.withOpacity(value == null ? 0.5 : 1.0),
+          ),
+        ),
         SizedBox(width: 10),
         SizedBox(
-          width: 50,
+          width: 60,
           child: TextField(
-            controller: TextEditingController(text: '0'),
+            enabled: value != null,
+            controller: TextEditingController(
+              text: value == null ? '' : value.toStringAsFixed(0),
+            ),
             decoration: InputDecoration(
-              filled: true,
+              filled: value != null,
               fillColor: Colors.white,
             ),
           ),
