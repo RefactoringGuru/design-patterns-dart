@@ -1,11 +1,11 @@
-import 'package:flutter/cupertino.dart';
+
 import 'package:flutter/material.dart';
 
 class RightPanelWidget extends StatelessWidget {
   RightPanelWidget({Key? key}) : super(key: key);
 
   final colors = [
-    Color(0xFFFFFFFF),
+    Color(0xFF000000),
     Color(0xFFD81B60),
     Color(0xFF5E35B1),
     Color(0xFF1E88E5),
