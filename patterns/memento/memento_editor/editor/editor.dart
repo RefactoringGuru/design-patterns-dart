@@ -21,7 +21,7 @@ class Editor extends ClassicApp with Manipulator, Shapes, Originator {
   void onPaint(Canvas canvas, Size canvasSize) {
     _paintBackground(canvas, canvasSize);
     paintShapes(canvas);
-    paintSelectFrame(canvas);
+    selected?.paintSelectFrame(canvas);
   }
 
   void _paintBackground(Canvas canvas, Size canvasSize) {

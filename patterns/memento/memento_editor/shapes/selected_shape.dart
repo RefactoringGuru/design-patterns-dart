@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'shape.dart';
 
 class SelectedShape {
@@ -20,5 +22,16 @@ class SelectedShape {
   void dragTo(double x, double y) {
     shape.x = x + _xStart;
     shape.y = y + _yStart;
+  }
+
+  void paintSelectFrame(Canvas canvas) {
+    final x = (shape.x - shape.size).roundToDouble() - 1.5;
+    final y = (shape.y - shape.size).roundToDouble() - 1.5;
+    canvas.drawRect(
+      Rect.fromLTWH(x, y, shape.size * 2 + 3, shape.size * 2 + 3),
+      Paint()
+        ..style = PaintingStyle.stroke
+        ..color = Color(0xff26e6ff),
+    );
   }
 }

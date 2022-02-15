@@ -1,23 +1,7 @@
-import 'dart:ui';
-
 import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
 import '../shapes/shapes.dart';
 
 mixin Manipulator implements ClassicApp, Shapes {
-  void paintSelectFrame(Canvas canvas) {
-    if (selected != null) {
-      final shapeSize = selected!.shape.size;
-      final x = (selected!.shape.x - shapeSize).roundToDouble() - 1.5;
-      final y = (selected!.shape.y - shapeSize).roundToDouble() - 1.5;
-      canvas.drawRect(
-        Rect.fromLTWH(x, y, shapeSize * 2 + 3, shapeSize * 2 + 3),
-        Paint()
-          ..style = PaintingStyle.stroke
-          ..color = Color(0xff26e6ff),
-      );
-    }
-  }
-
   var _isMouseDown = false;
 
   @override
