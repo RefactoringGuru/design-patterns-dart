@@ -5,10 +5,10 @@ import '../shapes/shapes.dart';
 
 mixin Manipulator implements ClassicApp, Shapes {
   void paintSelectFrame(Canvas canvas) {
-    if (selectedShape != null) {
-      final shapeSize = selectedShape!.size;
-      final x = (selectedShape!.x - shapeSize).roundToDouble() - 1.5;
-      final y = (selectedShape!.y - shapeSize).roundToDouble() - 1.5;
+    if (selected != null) {
+      final shapeSize = selected!.shape.size;
+      final x = (selected!.shape.x - shapeSize).roundToDouble() - 1.5;
+      final y = (selected!.shape.y - shapeSize).roundToDouble() - 1.5;
       canvas.drawRect(
         Rect.fromLTWH(x, y, shapeSize * 2 + 3, shapeSize * 2 + 3),
         Paint()
@@ -23,15 +23,15 @@ mixin Manipulator implements ClassicApp, Shapes {
   @override
   void onMouseDown(double x, double y) {
     _isMouseDown = true;
-    final currSelection = selectedShape;
+    final currSelection = selected;
 
     select(x, y);
 
-    if (currSelection == selectedShape) {
+    if (currSelection == selected) {
       return;
     }
 
-    if (selectedShape == null) {
+    if (selected == null) {
       unSelect();
     }
 
@@ -40,16 +40,16 @@ mixin Manipulator implements ClassicApp, Shapes {
 
   @override
   void onMouseMove(double x, double y) {
-    if (_isMouseDown && selectedShape != null) {
-      drag(x, y);
+    if (_isMouseDown) {
+      selected?.dragTo(x, y);
       repaint();
     }
   }
 
   @override
   void onPointerWheel(double deltaX, double deltaY) {
-    if (selectedShape != null) {
-      changeSize(deltaY / 5);
+    if (selected != null) {
+      selected!.changeSize(deltaY / 5);
       repaint();
     }
   }

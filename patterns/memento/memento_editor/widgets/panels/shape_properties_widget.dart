@@ -22,15 +22,15 @@ class ShapePropertiesWidget extends StatelessWidget {
       children: [
         Row(
           children: [
-            _buildNumberField('x:', app.editor.selectedShape?.x),
+            _buildNumberField('x:', app.editor.selected?.shape.x),
             SizedBox(width: 20),
-            _buildNumberField('y:', app.editor.selectedShape?.y),
+            _buildNumberField('y:', app.editor.selected?.shape.y),
           ],
         ),
         SizedBox(height: 20),
         _buildNumberField(
           'size:',
-          app.editor.selectedShape?.size,
+          app.editor.selected?.shape.size,
         ),
         SizedBox(height: 10),
         Padding(
@@ -41,16 +41,16 @@ class ShapePropertiesWidget extends StatelessWidget {
                 'color:',
                 style: TextStyle(
                   color: Colors.black.withOpacity(
-                    app.editor.selectedShape == null ? 0.5 : 1.0,
+                    app.editor.selected == null ? 0.5 : 1.0,
                   ),
                 ),
               ),
               SizedBox(width: 10),
               ColorsWidget(
-                currentColor: app.editor.selectedShape?.color,
+                currentColor: app.editor.selected?.shape.color,
                 colors: colors,
                 onColorSelect: (newColor) {
-                  app.editor.selectedShape?.color = newColor;
+                  app.editor.selected?.shape.color = newColor;
                   app.editor.repaint();
                 },
               ),
