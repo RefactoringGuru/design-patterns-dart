@@ -48,9 +48,12 @@ class ColorsWidget extends StatelessWidget {
         width: 5,
         height: 5,
         decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.8),
-            borderRadius: BorderRadius.all(Radius.circular(2)),
-            border: Border.all(color: Colors.black.withOpacity(0.2))),
+          color: Colors.white.withOpacity(0.8),
+          borderRadius: BorderRadius.all(Radius.circular(2)),
+          border: Border.all(
+            color: Colors.black.withOpacity(0.2),
+          ),
+        ),
       ),
     );
   }

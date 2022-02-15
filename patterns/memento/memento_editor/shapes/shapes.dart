@@ -1,5 +1,4 @@
 import 'dart:ui';
-
 import 'shape.dart';
 
 mixin Shapes {
@@ -16,7 +15,7 @@ mixin Shapes {
   Shape? get selectedShape => _selectedShape;
 
   void select(double x, double y) {
-    _selectedShape = findCircle(x, y);
+    _selectedShape = findShape(x, y);
 
     if (_selectedShape != null) {
       _xStart = _selectedShape!.x - x;
@@ -47,7 +46,7 @@ mixin Shapes {
   var _xStart = 0.0;
   var _yStart = 0.0;
 
-  Shape? findCircle(double x, double y) {
+  Shape? findShape(double x, double y) {
     for (final shape in shapes) {
       if (shape.isBounded(x, y)) {
         return shape;
