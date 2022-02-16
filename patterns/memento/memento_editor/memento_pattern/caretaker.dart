@@ -1,0 +1,3 @@
+class Caretaker {
+  //final snapshot
+}

@@ -1,5 +1,5 @@
 import 'editor/editor.dart';
-import 'memento_pattern/originator.dart';
+import 'memento_pattern/snapshot.dart';
 
 class MementoEditorApplication {
   final editor = Editor();

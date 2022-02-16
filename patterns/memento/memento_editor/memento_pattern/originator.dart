@@ -5,8 +5,7 @@ import 'dart:ui';
 import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
 import '../shapes/shape.dart';
 import '../shapes/shapes.dart';
-
-typedef Snapshot = String;
+import 'snapshot.dart';
 
 mixin Originator implements Shapes, ClassicApp {
   Snapshot backup() {
