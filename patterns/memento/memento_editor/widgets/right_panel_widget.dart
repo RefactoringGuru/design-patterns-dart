@@ -20,12 +20,20 @@ class RightPanelWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
       padding: EdgeInsets.all(20),
+      width: 300,
       child: Column(
         children: [
           ShapePropertiesWidget(app: app, colors: colors),
-          SnapshotWidget(app: app),
+          Container(
+            margin: EdgeInsets.symmetric(vertical: 20),
+            height: 2,
+            color: Colors.black.withOpacity(.2),
+          ),
+          Expanded(
+            child: SnapshotWidget(app: app),
+          ),
         ],
       ),
     );
