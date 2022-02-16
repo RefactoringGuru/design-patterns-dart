@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
+import '../../../../adapter/flutter_adapter/classic_app/repaint_event.dart';
+import '../../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
 import '../../application.dart';
 import '../composite/colors_widget.dart';
 import '../composite/named_panel.dart';
-
 
 class ShapePropertiesWidget extends StatelessWidget {
   final MementoEditorApplication app;
@@ -17,47 +18,49 @@ class ShapePropertiesWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return NamedPanel(
-      name: 'SHAPE PROPERTIES',
-      children: [
-        Row(
+    return SubscriberWidget<RepaintEvent>(
+      observer: app.editor.events,
+      builder: (buildContext, event) {
+        return NamedPanel(
+          name: 'SHAPE PROPERTIES',
           children: [
-            _buildNumberField('x:', app.editor.selected?.shape.x),
-            SizedBox(width: 20),
-            _buildNumberField('y:', app.editor.selected?.shape.y),
-          ],
-        ),
-        SizedBox(height: 20),
-        _buildNumberField(
-          'size:',
-          app.editor.selected?.shape.size,
-        ),
-        SizedBox(height: 10),
-        Padding(
-          padding: EdgeInsets.symmetric(vertical: 14),
-          child: Row(
-            children: [
-              Text(
-                'color:',
-                style: TextStyle(
-                  color: Colors.black.withOpacity(
-                    app.editor.selected == null ? 0.5 : 1.0,
+            Row(
+              children: [
+                _buildNumberField('x:', app.editor.selected?.shape.x),
+                SizedBox(width: 20),
+                _buildNumberField('y:', app.editor.selected?.shape.y),
+              ],
+            ),
+            SizedBox(height: 20),
+            _buildNumberField(
+              'size:',
+              app.editor.selected?.shape.size,
+            ),
+            SizedBox(height: 20),
+            Row(
+              children: [
+                Text(
+                  'color:',
+                  style: TextStyle(
+                    color: Colors.black.withOpacity(
+                      app.editor.selected == null ? 0.5 : 1.0,
+                    ),
                   ),
                 ),
-              ),
-              SizedBox(width: 10),
-              ColorsWidget(
-                currentColor: app.editor.selected?.shape.color,
-                colors: colors,
-                onColorSelect: (newColor) {
-                  app.editor.selected?.shape.color = newColor;
-                  app.editor.repaint();
-                },
-              ),
-            ],
-          ),
-        ),
-      ],
+                SizedBox(width: 10),
+                ColorsWidget(
+                  currentColor: app.editor.selected?.shape.color,
+                  colors: colors,
+                  onColorSelect: (newColor) {
+                    app.editor.selected?.shape.color = newColor;
+                    app.editor.repaint();
+                  },
+                ),
+              ],
+            ),
+          ],
+        );
+      },
     );
   }
 
