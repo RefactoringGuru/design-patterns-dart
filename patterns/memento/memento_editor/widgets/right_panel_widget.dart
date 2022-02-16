@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../application.dart';
 import 'panels/shape_properties_widget.dart';
-import 'panels/snapshot_widget.dart';
+import 'panels/memento_widget.dart';
 
 class RightPanelWidget extends StatelessWidget {
   final MementoEditorApplication app;
@@ -32,7 +32,7 @@ class RightPanelWidget extends StatelessWidget {
             color: Colors.black.withOpacity(.2),
           ),
           Expanded(
-            child: SnapshotWidget(app: app),
+            child: MementoWidget(app: app),
           ),
         ],
       ),

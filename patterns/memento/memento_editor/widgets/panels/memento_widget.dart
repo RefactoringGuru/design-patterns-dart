@@ -4,10 +4,10 @@ import '../../application.dart';
 import '../composite/named_panel.dart';
 import '../composite/snapshot_list_widget.dart';
 
-class SnapshotWidget extends StatelessWidget {
+class MementoWidget extends StatelessWidget {
   final MementoEditorApplication app;
 
-  const SnapshotWidget({Key? key, required this.app}) : super(key: key);
+  const MementoWidget({Key? key, required this.app}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
