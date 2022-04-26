@@ -2,7 +2,7 @@
 
 import 'dart:ui';
 
-part 'selected_shape.dart';
+part 'active_shape.dart';
 
 class Shape {
   double _x;

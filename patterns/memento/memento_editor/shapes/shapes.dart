@@ -2,21 +2,20 @@ import 'dart:ui';
 import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
 import 'shape.dart';
 
-
-mixin Shapes implements ClassicApp{
+mixin Shapes implements ClassicApp {
   final shapes = <Shape>[];
 
-  SelectedShape? _selectedShape;
+  ActiveShape? _activeShape;
 
-  SelectedShape? get selectedShape => _selectedShape;
+  ActiveShape? get activeShape => _activeShape;
 
   void select(double x, double y) {
     final shape = findShape(x, y);
 
     if (shape != null) {
-      _selectedShape = SelectedShape(shape, shape.x - x, shape.y - y, repaint);
+      _activeShape = ActiveShape(shape, shape.x - x, shape.y - y, repaint);
     } else {
-      _selectedShape = null;
+      _activeShape = null;
     }
   }
 
@@ -26,16 +25,16 @@ mixin Shapes implements ClassicApp{
     }
 
     if (index <= shapes.length - 1) {
-      _selectedShape = SelectedShape(shapes[index], 0, 0, repaint);
+      _activeShape = ActiveShape(shapes[index], 0, 0, repaint);
     }
   }
 
   void unSelect() {
-    _selectedShape = null;
+    _activeShape = null;
   }
 
   Shape? findShape(double x, double y) {
-    for (final shape in shapes) {
+    for (final shape in shapes.reversed) {
       if (shape.isBounded(x, y)) {
         return shape;
       }
@@ -45,7 +44,7 @@ mixin Shapes implements ClassicApp{
   }
 
   void paintShapes(Canvas canvas) {
-    for (final shape in shapes.reversed) {
+    for (final shape in shapes) {
       shape.paint(canvas);
     }
   }

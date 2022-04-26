@@ -1,10 +1,10 @@
 part of 'shape.dart';
 
-class SelectedShape {
+class ActiveShape {
   final Shape shape;
   final void Function() repaint;
 
-  SelectedShape(this.shape, this._xStart, this._yStart, this.repaint);
+  ActiveShape(this.shape, this._xStart, this._yStart, this.repaint);
 
   void changeSize(double delta) {
     final currentSize = shape.size;

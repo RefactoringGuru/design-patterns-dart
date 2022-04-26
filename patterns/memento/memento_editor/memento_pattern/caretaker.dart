@@ -7,7 +7,7 @@ class Caretaker {
   List<Memento> get list => List<Memento>.unmodifiable(_mementoList);
 
   void addMemento(Memento memento) {
-      _mementoList.add(memento);
+    _mementoList.add(memento);
   }
 
   bool isSnapshotExists(Snapshot snapshot) {
