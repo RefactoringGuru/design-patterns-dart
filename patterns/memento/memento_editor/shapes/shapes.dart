@@ -19,6 +19,16 @@ mixin Shapes {
     }
   }
 
+  void selectByIndex(int index) {
+    if (index == -1) {
+      return;
+    }
+
+    if (index <= shapes.length - 1) {
+      _selected = SelectedShape(shapes[index], 0, 0);
+    }
+  }
+
   void unSelect() {
     _selected = null;
   }

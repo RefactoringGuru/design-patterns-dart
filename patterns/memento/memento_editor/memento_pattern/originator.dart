@@ -9,7 +9,7 @@ import 'snapshot.dart';
 
 mixin Originator implements Shapes, ClassicApp {
   Snapshot backup() {
-    final byteSize = shapes.length * 16;
+    final byteSize = shapes.length * 16 + 4;
     final data = ByteData(byteSize);
     var byteOffset = 0;
 
@@ -22,13 +22,17 @@ mixin Originator implements Shapes, ClassicApp {
       byteOffset += 16;
     }
 
+    // save selected shape
+    final index = (selected != null) ? shapes.indexOf(selected!.shape) : -1;
+    data.setInt32(byteOffset, index);
+
     return Base64Encoder().convert(data.buffer.asUint8List());
   }
 
   void restore(Snapshot snapshot) {
     final unBase = Base64Decoder().convert(snapshot);
     final byteData = ByteData.sublistView(unBase);
-    final shapeCount = byteData.lengthInBytes ~/ 16;
+    final shapeCount = (byteData.lengthInBytes - 4) ~/ 16;
 
     shapes.clear();
     var byteOffset = 0;
@@ -42,6 +46,13 @@ mixin Originator implements Shapes, ClassicApp {
       );
       shapes.add(shape);
       byteOffset += 16;
+    }
+
+    // load selection shape index
+    final selectedIndex = byteData.getInt32(byteOffset);
+
+    if (selectedIndex != -1) {
+      selectByIndex(selectedIndex);
     }
   }
 }
