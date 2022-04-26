@@ -1,3 +1,6 @@
+## 0.18.0
+- Add Memento Editor.
+
 ## 0.17.16 - refactoring
 - Simplifying the ternary construction.
 - Remove multiline comment from main README.
