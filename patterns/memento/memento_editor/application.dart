@@ -1,6 +1,6 @@
 import 'dart:math';
 
-import 'editor/create_memento_event.dart';
+import 'editor/memento_create_event.dart';
 import 'editor/editor.dart';
 import 'memento_pattern/caretaker.dart';
 import 'memento_pattern/memento.dart';
@@ -32,7 +32,7 @@ class MementoEditorApplication {
 
     final memento = Memento(DateTime.now(), snapshot);
     caretaker.addMemento(memento);
-    editor.events.notify(CreateMementoEvent());
+    editor.events.notify(MementoCreateEvent());
   }
 
   void restoreState(Memento memento) {

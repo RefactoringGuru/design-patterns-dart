@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
 import '../../application.dart';
-import '../../editor/create_memento_event.dart';
+import '../../editor/memento_create_event.dart';
 import '../composite/named_panel.dart';
 import '../composite/snapshot_list_widget.dart';
 
@@ -21,7 +21,7 @@ class MementoWidget extends StatelessWidget {
         _buildSaveStateButton(),
         SizedBox(height: 5),
         Expanded(
-          child: SubscriberWidget<CreateMementoEvent>(
+          child: SubscriberWidget<MementoCreateEvent>(
             observer: app.editor.events,
             builder: (buildContext, event) {
               return SnapshotListWidget(
