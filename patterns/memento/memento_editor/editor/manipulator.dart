@@ -32,10 +32,7 @@ mixin Manipulator implements ClassicApp, Shapes {
 
   @override
   void onPointerWheel(double deltaX, double deltaY) {
-    if (selectedShape != null) {
-      selectedShape!.changeSize(deltaY / 5);
-      repaint();
-    }
+    selectedShape?.changeSize(deltaY / 5);
   }
 
   @override

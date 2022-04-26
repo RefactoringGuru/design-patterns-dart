@@ -1,8 +1,9 @@
 import 'dart:ui';
-import 'selected_shape.dart';
+import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
 import 'shape.dart';
 
-mixin Shapes {
+
+mixin Shapes implements ClassicApp{
   final shapes = <Shape>[];
 
   SelectedShape? _selectedShape;
@@ -13,7 +14,7 @@ mixin Shapes {
     final shape = findShape(x, y);
 
     if (shape != null) {
-      _selectedShape = SelectedShape(shape, shape.x - x, shape.y - y);
+      _selectedShape = SelectedShape(shape, shape.x - x, shape.y - y, repaint);
     } else {
       _selectedShape = null;
     }
@@ -25,7 +26,7 @@ mixin Shapes {
     }
 
     if (index <= shapes.length - 1) {
-      _selectedShape = SelectedShape(shapes[index], 0, 0);
+      _selectedShape = SelectedShape(shapes[index], 0, 0, repaint);
     }
   }
 

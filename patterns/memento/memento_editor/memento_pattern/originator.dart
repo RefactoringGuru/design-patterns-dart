@@ -3,8 +3,8 @@ import 'dart:typed_data';
 import 'dart:ui';
 
 import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
-import '../shapes/shape.dart';
 import '../shapes/shapes.dart';
+import '../shapes/shape.dart';
 import 'snapshot.dart';
 
 mixin Originator implements Shapes, ClassicApp {

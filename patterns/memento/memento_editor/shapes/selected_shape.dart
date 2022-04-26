@@ -1,27 +1,46 @@
-import 'dart:ui';
-
-import 'shape.dart';
+part of 'shape.dart';
 
 class SelectedShape {
   final Shape shape;
+  final void Function() repaint;
 
-  SelectedShape(this.shape, this._xStart, this._yStart);
+  SelectedShape(this.shape, this._xStart, this._yStart, this.repaint);
 
   void changeSize(double delta) {
     final currentSize = shape.size;
-    final newSize = currentSize - delta;
+    var newSize = currentSize - delta;
 
-    if (newSize != shape.size) {
-      shape.size = newSize;
+    if (newSize == shape.size) {
+      return;
     }
+
+    if (newSize < 10) {
+      newSize = 10;
+    } else if (newSize > 200) {
+      newSize = 200;
+    }
+
+    shape._size = newSize;
+    repaint();
   }
 
   final double _xStart;
   final double _yStart;
 
   void dragTo(double x, double y) {
-    shape.x = x + _xStart;
-    shape.y = y + _yStart;
+    shape._x = x + _xStart;
+    shape._y = y + _yStart;
+
+    repaint();
+  }
+
+  void changeColor(Color newColor) {
+    if (shape.color == newColor) {
+      return;
+    }
+
+    shape._color = newColor;
+    repaint();
   }
 
   void paintSelectionBox(Canvas canvas) {

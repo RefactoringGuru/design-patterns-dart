@@ -1,30 +1,34 @@
+// ignore_for_file: prefer_final_fields
+
 import 'dart:ui';
 
+part 'selected_shape.dart';
+
 class Shape {
-  double x;
-  double y;
-  Color color;
+  double _x;
+
+  double get x => _x;
+
+  double _y;
+
+  double get y => _y;
+
+  Color _color;
+
+  Color get color => _color;
+
   double _size;
 
   double get size => _size;
 
-  set size(double newSize) {
-    if (newSize < 10) {
-      newSize = 10;
-    } else if (newSize > 200) {
-      newSize = 200;
-    }
-    _size = newSize;
-  }
-
   Shape(
-    this.x,
-    this.y, [
-    this.color = const Color(0xFFFFFFFF),
+    this._x,
+    this._y, [
+    this._color = const Color(0xFFFFFFFF),
     this._size = 60.0,
   ]);
 
-  static final paintStroke = Paint()
+  static final _paintStroke = Paint()
     ..style = PaintingStyle.stroke
     ..color = Color(0xFFD81B60)
     ..strokeWidth = 2;
@@ -34,8 +38,9 @@ class Shape {
       ..style = PaintingStyle.fill
       ..color = color;
 
-    canvas.drawCircle(Offset(x, y), _size, paintFill);
-    canvas.drawCircle(Offset(x, y), _size, paintStroke);
+    final offset = Offset(x, y);
+    canvas.drawCircle(offset, _size, paintFill);
+    canvas.drawCircle(offset, _size, _paintStroke);
   }
 
   bool isBounded(double x, double y) {
