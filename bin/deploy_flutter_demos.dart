@@ -119,7 +119,7 @@ Future<String> repositoryOriginUrl(Directory workingDir) async {
 Future<String> lastProjectCommit() async {
   final rawCommit =
       await cmd('git log -1 --pretty=%B', workingDirectory: projectDir);
-  final formatCommit = rawCommit.replaceAll(' ', '_');
+  final formatCommit = rawCommit.replaceAll(' ', '_').replaceAll('&', '');
   return 'auto_commit:_$formatCommit';
 }
 
