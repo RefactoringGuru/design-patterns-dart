@@ -5,17 +5,17 @@ import 'shape.dart';
 mixin Shapes {
   final shapes = <Shape>[];
 
-  SelectedShape? _selected;
+  SelectedShape? _selectedShape;
 
-  SelectedShape? get selected => _selected;
+  SelectedShape? get selectedShape => _selectedShape;
 
   void select(double x, double y) {
     final shape = findShape(x, y);
 
     if (shape != null) {
-      _selected = SelectedShape(shape, shape.x - x, shape.y - y);
+      _selectedShape = SelectedShape(shape, shape.x - x, shape.y - y);
     } else {
-      _selected = null;
+      _selectedShape = null;
     }
   }
 
@@ -25,12 +25,12 @@ mixin Shapes {
     }
 
     if (index <= shapes.length - 1) {
-      _selected = SelectedShape(shapes[index], 0, 0);
+      _selectedShape = SelectedShape(shapes[index], 0, 0);
     }
   }
 
   void unSelect() {
-    _selected = null;
+    _selectedShape = null;
   }
 
   Shape? findShape(double x, double y) {

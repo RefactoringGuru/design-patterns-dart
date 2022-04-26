@@ -41,10 +41,10 @@ mixin Originator implements Shapes, ClassicApp {
   void _writeSelectedIndex(ByteData data) {
     late final int selectedIndex;
 
-    if (selected == null) {
+    if (selectedShape == null) {
       selectedIndex = -1;
     } else {
-      selectedIndex = shapes.indexOf(selected!.shape);
+      selectedIndex = shapes.indexOf(selectedShape!.shape);
     }
 
     final byteOffset = data.lengthInBytes - _selectedIndexByteSize;

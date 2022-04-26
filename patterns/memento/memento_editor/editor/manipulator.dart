@@ -7,15 +7,15 @@ mixin Manipulator implements ClassicApp, Shapes {
   @override
   void onMouseDown(double x, double y) {
     _isMouseDown = true;
-    final currSelection = selected;
+    final currSelection = selectedShape;
 
     select(x, y);
 
-    if (currSelection == selected) {
+    if (currSelection == selectedShape) {
       return;
     }
 
-    if (selected == null) {
+    if (selectedShape == null) {
       unSelect();
     }
 
@@ -25,15 +25,15 @@ mixin Manipulator implements ClassicApp, Shapes {
   @override
   void onMouseMove(double x, double y) {
     if (_isMouseDown) {
-      selected?.dragTo(x, y);
+      selectedShape?.dragTo(x, y);
       repaint();
     }
   }
 
   @override
   void onPointerWheel(double deltaX, double deltaY) {
-    if (selected != null) {
-      selected!.changeSize(deltaY / 5);
+    if (selectedShape != null) {
+      selectedShape!.changeSize(deltaY / 5);
       repaint();
     }
   }
