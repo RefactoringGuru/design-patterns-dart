@@ -9,8 +9,49 @@ import 'snapshot.dart';
 
 mixin Originator implements Shapes, ClassicApp {
   Snapshot backup() {
-    final byteSize = shapes.length * 16 + 4;
-    final data = ByteData(byteSize);
+    final data = _allocateBuffer();
+    _writeShapes(data);
+    _writeSelectedIndex(data);
+    return _toSnapshot(data);
+  }
+
+  void restore(Snapshot snapshot) {
+    final byteData = _fromSnapshotToByteData(snapshot);
+    final newShapes = _readShapes(byteData);
+    final selectedIndex = _readSelectedIndex(byteData);
+    shapes.clear();
+    shapes.addAll(newShapes);
+    selectByIndex(selectedIndex);
+  }
+
+  static const _shapeByteSize = 16;
+  static const _selectedIndexByteSize = 4;
+
+  ByteData _allocateBuffer() {
+    final byteSize = shapes.length * _shapeByteSize + _selectedIndexByteSize;
+    return ByteData(byteSize);
+  }
+
+  ByteData _fromSnapshotToByteData(Snapshot snapshot) {
+    final unBase = Base64Decoder().convert(snapshot);
+    final byteData = ByteData.sublistView(unBase);
+    return byteData;
+  }
+
+  void _writeSelectedIndex(ByteData data) {
+    late final int selectedIndex;
+
+    if (selected == null) {
+      selectedIndex = -1;
+    } else {
+      selectedIndex = shapes.indexOf(selected!.shape);
+    }
+
+    final byteOffset = data.lengthInBytes - _selectedIndexByteSize;
+    data.setInt32(byteOffset, selectedIndex);
+  }
+
+  int _writeShapes(ByteData data) {
     var byteOffset = 0;
 
     for (final shape in shapes) {
@@ -22,20 +63,17 @@ mixin Originator implements Shapes, ClassicApp {
       byteOffset += 16;
     }
 
-    // save selected shape
-    final index = (selected != null) ? shapes.indexOf(selected!.shape) : -1;
-    data.setInt32(byteOffset, index);
-
-    return Base64Encoder().convert(data.buffer.asUint8List());
+    return byteOffset;
   }
 
-  void restore(Snapshot snapshot) {
-    final unBase = Base64Decoder().convert(snapshot);
-    final byteData = ByteData.sublistView(unBase);
-    final shapeCount = (byteData.lengthInBytes - 4) ~/ 16;
+  int _getNumberOfShapes(ByteData byteData) {
+    return (byteData.lengthInBytes - _selectedIndexByteSize) ~/ _shapeByteSize;
+  }
 
-    shapes.clear();
+  List<Shape> _readShapes(ByteData byteData) {
+    final shapeCount = _getNumberOfShapes(byteData);
     var byteOffset = 0;
+    final shapes = <Shape>[];
 
     for (var i = 0; i < shapeCount; i++) {
       final shape = Shape(
@@ -48,11 +86,16 @@ mixin Originator implements Shapes, ClassicApp {
       byteOffset += 16;
     }
 
-    // load selection shape index
-    final selectedIndex = byteData.getInt32(byteOffset);
+    return shapes;
+  }
 
-    if (selectedIndex != -1) {
-      selectByIndex(selectedIndex);
-    }
+  int _readSelectedIndex(ByteData byteData) {
+    return byteData.getInt32(byteData.lengthInBytes - _selectedIndexByteSize);
+  }
+
+  Snapshot _toSnapshot(ByteData data) {
+    return Base64Encoder().convert(
+      data.buffer.asUint8List(),
+    );
   }
 }

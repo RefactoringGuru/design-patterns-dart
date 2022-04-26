@@ -37,6 +37,7 @@ class MementoEditorApplication {
 
   void restoreState(Memento memento) {
     editor
+      ..unSelect()
       ..restore(memento.snapshot)
       ..repaint();
   }
