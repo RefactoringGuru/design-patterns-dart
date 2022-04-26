@@ -12,8 +12,10 @@ dependencies:
   collection: ^1.15.0
   flutter:
     sdk: flutter
-
+  cupertino_icons: ^1.0.2
+  
 dev_dependencies:
   lints: ^1.0.0
 
-
+flutter:
+  uses-material-design: true

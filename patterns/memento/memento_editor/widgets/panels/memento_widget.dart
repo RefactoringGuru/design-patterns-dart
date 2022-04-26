@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../../../../observer/subscriber_flutter_widget/subscriber/subscriber_widget.dart';
 import '../../application.dart';
+import '../../editor/create_memento_event.dart';
 import '../composite/named_panel.dart';
 import '../composite/snapshot_list_widget.dart';
 
@@ -19,8 +21,14 @@ class MementoWidget extends StatelessWidget {
         _buildSaveStateButton(),
         SizedBox(height: 5),
         Expanded(
-          child: SnapshotListWidget(
-            snapshots: app.snapshots,
+          child: SubscriberWidget<CreateMementoEvent>(
+            observer: app.editor.events,
+            builder: (buildContext, event) {
+              return SnapshotListWidget(
+                mementoList: app.caretaker.list,
+                onMementoRestore: app.restoreState,
+              );
+            },
           ),
         ),
       ],
@@ -57,10 +65,7 @@ class MementoWidget extends StatelessWidget {
       children: [
         OutlinedButton(
           child: Text('Save state'),
-          onPressed: () {
-            app.snapshots.add(app.editor.backup());
-            app.editor.repaint();
-          },
+          onPressed: app.saveState,
         ),
       ],
     );

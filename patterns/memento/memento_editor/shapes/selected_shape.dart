@@ -24,7 +24,7 @@ class SelectedShape {
     shape.y = y + _yStart;
   }
 
-  void paintSelectFrame(Canvas canvas) {
+  void paintSelectionBox(Canvas canvas) {
     final x = (shape.x - shape.size).roundToDouble() - 1.5;
     final y = (shape.y - shape.size).roundToDouble() - 1.5;
     canvas.drawRect(

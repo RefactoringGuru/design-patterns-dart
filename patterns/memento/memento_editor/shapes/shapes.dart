@@ -29,6 +29,8 @@ mixin Shapes {
         return shape;
       }
     }
+
+    return null;
   }
 
   void paintShapes(Canvas canvas) {

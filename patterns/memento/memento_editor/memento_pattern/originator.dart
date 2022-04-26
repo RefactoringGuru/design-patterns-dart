@@ -22,10 +22,7 @@ mixin Originator implements Shapes, ClassicApp {
       byteOffset += 16;
     }
 
-    return data.buffer
-        .asUint8List()
-        .map((e) => e.toRadixString(16).padLeft(3, '0'))
-        .join();
+    return Base64Encoder().convert(data.buffer.asUint8List());
   }
 
   void restore(Snapshot snapshot) {
@@ -46,7 +43,5 @@ mixin Originator implements Shapes, ClassicApp {
       shapes.add(shape);
       byteOffset += 16;
     }
-
-    repaint();
   }
 }
