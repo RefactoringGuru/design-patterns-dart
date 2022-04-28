@@ -21,9 +21,9 @@ class AppObserver {
   }
 
   void unsubscribe<T extends Event>(EventFunction<T> func) {
-    final isDelete = _subscribers[T.hashCode]?.remove(func) ?? false;
+    final isDeleted = _subscribers[T.hashCode]?.remove(func) ?? false;
 
-    if (isDelete) {
+    if (isDeleted) {
       return;
     }
 
