@@ -2,12 +2,11 @@ import 'dart:convert';
 import 'dart:typed_data';
 import 'dart:ui';
 
-import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
 import '../shapes/shapes.dart';
 import '../shapes/shape.dart';
 import 'snapshot.dart';
 
-mixin Originator implements Shapes, ClassicApp {
+mixin Originator implements Shapes {
   Snapshot backup() {
     final data = _allocateBuffer();
     _writeShapes(data);
