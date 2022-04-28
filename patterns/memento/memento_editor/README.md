@@ -15,7 +15,7 @@ This complex example includes these implementations:
 - [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
 
 ### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/165399085-06835617-8ef1-4e2f-930f-03d730433afb.png)
+![image](https://user-images.githubusercontent.com/8049534/165758516-1de543f5-666d-4e07-958d-2d8fceb73af9.png)
 
 ### Client code:
 ```dart
