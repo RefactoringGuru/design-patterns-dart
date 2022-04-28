@@ -9,8 +9,8 @@ This example shows how to adapt a non-reactive classic type application for Flut
 
 ### Dependency
 This complex example includes these implementations:
-- [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)]
-- [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
+- [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)]
+- [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
 
 ### Online demo:
 Click on the picture to see a [demo](https://refactoringguru.github.io/design-patterns-dart/#/adapter/flutter_adapter).

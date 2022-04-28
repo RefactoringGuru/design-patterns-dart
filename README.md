@@ -5,27 +5,27 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 # Implementation checklist:
 - [ ] **Creation**
     - [ ] **Abstract Factory**
-    - [x] **Builder** - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/builder/color_text_format)]
+    - [x] **Builder** - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/builder/color_text_format)]
     - [ ] **Factory Method**
-    - [x] **Prototype**] - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/prototype/shapes)] 
+    - [x] **Prototype**] - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/prototype/shapes)] 
     - [ ] **Singleton**
 - [ ]  **Behavioral**
-    - [x] **Chain of Responsibility** - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/chain_of_responsibility/server_middleware)]
-    - [x] **Command** - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/command/text_editor)] 
+    - [x] **Chain of Responsibility** - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/chain_of_responsibility/server_middleware)]
+    - [x] **Command** - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/command/text_editor)] 
     - [ ] Interpreter
     - [ ] **Iterator**
     - [ ] **Mediator**
-    - [x] **Memento** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/memento/conceptual)] [[Memento Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/memento/memento_editor)] 
-    - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
+    - [x] **Memento** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/conceptual)] [[Memento Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/memento_editor)] 
+    - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
     - [ ] **State**
     - [ ] **Template Method**
     - [ ] **Visitor**
     - [ ] **Strategy**
 - [ ] **Structural**
-    - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/square_round_conflict)] [[Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/adapter/flutter_adapter)] 
-    - [x] **Bridge** - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/bridge/clock)] 
-    - [x] **Composite** - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/composite/products_and_boxes)] 
-    - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/decorator/data_source_decoder)]
+    - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/square_round_conflict)] [[Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)] 
+    - [x] **Bridge** - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/clock)] 
+    - [x] **Composite** - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/products_and_boxes)] 
+    - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/decorator/data_source_decoder)]
     - [ ] **Facade**
     - [ ] **Flyweight**
     - [ ] **Proxy**

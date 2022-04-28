@@ -8,7 +8,7 @@ Chain of Responsibility is a behavioral design pattern that lets you pass reques
 https://refactoring.guru/design-patterns/chain-of-responsibility?#problem
 
 ### Origin source code:
-This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/chain_of_responsibility/example)
+This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/main/src/refactoring_guru/chain_of_responsibility/example)
 
 ### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/149488654-7ff5f659-4086-4d1a-ae44-326c71fb880a.png)

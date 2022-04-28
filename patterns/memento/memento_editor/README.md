@@ -11,8 +11,8 @@ Click on the picture to see the [demo](https://RefactoringGuru.github.io/design-
 
 ### Dependency Patterns
 This complex example includes these implementations:
-- [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer)]
-- [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/subscriber_flutter_widget)]
+- [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)]
+- [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
 
 ### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/165758516-1de543f5-666d-4e07-958d-2d8fceb73af9.png)

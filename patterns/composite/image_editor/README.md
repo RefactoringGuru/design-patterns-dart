@@ -5,7 +5,7 @@ Composite is a structural design pattern that lets you compose objects into tree
 https://refactoring.guru/design-patterns/composite?#pseudocode
 
 ## Origin source code:
-This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/composite/example)
+This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/main/src/refactoring_guru/composite/example)
 
 ### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/149174388-25ca21b1-d762-40b5-a853-528abe18b66c.png)

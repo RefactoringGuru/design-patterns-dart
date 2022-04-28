@@ -11,7 +11,7 @@ possible to revert an operation if needed.
 More detailed explanation on [RefactoringGuru](https://refactoring.guru/design-patterns/command?#pseudocode).
 
 ## Origin source code:
-This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/command/example).
+This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/main/src/refactoring_guru/command/example).
 But slightly changed, see the class diagram.
 
 ## Diagram:

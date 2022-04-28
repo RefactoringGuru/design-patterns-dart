@@ -7,7 +7,7 @@ Tutorial: [here](https://refactoring.guru/design-patterns/observer).
 ## Subscriber flutter widget example 
 This is a complex example of an Observer pattern, connected to a Flutter application. The example includes,
 the previously implemented **AppObserver** example pattern, 
-which you can see [here](https://github.com/RefactoringGuru/design-patterns-dart/tree/master/patterns/observer/app_observer).
+which you can see [here](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer).
 
 ### Online demo:
 Click on the picture to see a [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/observer/subscriber_flutter_widget).
