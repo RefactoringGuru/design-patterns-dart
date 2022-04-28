@@ -53,7 +53,6 @@ class ShapePropertiesWidget extends StatelessWidget {
                   colors: colors,
                   onColorSelect: (newColor) {
                     app.editor.activeShape?.changeColor(newColor);
-
                   },
                 ),
               ],

@@ -15,7 +15,7 @@ mixin Shapes implements ClassicApp {
     if (shape != null) {
       _activeShape = ActiveShape(shape, shape.x - x, shape.y - y, repaint);
     } else {
-      _activeShape = null;
+      unSelect();
     }
   }
 
@@ -30,6 +30,11 @@ mixin Shapes implements ClassicApp {
   }
 
   void unSelect() {
+    if (_activeShape == null) {
+      return;
+    }
+
+    _activeShape?.dispose();
     _activeShape = null;
   }
 

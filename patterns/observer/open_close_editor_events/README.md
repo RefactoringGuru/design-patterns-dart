@@ -9,7 +9,7 @@ changes in its state.
 More detailed explanation on [RefactoringGuru](https://refactoring.guru/design-patterns/observer?#pseudocode).
 
 ### Origin source code:
-This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/master/src/refactoring_guru/observer/example).
+This example rewrite from [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/main/src/refactoring_guru/observer/example).
 
 ### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/150955865-7fbb29f3-ed48-4317-a356-cbb9cc79ed11.png)

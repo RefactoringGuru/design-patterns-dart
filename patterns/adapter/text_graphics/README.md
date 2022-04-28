@@ -8,7 +8,7 @@ https://refactoring.guru/design-patterns/adapter
 Adding shapes from a third-party library.
 
 ### Class Diagram:
-![image](https://user-images.githubusercontent.com/8049534/146028651-1262b66d-b0ac-4fc9-9487-76a2d588f97e.png)
+![image](https://user-images.githubusercontent.com/8049534/165749605-5361d5e2-e4a1-41ed-9d27-1c4965fa30d2.png)
 
 ### Client code:
 ```dart

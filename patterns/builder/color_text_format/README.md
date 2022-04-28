@@ -8,15 +8,13 @@ https://refactoring.guru/design-patterns/builder
 Using different text formats. 
 
 ### Class diagram
-![image](https://user-images.githubusercontent.com/8049534/152780645-4eed27fc-a483-432e-99b0-4a77f2adbd5d.png)
+![image](https://user-images.githubusercontent.com/8049534/165747411-75d587d4-aa16-4a14-a16d-52f3fa461a11.png)
 
 ### Client code:
 ```dart
 main() {
   final reader = ColorTextReader(
-    text: 'I love looking at the blue sky, '
-        'eating red apples, '
-        'sitting on the green grass.',
+    text: 'I love looking at the blue sky, eating red apples and sitting on the green grass.',
   );
 
   final html = reader.convert(HtmlConverter());
