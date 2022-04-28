@@ -1,4 +1,3 @@
-import '../../../adapter/flutter_adapter/classic_app/classic_app.dart';
 import '../shapes/shapes.dart';
 
 mixin Manipulator implements Shapes {
