@@ -5,8 +5,10 @@ multiple objects about any events that happen to the object they’re observing.
 Tutorial: [here](https://refactoring.guru/design-patterns/observer).
 
 ## AppObserver example 
-This example was created to be used in a more complex example.
-A complex example will be implemented later.
+This example was created to be used in a more complex examples:
+- [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
+- [[FlutterAdapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)]
+- [[MementoEditor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/memento_editor)]
 
 ### Diagram:
 ![image](https://user-images.githubusercontent.com/8049534/152783537-0c39c119-2e5b-44fb-9be1-a88840c7f7a1.png)
