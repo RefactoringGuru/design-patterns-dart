@@ -5,10 +5,9 @@ object without revealing the details of its implementation.
 Tutorial: [here](https://refactoring.guru/design-patterns/memento).
 
 ### Online demo:
-Click on the picture to see a [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/memento/flutter_memento_editor).
+Click on the picture to see the [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/memento/flutter_memento_editor).
 
 [![image](https://user-images.githubusercontent.com/8049534/165401175-88bc4593-4624-45b4-8c03-6f1390ed771a.png)](https://refactoringguru.github.io/design-patterns-dart/#/memento/flutter_memento_editor)
-
 
 ### Dependency Patterns
 This complex example includes these implementations:
