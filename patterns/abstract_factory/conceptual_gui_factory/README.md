@@ -1,21 +1,14 @@
-# Memento pattern
-Memento is a behavioral design pattern that lets you save and restore the previous state of an 
-object without revealing the details of its implementation.
+# Abstract Factory pattern
+Abstract Factory is a creational design pattern that lets you produce families of related objects 
+without specifying their concrete classes.
 
-Tutorial: [here](https://refactoring.guru/design-patterns/memento).
+Tutorial: [here](https://refactoring.guru/design-patterns/abstract-factory).
 
-### Online demo:
-Click on the picture to see the [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/memento/flutter_memento_editor).
-
-[![image](https://user-images.githubusercontent.com/8049534/165401175-88bc4593-4624-45b4-8c03-6f1390ed771a.png)](https://refactoringguru.github.io/design-patterns-dart/#/memento/flutter_memento_editor)
-
-### Dependency Patterns
-This complex example includes these implementations:
-- [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)]
-- [[SubscriberWidget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
+### About example.
+This the very conceptual example rewrite from original source code [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/main/src/refactoring_guru/abstract_factory/example)
 
 ### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/165758516-1de543f5-666d-4e07-958d-2d8fceb73af9.png)
+![image](https://user-images.githubusercontent.com/8049534/165987890-e64db9a3-4865-411c-a5c0-16da21043159.png)
 
 ### Client code:
 ```dart
