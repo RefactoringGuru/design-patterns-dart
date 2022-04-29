@@ -54,7 +54,7 @@ Future<void> fetchUpstream() async {
 void prepareIndexHtmlForRemoteHost() {
   print('Prepare "index.html" for remote host.');
 
-  final indexHtmlFile = File(projectDir.uri.toFilePath() + r'\index.html');
+  final indexHtmlFile = File(webBuildDir.path + r'\index.html');
   final indexContent = indexHtmlFile.readAsStringSync();
   final fixedIndexContent = indexContent.replaceFirst(
     r'<base href="/">',
