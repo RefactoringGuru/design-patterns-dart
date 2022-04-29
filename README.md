@@ -7,7 +7,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] **Abstract Factory**
     - [x] **Builder** - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/builder/color_text_format)]
     - [ ] **Factory Method**
-    - [x] **Prototype**] - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/prototype/shapes)] 
+    - [x] **Prototype** - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/prototype/shapes)] 
     - [ ] **Singleton**
 - [ ]  **Behavioral**
     - [x] **Chain of Responsibility** - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/chain_of_responsibility/server_middleware)]
@@ -39,6 +39,16 @@ Some complex examples require **Flutter 2.12**.
 
 We appreciate any help, whether it's a simple fix of a typo or a whole new example. Just [make a fork](https://help.github.com/articles/fork-a-repo/), do your change and submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 
+### Step-by-step instruction
+1. Just make a fork.
+2. Clone the forked repository to your local machine.
+3. Create a new branch and name it, for example: fix-issue-32.
+4. Make changes.
+5. Create commits and push them to your forked Github repository.
+6. Submit a pull request to the master branch.
+7. Wait for review.
+
+### Style guide
 Here's a style guide which might help you to keep your changes consistent with our code:
 
 1. All code should meet the [Effective Dart: Style](https://dart.dev/guides/language/effective-dart/style).
