@@ -1,3 +1,6 @@
+## 0.19.0
+- Add "Conceptual Gui Factory" example.
+
 ## 0.18.0
 - Add Memento Editor.
 
