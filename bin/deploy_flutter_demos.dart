@@ -14,10 +14,16 @@ void main() async {
 
   await Future.wait([prepareRepository, buildProject]);
 
+  prepareIndexHtmlForRemoteHost();
   copyFiles();
   await pushToOrigin();
   clear();
 }
+
+late final tmpDir = Directory.systemTemp.createTempSync();
+late final projectDir = thisPath(r'..\');
+late final webBuildDir = Directory(projectDir.uri.toFilePath() + r'build\web');
+late final String originUrl;
 
 Future<void> init() async {
   print('Use temp: $tmpDir');
@@ -45,6 +51,23 @@ Future<void> fetchUpstream() async {
   await cmd('git fetch upstream', workingDirectory: tmpDir);
 }
 
+void prepareIndexHtmlForRemoteHost() {
+  print('Prepare "index.html" for remote host.');
+
+  final indexHtmlFile = File(webBuildDir.path + r'\index.html');
+  final indexContent = indexHtmlFile.readAsStringSync();
+  final fixedIndexContent = indexContent.replaceFirst(
+    r'<base href="/">',
+    r'<base href="/design-patterns-dart/">',
+  );
+
+  if (indexContent == fixedIndexContent) {
+    throw 'Base url not found. It should be <base href="/">';
+  }
+
+  indexHtmlFile.writeAsStringSync(fixedIndexContent);
+}
+
 void copyFiles() {
   print('Copy files:');
   copyDirectory(webBuildDir, tmpDir);
@@ -65,11 +88,6 @@ Future<void> pushToOrigin() async {
     showOut: true,
   );
 }
-
-late final tmpDir = Directory.systemTemp.createTempSync();
-late final projectDir = thisPath(r'..\');
-late final webBuildDir = Directory(projectDir.uri.toFilePath() + r'build\web');
-late final String originUrl;
 
 void clear() {
   print('Clear: $tmpDir');
