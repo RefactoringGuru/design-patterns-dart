@@ -1,3 +1,6 @@
+## 0.20.0
+- Add "Conceptual Dialog Factory" example.
+
 ## 0.19.0
 - Add "Conceptual Gui Factory" example.
 
