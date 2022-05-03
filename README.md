@@ -20,7 +20,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] **State**
     - [ ] **Template Method**
     - [ ] **Visitor**
-    - [ ] **Strategy** [[Reservation cargo spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
+    - [X] **Strategy** [[Reservation cargo spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
 - [ ] **Structural**
     - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/square_round_conflict)] [[Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)] 
     - [x] **Bridge** - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/clock)] 
