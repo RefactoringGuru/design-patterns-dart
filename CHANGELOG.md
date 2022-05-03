@@ -1,3 +1,6 @@
+## 0.21.0
+- Add strategy pattern: "Reservation cargo spaces".
+
 ## 0.20.0
 - Add "Conceptual Dialog Factory" example.
 
