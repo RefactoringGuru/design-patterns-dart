@@ -15,7 +15,7 @@ class XMLExportVisitor implements Visitor {
   }
 
   @override
-  void visitCompoundGraphic(CompoundShape compound) {
+  void visitCompoundShape(CompoundShape compound) {
     _write('<compound>', openTag: true);
     _write('<x>${compound.x}</x>');
     _write('<y>${compound.y}</y>');

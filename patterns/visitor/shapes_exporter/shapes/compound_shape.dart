@@ -14,7 +14,7 @@ class CompoundShape implements Shape {
 
   @override
   void accept(Visitor visitor) {
-    visitor.visitCompoundGraphic(this);
+    visitor.visitCompoundShape(this);
   }
 
   @override

@@ -4,7 +4,7 @@ import '../shapes/dot.dart';
 import '../shapes/rectangle.dart';
 
 abstract class Visitor {
-  void visitCompoundGraphic(CompoundShape compound);
+  void visitCompoundShape(CompoundShape compound);
 
   void visitDot(Dot dot);
 
