@@ -9,7 +9,7 @@ class XMLExportVisitor implements Visitor {
 
   String export(Shape shape) {
     buff.clear();
-    _write('<?xml version="1.0" encoding="utf-8">');
+    _write('<?xml version="1.0" encoding="utf-8">?');
     shape.accept(this);
     return buff.toString().trim();
   }
