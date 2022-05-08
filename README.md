@@ -19,8 +19,8 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
     - [ ] **State**
     - [ ] **Template Method**
-    - [ ] **Visitor**
-    - [X] **Strategy** [[Reservation cargo spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
+    - [X] **Visitor**  [[Shape XML Exporter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/visitor/shapes_exporter)]
+    - [X] **Strategy** [[Reservation Cargo Spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
 - [ ] **Structural**
     - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/square_round_conflict)] [[Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)] 
     - [x] **Bridge** - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/clock)] 
