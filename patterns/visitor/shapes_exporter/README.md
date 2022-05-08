@@ -4,7 +4,10 @@ they operate.
 
 Tutorial: [here](https://refactoring.guru/design-patterns/visitor).
 
-### About example.
+### About example: Shape XML Exporter.
+In this example, the Visitor pattern adds XML export support to the class hierarchy of geometric 
+shapes [More info](https://refactoring.guru/design-patterns/visitor#pseudocode).
+
 This example rewrite from original source code [java example](https://github.com/RefactoringGuru/design-patterns-java/tree/main/src/refactoring_guru/visitor/example)
 
 ### Diagram:
