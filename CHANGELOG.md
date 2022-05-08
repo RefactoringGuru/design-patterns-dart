@@ -1,3 +1,6 @@
+## 0.22.0
+- Add visitor pattern: "Shape Xml Export".
+
 ## 0.21.0
 - Add strategy pattern: "Reservation cargo spaces".
 
