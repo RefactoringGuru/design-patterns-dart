@@ -5,7 +5,8 @@ import '../memento_pattern/originator.dart';
 import '../shapes/shapes.dart';
 import 'manipulator.dart';
 
-class Editor extends ClassicApp with Manipulator, Shapes, Originator {
+class Editor extends ClassicApp
+    with Manipulator, Shapes, BackupOriginator, RecoveryOriginator {
   @override
   void onPaint(Canvas canvas, Size canvasSize) {
     _paintBackground(canvas, canvasSize);

@@ -6,35 +6,20 @@ import '../shapes/shapes.dart';
 import '../shapes/shape.dart';
 import 'snapshot.dart';
 
-mixin Originator implements Shapes {
+const _shapeByteSize = 16;
+const _selectedIndexByteSize = 4;
+
+mixin BackupOriginator implements Shapes {
   Snapshot backup() {
-    final data = _allocateBuffer();
-    _writeShapes(data);
-    _writeSelectedIndex(data);
-    return _toSnapshot(data);
+    final buffer = _allocateBuffer();
+    _writeShapes(buffer);
+    _writeSelectedIndex(buffer);
+    return _toSnapshot(buffer);
   }
-
-  void restore(Snapshot snapshot) {
-    final byteData = _fromSnapshotToByteData(snapshot);
-    final newShapes = _readShapes(byteData);
-    final selectedIndex = _readSelectedIndex(byteData);
-    shapes.clear();
-    shapes.addAll(newShapes);
-    selectByIndex(selectedIndex);
-  }
-
-  static const _shapeByteSize = 16;
-  static const _selectedIndexByteSize = 4;
 
   ByteData _allocateBuffer() {
     final byteSize = shapes.length * _shapeByteSize + _selectedIndexByteSize;
     return ByteData(byteSize);
-  }
-
-  ByteData _fromSnapshotToByteData(Snapshot snapshot) {
-    final unBase = Base64Decoder().convert(snapshot);
-    final byteData = ByteData.sublistView(unBase);
-    return byteData;
   }
 
   void _writeSelectedIndex(ByteData data) {
@@ -59,10 +44,33 @@ mixin Originator implements Shapes {
         ..setFloat32(byteOffset + 4, shape.y)
         ..setInt32(byteOffset + 8, shape.color.value)
         ..setFloat32(byteOffset + 12, shape.size);
-      byteOffset += 16;
+      byteOffset += _shapeByteSize;
     }
 
     return byteOffset;
+  }
+
+  Snapshot _toSnapshot(ByteData data) {
+    return Base64Encoder().convert(
+      data.buffer.asUint8List(),
+    );
+  }
+}
+
+mixin RecoveryOriginator implements Shapes {
+  void restore(Snapshot snapshot) {
+    final byteData = _fromSnapshotToByteData(snapshot);
+    final newShapes = _readShapes(byteData);
+    final selectedIndex = _readSelectedIndex(byteData);
+    shapes.clear();
+    shapes.addAll(newShapes);
+    selectByIndex(selectedIndex);
+  }
+
+  ByteData _fromSnapshotToByteData(Snapshot snapshot) {
+    final unBase = Base64Decoder().convert(snapshot);
+    final byteData = ByteData.sublistView(unBase);
+    return byteData;
   }
 
   int _getNumberOfShapes(ByteData byteData) {
@@ -82,7 +90,7 @@ mixin Originator implements Shapes {
         byteData.getFloat32(byteOffset + 12),
       );
       shapes.add(shape);
-      byteOffset += 16;
+      byteOffset += _shapeByteSize;
     }
 
     return shapes;
@@ -90,11 +98,5 @@ mixin Originator implements Shapes {
 
   int _readSelectedIndex(ByteData byteData) {
     return byteData.getInt32(byteData.lengthInBytes - _selectedIndexByteSize);
-  }
-
-  Snapshot _toSnapshot(ByteData data) {
-    return Base64Encoder().convert(
-      data.buffer.asUint8List(),
-    );
   }
 }
