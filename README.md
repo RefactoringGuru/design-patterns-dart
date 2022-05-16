@@ -4,7 +4,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 
 # Implementation checklist:
 - [ ] **Creation**
-    - [x] **Abstract Factory** [[Conceptual Gui Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/conceptual_gui_factory)]
+    - [x] **Abstract Factory** [[Conceptual Gui Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/conceptual_gui_factory)] [[Tool Panel Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/tool_panel_factory)]
     - [x] **Builder** - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/builder/color_text_format)]
     - [x] **Factory Method** [[Conceptual Platform Dialog](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/factory_method/conceptual_platform_dialog)]
     - [x] **Prototype** - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/prototype/shapes)] 
