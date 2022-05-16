@@ -1,3 +1,6 @@
+## 0.23.0
+- Add "Tool Panel Factory" flutter example
+
 ## 0.22.0
 - Add visitor pattern: "Shape Xml Export".
 
