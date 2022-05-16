@@ -7,7 +7,7 @@ import 'package:flutter/material.dart';
 import '../pattern/tool_factory.dart';
 import '../pattern/shape.dart';
 
-mixin IconBoxMixin implements FactoryTool {
+mixin IconBoxMixin implements ToolFactory {
   Image? _icon;
 
   @override

@@ -7,10 +7,10 @@ import '../mixin/icon_box_mixin.dart';
 import '../pattern/tool_factory.dart';
 
 class Tools {
-  final List<FactoryTool> factories;
+  final List<ToolFactory> factories;
   final List<Color> colors;
 
-  final activeFactory = ValueNotifier<FactoryTool?>(null);
+  final activeFactory = ValueNotifier<ToolFactory?>(null);
 
   final activeColor = ValueNotifier(Color(0x0FFFFFFFF));
 

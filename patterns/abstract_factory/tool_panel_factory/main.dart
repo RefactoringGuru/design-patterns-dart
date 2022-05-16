@@ -11,14 +11,14 @@ import 'factories/txt_factory.dart';
 import 'widgets/drawing_board.dart';
 import 'widgets/tool_panel.dart';
 
-class WToolPanelApp extends StatefulWidget {
-  const WToolPanelApp({Key? key}) : super(key: key);
+class ToolPanelFactoryApp extends StatefulWidget {
+  const ToolPanelFactoryApp({Key? key}) : super(key: key);
 
   @override
-  _WToolPanelAppState createState() => _WToolPanelAppState();
+  _ToolPanelFactoryAppState createState() => _ToolPanelFactoryAppState();
 }
 
-class _WToolPanelAppState extends State<WToolPanelApp> {
+class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
   final app = App(
     shapes: Shapes([]),
     tools: Tools(

@@ -5,7 +5,7 @@ import '../pattern/tool_factory.dart';
 import '../pattern/shape.dart';
 import '../shapes/triangle_shape.dart';
 
-class TriangleFactory extends FactoryTool with IconBoxMixin {
+class TriangleFactory extends ToolFactory with IconBoxMixin {
   @override
   Shape createShape(double x, double y, Color color) {
     return TriangleShape(

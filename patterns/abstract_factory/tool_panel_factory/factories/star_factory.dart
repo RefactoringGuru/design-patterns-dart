@@ -5,7 +5,7 @@ import '../pattern/tool_factory.dart';
 import '../pattern/shape.dart';
 import '../shapes/star_shape.dart';
 
-class StarFactory extends FactoryTool with IconBoxMixin {
+class StarFactory extends ToolFactory with IconBoxMixin {
   @override
   Shape createShape(double x, double y, Color color) {
     return StarShape(

@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         '/observer/subscriber_flutter_widget': (_) => SubscriberFlutterApp(),
         '/adapter/flutter_adapter': (_) => FlutterAdapterApp(),
         '/memento/flutter_memento_editor': (_) => FlutterMementoEditorApp(),
-        '/abstract_factory/tool_panel': (_) => WToolPanelApp(),
+        '/abstract_factory/tool_panel_factory': (_) => ToolPanelFactoryApp(),
       },
     );
   }
