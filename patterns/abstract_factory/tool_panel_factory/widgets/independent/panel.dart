@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class Panel extends StatelessWidget {
-  static const thickness = 64.0;
+  static const thicknessWidth = 64.0;
+  static const thicknessHeight = 48.0;
 
   final Axis direction;
   final Widget child;
@@ -15,8 +16,8 @@ class Panel extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: direction == Axis.horizontal ? thickness : null,
-      width: direction == Axis.vertical ? thickness : null,
+      height: direction == Axis.horizontal ? thicknessHeight : null,
+      width: direction == Axis.vertical ? thicknessWidth : null,
       clipBehavior: Clip.antiAlias,
       decoration: BoxDecoration(
         color: Color(0xFF3B3B3B),

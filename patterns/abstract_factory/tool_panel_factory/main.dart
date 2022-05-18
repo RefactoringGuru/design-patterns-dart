@@ -9,6 +9,7 @@ import 'factories/star_factory.dart';
 import 'factories/triangle_factory.dart';
 import 'factories/text_factory.dart';
 import 'widgets/drawing_board.dart';
+import 'widgets/property_bar.dart';
 import 'widgets/tool_panel.dart';
 
 class ToolPanelFactoryApp extends StatefulWidget {
@@ -47,6 +48,9 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
           onClick: app.addShape,
         ),
         ToolPanel(
+          tools: app.tools,
+        ),
+        PropertyPanel(
           tools: app.tools,
         ),
       ],
