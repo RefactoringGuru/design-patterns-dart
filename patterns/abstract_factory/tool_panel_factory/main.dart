@@ -7,7 +7,7 @@ import 'factories/circle_factory.dart';
 import 'factories/line_factory.dart';
 import 'factories/star_factory.dart';
 import 'factories/triangle_factory.dart';
-import 'factories/txt_factory.dart';
+import 'factories/text_factory.dart';
 import 'widgets/drawing_board.dart';
 import 'widgets/tool_panel.dart';
 
@@ -23,7 +23,7 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
     shapes: Shapes([]),
     tools: Tools(
       factories: [
-        TxtFactory(),
+        TextFactory(),
         LineFactory(),
         CircleFactory(),
         TriangleFactory(),

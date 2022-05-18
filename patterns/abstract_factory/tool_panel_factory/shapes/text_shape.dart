@@ -2,11 +2,11 @@ import 'dart:ui';
 
 import '../pattern/shape.dart';
 
-class Txt extends Shape {
+class TextShape extends Shape {
   final String text;
   final double fontSize;
 
-  Txt({
+  TextShape({
     required this.text,
     required this.fontSize,
     required double x,

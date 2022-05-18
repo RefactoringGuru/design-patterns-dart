@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import '../mixin/icon_box_mixin.dart';
+import '../pattern/property.dart';
 import '../pattern/tool_factory.dart';
 import '../pattern/shape.dart';
 import '../shapes/star_shape.dart';
@@ -15,4 +16,7 @@ class StarFactory extends ToolFactory with IconBoxMixin {
       color: color,
     );
   }
+
+  @override
+  Iterable<Property> get properties => [];
 }
