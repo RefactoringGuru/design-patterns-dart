@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Refactoring Guru: Flutter launcher',
       theme: ThemeData(primarySwatch: Colors.pink),
-      initialRoute: '/abstract_factory/tool_panel',
+      initialRoute: '/abstract_factory/tool_panel_factory',
       routes: {
         '/observer/subscriber_flutter_widget': (_) => SubscriberFlutterApp(),
         '/adapter/flutter_adapter': (_) => FlutterAdapterApp(),
