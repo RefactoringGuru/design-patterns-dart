@@ -10,6 +10,10 @@ import 'factories/triangle_factory.dart';
 import 'factories/text_factory.dart';
 import 'widgets/drawing_board.dart';
 import 'widgets/property_bar.dart';
+import 'widgets/property_widgets/bool_property_widget.dart';
+import 'widgets/property_widgets/double_property_widget.dart';
+import 'widgets/property_widgets/factories/property_widget_factories.dart';
+import 'widgets/property_widgets/string_property_widget.dart';
 import 'widgets/tool_panel.dart';
 
 class ToolPanelFactoryApp extends StatefulWidget {
@@ -39,6 +43,14 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
     ),
   );
 
+  final propertyWidgetFactories = PropertyWidgetFactories(
+    factories: [
+      StringPropertyWidgetFactory(),
+      DoublePropertyWidgetFactory(),
+      BoolPropertyWidgetFactory(),
+    ],
+  );
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -52,6 +64,7 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
         ),
         PropertyPanel(
           tools: app.tools,
+          propertyWidgetFactories: propertyWidgetFactories,
         ),
       ],
     );

@@ -20,7 +20,8 @@ class FactoriesToolBar extends StatelessWidget {
               ? _buildToolButtons()
               : Padding(
                   padding: EdgeInsets.all(10),
-                  child: CircularProgressIndicator());
+                  child: CircularProgressIndicator(),
+                );
         },
       ),
     );
