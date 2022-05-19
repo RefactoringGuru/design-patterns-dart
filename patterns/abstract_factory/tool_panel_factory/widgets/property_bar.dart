@@ -39,55 +39,41 @@ class PropertyPanel extends StatelessWidget {
 
   Widget _buildTheme({required Widget child}) {
     return Material(
-        color: Colors.transparent,
-        textStyle: TextStyle(
-          color: Colors.white,
-          fontSize: 18,
-          fontWeight: FontWeight.w600,
-        ),
-        child: child);
+      color: Colors.transparent,
+      textStyle: TextStyle(
+        color: Colors.white,
+        fontSize: 16,
+        fontFamily: 'Arial',
+      ),
+      child: Theme(
+          data: ThemeData(
+            primarySwatch: Colors.pink,
+            unselectedWidgetColor: Colors.grey, // Your color
+          ),
+          child: child),
+    );
   }
 
   Widget _buildProperty(Property prop) {
-    switch (prop.value().runtimeType) {
-      case String:
-        return StringPropertyWidget(property: prop);
-      case double:
-        return DoublePropertyWidget(property: prop);
+    final val = prop.value();
+
+    if (val is String) {
+      return StringPropertyWidget(property: prop);
+    } else if (val is double) {
+      return DoublePropertyWidget(property: prop);
+    } else if (val is bool) {
+      return BoolPropertyWidget(property: prop);
     }
 
     throw 'Type(${prop.value().runtimeType}) of property is not support';
   }
 }
 
-class _FieldLabel extends StatelessWidget {
-  final String text;
-  final Widget child;
-
-  const _FieldLabel({
-    Key? key,
-    required this.text,
-    required this.child,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: [
-        SizedBox(width: 10),
-        Text(text + ':'),
-        SizedBox(width: 10),
-        child,
-        SizedBox(width: 20),
-      ],
-    );
-  }
-}
-
 class StringPropertyWidget extends StatelessWidget {
   final Property property;
 
-  const StringPropertyWidget({Key? key, required this.property}) : super(key: key);
+  const StringPropertyWidget({Key? key, required this.property})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -111,7 +97,6 @@ class StringPropertyWidget extends StatelessWidget {
   }
 }
 
-
 class DoublePropertyWidget extends StatefulWidget {
   final Property property;
 
@@ -129,15 +114,18 @@ class _DoublePropertyWidgetState extends State<DoublePropertyWidget> {
       text: widget.property.name,
       child: Row(
         children: [
-          Slider(
-            min: 4,
-            max: 150,
-            value: widget.property.value() as double,
-            onChanged: (val) {
-              setState(() {
-                widget.property.onChange(val);
-              });
-            },
+          SizedBox(
+            width: 200,
+            child: Slider.adaptive(
+              min: 0.0,
+              max: 300,
+              value: widget.property.value() as double,
+              onChanged: (val) {
+                setState(() {
+                  widget.property.onChange(val);
+                });
+              },
+            ),
           ),
           SizedBox(
             width: 32,
@@ -148,6 +136,61 @@ class _DoublePropertyWidgetState extends State<DoublePropertyWidget> {
           )
         ],
       ),
+    );
+  }
+}
+
+class BoolPropertyWidget extends StatefulWidget {
+  final Property property;
+
+  const BoolPropertyWidget({Key? key, required this.property})
+      : super(key: key);
+
+  @override
+  _BoolPropertyWidgetState createState() => _BoolPropertyWidgetState();
+}
+
+class _BoolPropertyWidgetState extends State<BoolPropertyWidget> {
+  @override
+  Widget build(BuildContext context) {
+    return _FieldLabel(
+      text: widget.property.name,
+      child: Row(
+        children: [
+          Checkbox(
+            value: widget.property.value() as bool,
+            onChanged: (val) {
+              setState(() {
+                widget.property.onChange(val);
+              });
+            },
+          )
+        ],
+      ),
+    );
+  }
+}
+
+class _FieldLabel extends StatelessWidget {
+  final String text;
+  final Widget child;
+
+  const _FieldLabel({
+    Key? key,
+    required this.text,
+    required this.child,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        SizedBox(width: 10),
+        Text(text + ':'),
+        SizedBox(width: 10),
+        child,
+        SizedBox(width: 20),
+      ],
     );
   }
 }

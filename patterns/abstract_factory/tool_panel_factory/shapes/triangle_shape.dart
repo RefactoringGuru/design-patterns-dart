@@ -7,21 +7,16 @@ import '../pattern/shape.dart';
 
 class TriangleShape extends Shape {
   final double sideLength;
+  final bool isFilled;
 
   TriangleShape({
     required this.sideLength,
+    required this.isFilled,
     required double x,
     required double y,
     required Color color,
-  }) : super(
-          x: x,
-          y: y,
-          color: color,
-        );
-
-  @override
-  void paint(Canvas can) {
-    final path = Path()
+  }) : super(x: x, y: y, color: color) {
+    _trianglePath = Path()
       ..addPolygon(
         [
           Offset(0, height),
@@ -30,15 +25,17 @@ class TriangleShape extends Shape {
         ],
         true,
       );
+  }
 
+  late final Path _trianglePath;
+
+  @override
+  void paint(Canvas can) {
     can.drawPath(
-      path,
-      Paint()
-        ..strokeJoin = StrokeJoin.round
-        ..style = PaintingStyle.stroke
-        ..color = color
-        ..strokeWidth = 5,
-    );
+        _trianglePath,
+        Paint()
+          ..style = isFilled ? PaintingStyle.fill : PaintingStyle.stroke
+          ..color = color);
   }
 
   @override

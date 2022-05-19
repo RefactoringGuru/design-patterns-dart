@@ -8,6 +8,7 @@ class LineShape extends Shape {
   final double length;
 
   LineShape({
+    required bool isMirror,
     required this.length,
     required double x,
     required double y,
@@ -16,17 +17,22 @@ class LineShape extends Shape {
           x: x,
           y: y,
           color: color,
-        );
+        ) {
+    if (isMirror) {
+      point1 = Offset(0, length);
+      point2 = Offset(length, 0);
+    } else {
+      point1 = Offset(0, 0);
+      point2 = Offset(length, length);
+    }
+  }
+
+  late final Offset point1;
+  late final Offset point2;
 
   @override
   void paint(Canvas can) {
-    can.drawLine(
-      Offset(0, length),
-      Offset(length, 0),
-      Paint()
-        ..color = color
-        ..strokeWidth = 3,
-    );
+    can.drawLine(point1, point2, Paint()..color = color);
   }
 
   @override

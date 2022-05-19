@@ -7,10 +7,14 @@ import '../pattern/shape.dart';
 import '../shapes/line_shape.dart';
 
 class LineFactory extends ToolFactory with IconBoxMixin {
+  var _isMirror = true;
+  var _length = 100.0;
+
   @override
   Shape createShape(double x, double y, Color color) {
     return LineShape(
-      length: 100,
+      length: _length,
+      isMirror: _isMirror,
       x: x,
       y: y,
       color: color,
@@ -18,5 +22,22 @@ class LineFactory extends ToolFactory with IconBoxMixin {
   }
 
   @override
-  Iterable<Property> get properties => [];
+  Iterable<Property> get properties {
+    return [
+      Property(
+        name: 'mirror',
+        value: () => _isMirror,
+        onChange: (val) {
+          _isMirror = val;
+        },
+      ),
+      Property(
+        name: 'length',
+        value: () => _length,
+        onChange: (val) {
+          _length = val;
+        },
+      ),
+    ];
+  }
 }

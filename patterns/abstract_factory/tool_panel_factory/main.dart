@@ -24,11 +24,11 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
     shapes: Shapes([]),
     tools: Tools(
       factories: [
-        TextFactory(),
         LineFactory(),
         CircleFactory(),
         TriangleFactory(),
         StarFactory(),
+        TextFactory(),
       ],
       colors: [
         Colors.white,

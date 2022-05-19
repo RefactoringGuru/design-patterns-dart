@@ -7,10 +7,14 @@ import '../pattern/shape.dart';
 import '../shapes/star_shape.dart';
 
 class StarFactory extends ToolFactory with IconBoxMixin {
+  var _radius = 80.0;
+  var _isFilled = false;
+
   @override
   Shape createShape(double x, double y, Color color) {
     return StarShape(
-      radius: 80,
+      radius: _radius,
+      isFilled: _isFilled,
       x: x,
       y: y,
       color: color,
@@ -18,5 +22,22 @@ class StarFactory extends ToolFactory with IconBoxMixin {
   }
 
   @override
-  Iterable<Property> get properties => [];
+  Iterable<Property> get properties {
+    return [
+      Property(
+        name: 'radius',
+        value: () => _radius,
+        onChange: (val) {
+          _radius = val;
+        },
+      ),
+      Property(
+        name: 'filled',
+        value: () => _isFilled,
+        onChange: (val) {
+          _isFilled = val;
+        },
+      ),
+    ];
+  }
 }

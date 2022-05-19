@@ -6,9 +6,11 @@ import '../pattern/shape.dart';
 
 class CircleShape extends Shape {
   final double radius;
+  final bool isFilled;
 
   CircleShape({
     required this.radius,
+    required this.isFilled,
     required double x,
     required double y,
     required Color color,
@@ -23,8 +25,10 @@ class CircleShape extends Shape {
     final pos = width / 2;
     can.drawCircle(
       Offset(pos, pos),
-      radius,
-      Paint()..color = color,
+      radius - 2,
+      Paint()
+        ..style = isFilled ? PaintingStyle.fill : PaintingStyle.stroke
+        ..color = color,
     );
   }
 

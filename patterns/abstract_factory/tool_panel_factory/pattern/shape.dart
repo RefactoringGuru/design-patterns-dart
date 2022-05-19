@@ -25,6 +25,11 @@ abstract class Shape {
     _y -= height / 2;
   }
 
+  void translate(double x, double y) {
+    _x += x;
+    _y += y;
+  }
+
   double _x;
   double _y;
 }

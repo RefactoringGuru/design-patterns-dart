@@ -7,10 +7,14 @@ import '../pattern/shape.dart';
 import '../shapes/triangle_shape.dart';
 
 class TriangleFactory extends ToolFactory with IconBoxMixin {
+  var _isFilled = false;
+  var _sideLength = 120.0;
+
   @override
   Shape createShape(double x, double y, Color color) {
     return TriangleShape(
-      sideLength: 120,
+      sideLength: _sideLength,
+      isFilled: _isFilled,
       x: x,
       y: y,
       color: color,
@@ -18,5 +22,20 @@ class TriangleFactory extends ToolFactory with IconBoxMixin {
   }
 
   @override
-  Iterable<Property> get properties => [];
+  Iterable<Property> get properties => [
+        Property(
+          name: 'sideLength',
+          value: () => _sideLength,
+          onChange: (val) {
+            _sideLength = val;
+          },
+        ),
+        Property(
+          name: 'filled',
+          value: () => _isFilled,
+          onChange: (val) {
+            _isFilled = val;
+          },
+        ),
+      ];
 }
