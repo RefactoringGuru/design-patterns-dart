@@ -1,10 +1,8 @@
-import 'dart:ui';
+import 'package:flutter/material.dart';
 
-import 'package:flutter/cupertino.dart';
+import 'base_shape.dart';
 
-import '../pattern/shape.dart';
-
-class CircleShape extends Shape {
+class CircleShape extends BaseShape {
   final double radius;
   final bool isFilled;
 

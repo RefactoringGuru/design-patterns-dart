@@ -1,10 +1,10 @@
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import '../pattern/shape.dart';
+import 'base_shape.dart';
 
-class LineShape extends Shape {
+class LineShape extends BaseShape {
   final double length;
 
   LineShape({

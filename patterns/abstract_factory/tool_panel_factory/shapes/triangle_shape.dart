@@ -1,11 +1,11 @@
 import 'dart:math';
 import 'dart:ui';
 
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 
-import '../pattern/shape.dart';
+import 'base_shape.dart';
 
-class TriangleShape extends Shape {
+class TriangleShape extends BaseShape {
   final double sideLength;
   final bool isFilled;
 

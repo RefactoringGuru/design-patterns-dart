@@ -3,9 +3,9 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../pattern/shape.dart';
+import 'base_shape.dart';
 
-class StarShape extends Shape {
+class StarShape extends BaseShape {
   final double radius;
   final bool isFilled;
 
