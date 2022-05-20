@@ -33,7 +33,7 @@ Future<void> init() async {
 Future<void> buildWebProject() async {
   final flutterTargetFile = '${projectDir.path}bin\\main.dart';
   print('Build web app: $flutterTargetFile');
-  await cmd('flutter build web -t $flutterTargetFile --web-renderer html');
+  await cmd('flutter build web -t $flutterTargetFile');
 }
 
 Future<void> cloneOriginRepository() async {
