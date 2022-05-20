@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../app/shapes.dart';
 import 'independent/event_listenable_builder.dart';
-import 'shape_widget.dart';
 
 class DrawingBoard extends StatelessWidget {
   final Shapes shapes;
@@ -22,10 +21,13 @@ class DrawingBoard extends StatelessWidget {
         child: EventListenableBuilder(
           event: shapes.onAddShapeEvent,
           builder: (_) {
-            return Stack(
-              children: [
-                for (final shape in shapes) ShapeWidget(shape: shape),
-              ],
+            return LayoutBuilder(
+              builder: (_, constraints) {
+                return CustomPaint(
+                  size: Size(constraints.maxWidth, constraints.maxHeight),
+                  painter: ShapesPainter(shapes),
+                );
+              },
             );
           },
         ),
@@ -35,5 +37,26 @@ class DrawingBoard extends StatelessWidget {
 
   void addShape(Offset position) {
     onClick(position.dx, position.dy);
+  }
+}
+
+class ShapesPainter extends CustomPainter {
+  final Shapes shapes;
+
+  ShapesPainter(this.shapes);
+
+  @override
+  void paint(Canvas canvas, Size _) {
+    for (final shape in shapes) {
+      canvas.save();
+      canvas.translate(shape.x, shape.y);
+      shape.paint(canvas);
+      canvas.restore();
+    }
+  }
+
+  @override
+  bool shouldRepaint(covariant CustomPainter _) {
+    return false;
   }
 }

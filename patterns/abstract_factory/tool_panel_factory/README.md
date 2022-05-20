@@ -7,43 +7,34 @@ Tutorial: [here](https://refactoring.guru/design-patterns/abstract-factory).
 ### Online demo:
 Click on the picture to see the [demo](https://RefactoringGuru.github.io/design-patterns-dart/#/abstract_factory/tool_panel_factory).
 
-[![image](https://user-images.githubusercontent.com/8049534/168668992-369a1bab-9f97-4333-a20e-ffd06bf91b54.png)](https://refactoringguru.github.io/design-patterns-dart/#/abstract_factory/tool_panel_factory)
+[![image](https://user-images.githubusercontent.com/8049534/169530318-0ce7ee6a-3538-4398-a2ab-e6e85f2132b5.png)](https://refactoringguru.github.io/design-patterns-dart/#/abstract_factory/tool_panel_factory)
+
+### About
+![image](https://user-images.githubusercontent.com/8049534/169521422-052cc59a-7b3d-4889-8d76-5664a75b271a.png)
 
 ### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/168672053-73ae1c9c-8fad-45ae-9247-429f7b5da565.png)
+![image](https://user-images.githubusercontent.com/8049534/169528461-d7c5279d-7e7f-4ce7-b8d2-87388ec2d32f.png)
 
-### Client code (using the "createShape" method):
+### Client code:
 ```dart
-final app = App(
-  tools: Tools(
-    factories: [
-      TxtFactory(),
-      LineFactory(),
-      CircleFactory(),
-      TriangleFactory(),
-      StarFactory(),
-    ],
-  ),
-);
-
 class App {
   void addShape(double x, double y) {
-    final newShape = activeFactory.createShape(x, y, activeColor);
+    final newShape = activeToolFactory.createShape(x, y, activeColor);
     shapes.add(newShape);
   }
 }
 
-mixin IconBoxMixin implements FactoryTool {
-  Image? _icon;
+
+class PropertyPanel extends StatelessWidget {
+  final PropertyWidgetFactories factories;
 
   @override
-  Image get icon => _icon!;
-
-  Future<void> updateIcon(Color color) async {
-    final shape = createShape(0, 0, color);
-    final pngBytes = await _pngImageFromShape(shape);
-    _icon = Image.memory(pngBytes);
+  Widget build(BuildContext context) {
+    return Row(
+        children: propertyWidgetFactories
+            .createListWidgetsFrom(activeToolFactory.properties)
+            .toList(),
+      );
   }
 }
 ```
-

@@ -3,13 +3,15 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
-import '../pattern/shape.dart';
+import 'base_shape.dart';
 
-class StarShape extends Shape {
+class StarShape extends BaseShape {
   final double radius;
+  final bool isFilled;
 
   StarShape({
     required this.radius,
+    required this.isFilled,
     required double x,
     required double y,
     required Color color,
@@ -17,12 +19,20 @@ class StarShape extends Shape {
           x: x,
           y: y,
           color: color,
-        );
+        ) {
+    _starPath = Path()..addPolygon(_createStar(), true);
+  }
+
+  late final Path _starPath;
 
   @override
   void paint(Canvas can) {
-    final path = Path()..addPolygon(_createStar(), true);
-    can.drawPath(path, Paint()..color = color);
+    can.drawPath(
+      _starPath,
+      Paint()
+        ..style = isFilled ? PaintingStyle.fill : PaintingStyle.stroke
+        ..color = color,
+    );
   }
 
   @override

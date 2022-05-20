@@ -10,22 +10,18 @@ class Tools {
   final List<ToolFactory> factories;
   final List<Color> colors;
 
-  final activeFactory = ValueNotifier<ToolFactory?>(null);
+  late final ValueNotifier<ToolFactory> activeFactory;
 
-  final activeColor = ValueNotifier(Color(0x0FFFFFFFF));
+  late final ValueNotifier<Color> activeColor;
 
   Future<bool> get iconsReady => _iconsInitCompleter.future;
 
-  Tools({required this.factories, required this.colors}) {
+  Tools({required this.factories, required this.colors})
+      : assert(factories.isNotEmpty),
+        assert(colors.isNotEmpty) {
+    activeFactory = ValueNotifier(factories.first);
+    activeColor = ValueNotifier(colors.first);
     _initIconsFromShapes();
-
-    if (factories.isNotEmpty) {
-      activeFactory.value = factories.first;
-    }
-
-    if (colors.isNotEmpty) {
-      activeColor.value = colors.first;
-    }
   }
 
   final _iconsInitCompleter = Completer<bool>();

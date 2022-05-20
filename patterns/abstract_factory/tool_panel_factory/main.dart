@@ -7,8 +7,13 @@ import 'factories/circle_factory.dart';
 import 'factories/line_factory.dart';
 import 'factories/star_factory.dart';
 import 'factories/triangle_factory.dart';
-import 'factories/txt_factory.dart';
+import 'factories/text_factory.dart';
 import 'widgets/drawing_board.dart';
+import 'widgets/property_bar.dart';
+import 'widgets/property_widgets/bool_property_widget.dart';
+import 'widgets/property_widgets/double_property_widget.dart';
+import 'widgets/property_widgets/factories/property_widget_factories.dart';
+import 'widgets/property_widgets/string_property_widget.dart';
 import 'widgets/tool_panel.dart';
 
 class ToolPanelFactoryApp extends StatefulWidget {
@@ -23,11 +28,11 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
     shapes: Shapes([]),
     tools: Tools(
       factories: [
-        TxtFactory(),
         LineFactory(),
         CircleFactory(),
         TriangleFactory(),
         StarFactory(),
+        TextFactory(),
       ],
       colors: [
         Colors.white,
@@ -36,6 +41,14 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
         Colors.yellow,
       ],
     ),
+  );
+
+  final propertyWidgetFactories = PropertyWidgetFactories(
+    factories: [
+      StringPropertyWidgetFactory(),
+      DoublePropertyWidgetFactory(),
+      BoolPropertyWidgetFactory(),
+    ],
   );
 
   @override
@@ -48,6 +61,10 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
         ),
         ToolPanel(
           tools: app.tools,
+        ),
+        PropertyPanel(
+          tools: app.tools,
+          factories: propertyWidgetFactories,
         ),
       ],
     );

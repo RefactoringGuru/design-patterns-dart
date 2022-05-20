@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'panel.dart';
+
 class ToolBar extends StatelessWidget {
   final String title;
   final Widget child;
@@ -12,26 +14,8 @@ class ToolBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return _buildNamedPanel(
-      title: title,
-      child: child,
-    );
-  }
-
-  Widget _buildNamedPanel({required String title, required Widget child}) {
-    return Container(
-      width: 64,
-      clipBehavior: Clip.antiAlias,
-      decoration: BoxDecoration(
-          color: Color(0xFF3B3B3B),
-          borderRadius: BorderRadius.all(Radius.circular(3)),
-          boxShadow: [
-            BoxShadow(
-              color: Color(0x7C000000),
-              blurRadius: 6,
-              offset: Offset(2, 2),
-            ),
-          ]),
+    return Panel(
+      direction: Axis.vertical,
       child: Column(
         children: [
           _buildTitle(title),

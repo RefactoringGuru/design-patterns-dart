@@ -1,3 +1,6 @@
+## 0.23.12
+- Add properties bar to "Tool Panel Factory".
+
 ## 0.23.0
 - Add "Tool Panel Factory" flutter example
 

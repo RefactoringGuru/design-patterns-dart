@@ -12,7 +12,7 @@ class App {
 
   void addShape(double x, double y) {
     final activeColor = tools.activeColor.value;
-    final activeFactory = tools.activeFactory.value!;
+    final activeFactory = tools.activeFactory.value;
 
     final newShape = activeFactory.createShape(x, y, activeColor);
     newShape.centerToFit();
