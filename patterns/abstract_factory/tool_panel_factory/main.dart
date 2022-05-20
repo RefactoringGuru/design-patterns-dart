@@ -64,7 +64,7 @@ class _ToolPanelFactoryAppState extends State<ToolPanelFactoryApp> {
         ),
         PropertyPanel(
           tools: app.tools,
-          propertyWidgetFactories: propertyWidgetFactories,
+          factories: propertyWidgetFactories,
         ),
       ],
     );

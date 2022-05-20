@@ -8,12 +8,12 @@ import 'property_widgets/primitive/theme_property.dart';
 
 class PropertyPanel extends StatelessWidget {
   final Tools tools;
-  final PropertyWidgetFactories propertyWidgetFactories;
+  final PropertyWidgetFactories factories;
 
   const PropertyPanel({
     Key? key,
     required this.tools,
-    required this.propertyWidgetFactories,
+    required this.factories,
   }) : super(key: key);
 
   @override
@@ -28,7 +28,7 @@ class PropertyPanel extends StatelessWidget {
             valueListenable: tools.activeFactory,
             builder: (_, activeToolFactory, __) {
               return Row(
-                children: propertyWidgetFactories
+                children: factories
                     .createListWidgetsFrom(activeToolFactory.properties)
                     .toList(),
               );
