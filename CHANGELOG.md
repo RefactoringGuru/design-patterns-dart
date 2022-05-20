@@ -1,3 +1,6 @@
+## 0.23.13
+- Update demos splash screen logo (Ukraine).
+
 ## 0.23.12
 - Add properties bar to "Tool Panel Factory".
 
