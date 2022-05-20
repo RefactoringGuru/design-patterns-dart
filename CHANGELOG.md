@@ -1,3 +1,6 @@
+## 0.23.14
+- Replace web renderer html to canvakit (deploy_flutter_demo.dart).
+
 ## 0.23.13
 - Update demos splash screen logo (Ukraine).
 
