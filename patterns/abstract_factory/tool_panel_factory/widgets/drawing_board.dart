@@ -14,25 +14,22 @@ class DrawingBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Listener(
-      onPointerMove: (e) => addShape(e.localPosition),
-      child: GestureDetector(
-        onTapDown: (e) => addShape(e.localPosition),
-        child: Container(
-          color: Color(0xff1f1f1f),
-          child: EventListenableBuilder(
-            event: shapes.onAddShapeEvent,
-            builder: (_) {
-              return LayoutBuilder(
-                builder: (_, constraints) {
-                  return CustomPaint(
-                    size: Size(constraints.maxWidth, constraints.maxHeight),
-                    painter: ShapesPainter(shapes),
-                  );
-                },
-              );
-            },
-          ),
+    return GestureDetector(
+      onTapDown: (e) => addShape(e.localPosition),
+      child: Container(
+        color: Color(0xff1f1f1f),
+        child: EventListenableBuilder(
+          event: shapes.onAddShapeEvent,
+          builder: (_) {
+            return LayoutBuilder(
+              builder: (_, constraints) {
+                return CustomPaint(
+                  size: Size(constraints.maxWidth, constraints.maxHeight),
+                  painter: ShapesPainter(shapes),
+                );
+              },
+            );
+          },
         ),
       ),
     );
