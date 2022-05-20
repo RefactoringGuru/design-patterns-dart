@@ -13,15 +13,15 @@ class PropertyWidgetFactories {
 
   Widget createPropertyWidgetFrom(Property property) {
     for (final factory in _factories) {
-      if (factory.isPropertyContain(property)) {
-        return factory.createPropertyWidget(property);
+      if (factory.isPropertyCompatible(property)) {
+        return factory.createWidget(property);
       }
     }
 
     throw 'Value(${property.value()}) property is not support.';
   }
 
-  Iterable<Widget> createListPropertyWidgetsFrom(
+  Iterable<Widget> createListWidgetsFrom(
     Iterable<Property> properties,
   ) sync* {
     for (final property in properties) {

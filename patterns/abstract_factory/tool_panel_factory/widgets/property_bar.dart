@@ -29,7 +29,7 @@ class PropertyPanel extends StatelessWidget {
             builder: (_, activeToolFactory, __) {
               return Row(
                 children: propertyWidgetFactories
-                    .createListPropertyWidgetsFrom(activeToolFactory.properties)
+                    .createListWidgetsFrom(activeToolFactory.properties)
                     .toList(),
               );
             },

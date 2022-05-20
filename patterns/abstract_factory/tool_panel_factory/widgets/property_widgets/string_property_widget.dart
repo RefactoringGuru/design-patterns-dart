@@ -6,12 +6,12 @@ import 'primitive/filed_label.dart';
 
 class StringPropertyWidgetFactory implements PropertyWidgetFactory {
   @override
-  Widget createPropertyWidget(Property property) {
+  Widget createWidget(Property property) {
     return StringPropertyWidget(property: property);
   }
 
   @override
-  bool isPropertyContain(Property property) => property.value() is String;
+  bool isPropertyCompatible(Property property) => property.value() is String;
 }
 
 class StringPropertyWidget extends StatelessWidget {

@@ -6,12 +6,12 @@ import 'primitive/filed_label.dart';
 
 class BoolPropertyWidgetFactory implements PropertyWidgetFactory {
   @override
-  Widget createPropertyWidget(Property property) {
+  Widget createWidget(Property property) {
     return BoolPropertyWidget(property: property);
   }
 
   @override
-  bool isPropertyContain(Property property) => property.value() is bool;
+  bool isPropertyCompatible(Property property) => property.value() is bool;
 }
 
 class BoolPropertyWidget extends StatefulWidget {

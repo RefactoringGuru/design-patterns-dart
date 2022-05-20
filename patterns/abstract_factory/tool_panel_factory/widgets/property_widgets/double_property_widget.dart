@@ -6,12 +6,12 @@ import 'primitive/filed_label.dart';
 
 class DoublePropertyWidgetFactory implements PropertyWidgetFactory {
   @override
-  Widget createPropertyWidget(Property property) {
+  Widget createWidget(Property property) {
     return DoublePropertyWidget(property: property);
   }
 
   @override
-  bool isPropertyContain(Property property) => property.value() is double;
+  bool isPropertyCompatible(Property property) => property.value() is double;
 }
 
 class DoublePropertyWidget extends StatefulWidget {

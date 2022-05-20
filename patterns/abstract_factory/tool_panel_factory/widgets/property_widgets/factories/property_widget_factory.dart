@@ -3,7 +3,7 @@ import 'package:flutter/widgets.dart';
 import '../../../pattern/property.dart';
 
 abstract class PropertyWidgetFactory<T> {
-  Widget createPropertyWidget(Property property);
+  Widget createWidget(Property<T> property);
 
-  bool isPropertyContain(Property value);
+  bool isPropertyCompatible(Property<T> value);
 }
