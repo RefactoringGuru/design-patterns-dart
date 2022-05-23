@@ -3,7 +3,7 @@ import '../../shapes/shape.dart';
 
 abstract class CreationState extends ManipulationState {
   @override
-  void mouseDown(double x, y) {
+  void mouseDown(double x, double y) {
     final newShape = createShape();
     context.shapes.add(newShape);
     context.changeState(newShape.createSelectionState());
