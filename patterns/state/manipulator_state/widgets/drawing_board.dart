@@ -9,10 +9,14 @@ class DrawingBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.black12,
-      child: CustomPaint(
-        painter: _Painter(app),
+    return Listener(
+      onPointerUp: (e) => app.manipulator.mouseDown(0, 0),
+      child: Container(
+        constraints: BoxConstraints.expand(),
+        color:  Color(0xff1f1f1f),
+        child: CustomPaint(
+          painter: _Painter(app),
+        ),
       ),
     );
   }
