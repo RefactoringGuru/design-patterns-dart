@@ -20,9 +20,9 @@ void main() async {
   clear();
 }
 
-late final tmpDir = Directory.systemTemp.createTempSync();
-late final projectDir = thisPath(r'..\');
-late final webBuildDir = Directory(projectDir.uri.toFilePath() + r'build\web');
+ final tmpDir = Directory.systemTemp.createTempSync();
+ final projectDir = thisPath(r'..\');
+ final webBuildDir = Directory(projectDir.uri.toFilePath() + r'build\web');
 late final String originUrl;
 
 Future<void> init() async {

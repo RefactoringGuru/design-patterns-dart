@@ -34,5 +34,5 @@ void main() {
   // RU: Директор может знать больше одного рецепта строительства
   director.constructSportsCar(manualBuilder);
   final carManual = manualBuilder.getResult();
-  print("Car manual built:\n" + carManual.print());
+  print("Car manual built:\n${carManual.print()}");
 }
