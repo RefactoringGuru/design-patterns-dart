@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../states/selections/selection_state.dart';
 import 'dart:ui';
 
@@ -41,7 +43,12 @@ class BaseShape implements Shape {
 
   @override
   void paint(Canvas canvas) {
-
+    canvas.drawRect(
+      Rect.fromCenter(center: Offset(_x, _y), width: _width, height: _height),
+      Paint()
+        ..color = Colors.white
+        ..style = PaintingStyle.stroke,
+    );
   }
 
   double _x;
