@@ -1,12 +1,16 @@
 import 'package:flutter/cupertino.dart';
 
+import '../app/shapes.dart';
 import 'manipulation_state.dart';
 
 class ManipulatorContext {
+  final Shapes shapes;
   late ManipulationState _state;
 
-  ManipulatorContext({required ManipulationState initState})
-      : _state = initState {
+  ManipulatorContext({
+    required this.shapes,
+    required ManipulationState initState,
+  }) : _state = initState {
     _state.context = this;
   }
 

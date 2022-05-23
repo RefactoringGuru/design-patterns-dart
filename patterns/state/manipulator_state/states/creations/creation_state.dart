@@ -1,12 +1,13 @@
 import '../../pattern/manipulation_state.dart';
-import '../free_sate.dart';
+import '../../shapes/shape.dart';
 
 abstract class CreationState extends ManipulationState {
   @override
   void mouseDown(double x, y) {
-    print(createShape());
-    context!.changeState(FreeState());
+    final newShape = createShape();
+    context!.shapes.add(newShape);
+    context!.changeState(newShape.createSelectionState());
   }
 
-  String createShape();
+  Shape createShape();
 }

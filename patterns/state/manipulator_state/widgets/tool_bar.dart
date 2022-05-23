@@ -20,22 +20,21 @@ class ToolBar extends StatelessWidget {
         thicknessHeight: 64,
         direction: Axis.horizontal,
         child: EventListenableBuilder(
-          event: app.manipulator.onStateChange,
-          builder: (_) {
-            return Row(
-              children: [
-                for (final tool in app.tools)
-                  ToolButton(
-                    active: tool.state == app.manipulator.state,
-                    icon: Center(child: tool.icon),
-                    onTap: () {
-                      app.manipulator.changeState(tool.state);
-                    },
-                  )
-              ],
-            );
-          }
-        ),
+            event: app.manipulator.onStateChange,
+            builder: (_) {
+              return Row(
+                children: [
+                  for (final tool in app.tools)
+                    ToolButton(
+                      active: tool.state == app.manipulator.state,
+                      icon: Center(child: tool.icon),
+                      onTap: () {
+                        app.manipulator.changeState(tool.state);
+                      },
+                    )
+                ],
+              );
+            }),
       ),
     );
   }

@@ -1,8 +1,10 @@
+import '../../shapes/base_shape.dart';
+import '../../shapes/shape.dart';
 import 'creation_state.dart';
 
-class RectangleCreationState  extends CreationState {
+class RectangleCreationState extends CreationState {
   @override
-  String createShape() {
-    return 'Rectangle';
+  Shape createShape() {
+    return BaseShape(100, 100, 100, 100);
   }
 }

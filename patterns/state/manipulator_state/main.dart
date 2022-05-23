@@ -20,30 +20,38 @@ class ManipulatorStateApp extends StatefulWidget {
 }
 
 class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
-  final app = App(
-    shapes: Shapes(),
-    manipulator: ManipulatorContext(
-      initState: FreeState(),
-    ),
-    tools: [
-      Tool(
-        icon: Icon(MdiIcons.cursorDefaultOutline),
-        state: FreeState(),
+  late final App app;
+
+  @override
+  void initState() {
+    final shapes = Shapes();
+    app = App(
+      shapes: shapes,
+      manipulator: ManipulatorContext(
+        initState: FreeState(),
+        shapes: shapes,
       ),
-      Tool(
-        icon: Icon(MdiIcons.rectangleOutline),
-        state: RectangleCreationState(),
-      ),
-      Tool(
-        icon: Icon(MdiIcons.circleOutline),
-        state: CircleCreationState(),
-      ),
-      Tool(
-        icon: Icon(MdiIcons.formatTextVariant),
-        state: TextCreationState(),
-      ),
-    ],
-  );
+      tools: [
+        Tool(
+          icon: Icon(MdiIcons.cursorDefaultOutline),
+          state: FreeState(),
+        ),
+        Tool(
+          icon: Icon(MdiIcons.rectangleOutline),
+          state: RectangleCreationState(),
+        ),
+        Tool(
+          icon: Icon(MdiIcons.circleOutline),
+          state: CircleCreationState(),
+        ),
+        Tool(
+          icon: Icon(MdiIcons.formatTextVariant),
+          state: TextCreationState(),
+        ),
+      ],
+    );
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
