@@ -32,7 +32,7 @@ class ManipulatorContext {
 
   void mouseMove(double x, double y) {}
 
-  void mouseDown(double x, y) => _state.mouseDown(x, y);
+  void mouseDown(double x, double y) => _state.mouseDown(x, y);
 
   void mouseUp() {}
 

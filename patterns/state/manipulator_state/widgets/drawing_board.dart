@@ -11,7 +11,10 @@ class DrawingBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Listener(
-      onPointerUp: (e) => app.manipulator.mouseDown(0, 0),
+      onPointerUp: (e) => app.manipulator.mouseDown(
+        e.localPosition.dx,
+        e.localPosition.dy,
+      ),
       child: Container(
         constraints: BoxConstraints.expand(),
         color: Color(0xff1f1f1f),
@@ -34,6 +37,7 @@ class _Painter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
+    canvas.translate(0.5, 0.5);
     for (final shape in app.shapes) {
       shape.paint(canvas);
     }
