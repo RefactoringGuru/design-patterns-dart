@@ -4,7 +4,7 @@ import 'creation_state.dart';
 
 class CircleCreationState extends CreationState {
   @override
-  Shape createShape() {
-    return BaseShape(100, 100, 100, 100);
+  Shape createShape(double x, double y) {
+    return BaseShape(x, y, 100, 100);
   }
 }
