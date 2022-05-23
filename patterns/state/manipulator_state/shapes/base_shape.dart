@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
 import '../states/selections/selection_state.dart';
-import 'dart:ui';
-
 import 'shape.dart';
 
 class BaseShape implements Shape {

@@ -1,4 +1,4 @@
-import '../pattern/manipulation_state.dart';
+import '../pattern/manipulator_context.dart';
 
 class FreeState extends ManipulationState {
   @override

@@ -1,7 +1,9 @@
-import 'manipulator_context.dart';
+part of manipulator;
 
 class ManipulationState {
-  ManipulatorContext? context;
+  ManipulatorContext? _context;
+
+  ManipulatorContext get context => _context!;
 
   void mouseMove(double x, double y) {}
 

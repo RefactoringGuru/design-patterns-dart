@@ -1,7 +1,9 @@
-import 'package:flutter/cupertino.dart';
+library manipulator;
 
+import 'package:flutter/material.dart';
 import '../app/shapes.dart';
-import 'manipulation_state.dart';
+
+part 'manipulation_state.dart';
 
 class ManipulatorContext {
   final Shapes shapes;
@@ -11,7 +13,7 @@ class ManipulatorContext {
     required this.shapes,
     required ManipulationState initState,
   }) : _state = initState {
-    _state.context = this;
+    _state._context = this;
   }
 
   ManipulationState get state => _state;
@@ -22,7 +24,7 @@ class ManipulatorContext {
     }
 
     _state = newState;
-    _state.context = this;
+    _state._context = this;
     onStateChange._emit();
   }
 
