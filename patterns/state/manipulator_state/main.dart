@@ -1,12 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:material_design_icons_flutter/material_design_icons_flutter.dart';
 
 import 'app/app.dart';
 import 'app/shapes.dart';
 import 'app/tool.dart';
 import 'pattern/manipulator_context.dart';
-import 'states/create_circle_state.dart';
-import 'states/create_rectangle_state.dart';
-import 'states/create_text_state.dart';
+import 'states/creations/circle_creation_state.dart';
+import 'states/creations/rectangle_creation_state.dart';
+import 'states/creations/text_creation_state.dart';
 import 'states/free_sate.dart';
 import 'widgets/drawing_board.dart';
 import 'widgets/tool_bar.dart';
@@ -15,7 +16,7 @@ class ManipulatorStateApp extends StatefulWidget {
   const ManipulatorStateApp({Key? key}) : super(key: key);
 
   @override
-  _ManipulatorStateAppState createState() => _ManipulatorStateAppState();
+  State createState() => _ManipulatorStateAppState();
 }
 
 class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
@@ -26,31 +27,35 @@ class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
     ),
     tools: [
       Tool(
-        icon: Icon(Icons.agriculture_sharp),
+        icon: Icon(MdiIcons.cursorDefaultOutline),
         state: FreeState(),
       ),
       Tool(
-        icon: Icon(Icons.loupe),
-        state: CreateRectangleState(),
+        icon: Icon(MdiIcons.rectangleOutline),
+        state: RectangleCreationState(),
       ),
       Tool(
-        icon: Icon(Icons.checklist_outlined),
-        state: CreateCircleState(),
+        icon: Icon(MdiIcons.circleOutline),
+        state: CircleCreationState(),
       ),
       Tool(
-        icon: Icon(Icons.fiber_dvr),
-        state: CreateTextState(),
+        icon: Icon(MdiIcons.formatTextVariant),
+        state: TextCreationState(),
       ),
     ],
   );
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        DrawingBoard(app: app),
-        ToolBar(),
-      ],
+    return Scaffold(
+      body: SizedBox.expand(
+        child: Stack(
+          children: [
+            DrawingBoard(app: app),
+            ToolBar(app: app),
+          ],
+        ),
+      ),
     );
   }
 }

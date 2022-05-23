@@ -2,16 +2,17 @@ import 'package:flutter/material.dart';
 
 class Panel extends StatelessWidget {
   static const thicknessWidth = 64.0;
-  static const thicknessHeight = 48.0;
+  final double thicknessHeight;
 
   final Axis direction;
   final Widget child;
 
-  const Panel({
-    Key? key,
-    required this.direction,
-    required this.child,
-  }) : super(key: key);
+  const Panel(
+      {Key? key,
+      required this.direction,
+      required this.child,
+      this.thicknessHeight = 48.0})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
