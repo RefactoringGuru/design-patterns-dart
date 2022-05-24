@@ -9,11 +9,6 @@ mixin SpecificActionsMixin implements ManipulationState {
       return false;
     }
 
-    // if (context.state is SelectionState &&
-    //     (context.state as SelectionState).selectedShape == shape) {
-    //   return true;
-    // }
-
     context.changeState(
       MovingState(
         startX: x,

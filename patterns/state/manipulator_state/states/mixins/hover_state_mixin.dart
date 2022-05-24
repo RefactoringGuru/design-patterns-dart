@@ -23,9 +23,9 @@ mixin HoverStateMixin implements ManipulationState {
     context.update();
   }
 
-  void onHover(){}
+  void onHover() {}
 
-  void onMouseLeave(){}
+  void onMouseLeave() {}
 
   Shape? _hoverShape;
 
@@ -37,10 +37,10 @@ mixin HoverStateMixin implements ManipulationState {
 
     canvas.drawRect(
       Rect.fromLTWH(
-        _hoverShape!.x+2,
-        _hoverShape!.y+2,
-        _hoverShape!.width-4,
-        _hoverShape!.height-4,
+        _hoverShape!.x + 2,
+        _hoverShape!.y + 2,
+        _hoverShape!.width - 4,
+        _hoverShape!.height - 4,
       ),
       Paint()
         ..color = Colors.cyanAccent
