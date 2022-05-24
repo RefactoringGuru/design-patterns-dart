@@ -38,6 +38,11 @@ class ManipulatorContext {
     onUpdate._emit();
   }
 
+  @override
+  String toString() {
+    return _state.toString();
+  }
+
   void mouseMove(double x, double y) {
     _state.mouseMove(x, y);
   }

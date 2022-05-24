@@ -7,4 +7,9 @@ class CircleCreationState extends CreationState {
   Shape createShape(double x, double y) {
     return BaseShape(x, y, 100, 100);
   }
+
+  @override
+  String toString() {
+    return 'Circle Creation State';
+  }
 }

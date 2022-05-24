@@ -9,6 +9,7 @@ import 'states/creations/circle_creation_state.dart';
 import 'states/creations/rectangle_creation_state.dart';
 import 'states/creations/text_creation_state.dart';
 import 'states/free_sate.dart';
+import 'widgets/current_state.dart';
 import 'widgets/drawing_board.dart';
 import 'widgets/tool_bar.dart';
 
@@ -61,6 +62,7 @@ class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
           children: [
             DrawingBoard(app: app),
             ToolBar(app: app),
+            CurrentState(manipulator: app.manipulator),
           ],
         ),
       ),

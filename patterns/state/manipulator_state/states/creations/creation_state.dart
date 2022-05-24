@@ -3,28 +3,21 @@ import 'dart:ui';
 import '../../pattern/manipulator_context.dart';
 import '../../shapes/shape.dart';
 import '../mixins/hover_state_mixin.dart';
-import '../selections/selection_state.dart';
 import '../mixins/specific_actions_mixin.dart';
 
 abstract class CreationState extends ManipulationState
     with SpecificActionsMixin, HoverStateMixin {
-  var _startX = 0.0;
-  var _startY = 0.0;
-  Shape? _newShape;
-  var _isDragged = false;
+  Shape createShape(double x, double y);
 
   @override
-  bool mouseDown(double x, double y) {
-    _startX = x;
-    _startY = y;
-    _newShape = createShape(x, y);
-    return true;
+  void mouseDown(double x, double y) {
+    _startCreatingShape(x, y);
   }
 
   @override
   void mouseMove(double x, double y) {
-    if (_newShape == null) {
-      super.mouseMove(x, y);
+    if (_isCreatingNotStart) {
+      super.mouseMove(x, y); // HoverStateMixin
       return;
     }
 
@@ -35,7 +28,7 @@ abstract class CreationState extends ManipulationState
 
   @override
   void mouseUp() {
-    if (_newShape == null) {
+    if (_isCreatingNotStart) {
       return;
     }
 
@@ -46,9 +39,7 @@ abstract class CreationState extends ManipulationState
 
     context.shapes.add(_newShape!);
     context.changeState(
-      SelectionState(
-        selectedShape: _newShape!,
-      ),
+      _newShape!.createSelectionState(),
     );
 
     _isDragged = false;
@@ -61,5 +52,16 @@ abstract class CreationState extends ManipulationState
     super.paint(canvas);
   }
 
-  Shape createShape(double x, double y);
+  var _startX = 0.0;
+  var _startY = 0.0;
+  Shape? _newShape;
+  var _isDragged = false;
+
+  void _startCreatingShape(double x, double y) {
+    _startX = x;
+    _startY = y;
+    _newShape = createShape(x, y);
+  }
+
+  bool get _isCreatingNotStart => _newShape == null;
 }

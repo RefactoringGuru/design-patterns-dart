@@ -7,4 +7,9 @@ class TextCreationState extends CreationState {
   Shape createShape(double x, double y) {
     return BaseShape(x, y, 100, 100);
   }
+
+  @override
+  String toString() {
+    return 'Text Creation State';
+  }
 }

@@ -6,6 +6,11 @@ class FreeState extends ManipulationState
     with SpecificActionsMixin, HoverStateMixin {
   @override
   void mouseDown(double x, double y) {
-    trySelectShape(x, y);
+    trySelectAndStartMovingShape(x, y);
+  }
+
+  @override
+  String toString() {
+    return 'Free State';
   }
 }

@@ -55,7 +55,6 @@ class _Painter extends CustomPainter {
 
   @override
   void paint(Canvas canvas, Size size) {
-    canvas.translate(0.5, 0.5);
     for (final shape in app.shapes) {
       shape.paint(canvas);
     }

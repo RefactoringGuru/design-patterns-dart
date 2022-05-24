@@ -14,9 +14,9 @@ class SelectionState extends ManipulationState
 
   @override
   void mouseDown(double x, double y) {
-    final isNotShapeSelected = !trySelectShape(x, y);
+    final isShapeNotSelected = !trySelectAndStartMovingShape(x, y);
 
-    if (isNotShapeSelected) {
+    if (isShapeNotSelected) {
       context.changeState(FreeState());
     }
   }
@@ -26,10 +26,10 @@ class SelectionState extends ManipulationState
     super.paint(canvas);
     canvas.drawRect(
       Rect.fromLTWH(
-        selectedShape.x - 1,
-        selectedShape.y - 1,
-        selectedShape.width + 2,
-        selectedShape.height + 2,
+        selectedShape.x+1,
+        selectedShape.y+1,
+        selectedShape.width-2,
+        selectedShape.height-2,
       ),
       Paint()
         ..color = Colors.cyanAccent

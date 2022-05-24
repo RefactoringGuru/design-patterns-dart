@@ -7,12 +7,12 @@ class Panel extends StatelessWidget {
   final Axis direction;
   final Widget child;
 
-  const Panel(
-      {Key? key,
-      required this.direction,
-      required this.child,
-      this.thicknessHeight = 48.0})
-      : super(key: key);
+  const Panel({
+    Key? key,
+    required this.direction,
+    required this.child,
+    this.thicknessHeight = 48.0,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
