@@ -8,14 +8,14 @@ part 'manipulation_state.dart';
 class ManipulatorContext {
   final Shapes shapes;
 
-  ManipulationState _state;
-
   ManipulatorContext({
     required this.shapes,
     required ManipulationState initState,
   }) : _state = initState {
     _state._context = this;
   }
+
+  ManipulationState _state;
 
   ManipulationState get state => _state;
 
