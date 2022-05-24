@@ -26,7 +26,7 @@ class ToolBar extends StatelessWidget {
                 children: [
                   for (final tool in app.tools)
                     ToolButton(
-                      active: tool.state == app.manipulator.state,
+                      active: tool.state.runtimeType == app.manipulator.state.runtimeType,
                       icon: Center(child: tool.icon),
                       onTap: () {
                         app.manipulator.changeState(tool.state);

@@ -1,8 +1,11 @@
 import '../pattern/manipulator_context.dart';
+import 'specific_actions_mixin.dart';
 
-class FreeState extends ManipulationState {
+class FreeState extends ManipulationState with SpecificActionsMixin {
   @override
   void mouseDown(double x, double y) {
-    print('selected');
+    trySelectShape(x, y);
   }
 }
+
+

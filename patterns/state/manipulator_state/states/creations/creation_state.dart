@@ -11,10 +11,11 @@ abstract class CreationState extends ManipulationState {
   var _isDragged = false;
 
   @override
-  void mouseDown(double x, double y) {
+  bool mouseDown(double x, double y) {
     _startX = x;
     _startY = y;
     _newShape = createShape(x, y);
+    return true;
   }
 
   @override

@@ -14,12 +14,4 @@ class ManipulationState {
   void keyDown(String key) {}
 
   void paint(Canvas canvas) {}
-
-  @override
-  bool operator ==(Object other) {
-    return runtimeType == other.runtimeType;
-  }
-
-  @override
-  int get hashCode => super.hashCode.toInt();
 }
