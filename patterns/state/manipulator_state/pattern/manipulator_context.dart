@@ -32,7 +32,9 @@ class ManipulatorContext {
   final onStateChange = Event();
   final onUpdate = Event();
 
-  void update(){
+  var cursor = MouseCursor.defer;
+
+  void update() {
     onUpdate._emit();
   }
 
@@ -60,5 +62,3 @@ class ManipulatorContext {
 class Event extends ChangeNotifier {
   void _emit() => notifyListeners();
 }
-
-

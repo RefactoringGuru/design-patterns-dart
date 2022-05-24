@@ -7,5 +7,3 @@ class FreeState extends ManipulationState with SpecificActionsMixin {
     trySelectShape(x, y);
   }
 }
-
-

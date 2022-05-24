@@ -21,17 +21,18 @@ class SelectionState extends ManipulationState with SpecificActionsMixin {
 
   @override
   void paint(Canvas canvas) {
+    super.paint(canvas);
     canvas.drawRect(
       Rect.fromLTWH(
-        selectedShape.x-1,
-        selectedShape.y-1,
-        selectedShape.width+2,
-        selectedShape.height+2,
+        selectedShape.x - 1,
+        selectedShape.y - 1,
+        selectedShape.width + 2,
+        selectedShape.height + 2,
       ),
       Paint()
         ..color = Colors.cyanAccent
         ..style = PaintingStyle.stroke
-      ..strokeWidth = 2.0,
+        ..strokeWidth = 2.0,
     );
   }
 }

@@ -19,8 +19,13 @@ class Shapes with IterableMixin<Shape> {
   final onChange = Event();
 
   Shape? shapeFromCoordinate(x, y) {
-    for(final shape in _shapes){
-      final shapeRect = Rect.fromLTWH(shape.x, shape.y, shape.width, shape.height,);
+    for (final shape in _shapes) {
+      final shapeRect = Rect.fromLTWH(
+        shape.x,
+        shape.y,
+        shape.width,
+        shape.height,
+      );
 
       if (shapeRect.contains(Offset(x, y))) {
         return shape;

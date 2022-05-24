@@ -42,9 +42,13 @@ class BaseShape implements Shape {
   @override
   void paint(Canvas canvas) {
     canvas.drawRect(
-      Rect.fromLTWH(_x, _y,  _width, _height),
-      Paint()
-        ..color = Colors.white
+      Rect.fromLTWH(
+        _x,
+        _y,
+        _width,
+        _height,
+      ),
+      Paint()..color = Colors.white,
     );
   }
 

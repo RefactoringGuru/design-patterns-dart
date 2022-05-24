@@ -3,8 +3,10 @@ import 'dart:ui';
 import '../../pattern/manipulator_context.dart';
 import '../../shapes/shape.dart';
 import '../selections/selection_state.dart';
+import '../specific_actions_mixin.dart';
 
-abstract class CreationState extends ManipulationState {
+abstract class CreationState extends ManipulationState
+    with SpecificActionsMixin {
   var _startX = 0.0;
   var _startY = 0.0;
   Shape? _newShape;
@@ -21,6 +23,7 @@ abstract class CreationState extends ManipulationState {
   @override
   void mouseMove(double x, double y) {
     if (_newShape == null) {
+      super.mouseMove(x, y);
       return;
     }
 
@@ -36,22 +39,25 @@ abstract class CreationState extends ManipulationState {
     }
 
     if (!_isDragged) {
-      _newShape!.move(_startX-50, _startY-50);
+      _newShape!.move(_startX - 50, _startY - 50);
       _newShape!.resize(100, 100);
     }
 
-    _isDragged = false;
     context.shapes.add(_newShape!);
     context.changeState(
       SelectionState(
         selectedShape: _newShape!,
       ),
     );
+
+    _isDragged = false;
+    _newShape = null;
   }
 
   @override
   void paint(Canvas canvas) {
     _newShape?.paint(canvas);
+    super.paint(canvas);
   }
 
   Shape createShape(double x, double y);

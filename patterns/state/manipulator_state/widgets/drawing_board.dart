@@ -15,6 +15,10 @@ class DrawingBoard extends StatelessWidget {
         e.localPosition.dx,
         e.localPosition.dy,
       ),
+      onPointerHover: (e) => app.manipulator.mouseMove(
+        e.localPosition.dx,
+        e.localPosition.dy,
+      ),
       onPointerMove: (e) => app.manipulator.mouseMove(
         e.localPosition.dx,
         e.localPosition.dy,
@@ -27,12 +31,16 @@ class DrawingBoard extends StatelessWidget {
           event: app.shapes.onChange,
           builder: (_) {
             return EventListenableBuilder(
-                event: app.manipulator.onUpdate,
-                builder: (_) {
-                  return CustomPaint(
+              event: app.manipulator.onUpdate,
+              builder: (_) {
+                return MouseRegion(
+                  cursor: app.manipulator.cursor,
+                  child: CustomPaint(
                     painter: _Painter(app),
-                  );
-                });
+                  ),
+                );
+              },
+            );
           },
         ),
       ),
