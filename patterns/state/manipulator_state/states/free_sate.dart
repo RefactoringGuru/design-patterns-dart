@@ -1,6 +1,6 @@
 import '../pattern/manipulator_context.dart';
-import 'hover_state_mixin.dart';
-import 'specific_actions_mixin.dart';
+import 'mixins/hover_state_mixin.dart';
+import 'mixins/specific_actions_mixin.dart';
 
 class FreeState extends ManipulationState
     with SpecificActionsMixin, HoverStateMixin {

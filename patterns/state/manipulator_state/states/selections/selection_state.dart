@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../pattern/manipulator_context.dart';
 import '../../shapes/shape.dart';
 import '../free_sate.dart';
-import '../hover_state_mixin.dart';
-import '../specific_actions_mixin.dart';
+import '../mixins/hover_state_mixin.dart';
+import '../mixins/specific_actions_mixin.dart';
 
 class SelectionState extends ManipulationState
     with SpecificActionsMixin, HoverStateMixin {

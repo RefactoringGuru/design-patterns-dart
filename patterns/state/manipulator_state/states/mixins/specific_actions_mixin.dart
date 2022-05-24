@@ -1,5 +1,5 @@
-import '../pattern/manipulator_context.dart';
-import 'selections/selection_state.dart';
+import '../../pattern/manipulator_context.dart';
+import '../selections/selection_state.dart';
 
 mixin SpecificActionsMixin implements ManipulationState {
   bool trySelectShape(double x, double y) {

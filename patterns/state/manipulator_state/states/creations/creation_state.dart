@@ -2,9 +2,9 @@ import 'dart:ui';
 
 import '../../pattern/manipulator_context.dart';
 import '../../shapes/shape.dart';
-import '../hover_state_mixin.dart';
+import '../mixins/hover_state_mixin.dart';
 import '../selections/selection_state.dart';
-import '../specific_actions_mixin.dart';
+import '../mixins/specific_actions_mixin.dart';
 
 abstract class CreationState extends ManipulationState
     with SpecificActionsMixin, HoverStateMixin {
