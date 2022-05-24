@@ -11,20 +11,30 @@ class DrawingBoard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Listener(
-      onPointerUp: (e) => app.manipulator.mouseDown(
+      onPointerDown: (e) => app.manipulator.mouseDown(
         e.localPosition.dx,
         e.localPosition.dy,
       ),
+      onPointerMove: (e) => app.manipulator.mouseMove(
+        e.localPosition.dx,
+        e.localPosition.dy,
+      ),
+      onPointerUp: (e) => app.manipulator.mouseUp(),
       child: Container(
         constraints: BoxConstraints.expand(),
         color: Color(0xff1f1f1f),
         child: EventListenableBuilder(
-            event: app.shapes.onChange,
-            builder: (_) {
-              return CustomPaint(
-                painter: _Painter(app),
-              );
-            }),
+          event: app.shapes.onChange,
+          builder: (_) {
+            return EventListenableBuilder(
+                event: app.manipulator.onUpdate,
+                builder: (_) {
+                  return CustomPaint(
+                    painter: _Painter(app),
+                  );
+                });
+          },
+        ),
       ),
     );
   }

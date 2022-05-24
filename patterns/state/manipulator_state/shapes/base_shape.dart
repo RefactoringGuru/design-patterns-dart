@@ -24,7 +24,7 @@ class BaseShape implements Shape {
 
   @override
   SelectionState createSelectionState() {
-    return SelectionState();
+    return SelectionState(selectedShape: this);
   }
 
   @override
@@ -42,10 +42,9 @@ class BaseShape implements Shape {
   @override
   void paint(Canvas canvas) {
     canvas.drawRect(
-      Rect.fromCenter(center: Offset(_x, _y), width: _width, height: _height),
+      Rect.fromLTWH(_x, _y,  _width, _height),
       Paint()
         ..color = Colors.white
-        ..style = PaintingStyle.stroke,
     );
   }
 

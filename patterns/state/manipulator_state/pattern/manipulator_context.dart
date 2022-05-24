@@ -7,7 +7,8 @@ part 'manipulation_state.dart';
 
 class ManipulatorContext {
   final Shapes shapes;
-  late ManipulationState _state;
+
+  ManipulationState _state;
 
   ManipulatorContext({
     required this.shapes,
@@ -29,18 +30,35 @@ class ManipulatorContext {
   }
 
   final onStateChange = Event();
+  final onUpdate = Event();
 
-  void mouseMove(double x, double y) {}
+  void update(){
+    onUpdate._emit();
+  }
 
-  void mouseDown(double x, double y) => _state.mouseDown(x, y);
+  void mouseMove(double x, double y) {
+    _state.mouseMove(x, y);
+  }
 
-  void mouseUp() {}
+  void mouseDown(double x, double y) {
+    _state.mouseDown(x, y);
+  }
 
-  void keyDown(String key) {}
+  void mouseUp() {
+    _state.mouseUp();
+  }
 
-  void paint(Canvas canvas) {}
+  void keyDown(String key) {
+    _state.keyDown(key);
+  }
+
+  void paint(Canvas canvas) {
+    _state.paint(canvas);
+  }
 }
 
 class Event extends ChangeNotifier {
   void _emit() => notifyListeners();
 }
+
+
