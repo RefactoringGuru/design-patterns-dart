@@ -1,3 +1,5 @@
+import 'package:flutter/material.dart';
+
 import '../states/selections/resizable_state.dart';
 import '../states/selections/selection_state.dart';
 import 'base_shape.dart';
@@ -8,5 +10,18 @@ class RectangleShape extends BaseShape {
   @override
   SelectionState createSelectionState() {
     return ResizableState(selectedShape: this);
+  }
+
+  @override
+  void paint(Canvas canvas) {
+    canvas.drawRect(
+      Rect.fromLTWH(
+        x,
+        y,
+        width,
+        height,
+      ),
+      Paint()..color = Colors.white,
+    );
   }
 }
