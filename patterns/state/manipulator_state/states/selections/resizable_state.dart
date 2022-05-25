@@ -20,17 +20,12 @@ class ResizableState extends SelectionState {
     for (final marker in _markers) {
       marker.mouseDown(x, y);
       if (marker.isDown) {
+        context.changeState(marker);
         return;
       }
     }
 
     super.mouseDown(x, y);
-  }
-
-  void updateMarkersPosition() {
-    for (final marker in _markers) {
-      marker.updatePosition();
-    }
   }
 
   @override
@@ -58,6 +53,12 @@ class ResizableState extends SelectionState {
 
     for (final marker in _markers) {
       marker.render(canvas);
+    }
+  }
+
+  void updateMarkersPosition() {
+    for (final marker in _markers) {
+      marker.updatePosition();
     }
   }
 

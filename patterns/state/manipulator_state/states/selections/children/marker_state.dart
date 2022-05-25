@@ -15,6 +15,7 @@ class MarkerState extends ManipulationState with HoverStateMixin {
 
   MarkerState({
     required Offset Function() updatePosition,
+    required this.mouseEffect,
     required this.hoverCursor,
     required this.parentState,
   })  : markerShape = MarkerShape(),
@@ -28,6 +29,10 @@ class MarkerState extends ManipulationState with HoverStateMixin {
         parentState.selectedShape.x,
         parentState.selectedShape.y,
       ),
+      mouseEffect: (double x, double y) => parentState.selectedShape.resize(
+        x - parentState.selectedShape.x,
+        y - parentState.selectedShape.y,
+      ),
       hoverCursor: SystemMouseCursors.resizeUpLeft,
       parentState: parentState,
     ).._name = 'MarkerState.topLeft';
@@ -38,6 +43,10 @@ class MarkerState extends ManipulationState with HoverStateMixin {
       updatePosition: () => Offset(
         parentState.selectedShape.x + parentState.selectedShape.width,
         parentState.selectedShape.y,
+      ),
+      mouseEffect: (double x, double y) => parentState.selectedShape.resize(
+        x - parentState.selectedShape.x,
+        y - parentState.selectedShape.y,
       ),
       hoverCursor: SystemMouseCursors.resizeUpRight,
       parentState: parentState,
@@ -50,6 +59,10 @@ class MarkerState extends ManipulationState with HoverStateMixin {
         parentState.selectedShape.x + parentState.selectedShape.width,
         parentState.selectedShape.y + parentState.selectedShape.height,
       ),
+      mouseEffect: (double x, double y) => parentState.selectedShape.resize(
+        x - parentState.selectedShape.x,
+        y - parentState.selectedShape.y,
+      ),
       hoverCursor: SystemMouseCursors.resizeDownRight,
       parentState: parentState,
     ).._name = 'MarkerState.bottomRight';
@@ -61,12 +74,13 @@ class MarkerState extends ManipulationState with HoverStateMixin {
         parentState.selectedShape.x,
         parentState.selectedShape.y + parentState.selectedShape.height,
       ),
+      mouseEffect: (double x, double y) {
+        parentState.selectedShape.move(x, parentState.selectedShape.y);
+      },
       hoverCursor: SystemMouseCursors.resizeDownLeft,
       parentState: parentState,
     ).._name = 'MarkerState.bottomLeft';
   }
-
-  final Offset Function() _updatePosition;
 
   void updatePosition() {
     final p = _updatePosition();
@@ -77,7 +91,6 @@ class MarkerState extends ManipulationState with HoverStateMixin {
   void mouseDown(double x, double y) {
     if (isHover) {
       _isDown = true;
-      context.changeState(this);
     }
   }
 
@@ -85,11 +98,7 @@ class MarkerState extends ManipulationState with HoverStateMixin {
   void mouseMove(double x, double y) {
     super.mouseMove(x, y);
     if (_isDown) {
-      parentState.selectedShape.resize(
-        x - parentState.selectedShape.x,
-        y - parentState.selectedShape.y,
-      );
-
+      mouseEffect.call(x, y);
       parentState.updateMarkersPosition();
       context.update();
     }
@@ -142,6 +151,8 @@ class MarkerState extends ManipulationState with HoverStateMixin {
 
   bool get isDown => _isDown;
 
+  final void Function(double x, double y) mouseEffect;
+  final Offset Function() _updatePosition;
   bool _isDown = false;
   String _name = 'MarkerState';
 
