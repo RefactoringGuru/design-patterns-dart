@@ -1,9 +1,13 @@
-import 'package:flutter/material.dart';
+import 'dart:ui';
 
-import 'children/marker_state.dart';
-import 'selection_state.dart';
+import 'package:flutter/services.dart';
 
-import '../../shapes/shape.dart';
+import '../../../shapes/marker_shape.dart';
+import '../../../shapes/shape.dart';
+import '../../../pattern/manipulation_context.dart';
+import '../../mixins/hover_state_mixin.dart';
+import '../resizable_state.dart';
+import '../selection_state.dart';
 
 class MarkerState extends ManipulationState with HoverStateMixin {
   final SelectionState parentState;
@@ -53,6 +57,46 @@ class MarkerState extends ManipulationState with HoverStateMixin {
     ).._name = 'MarkerState.bottomLeft';
   }
 
+
+  @override
+  void mouseDown(double x, double y) {
+    if (isHover) {
+      _isDown = true;
+      context.changeState(this);
+    }
+  }
+
+  @override
+  void mouseMove(double x, double y) {
+    super.mouseMove(x, y);
+    if (_isDown) {
+      parentState.selectedShape.resize(
+        x - parentState.selectedShape.x,
+        y - parentState.selectedShape.y,
+      );
+
+      markerShape.move(
+        parentState.selectedShape.x + parentState.selectedShape.width,
+        parentState.selectedShape.y + parentState.selectedShape.height,
+      );
+      context.update();
+    }
+  }
+
+  @override
+  void mouseUp() {
+    if (!_isDown) {
+      return;
+    }
+
+    context.changeState(
+      ResizableState(
+        selectedShape: parentState.selectedShape,
+      ),
+    );
+    _isDown = false;
+  }
+
   @override
   void onHover() {
     context.cursor = hoverCursor;
@@ -86,51 +130,13 @@ class MarkerState extends ManipulationState with HoverStateMixin {
     parentState.paint(canvas);
   }
 
+  bool get isDown => _isDown;
+
+  bool _isDown = false;
   String _name = 'MarkerState';
 
   @override
   String toString() {
-    return _name;
-  }
-}
-
-class ResizableState extends SelectionState {
-  late final MarkerState markerState;
-
-  late final List<MarkerState> _markers;
-
-  ResizableState({required super.selectedShape}) {
-    _markers = [
-      MarkerState.topLeft(this),
-      MarkerState.topRight(this),
-      MarkerState.bottomRight(this),
-      MarkerState.bottomLeft(this),
-    ];
-  }
-
-  @override
-  void mouseMove(double x, double y) {
-    super.mouseMove(x, y);
-
-    for (final marker in _markers) {
-      marker.mouseMove(x, y);
-      if (marker.isHover) {
-        return;
-      }
-    }
-  }
-
-  @override
-  void paint(Canvas canvas) {
-    super.paint(canvas);
-
-    for (final marker in _markers) {
-      marker.render(canvas);
-    }
-  }
-
-  @override
-  String toString() {
-    return 'Resizable State + ${super.toString()}';
+    return '$parentState + $_name';
   }
 }

@@ -4,9 +4,15 @@ import '../../pattern/manipulation_context.dart';
 import '../../shapes/shape.dart';
 
 mixin HoverStateMixin implements ManipulationState {
+  Shape? findShapeByCoordinates(double x, double y) {
+    return context.shapes.findShapeByCoordinates(x, y);
+  }
+
+  bool get isHover => _isHover;
+
   @override
   void mouseMove(double x, double y) {
-    final newHover = context.shapes.findShapeByCoordinates(x, y);
+    final newHover = findShapeByCoordinates(x, y);
 
     if (newHover == _hoverShape) {
       return;
@@ -15,8 +21,10 @@ mixin HoverStateMixin implements ManipulationState {
     _hoverShape = newHover;
 
     if (newHover == null) {
+      _isHover = false;
       onMouseLeave();
     } else {
+      _isHover = true;
       onHover();
     }
 
@@ -27,7 +35,7 @@ mixin HoverStateMixin implements ManipulationState {
 
   void onMouseLeave() {}
 
-  Shape? _hoverShape;
+
 
   @override
   void paint(Canvas canvas) {
@@ -48,4 +56,7 @@ mixin HoverStateMixin implements ManipulationState {
         ..strokeWidth = 4.0,
     );
   }
+
+  Shape? _hoverShape;
+  bool _isHover = false;
 }

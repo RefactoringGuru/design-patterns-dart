@@ -7,11 +7,6 @@ class CircleInnerRadiusState extends ResizableState {
   CircleInnerRadiusState({required super.selectedShape});
 
   @override
-  void mouseMove(double x, double y) {
-    super.mouseMove(x, y);
-  }
-
-  @override
   void paint(Canvas canvas) {
     super.paint(canvas);
     canvas.save();
