@@ -1,9 +1,9 @@
 part of manipulator;
 
 class ManipulationState {
-  ManipulatorContext? _context;
+  ManipulationContext? _context;
 
-  ManipulatorContext get context => _context!;
+  ManipulationContext get context => _context!;
 
   void mouseMove(double x, double y) {}
 

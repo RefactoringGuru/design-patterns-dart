@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import '../../pattern/manipulator_context.dart';
+import '../../pattern/manipulation_context.dart';
 import '../../shapes/shape.dart';
 import '../mixins/hover_state_mixin.dart';
 import '../mixins/specific_actions_mixin.dart';

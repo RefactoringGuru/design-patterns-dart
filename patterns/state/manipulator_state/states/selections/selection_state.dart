@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../pattern/manipulator_context.dart';
+import '../../pattern/manipulation_context.dart';
 import '../../shapes/shape.dart';
 import '../free_sate.dart';
 import '../mixins/hover_state_mixin.dart';

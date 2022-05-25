@@ -1,4 +1,4 @@
-import '../../pattern/manipulator_context.dart';
+import '../../pattern/manipulation_context.dart';
 import '../selections/moving_state.dart';
 
 mixin SpecificActionsMixin implements ManipulationState {

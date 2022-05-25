@@ -1,4 +1,4 @@
-import '../pattern/manipulator_context.dart';
+import '../pattern/manipulation_context.dart';
 import 'mixins/hover_state_mixin.dart';
 import 'mixins/specific_actions_mixin.dart';
 

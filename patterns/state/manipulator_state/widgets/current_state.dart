@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../../abstract_factory/tool_panel_factory/widgets/independent/event_listenable_builder.dart';
 import '../../../abstract_factory/tool_panel_factory/widgets/independent/panel.dart';
-import '../pattern/manipulator_context.dart';
+import '../pattern/manipulation_context.dart';
 
 class CurrentState extends StatelessWidget {
-  final ManipulatorContext manipulator;
+  final ManipulationContext manipulator;
 
   const CurrentState({
     Key? key,

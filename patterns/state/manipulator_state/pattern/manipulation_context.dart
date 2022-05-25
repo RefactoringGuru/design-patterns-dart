@@ -5,10 +5,10 @@ import '../app/shapes.dart';
 
 part 'manipulation_state.dart';
 
-class ManipulatorContext {
+class ManipulationContext {
   final Shapes shapes;
 
-  ManipulatorContext({
+  ManipulationContext({
     required this.shapes,
     required ManipulationState initState,
   }) : _state = initState {
