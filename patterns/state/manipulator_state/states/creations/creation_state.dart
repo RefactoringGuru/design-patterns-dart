@@ -2,11 +2,8 @@ import 'dart:ui';
 
 import '../../pattern/manipulation_context.dart';
 import '../../shapes/shape.dart';
-import '../mixins/hover_state_mixin.dart';
-import '../mixins/specific_actions_mixin.dart';
 
-abstract class CreationState extends ManipulationState
-    with SpecificActionsMixin, HoverStateMixin {
+abstract class CreationState extends ManipulationState {
   Shape createShape(double x, double y);
 
   @override
@@ -17,13 +14,10 @@ abstract class CreationState extends ManipulationState
   @override
   void mouseMove(double x, double y) {
     if (_isCreatingNotStart) {
-      super.mouseMove(x, y); // HoverStateMixin
       return;
     }
 
-    _isDragged = true;
-    _newShape!.resize(x - _startX, y - _startY);
-    context.update();
+    _resizeNewShape(x, y);
   }
 
   @override
@@ -32,24 +26,14 @@ abstract class CreationState extends ManipulationState
       return;
     }
 
-    if (!_isDragged) {
-      _newShape!.move(_startX - 50, _startY - 50);
-      _newShape!.resize(100, 100);
-    }
-
+    _repositionNewShape();
     context.shapes.add(_newShape!);
-    context.changeState(
-      _newShape!.createSelectionState(),
-    );
-
-    _isDragged = false;
-    _newShape = null;
+    _finishCreatingShape();
   }
 
   @override
   void paint(Canvas canvas) {
     _newShape?.paint(canvas);
-    super.paint(canvas);
   }
 
   var _startX = 0.0;
@@ -64,4 +48,26 @@ abstract class CreationState extends ManipulationState
   }
 
   bool get _isCreatingNotStart => _newShape == null;
+
+  void _resizeNewShape(double x, double y) {
+    _isDragged = true;
+    _newShape!.resize(x - _startX, y - _startY);
+    context.update();
+  }
+
+  void _finishCreatingShape() {
+    context.changeState(
+      _newShape!.createSelectionState(),
+    );
+
+    _isDragged = false;
+    _newShape = null;
+  }
+
+  void _repositionNewShape() {
+    if (!_isDragged) {
+      _newShape!.move(_startX - 50, _startY - 50);
+      _newShape!.resize(100, 100);
+    }
+  }
 }
