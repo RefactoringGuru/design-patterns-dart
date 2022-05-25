@@ -48,6 +48,6 @@ class CircleInnerRadiusState extends ResizableState {
 
   @override
   String toString() {
-    return 'Selection State + Resizable State + Circle Inner Radius State';
+    return 'Circle Inner Radius State + ${super.toString()}';
   }
 }

@@ -70,6 +70,6 @@ class ResizableState extends SelectionState {
 
   @override
   String toString() {
-    return 'Selection State + Resizable State';
+    return 'Resizable State + ${super.toString()}';
   }
 }

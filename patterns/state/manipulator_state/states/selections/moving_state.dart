@@ -26,6 +26,6 @@ class MovingState extends SelectionState {
 
   @override
   String toString() {
-    return 'Selection State + Moving State';
+    return 'Moving State + ${super.toString()}';
   }
 }
