@@ -36,6 +36,6 @@ class SelectionState extends FreeState {
 
   @override
   String toString() {
-    return 'Selection State + ${super.toString()}';
+    return '${super.toString()} + Selection State';
   }
 }

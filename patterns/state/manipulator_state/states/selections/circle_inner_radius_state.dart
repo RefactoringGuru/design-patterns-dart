@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'resizable_state.dart';
@@ -43,6 +42,6 @@ class CircleInnerRadiusState extends ResizableState {
 
   @override
   String toString() {
-    return 'Circle Inner Radius State + ${super.toString()}';
+    return '${super.toString()} + Circle Inner Radius State';
   }
 }
