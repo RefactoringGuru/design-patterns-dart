@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'base_shape.dart';
 
 class MarkerShape extends BaseShape {
-  MarkerShape(super.x, super.y, [super.width = 5, super.height = 5]);
+  MarkerShape([super.x = 0, super.y = 0, super.width = 5, super.height = 5]);
 
   @override
   void paint(Canvas canvas) {

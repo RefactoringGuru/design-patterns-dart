@@ -27,6 +27,12 @@ class ResizableState extends SelectionState {
     super.mouseDown(x, y);
   }
 
+  void updateMarkersPosition() {
+    for (final marker in _markers) {
+      marker.updatePosition();
+    }
+  }
+
   @override
   void mouseMove(double x, double y) {
     super.mouseMove(x, y);

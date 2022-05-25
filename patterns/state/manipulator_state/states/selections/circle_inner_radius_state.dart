@@ -24,7 +24,6 @@ class CircleInnerRadiusState extends ResizableState {
       p1,
       5,
       Paint()
-
         ..color = Colors.black
         ..style = PaintingStyle.fill,
     );

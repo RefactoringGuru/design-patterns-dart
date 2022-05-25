@@ -35,8 +35,6 @@ mixin HoverStateMixin implements ManipulationState {
 
   void onMouseLeave() {}
 
-
-
   @override
   void paint(Canvas canvas) {
     if (_hoverShape == null) {
@@ -45,15 +43,15 @@ mixin HoverStateMixin implements ManipulationState {
 
     canvas.drawRect(
       Rect.fromLTWH(
-        _hoverShape!.x + 2,
-        _hoverShape!.y + 2,
-        _hoverShape!.width - 4,
-        _hoverShape!.height - 4,
+        _hoverShape!.x + 1,
+        _hoverShape!.y + 1,
+        _hoverShape!.width - 2,
+        _hoverShape!.height - 2,
       ),
       Paint()
         ..color = Colors.cyanAccent
         ..style = PaintingStyle.stroke
-        ..strokeWidth = 4.0,
+        ..strokeWidth = 2.0,
     );
   }
 
