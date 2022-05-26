@@ -14,4 +14,6 @@ class ManipulationState {
   void keyDown(String key) {}
 
   void paint(Canvas canvas) {}
+
+  void updateChildrenStates() {}
 }

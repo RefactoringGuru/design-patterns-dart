@@ -7,6 +7,9 @@ part 'manipulation_state.dart';
 
 class ManipulationContext {
   final Shapes shapes;
+  final onStateChange = Event();
+  final onUpdate = Event();
+  var cursor = MouseCursor.defer;
 
   ManipulationContext({
     required this.shapes,
@@ -15,8 +18,6 @@ class ManipulationContext {
     _state._context = this;
   }
 
-  ManipulationState _state;
-
   ManipulationState get state => _state;
 
   void changeState(ManipulationState newState) {
@@ -24,15 +25,11 @@ class ManipulationContext {
       return;
     }
 
+    _state._context = null;
     _state = newState;
     _state._context = this;
     onStateChange._emit();
   }
-
-  final onStateChange = Event();
-  final onUpdate = Event();
-
-  var cursor = MouseCursor.defer;
 
   void update() {
     onUpdate._emit();
@@ -62,6 +59,8 @@ class ManipulationContext {
   void paint(Canvas canvas) {
     _state.paint(canvas);
   }
+
+  ManipulationState _state;
 }
 
 class Event extends ChangeNotifier {
