@@ -3,7 +3,7 @@ import 'dart:ui';
 import 'package:flutter/services.dart';
 
 import '../../../shapes/shape.dart';
-import '../../../pattern/manipulation_context.dart';
+import '../../../pattern/manipulator.dart';
 import '../../mixins/hover_state_mixin.dart';
 import '../selection_state.dart';
 
@@ -73,7 +73,7 @@ abstract class ChildState extends ManipulationState with HoverStateMixin {
   }
 
   @override
-  ManipulationContext get context => parentState.context;
+  Manipulator get context => parentState.context;
 
   @override
   Shape? findShapeByCoordinates(double x, double y) {

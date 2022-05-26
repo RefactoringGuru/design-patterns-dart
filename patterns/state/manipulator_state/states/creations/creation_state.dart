@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-import '../../pattern/manipulation_context.dart';
+import '../../pattern/manipulator.dart';
 import '../../shapes/shape.dart';
 
 abstract class CreationState extends ManipulationState {

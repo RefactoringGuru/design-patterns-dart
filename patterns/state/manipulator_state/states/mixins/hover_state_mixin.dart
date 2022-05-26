@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../pattern/manipulation_context.dart';
+import '../../pattern/manipulator.dart';
 import '../../shapes/shape.dart';
 
 mixin HoverStateMixin implements ManipulationState {

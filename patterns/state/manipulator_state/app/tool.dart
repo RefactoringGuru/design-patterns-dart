@@ -1,6 +1,6 @@
 import 'package:flutter/widgets.dart';
 
-import '../pattern/manipulation_context.dart';
+import '../pattern/manipulator.dart';
 
 class Tool {
   final Icon icon;

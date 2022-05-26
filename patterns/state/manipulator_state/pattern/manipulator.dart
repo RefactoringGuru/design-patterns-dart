@@ -4,9 +4,9 @@ import 'package:flutter/material.dart';
 import '../app/shapes.dart';
 
 part 'manipulation_state.dart';
-part '../app/base_manipulation_context.dart';
+part '../app/base_manipulationt.dart';
 
-abstract class ManipulationContext {
+abstract class Manipulator {
   Shapes get shapes;
 
   MouseCursor get cursor;

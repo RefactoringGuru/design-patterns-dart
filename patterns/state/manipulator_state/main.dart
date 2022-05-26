@@ -4,7 +4,7 @@ import 'package:material_design_icons_flutter/material_design_icons_flutter.dart
 import 'app/app.dart';
 import 'app/shapes.dart';
 import 'app/tool.dart';
-import 'pattern/manipulation_context.dart';
+import 'pattern/manipulator.dart';
 import 'states/creations/circle_creation_state.dart';
 import 'states/creations/rectangle_creation_state.dart';
 import 'states/creations/text_creation_state.dart';
@@ -28,7 +28,7 @@ class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
     final shapes = Shapes([]);
     app = App(
       shapes: shapes,
-      manipulator: BaseManipulationContext(
+      manipulator: BaseManipulator(
         initState: FreeState(),
         shapes: shapes,
       ),

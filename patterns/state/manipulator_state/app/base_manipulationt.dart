@@ -1,7 +1,7 @@
 part of manipulator;
 
-class BaseManipulationContext implements ManipulationContext {
-  BaseManipulationContext({
+class BaseManipulator implements Manipulator {
+  BaseManipulator({
     required this.shapes,
     required ManipulationState initState,
   }) : _state = initState {
