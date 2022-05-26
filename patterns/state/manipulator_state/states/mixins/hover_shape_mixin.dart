@@ -3,12 +3,14 @@ import 'package:flutter/material.dart';
 import '../../pattern/manipulator.dart';
 import '../../shapes/shape.dart';
 
-mixin HoverShape implements ManipulationState {
+mixin HoverShapeMixin implements ManipulationState {
   Shape? findShapeByCoordinates(double x, double y) {
     return context.shapes.findShapeByCoordinates(x, y);
   }
 
-  bool get isHover => _isHover;
+  Shape? get hoverShape => _hoverShape;
+
+  bool get isHover => _hoverShape != null;
 
   @override
   void mouseMove(double x, double y) {
@@ -21,10 +23,8 @@ mixin HoverShape implements ManipulationState {
     _hoverShape = newHover;
 
     if (newHover == null) {
-      _isHover = false;
       onMouseLeave();
     } else {
-      _isHover = true;
       onHover();
     }
 
@@ -56,5 +56,4 @@ mixin HoverShape implements ManipulationState {
   }
 
   Shape? _hoverShape;
-  bool _isHover = false;
 }

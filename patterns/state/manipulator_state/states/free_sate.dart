@@ -1,17 +1,15 @@
 import '../pattern/manipulator.dart';
-import 'mixins/hover_shape.dart';
+import 'mixins/hover_shape_mixin.dart';
 import 'selections/moving_state.dart';
 
-class FreeState extends ManipulationState with HoverShape {
+class FreeState extends ManipulationState with HoverShapeMixin {
   @override
   void mouseDown(double x, double y) {
     trySelectAndStartMovingShape(x, y);
   }
 
   bool trySelectAndStartMovingShape(double x, double y) {
-    final shape = context.shapes.findShapeByCoordinates(x, y);
-
-    if (shape == null) {
+    if (hoverShape == null) {
       return false;
     }
 
@@ -19,7 +17,7 @@ class FreeState extends ManipulationState with HoverShape {
       MovingState(
         startX: x,
         startY: y,
-        selectedShape: shape,
+        selectedShape: hoverShape!,
       ),
     );
 
