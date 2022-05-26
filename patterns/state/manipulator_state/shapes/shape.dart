@@ -11,6 +11,8 @@ abstract class Shape {
 
   double get height;
 
+  Rect get rect;
+
   void move(double x, double y);
 
   void resize(double width, double height);

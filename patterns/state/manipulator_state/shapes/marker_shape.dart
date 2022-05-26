@@ -3,23 +3,26 @@ import 'package:flutter/material.dart';
 import 'base_shape.dart';
 
 class MarkerShape extends BaseShape {
-  MarkerShape([super.x = 0, super.y = 0, super.width = 5, super.height = 5]);
+  MarkerShape([super.x = 0, super.y = 0, super.width = 5, super.height = -1]);
+
+  @override
+  Rect get rect => Rect.fromLTWH(x - width, y - width, width * 2, width * 2);
 
   @override
   void paint(Canvas canvas) {
-    final point1 = Offset(x, y);
+    final point = Offset(x, y);
 
-    final paint1 = Paint()
+    final paint = Paint()
       ..style = PaintingStyle.fill
       ..color = Colors.black;
 
-    canvas.drawCircle(point1, width, paint1);
+    canvas.drawCircle(point, width, paint);
 
     final paint2 = Paint()
       ..style = PaintingStyle.stroke
       ..strokeWidth = 1.5
       ..color = Colors.cyanAccent;
 
-    canvas.drawCircle(point1, width, paint2);
+    canvas.drawCircle(point, width, paint2);
   }
 }

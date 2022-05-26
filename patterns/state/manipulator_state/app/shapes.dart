@@ -6,9 +6,9 @@ import 'package:flutter/foundation.dart';
 import '../shapes/shape.dart';
 
 class Shapes with IterableMixin<Shape> {
-  final List<Shape>_shapes;
+  final List<Shape> _shapes;
 
-  Shapes([this._shapes = const []]);
+  Shapes(List<Shape> shapes) : _shapes = shapes;
 
   void add(Shape shape) {
     _shapes.add(shape);
@@ -22,14 +22,7 @@ class Shapes with IterableMixin<Shape> {
 
   Shape? findShapeByCoordinates(x, y) {
     for (final shape in _shapes) {
-      final shapeRect = Rect.fromLTWH(
-        shape.x,
-        shape.y,
-        shape.width,
-        shape.height,
-      );
-
-      if (shapeRect.contains(Offset(x, y))) {
+      if (shape.rect.contains(Offset(x, y))) {
         return shape;
       }
     }

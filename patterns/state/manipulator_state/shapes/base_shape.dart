@@ -23,6 +23,9 @@ class BaseShape implements Shape {
   double get width => _width;
 
   @override
+  Rect get rect => Rect.fromLTWH(x, y, width, height);
+
+  @override
   SelectionState createSelectionState() {
     return SelectionState(selectedShape: this);
   }

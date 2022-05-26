@@ -17,7 +17,7 @@ class BottomLeftMarkerState extends ChildState {
   void mouseMoveAction(double x, double y) {
     final selectedShape = parentState.selectedShape;
     selectedShape.resize(
-      selectedShape.width +selectedShape.x - x,
+      selectedShape.width + selectedShape.x - x,
       y - selectedShape.y,
     );
     selectedShape.move(x, selectedShape.y);
@@ -30,6 +30,7 @@ class BottomLeftMarkerState extends ChildState {
       parentState.selectedShape.y + parentState.selectedShape.height,
     );
   }
+
   @override
   String toString() {
     return '${parentState.toString()} + Bottom Left Marker State';

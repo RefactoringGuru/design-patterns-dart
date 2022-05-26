@@ -25,7 +25,7 @@ class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
 
   @override
   void initState() {
-    final shapes = Shapes();
+    final shapes = Shapes([]);
     app = App(
       shapes: shapes,
       manipulator: BaseManipulationContext(

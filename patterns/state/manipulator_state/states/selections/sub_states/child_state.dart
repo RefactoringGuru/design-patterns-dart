@@ -77,14 +77,7 @@ abstract class ChildState extends ManipulationState with HoverStateMixin {
 
   @override
   Shape? findShapeByCoordinates(double x, double y) {
-    final rect = Rect.fromLTWH(
-      markerShape.x - markerShape.width,
-      markerShape.y - markerShape.width,
-      markerShape.width * 2,
-      markerShape.width * 2,
-    );
-
-    return rect.contains(Offset(x, y)) ? markerShape : null;
+    return markerShape.rect.contains(Offset(x, y)) ? markerShape : null;
   }
 
   bool get isDown => _isDown;

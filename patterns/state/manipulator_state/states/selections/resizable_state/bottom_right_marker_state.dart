@@ -17,17 +17,16 @@ class BottomRightMarkerState extends ChildState {
   void mouseMoveAction(double x, double y) {
     final selectedShape = parentState.selectedShape;
     selectedShape.resize(
-      x-selectedShape.x,
+      x - selectedShape.x,
       y - selectedShape.y,
     );
-
   }
 
   @override
   void updatePosition() {
     markerShape.move(
       parentState.selectedShape.x + parentState.selectedShape.width,
-      parentState.selectedShape.y+ parentState.selectedShape.height,
+      parentState.selectedShape.y + parentState.selectedShape.height,
     );
   }
 

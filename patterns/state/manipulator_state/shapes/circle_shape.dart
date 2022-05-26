@@ -13,23 +13,23 @@ class CircleShape extends BaseShape {
   }
 
   @override
+  Rect get rect => Rect.fromLTWH(x, y, width, height);
+
+  @override
   void paint(Canvas canvas) {
     final w = width / 2;
     final h = height / 2;
     final path = Path()
       ..fillType = PathFillType.evenOdd
-      ..addOval(Rect.fromLTWH(
-        x,
-        y,
-        width,
-        height,
-      ))
-      ..addOval(Rect.fromLTWH(
-        x + w / 2,
-        y + h / 2,
-        w,
-        h,
-      ));
+      ..addOval(rect)
+      ..addOval(
+        Rect.fromLTWH(
+          x + w / 2,
+          y + h / 2,
+          w,
+          h,
+        ),
+      );
     canvas.drawPath(
       path,
       Paint()..color = Colors.white,
