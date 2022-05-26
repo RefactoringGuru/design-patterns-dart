@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import 'resizable_state.dart';
+import 'resizable_state/resizable_state.dart';
 
 class CircleInnerRadiusState extends ResizableState {
   CircleInnerRadiusState({required super.selectedShape});

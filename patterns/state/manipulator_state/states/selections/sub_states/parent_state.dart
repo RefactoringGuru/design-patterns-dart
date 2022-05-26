@@ -4,7 +4,9 @@ import '../sub_states/child_state.dart';
 import '../selection_state.dart';
 
 class ParentState extends SelectionState {
-  ParentState({required super.selectedShape});
+  ParentState({
+    required super.selectedShape,
+  });
 
   void addMarkers(List<ChildState> markers) {
     _markers.addAll(markers);
@@ -44,11 +46,12 @@ class ParentState extends SelectionState {
     }
   }
 
-  void updateMarkersPosition() {
+  @override
+  void updateChildrenStates() {
     for (final marker in _markers) {
       marker.updatePosition();
     }
   }
 
-  List<ChildState> _markers = [];
+  final _markers = <ChildState>[];
 }

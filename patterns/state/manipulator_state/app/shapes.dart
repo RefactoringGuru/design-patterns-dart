@@ -6,7 +6,9 @@ import 'package:flutter/foundation.dart';
 import '../shapes/shape.dart';
 
 class Shapes with IterableMixin<Shape> {
-  final _shapes = <Shape>[];
+  final List<Shape>_shapes;
+
+  Shapes([this._shapes = const []]);
 
   void add(Shape shape) {
     _shapes.add(shape);

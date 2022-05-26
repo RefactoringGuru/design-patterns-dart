@@ -29,7 +29,6 @@ class BaseManipulationContext implements ManipulationContext {
       return;
     }
 
-    _state._context = null;
     _state = newState;
     _state._context = this;
     onStateChange._emit();

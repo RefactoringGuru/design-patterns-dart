@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../states/selections/resizable_state.dart';
+import '../states/selections/resizable_state/resizable_state.dart';
 import '../states/selections/selection_state.dart';
 import 'base_shape.dart';
 
