@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../pattern/manipulator.dart';
 import '../../shapes/shape.dart';
 
-mixin HoverStateMixin implements ManipulationState {
+mixin HoverShape implements ManipulationState {
   Shape? findShapeByCoordinates(double x, double y) {
     return context.shapes.findShapeByCoordinates(x, y);
   }

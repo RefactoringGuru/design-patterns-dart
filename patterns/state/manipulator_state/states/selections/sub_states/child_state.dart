@@ -4,10 +4,10 @@ import 'package:flutter/services.dart';
 
 import '../../../shapes/shape.dart';
 import '../../../pattern/manipulator.dart';
-import '../../mixins/hover_state_mixin.dart';
+import '../../mixins/hover_shape.dart';
 import '../selection_state.dart';
 
-abstract class ChildState extends ManipulationState with HoverStateMixin {
+abstract class ChildState extends ManipulationState with HoverShape {
   final SelectionState parentState;
   final Shape markerShape;
   final MouseCursor hoverCursor;

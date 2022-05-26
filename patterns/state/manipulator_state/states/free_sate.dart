@@ -1,8 +1,8 @@
 import '../pattern/manipulator.dart';
-import 'mixins/hover_state_mixin.dart';
+import 'mixins/hover_shape.dart';
 import 'selections/moving_state.dart';
 
-class FreeState extends ManipulationState with HoverStateMixin {
+class FreeState extends ManipulationState with HoverShape {
   @override
   void mouseDown(double x, double y) {
     trySelectAndStartMovingShape(x, y);
