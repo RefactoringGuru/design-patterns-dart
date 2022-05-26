@@ -28,7 +28,7 @@ class _ManipulatorStateAppState extends State<ManipulatorStateApp> {
     final shapes = Shapes();
     app = App(
       shapes: shapes,
-      manipulator: ManipulationContext(
+      manipulator: BaseManipulationContext(
         initState: FreeState(),
         shapes: shapes,
       ),

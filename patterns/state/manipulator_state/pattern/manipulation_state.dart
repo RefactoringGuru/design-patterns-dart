@@ -1,8 +1,6 @@
 part of manipulator;
 
 class ManipulationState {
-  ManipulationContext? _context;
-
   ManipulationContext get context => _context!;
 
   void mouseMove(double x, double y) {}
@@ -16,4 +14,6 @@ class ManipulationState {
   void paint(Canvas canvas) {}
 
   void updateChildrenStates() {}
+
+  ManipulationContext? _context;
 }

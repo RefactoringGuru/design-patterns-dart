@@ -4,65 +4,32 @@ import 'package:flutter/material.dart';
 import '../app/shapes.dart';
 
 part 'manipulation_state.dart';
+part '../app/base_manipulation_context.dart';
 
-class ManipulationContext {
-  final Shapes shapes;
-  final onStateChange = Event();
-  final onUpdate = Event();
-  var cursor = MouseCursor.defer;
+abstract class ManipulationContext {
+  Shapes get shapes;
 
-  ManipulationContext({
-    required this.shapes,
-    required ManipulationState initState,
-  }) : _state = initState {
-    _state._context = this;
-  }
+  MouseCursor get cursor;
 
-  ManipulationState get state => _state;
+  set cursor(MouseCursor cursor);
 
-  void changeState(ManipulationState newState) {
-    if (_state == newState) {
-      return;
-    }
+  ManipulationState get state;
 
-    _state._context = null;
-    _state = newState;
-    _state._context = this;
-    onStateChange._emit();
-  }
+  Event get onStateChange;
 
-  void update() {
-    onUpdate._emit();
-  }
+  Event get onUpdate;
 
-  @override
-  String toString() {
-    return _state.toString();
-  }
+  void changeState(ManipulationState newState);
 
-  void mouseMove(double x, double y) {
-    _state.mouseMove(x, y);
-  }
+  void update();
 
-  void mouseDown(double x, double y) {
-    _state.mouseDown(x, y);
-  }
+  void mouseMove(double x, double y);
 
-  void mouseUp() {
-    _state.mouseUp();
-  }
+  void mouseDown(double x, double y);
 
-  void keyDown(String key) {
-    _state.keyDown(key);
-  }
+  void mouseUp();
 
-  void paint(Canvas canvas) {
-    _state.paint(canvas);
-  }
+  void keyDown(String key);
 
-  ManipulationState _state;
-}
-
-class Event extends ChangeNotifier {
-  void _emit() => notifyListeners();
+  void paint(Canvas canvas);
 }
