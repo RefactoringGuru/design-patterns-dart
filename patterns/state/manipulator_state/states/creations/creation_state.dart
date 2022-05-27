@@ -41,27 +41,18 @@ abstract class CreationState extends ManipulationState {
   Shape? _newShape;
   var _isDragged = false;
 
+  bool get _isCreatingNotStart => _newShape == null;
+
   void _startCreatingShape(double x, double y) {
     _startX = x;
     _startY = y;
     _newShape = createShape(x, y);
   }
 
-  bool get _isCreatingNotStart => _newShape == null;
-
   void _resizeNewShape(double x, double y) {
     _isDragged = true;
     _newShape!.resize(x - _startX, y - _startY);
     context.update();
-  }
-
-  void _finishCreatingShape() {
-    context.changeState(
-      _newShape!.createSelectionState(),
-    );
-
-    _isDragged = false;
-    _newShape = null;
   }
 
   void _repositionNewShape() {
@@ -70,4 +61,13 @@ abstract class CreationState extends ManipulationState {
       _newShape!.resize(100, 100);
     }
   }
+
+  void _finishCreatingShape() {
+    final selectedShapeState = _newShape!.createSelectionState();
+    context.changeState(selectedShapeState);
+    _isDragged = false;
+    _newShape = null;
+  }
+
+
 }
