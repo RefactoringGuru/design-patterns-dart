@@ -5,6 +5,9 @@ import '../../../abstract_factory/tool_panel_factory/widgets/independent/event_l
 import '../../../abstract_factory/tool_panel_factory/widgets/independent/panel.dart';
 import '../../../abstract_factory/tool_panel_factory/widgets/independent/tool_button.dart';
 import '../app/app.dart';
+import '../app/tool.dart';
+import '../states/free_sate.dart';
+import '../states/selections/selection_state.dart';
 
 class ToolBar extends StatelessWidget {
   final App app;
@@ -20,23 +23,37 @@ class ToolBar extends StatelessWidget {
         thicknessHeight: 64,
         direction: Axis.horizontal,
         child: EventListenableBuilder(
-            event: app.manipulator.onStateChange,
-            builder: (_) {
-              return Row(
-                children: [
-                  for (final tool in app.tools)
-                    ToolButton(
-                      active: tool.state.runtimeType ==
-                          app.manipulator.state.runtimeType,
-                      icon: Center(child: tool.icon),
-                      onTap: () {
-                        app.manipulator.changeState(tool.state);
-                      },
-                    )
-                ],
-              );
-            }),
+          event: app.manipulator.onStateChange,
+          builder: (_) {
+            return Row(
+              children: [
+                for (final tool in app.tools)
+                  ToolButton(
+                    active: isSelected(tool),
+                    icon: Center(child: tool.icon),
+                    onTap: () {
+                      app.manipulator.changeState(tool.state);
+                    },
+                  )
+              ],
+            );
+          },
+        ),
       ),
     );
+  }
+
+  bool isSelected(Tool tool) {
+    if (app.manipulator.state is SelectionState) {
+      if ( tool.state is FreeState) {
+        return true;
+      }
+    }
+
+    if(app.manipulator.state.runtimeType == tool.state.runtimeType){
+      return true;
+    }
+
+    return  false;
   }
 }
