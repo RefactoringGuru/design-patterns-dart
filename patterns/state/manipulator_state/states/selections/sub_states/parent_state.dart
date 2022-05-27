@@ -16,8 +16,7 @@ class ParentState extends SelectionState {
   void mouseDown(double x, double y) {
     for (final marker in _markers) {
       marker.mouseDown(x, y);
-      if (marker.isDown) {
-        context.changeState(marker);
+      if (context.state == marker) {
         return;
       }
     }

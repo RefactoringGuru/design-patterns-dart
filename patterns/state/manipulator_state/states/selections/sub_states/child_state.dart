@@ -38,6 +38,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
   void mouseDown(double x, double y) {
     if (isHover) {
       _isDown = true;
+      context.changeState(this);
     }
   }
 
