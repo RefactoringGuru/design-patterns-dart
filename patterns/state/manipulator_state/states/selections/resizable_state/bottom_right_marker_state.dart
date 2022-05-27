@@ -6,7 +6,7 @@ class BottomRightMarkerState extends CornerMarker {
   });
 
   @override
-  void mouseMoveAction(double x, double y) {
+  void mouseDragAction(double x, double y) {
     final parentShape = parentState.selectedShape;
     parentShape.resize(
       x - parentShape.x,

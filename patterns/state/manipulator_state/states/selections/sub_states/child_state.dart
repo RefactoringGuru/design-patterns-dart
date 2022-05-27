@@ -22,7 +22,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
 
   void updatePosition();
 
-  void mouseMoveAction(double x, double y);
+  void mouseDragAction(double x, double y);
 
   @override
   void onHover() {
@@ -45,7 +45,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
   void mouseMove(double x, double y) {
     super.mouseMove(x, y);
     if (_isDown) {
-      mouseMoveAction(x, y);
+      mouseDragAction(x, y);
       parentState.updateMarkers();
       context.cursor = hoverCursor;
       context.update();
