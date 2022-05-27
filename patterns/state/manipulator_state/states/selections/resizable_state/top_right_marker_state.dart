@@ -10,7 +10,7 @@ class TopRightMarkerState extends ChildState {
   }) : super(
           parentState: parentState,
           hoverCursor: SystemMouseCursors.resizeUpRight,
-          markerShape: MarkerShape(),
+          shape: MarkerShape(),
         );
 
   @override
@@ -25,7 +25,7 @@ class TopRightMarkerState extends ChildState {
 
   @override
   void updatePosition() {
-    markerShape.move(
+    shape.move(
       parentState.selectedShape.x + parentState.selectedShape.width,
       parentState.selectedShape.y,
     );

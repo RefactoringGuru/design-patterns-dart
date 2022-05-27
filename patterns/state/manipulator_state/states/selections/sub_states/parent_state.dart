@@ -42,12 +42,12 @@ class ParentState extends SelectionState {
     super.paint(canvas);
 
     for (final marker in _markers) {
-      marker.render(canvas);
+      context.paintStyle.paintMarker(canvas, marker.shape);
     }
   }
 
   @override
-  void updateChildrenStates() {
+  void updateMarkers() {
     for (final marker in _markers) {
       marker.updatePosition();
     }

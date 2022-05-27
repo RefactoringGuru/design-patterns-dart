@@ -4,9 +4,13 @@ class BaseManipulator implements Manipulator {
   BaseManipulator({
     required this.shapes,
     required ManipulationState initState,
+    required this.paintStyle,
   }) : _state = initState {
     _state._context = this;
   }
+
+  @override
+  ManipulationState get state => _state;
 
   @override
   final Shapes shapes;
@@ -21,7 +25,7 @@ class BaseManipulator implements Manipulator {
   var cursor = MouseCursor.defer;
 
   @override
-  ManipulationState get state => _state;
+  final PaintStyle paintStyle;
 
   @override
   void changeState(ManipulationState newState) {

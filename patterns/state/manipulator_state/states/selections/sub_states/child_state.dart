@@ -9,12 +9,12 @@ import '../selection_state.dart';
 
 abstract class ChildState extends ManipulationState with HoverShapeMixin {
   final SelectionState parentState;
-  final Shape markerShape;
+  final Shape shape;
   final MouseCursor hoverCursor;
 
   ChildState({
     required this.parentState,
-    required this.markerShape,
+    required this.shape,
     this.hoverCursor = SystemMouseCursors.basic,
   }) {
     updatePosition();
@@ -23,10 +23,6 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
   void updatePosition();
 
   void mouseMoveAction(double x, double y);
-
-  void render(Canvas canvas) {
-    markerShape.paint(canvas);
-  }
 
   @override
   void onHover() {
@@ -50,7 +46,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
     super.mouseMove(x, y);
     if (_isDown) {
       mouseMoveAction(x, y);
-      parentState.updateChildrenStates();
+      parentState.updateMarkers();
       context.update();
     }
   }
@@ -77,7 +73,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
 
   @override
   Shape? findShapeByCoordinates(double x, double y) {
-    return markerShape.rect.contains(Offset(x, y)) ? markerShape : null;
+    return shape.rect.contains(Offset(x, y)) ? shape : null;
   }
 
   bool get isDown => _isDown;

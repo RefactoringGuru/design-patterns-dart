@@ -13,7 +13,7 @@ class ManipulationState {
 
   void paint(Canvas canvas) {}
 
-  void updateChildrenStates() {}
+  void updateMarkers() {}
 
   Manipulator? _context;
 }

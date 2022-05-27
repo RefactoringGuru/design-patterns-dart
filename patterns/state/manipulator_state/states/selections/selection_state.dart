@@ -20,13 +20,7 @@ class SelectionState extends FreeState {
   @override
   void paint(Canvas canvas) {
     super.paint(canvas);
-    canvas.drawRect(
-      selectedShape.rect.deflate(1),
-      Paint()
-        ..color = Colors.cyanAccent
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2.0,
-    );
+    context.paintStyle.paintHover(canvas, selectedShape);
   }
 
   @override

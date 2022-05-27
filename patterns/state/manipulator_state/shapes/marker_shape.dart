@@ -9,20 +9,5 @@ class MarkerShape extends BaseShape {
   Rect get rect => Rect.fromLTWH(x - width, y - width, width * 2, width * 2);
 
   @override
-  void paint(Canvas canvas) {
-    final point = Offset(x, y);
-
-    final paint = Paint()
-      ..style = PaintingStyle.fill
-      ..color = Colors.black;
-
-    canvas.drawCircle(point, width, paint);
-
-    final paint2 = Paint()
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 1.5
-      ..color = Colors.cyanAccent;
-
-    canvas.drawCircle(point, width, paint2);
-  }
+  void paint(Canvas canvas) {}
 }

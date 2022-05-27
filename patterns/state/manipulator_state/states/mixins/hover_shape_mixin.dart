@@ -41,18 +41,7 @@ mixin HoverShapeMixin implements ManipulationState {
       return;
     }
 
-    canvas.drawRect(
-      Rect.fromLTWH(
-        _hoverShape!.x + 1,
-        _hoverShape!.y + 1,
-        _hoverShape!.width - 2,
-        _hoverShape!.height - 2,
-      ),
-      Paint()
-        ..color = Colors.cyanAccent
-        ..style = PaintingStyle.stroke
-        ..strokeWidth = 2.0,
-    );
+    context.paintStyle.paintHover(canvas, _hoverShape!);
   }
 
   Shape? _hoverShape;
