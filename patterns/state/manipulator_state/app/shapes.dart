@@ -21,7 +21,7 @@ class Shapes with IterableMixin<Shape> {
   final onChange = Event();
 
   Shape? findShapeByCoordinates(x, y) {
-    for (final shape in _shapes) {
+    for (final shape in _shapes.reversed) {
       if (shape.rect.contains(Offset(x, y))) {
         return shape;
       }
