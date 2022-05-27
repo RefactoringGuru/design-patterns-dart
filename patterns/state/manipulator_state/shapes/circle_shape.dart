@@ -12,8 +12,6 @@ class CircleShape extends BaseShape {
     return CircleInnerRadiusState(selectedShape: this);
   }
 
-  @override
-  Rect get rect => Rect.fromLTWH(x, y, width, height);
 
   @override
   void paint(Canvas canvas) {
