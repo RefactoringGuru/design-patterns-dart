@@ -10,12 +10,12 @@ import '../selection_state.dart';
 abstract class ChildState extends ManipulationState with HoverShapeMixin {
   final SelectionState parentState;
   final Shape shape;
-  final MouseCursor hoverCursor;
+
+  MouseCursor get hoverCursor;
 
   ChildState({
     required this.parentState,
     required this.shape,
-    this.hoverCursor = SystemMouseCursors.basic,
   }) {
     updatePosition();
   }
@@ -47,6 +47,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
     if (_isDown) {
       mouseMoveAction(x, y);
       parentState.updateMarkers();
+      context.cursor = hoverCursor;
       context.update();
     }
   }
@@ -57,9 +58,8 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
       return;
     }
 
-    context.changeState(
-      parentState,
-    );
+    context.changeState(parentState);
+
     _isDown = false;
   }
 

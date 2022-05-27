@@ -1,31 +1,24 @@
-import 'package:flutter/rendering.dart';
+import 'corner_marker.dart';
 
-import '../../../shapes/marker_shape.dart';
-import '../selection_state.dart';
-import '../sub_states/child_state.dart';
-
-class BottomRightMarkerState extends ChildState {
+class BottomRightMarkerState extends CornerMarker {
   BottomRightMarkerState({
-    required SelectionState parentState,
-  }) : super(
-          parentState: parentState,
-          hoverCursor: SystemMouseCursors.resizeDownRight,
-          shape: MarkerShape(),
-        );
+    required super.parentState,
+  });
 
   @override
   void mouseMoveAction(double x, double y) {
-    final selectedShape = parentState.selectedShape;
-    selectedShape.resize(
-      x - selectedShape.x,
-      y - selectedShape.y,
+    final parentShape = parentState.selectedShape;
+    parentShape.resize(
+      x - parentShape.x,
+      y - parentShape.y,
     );
   }
 
   @override
   void updatePosition() {
+    final parentShape = parentState.selectedShape;
     shape.move(
-      parentState.selectedShape.x + parentState.selectedShape.width,
+      parentShape.x + parentState.selectedShape.width,
       parentState.selectedShape.y + parentState.selectedShape.height,
     );
   }
