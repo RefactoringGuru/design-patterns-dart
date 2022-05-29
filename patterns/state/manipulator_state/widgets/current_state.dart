@@ -24,17 +24,19 @@ class CurrentState extends StatelessWidget {
           padding: EdgeInsets.symmetric(horizontal: 16),
           child: Center(
             child: EventListenableBuilder(
-                event: manipulator.onStateChange,
-                builder: (context) {
-                  return EventListenableBuilder(
-                      event: manipulator.onUpdate,
-                      builder: (context) {
-                        return Text(
-                          manipulator.toString(),
-                          style: TextStyle(color: Colors.white, fontSize: 16),
-                        );
-                      });
-                }),
+              event: manipulator.onStateChange,
+              builder: (context) {
+                return EventListenableBuilder(
+                  event: manipulator.onUpdate,
+                  builder: (context) {
+                    return Text(
+                      manipulator.toString(),
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    );
+                  },
+                );
+              },
+            ),
           ),
         ),
       ),
