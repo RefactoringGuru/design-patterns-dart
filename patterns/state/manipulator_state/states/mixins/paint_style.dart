@@ -26,6 +26,10 @@ class PaintStyle {
     );
   }
 
+  void paintSelection(Canvas canvas, Shape shape) {
+    paintHover(canvas, shape);
+  }
+
   void paintMarker(Canvas canvas, Shape markerShape) {
     final point = Offset(markerShape.x, markerShape.y);
     canvas.drawCircle(

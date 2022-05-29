@@ -20,7 +20,7 @@ class SelectionState<T extends Shape> extends FreeState {
   @override
   void paint(Canvas canvas) {
     super.paint(canvas);
-    context.paintStyle.paintHover(canvas, selectedShape);
+    context.paintStyle.paintSelection(canvas, selectedShape);
   }
 
   @override
