@@ -2,8 +2,9 @@ import 'dart:ui';
 
 import '../sub_states/child_state.dart';
 import '../selection_state.dart';
+import '../../../shapes/shape.dart';
 
-class ParentState extends SelectionState {
+class ParentState<T extends Shape> extends SelectionState<T> {
   ParentState({
     required super.selectedShape,
   });
