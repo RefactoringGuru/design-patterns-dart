@@ -50,7 +50,7 @@ class PaintStyle {
       Offset(selectedShape.width, y),
       Paint()
         ..color = color
-        ..strokeWidth = 1,
+        ..strokeWidth = 1.5,
     );
 
     canvas.restore();
