@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../../abstract_factory/tool_panel_factory/widgets/independent/event_listenable_builder.dart';
@@ -28,18 +27,22 @@ class ToolBar extends StatelessWidget {
             return Row(
               children: [
                 for (final tool in app.tools)
-                  ToolButton(
-                    active: isSelected(tool),
-                    icon: Center(child: tool.icon),
-                    onTap: () {
-                      app.manipulator.changeState(tool.state);
-                    },
-                  )
+                  buildButton(tool),
               ],
             );
           },
         ),
       ),
+    );
+  }
+
+  Widget buildButton(Tool tool) {
+    return ToolButton(
+      active: isSelected(tool),
+      icon: Center(child: tool.icon),
+      onTap: () {
+        app.manipulator.changeState(tool.state);
+      },
     );
   }
 
