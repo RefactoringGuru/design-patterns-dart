@@ -44,13 +44,15 @@ class ToolBar extends StatelessWidget {
   }
 
   bool isSelected(Tool tool) {
-    if (app.manipulator.state is SelectionState) {
+    final currentState = app.manipulator.state;
+
+    if (currentState is SelectionState) {
       if (tool.state is FreeState) {
         return true;
       }
     }
 
-    if (app.manipulator.state.runtimeType == tool.state.runtimeType) {
+    if (currentState.runtimeType == tool.state.runtimeType) {
       return true;
     }
 
