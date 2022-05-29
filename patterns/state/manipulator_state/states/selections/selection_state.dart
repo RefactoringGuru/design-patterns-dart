@@ -10,7 +10,7 @@ class SelectionState extends FreeState {
 
   @override
   void mouseDown(double x, double y) {
-    final isShapeNotSelected = !trySelectAndStartMovingShape(x, y);
+    final isShapeNotSelected = !tryToSelectAndStartMovingShape(x, y);
 
     if (isShapeNotSelected) {
       context.changeState(FreeState());
