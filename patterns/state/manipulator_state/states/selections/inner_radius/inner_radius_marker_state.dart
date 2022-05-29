@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/src/services/mouse_cursor.dart';
 
 import '../../../shapes/circle_shape.dart';
@@ -33,4 +32,9 @@ class InnerRadiusMarkerState extends ChildState {
 
   @override
   MouseCursor get hoverCursor => SystemMouseCursors.resizeLeftRight;
+
+  @override
+  String toString() {
+    return '${parentState.toString()} + Inner Radius Marker State';
+  }
 }
