@@ -5,10 +5,10 @@ import 'selections/moving_state.dart';
 class FreeState extends ManipulationState with HoverShapeMixin {
   @override
   void mouseDown(double x, double y) {
-    trySelectAndStartMovingShape(x, y);
+    tryToSelectAndStartMovingShape(x, y);
   }
 
-  bool trySelectAndStartMovingShape(double x, double y) {
+  bool tryToSelectAndStartMovingShape(double x, double y) {
     if (hoverShape == null) {
       return false;
     }
