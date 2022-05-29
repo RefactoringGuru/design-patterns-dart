@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../shapes/circle_shape.dart';
 import '../../shapes/shape.dart';
 
 class PaintStyle {
@@ -42,4 +43,20 @@ class PaintStyle {
   final Paint _selectStroke;
   final Paint _markerStroke;
   final Paint _markerFill;
+
+  void paintRadiusLine(CircleShape selectedShape, Canvas canvas) {
+    canvas.save();
+    canvas.translate(selectedShape.x, selectedShape.y);
+    final x = selectedShape.width - selectedShape.innerRadius;
+    final y = selectedShape.height / 2;
+    canvas.drawLine(
+      Offset(x,y),
+      Offset(selectedShape.width, y),
+      Paint()
+        ..color = color
+        ..strokeWidth = 1,
+    );
+
+    canvas.restore();
+  }
 }

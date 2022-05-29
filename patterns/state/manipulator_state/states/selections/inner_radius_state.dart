@@ -13,22 +13,8 @@ class InnerRadiusState extends ResizableState<CircleShape> {
 
   @override
   void paint(Canvas canvas) {
-    canvas.save();
-    canvas.translate(selectedShape.x, selectedShape.y);
-    final y = selectedShape.height / 2;
-    final p1 = Offset(
-      selectedShape.width - (selectedShape as CircleShape).innerRadius,
-      y,
-    );
-    canvas.drawLine(
-      p1,
-      Offset(selectedShape.width, y),
-      Paint()
-        ..color = Colors.cyanAccent
-        ..strokeWidth = 1,
-    );
+    context.paintStyle.paintRadiusLine(selectedShape, canvas);
 
-    canvas.restore();
     super.paint(canvas);
   }
 
