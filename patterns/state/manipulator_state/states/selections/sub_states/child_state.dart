@@ -5,13 +5,11 @@ import 'package:flutter/services.dart';
 import '../../../shapes/shape.dart';
 import '../../../pattern/manipulator.dart';
 import '../../mixins/hover_shape_mixin.dart';
-import '../selection_state.dart';
+import 'parent_state.dart';
 
 abstract class ChildState extends ManipulationState with HoverShapeMixin {
-  final SelectionState parentState;
+  final ParentState parentState;
   final Shape shape;
-
-  MouseCursor get hoverCursor;
 
   ChildState({
     required this.parentState,
@@ -23,6 +21,8 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
   void updatePosition();
 
   void mouseDragAction(double x, double y);
+
+  MouseCursor get hoverCursor;
 
   @override
   void onHover() {
@@ -60,8 +60,12 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
     }
 
     context.changeState(parentState);
-
     _isDown = false;
+
+    if (!isHover) {
+      context.cursor = SystemMouseCursors.basic;
+      context.update();
+    }
   }
 
   @override

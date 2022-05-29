@@ -12,6 +12,12 @@ class ParentState extends SelectionState {
     _markers.addAll(markers);
   }
 
+  void updateMarkers() {
+    for (final marker in _markers) {
+      marker.updatePosition();
+    }
+  }
+
   @override
   void mouseDown(double x, double y) {
     for (final marker in _markers) {
@@ -42,13 +48,6 @@ class ParentState extends SelectionState {
 
     for (final marker in _markers) {
       context.paintStyle.paintMarker(canvas, marker.shape);
-    }
-  }
-
-  @override
-  void updateMarkers() {
-    for (final marker in _markers) {
-      marker.updatePosition();
     }
   }
 

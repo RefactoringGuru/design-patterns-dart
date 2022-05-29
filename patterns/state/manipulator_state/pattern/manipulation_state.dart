@@ -13,7 +13,5 @@ class ManipulationState {
 
   void paint(Canvas canvas) {}
 
-  void updateMarkers() {}
-
   late Manipulator _context;
 }
