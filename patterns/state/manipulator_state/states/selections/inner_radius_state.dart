@@ -14,7 +14,6 @@ class InnerRadiusState extends ResizableState<CircleShape> {
   @override
   void paint(Canvas canvas) {
     context.paintStyle.paintRadiusLine(selectedShape, canvas);
-
     super.paint(canvas);
   }
 

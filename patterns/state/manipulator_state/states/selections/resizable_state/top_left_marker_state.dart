@@ -7,16 +7,20 @@ class TopLeftMarkerState extends CornerMarker {
 
   @override
   void mouseDragAction(double x, double y) {
-    parentState.selectedShape.resize(
-      parentState.selectedShape.width + parentState.selectedShape.x - x,
-      parentState.selectedShape.height + parentState.selectedShape.y - y,
-    );
-    parentState.selectedShape.move(x, y);
+    final newWidth = selectedShape.width + selectedShape.x - x;
+    final newHeight = selectedShape.height + selectedShape.y - y;
+
+    selectedShape
+      ..resize(newWidth, newHeight)
+      ..move(x, y);
   }
 
   @override
   void updatePosition() {
-    markerShape.move(parentState.selectedShape.x, parentState.selectedShape.y);
+    markerShape.move(
+      selectedShape.x,
+      selectedShape.y,
+    );
   }
 
   @override

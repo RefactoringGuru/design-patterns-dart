@@ -3,6 +3,7 @@ import 'package:flutter/rendering.dart';
 import '../../../shapes/marker_shape.dart';
 import '../sub_states/child_state.dart';
 import '../sub_states/parent_state.dart';
+import '../../../shapes/shape.dart';
 
 abstract class CornerMarker extends ChildState {
   CornerMarker({
@@ -29,4 +30,6 @@ abstract class CornerMarker extends ChildState {
 
     return SystemMouseCursors.move;
   }
+
+  Shape get selectedShape => parentState.selectedShape;
 }
