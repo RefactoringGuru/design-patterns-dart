@@ -40,17 +40,13 @@ class PaintStyle {
     );
   }
 
-  final Paint _selectStroke;
-  final Paint _markerStroke;
-  final Paint _markerFill;
-
   void paintRadiusLine(CircleShape selectedShape, Canvas canvas) {
     canvas.save();
     canvas.translate(selectedShape.x, selectedShape.y);
     final x = selectedShape.width - selectedShape.innerRadius;
     final y = selectedShape.height / 2;
     canvas.drawLine(
-      Offset(x,y),
+      Offset(x, y),
       Offset(selectedShape.width, y),
       Paint()
         ..color = color
@@ -59,4 +55,8 @@ class PaintStyle {
 
     canvas.restore();
   }
+
+  final Paint _selectStroke;
+  final Paint _markerStroke;
+  final Paint _markerFill;
 }
