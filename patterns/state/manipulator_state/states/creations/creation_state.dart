@@ -36,11 +36,6 @@ abstract class CreationState extends ManipulationState {
     _newShape?.paint(canvas);
   }
 
-  var _startX = 0.0;
-  var _startY = 0.0;
-  Shape? _newShape;
-  var _isDragged = false;
-
   bool get _isCreatingNotStart => _newShape == null;
 
   void _startCreatingShape(double x, double y) {
@@ -69,5 +64,8 @@ abstract class CreationState extends ManipulationState {
     _newShape = null;
   }
 
-
+  var _startX = 0.0;
+  var _startY = 0.0;
+  Shape? _newShape;
+  var _isDragged = false;
 }

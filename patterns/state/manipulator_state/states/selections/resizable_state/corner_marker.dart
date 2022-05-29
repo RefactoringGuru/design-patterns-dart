@@ -1,15 +1,15 @@
 import 'package:flutter/rendering.dart';
 
 import '../../../shapes/marker_shape.dart';
-import '../selection_state.dart';
 import '../sub_states/child_state.dart';
+import '../sub_states/parent_state.dart';
 
 abstract class CornerMarker extends ChildState {
   CornerMarker({
-    required SelectionState parentState,
+    required ParentState parentState,
   }) : super(
           parentState: parentState,
-          shape: MarkerShape(),
+          shape: MarkerShape(5),
         );
 
   @override
