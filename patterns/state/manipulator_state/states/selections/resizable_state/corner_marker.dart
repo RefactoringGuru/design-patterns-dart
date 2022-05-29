@@ -9,13 +9,13 @@ abstract class CornerMarker extends ChildState {
     required ParentState parentState,
   }) : super(
           parentState: parentState,
-          shape: MarkerShape(5),
+          markerShape: MarkerShape(5),
         );
 
   @override
   MouseCursor get hoverCursor {
     final rect = parentState.selectedShape.rect;
-    final corner = Offset(shape.x, shape.y);
+    final corner = Offset(markerShape.x, markerShape.y);
 
     if (corner == rect.topLeft) {
       return SystemMouseCursors.resizeUpLeft;

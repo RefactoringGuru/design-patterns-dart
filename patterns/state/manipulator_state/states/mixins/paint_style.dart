@@ -26,16 +26,16 @@ class PaintStyle {
     );
   }
 
-  void paintMarker(Canvas canvas, Shape shape) {
-    final point = Offset(shape.x, shape.y);
+  void paintMarker(Canvas canvas, Shape markerShape) {
+    final point = Offset(markerShape.x, markerShape.y);
     canvas.drawCircle(
       point,
-      shape.width,
+      markerShape.width,
       _markerFill,
     );
     canvas.drawCircle(
       point,
-      shape.width,
+      markerShape.width,
       _markerStroke,
     );
   }

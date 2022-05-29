@@ -5,26 +5,26 @@ import '../../../shapes/marker_shape.dart';
 import '../sub_states/child_state.dart';
 import '../sub_states/parent_state.dart';
 
-class InnerRadiusMarkerState extends ChildState {
+class InnerRadiusMarkerState extends ChildState<CircleShape> {
   InnerRadiusMarkerState({
-    required ParentState parentState,
+    required ParentState<CircleShape> parentState,
   }) : super(
           parentState: parentState,
-          shape: MarkerShape(5),
+          markerShape: MarkerShape(5),
         );
 
   @override
   void mouseDragAction(double x, double y) {
-    final selectedCircle = parentState.selectedShape as CircleShape;
+    final selectedCircle = parentState.selectedShape;
     selectedCircle.innerRadius = selectedCircle.rect.right - x;
   }
 
   @override
   void updatePosition() {
-    final selectedCircle = parentState.selectedShape as CircleShape;
+    final selectedCircle = parentState.selectedShape;
     final y = selectedCircle.y + selectedCircle.height / 2;
     final x = selectedCircle.x + selectedCircle.width;
-    shape.move(
+    markerShape.move(
       x - selectedCircle.innerRadius,
       y,
     );

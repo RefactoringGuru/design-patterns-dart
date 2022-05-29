@@ -16,7 +16,7 @@ class TopLeftMarkerState extends CornerMarker {
 
   @override
   void updatePosition() {
-    shape.move(parentState.selectedShape.x, parentState.selectedShape.y);
+    markerShape.move(parentState.selectedShape.x, parentState.selectedShape.y);
   }
 
   @override

@@ -17,7 +17,7 @@ class BottomRightMarkerState extends CornerMarker {
   @override
   void updatePosition() {
     final parentShape = parentState.selectedShape;
-    shape.move(
+    markerShape.move(
       parentShape.x + parentState.selectedShape.width,
       parentState.selectedShape.y + parentState.selectedShape.height,
     );

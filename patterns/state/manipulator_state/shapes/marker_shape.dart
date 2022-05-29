@@ -7,7 +7,4 @@ class MarkerShape extends BaseShape {
 
   @override
   Rect get rect => Rect.fromLTWH(x - width, y - width, width * 2, width * 2);
-
-  @override
-  void paint(Canvas canvas) {}
 }

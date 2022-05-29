@@ -48,7 +48,7 @@ class ParentState<T extends Shape> extends SelectionState<T> {
     super.paint(canvas);
 
     for (final marker in _markers) {
-      context.paintStyle.paintMarker(canvas, marker.shape);
+      context.paintStyle.paintMarker(canvas, marker.markerShape);
     }
   }
 

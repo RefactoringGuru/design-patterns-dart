@@ -7,13 +7,13 @@ import '../../../pattern/manipulator.dart';
 import '../../mixins/hover_shape_mixin.dart';
 import 'parent_state.dart';
 
-abstract class ChildState extends ManipulationState with HoverShapeMixin {
-  final ParentState parentState;
-  final Shape shape;
+abstract class ChildState<T extends Shape> extends ManipulationState with HoverShapeMixin {
+  final ParentState<T> parentState;
+  final Shape markerShape;
 
   ChildState({
     required this.parentState,
-    required this.shape,
+    required this.markerShape,
   }) {
     updatePosition();
   }
@@ -78,7 +78,7 @@ abstract class ChildState extends ManipulationState with HoverShapeMixin {
 
   @override
   Shape? findShapeByCoordinates(double x, double y) {
-    return shape.rect.contains(Offset(x, y)) ? shape : null;
+    return markerShape.rect.contains(Offset(x, y)) ? markerShape : null;
   }
 
   bool get isDown => _isDown;
