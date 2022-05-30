@@ -15,12 +15,7 @@ class RectangleShape extends BaseShape {
   @override
   void paint(Canvas canvas) {
     canvas.drawRect(
-      Rect.fromLTWH(
-        x,
-        y,
-        width,
-        height,
-      ),
+      rect,
       Paint()..color = Colors.white,
     );
   }

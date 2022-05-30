@@ -18,25 +18,27 @@ class CircleShape extends BaseShape {
   double get innerRadius =>
       _turnOnInnerRadius && _drawInnerRadius ? _innerRadius : width / 2;
 
-  bool get turnOnInnerRadius => _turnOnInnerRadius;
-
   set innerRadius(double newValue) {
     if (newValue > width / 2) {
       _turnOnInnerRadius = false;
       _innerRadius = newValue;
+      _buildPath();
       return;
     } else if (newValue < 1) {
       newValue = 1;
     }
+
     _drawInnerRadius = true;
-    _turnOnInnerRadius = true;
+    _turnOnInnerRadius = _drawInnerRadius;
     _innerRadius = newValue;
+    _buildPath();
   }
 
   @override
   void resize(double width, double height) {
-    _drawInnerRadius = width > _innerRadius * 2;
     super.resize(width, height);
+    _drawInnerRadius = width > _innerRadius * 2;
+    _buildPath();
   }
 
   @override
@@ -46,29 +48,33 @@ class CircleShape extends BaseShape {
 
   @override
   void paint(Canvas canvas) {
-    final path = Path()
+    canvas.drawPath(
+      _path,
+      Paint()..color = Colors.white,
+    );
+  }
+
+  void _buildPath() {
+    _path = Path()
       ..fillType = PathFillType.evenOdd
       ..addOval(rect);
 
     if (_drawInnerRadius) {
       final fixHeight = height / width;
-      path.addOval(
+      final doubleRadius = innerRadius * 2;
+      _path.addOval(
         Rect.fromLTWH(
           x + innerRadius,
           y + innerRadius * fixHeight,
-          width - innerRadius * 2,
-          height - innerRadius * 2 * fixHeight,
+          width - doubleRadius,
+          height - doubleRadius * fixHeight,
         ),
       );
     }
-
-    canvas.drawPath(
-      path,
-      Paint()..color = Colors.white,
-    );
   }
 
   late double _innerRadius;
+  late Path _path;
   bool _drawInnerRadius = true;
   bool _turnOnInnerRadius = true;
 }
