@@ -5,9 +5,9 @@ import '../sub_states/child_state.dart';
 import '../sub_states/parent_state.dart';
 import '../../../shapes/shape.dart';
 
-abstract class CornerMarker extends ChildState {
+abstract class CornerMarker<T extends Shape> extends ChildState<T> {
   CornerMarker({
-    required ParentState parentState,
+    required ParentState<T> parentState,
   }) : super(
           parentState: parentState,
           markerShape: MarkerShape(5),
@@ -31,5 +31,5 @@ abstract class CornerMarker extends ChildState {
     return SystemMouseCursors.move;
   }
 
-  Shape get selectedShape => parentState.selectedShape;
+  T get selectedShape => parentState.selectedShape;
 }

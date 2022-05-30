@@ -26,8 +26,7 @@ class ToolBar extends StatelessWidget {
           builder: (_) {
             return Row(
               children: [
-                for (final tool in app.tools)
-                  buildButton(tool),
+                for (final tool in app.tools) buildButton(tool),
               ],
             );
           },

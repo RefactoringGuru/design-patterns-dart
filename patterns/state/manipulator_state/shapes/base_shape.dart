@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 
-import '../states/selections/selection_state.dart';
 import 'shape.dart';
 
-class BaseShape implements Shape {
+abstract class BaseShape implements Shape {
   BaseShape(double x, double y, double width, double height)
       : _x = x,
         _y = y,
@@ -31,11 +30,6 @@ class BaseShape implements Shape {
       );
 
   @override
-  SelectionState createSelectionState() {
-    return SelectionState(selectedShape: this);
-  }
-
-  @override
   void move(double x, double y) {
     _x = x;
     _y = y;
@@ -46,9 +40,6 @@ class BaseShape implements Shape {
     _width = width;
     _height = height;
   }
-
-  @override
-  void paint(Canvas canvas) {}
 
   double _x;
   double _y;

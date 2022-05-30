@@ -1,17 +1,10 @@
 import 'package:flutter/src/services/mouse_cursor.dart';
 
 import '../../../shapes/circle_shape.dart';
-import '../../../shapes/marker_shape.dart';
-import '../sub_states/child_state.dart';
-import '../sub_states/parent_state.dart';
+import '../resizable_state/corner_marker.dart';
 
-class InnerRadiusMarkerState extends ChildState<CircleShape> {
-  InnerRadiusMarkerState({
-    required ParentState<CircleShape> parentState,
-  }) : super(
-          parentState: parentState,
-          markerShape: MarkerShape(5),
-        );
+class InnerRadiusMarkerState extends CornerMarker<CircleShape> {
+  InnerRadiusMarkerState({required super.parentState});
 
   @override
   void mouseDragAction(double x, double y) {

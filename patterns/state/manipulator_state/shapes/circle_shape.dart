@@ -42,6 +42,12 @@ class CircleShape extends BaseShape {
   }
 
   @override
+  void move(double x, double y) {
+    super.move(x, y);
+    _buildPath();
+  }
+
+  @override
   SelectionState createSelectionState() {
     return InnerRadiusState(selectedShape: this);
   }

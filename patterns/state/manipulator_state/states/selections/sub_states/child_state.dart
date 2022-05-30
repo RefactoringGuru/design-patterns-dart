@@ -7,7 +7,8 @@ import '../../../pattern/manipulator.dart';
 import '../../mixins/hover_shape_mixin.dart';
 import 'parent_state.dart';
 
-abstract class ChildState<T extends Shape> extends ManipulationState with HoverShapeMixin {
+abstract class ChildState<T extends Shape> extends ManipulationState
+    with HoverShapeMixin {
   final ParentState<T> parentState;
   final Shape markerShape;
 

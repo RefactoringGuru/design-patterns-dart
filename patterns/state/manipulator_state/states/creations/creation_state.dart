@@ -52,8 +52,12 @@ abstract class CreationState extends ManipulationState {
 
   void _repositionNewShape() {
     if (!_isDragged) {
-      _newShape!.move(_startX - 50, _startY - 50);
       _newShape!.resize(100, 100);
+      final rect = _newShape!.rect;
+      _newShape!.move(
+        _startX - rect.width / 2,
+        _startY - rect.height / 2,
+      );
     }
   }
 

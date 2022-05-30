@@ -1,11 +1,11 @@
-import '../../shapes/base_shape.dart';
 import '../../shapes/shape.dart';
+import '../../shapes/text_shape.dart';
 import 'creation_state.dart';
 
 class TextCreationState extends CreationState {
   @override
   Shape createShape(double x, double y) {
-    return BaseShape(x, y, 100, 100);
+    return TextShape(x, y, 2, 2);
   }
 
   @override
