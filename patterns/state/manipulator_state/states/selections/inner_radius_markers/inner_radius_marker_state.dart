@@ -1,7 +1,7 @@
 import 'package:flutter/src/services/mouse_cursor.dart';
 
 import '../../../shapes/circle_shape.dart';
-import '../resizable_state/corner_marker.dart';
+import '../../_/corner_marker.dart';
 
 class InnerRadiusMarkerState extends CornerMarker<CircleShape> {
   InnerRadiusMarkerState({required super.parentState});

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../shapes/circle_shape.dart';
-import 'inner_radius/inner_radius_marker_state.dart';
+import 'inner_radius_markers/inner_radius_marker_state.dart';
 import 'resizable_state.dart';
 
 class InnerRadiusState extends ResizableState<CircleShape> {

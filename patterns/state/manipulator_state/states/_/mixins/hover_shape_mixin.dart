@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../pattern/manipulator.dart';
-import '../../shapes/shape.dart';
+import '../../../pattern/manipulator.dart';
+import '../../../shapes/shape.dart';
 
 mixin HoverShapeMixin implements ManipulationState {
   Shape? findShapeByCoordinates(double x, double y) {

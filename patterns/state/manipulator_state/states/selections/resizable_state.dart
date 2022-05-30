@@ -1,8 +1,8 @@
-import 'resizable_state/bottom_left_marker_state.dart';
-import 'resizable_state/bottom_right_marker_state.dart';
-import 'resizable_state/top_left_marker_state.dart';
-import 'resizable_state/top_right_marker_state.dart';
-import 'sub_states/parent_state.dart';
+import 'resizable_markers/bottom_left_marker_state.dart';
+import 'resizable_markers/bottom_right_marker_state.dart';
+import 'resizable_markers/top_left_marker_state.dart';
+import 'resizable_markers/top_right_marker_state.dart';
+import '../_/sub_states/parent_state.dart';
 import '../../shapes/shape.dart';
 
 class ResizableState<T extends Shape> extends ParentState<T> {

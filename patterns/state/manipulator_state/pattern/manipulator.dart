@@ -1,8 +1,8 @@
 library manipulator;
 
 import 'package:flutter/material.dart';
+import '../states/_/paint_style.dart';
 import '../app/shapes.dart';
-import '../states/mixins/paint_style.dart';
 
 part 'manipulation_state.dart';
 part '../app/base_manipulationt.dart';

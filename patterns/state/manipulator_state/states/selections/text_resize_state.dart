@@ -1,8 +1,8 @@
 import 'package:flutter/src/services/mouse_cursor.dart';
 
 import '../../shapes/text_shape.dart';
-import 'resizable_state/corner_marker.dart';
-import 'sub_states/parent_state.dart';
+import '../_/corner_marker.dart';
+import '../_/sub_states/parent_state.dart';
 
 class TextResizeState extends ParentState<TextShape> {
   TextResizeState({required super.selectedShape}) {

@@ -4,7 +4,7 @@ import 'package:flutter/services.dart';
 
 import '../../../shapes/shape.dart';
 import '../../../pattern/manipulator.dart';
-import '../../mixins/hover_shape_mixin.dart';
+import '../../_/mixins/hover_shape_mixin.dart';
 import 'parent_state.dart';
 
 abstract class ChildState<T extends Shape> extends ManipulationState

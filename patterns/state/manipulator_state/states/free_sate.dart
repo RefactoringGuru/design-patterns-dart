@@ -1,5 +1,5 @@
 import '../pattern/manipulator.dart';
-import 'mixins/hover_shape_mixin.dart';
+import '_/mixins/hover_shape_mixin.dart';
 import 'selections/moving_state.dart';
 
 class FreeState extends ManipulationState with HoverShapeMixin {

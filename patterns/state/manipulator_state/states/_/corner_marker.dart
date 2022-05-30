@@ -1,9 +1,9 @@
 import 'package:flutter/rendering.dart';
 
-import '../../../shapes/marker_shape.dart';
-import '../sub_states/child_state.dart';
-import '../sub_states/parent_state.dart';
-import '../../../shapes/shape.dart';
+import '../../shapes/marker_shape.dart';
+import '../../shapes/shape.dart';
+import 'sub_states/child_state.dart';
+import 'sub_states/parent_state.dart';
 
 abstract class CornerMarker<T extends Shape> extends ChildState<T> {
   CornerMarker({
