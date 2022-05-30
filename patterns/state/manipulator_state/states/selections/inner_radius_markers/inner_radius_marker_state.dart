@@ -8,17 +8,16 @@ class InnerRadiusMarkerState extends Marker<CircleShape> {
 
   @override
   void mouseDragAction(double x, double y) {
-    final selectedCircle = parentState.selectedShape;
-    selectedCircle.innerRadius = selectedCircle.rect.right - x;
+    selectedShape.innerRadius = selectedShape.rect.right - x;
   }
 
   @override
   void updatePosition() {
-    final selectedCircle = parentState.selectedShape;
-    final y = selectedCircle.y + selectedCircle.height / 2;
-    final x = selectedCircle.x + selectedCircle.width;
+    final y = selectedShape.y + selectedShape.height / 2;
+    final x = selectedShape.x + selectedShape.width;
+
     markerShape.move(
-      x - selectedCircle.innerRadius,
+      x - selectedShape.innerRadius,
       y,
     );
   }
