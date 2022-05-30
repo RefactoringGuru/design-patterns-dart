@@ -1,6 +1,6 @@
 import '../../shapes/rectangle_shape.dart';
 import '../../shapes/shape.dart';
-import 'creation_state.dart';
+import '../_/creation_state.dart';
 
 class RectangleCreationState extends CreationState {
   @override

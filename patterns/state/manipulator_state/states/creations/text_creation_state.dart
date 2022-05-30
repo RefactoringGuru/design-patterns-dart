@@ -1,6 +1,6 @@
 import '../../shapes/shape.dart';
 import '../../shapes/text_shape.dart';
-import 'creation_state.dart';
+import '../_/creation_state.dart';
 
 class TextCreationState extends CreationState {
   @override
