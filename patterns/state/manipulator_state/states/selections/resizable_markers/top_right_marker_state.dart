@@ -10,8 +10,9 @@ class TopRightMarkerState extends Marker {
     final width = x - selectedShape.x;
     final height = selectedShape.height + selectedShape.y - y;
 
-    selectedShape.resize(width, height);
-    selectedShape.move(selectedShape.x, y);
+    selectedShape
+      ..resize(width, height)
+      ..move(selectedShape.x, y);
   }
 
   @override

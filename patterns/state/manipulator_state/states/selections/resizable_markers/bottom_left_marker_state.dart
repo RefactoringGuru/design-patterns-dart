@@ -10,8 +10,9 @@ class BottomLeftMarkerState extends Marker {
     final newX = selectedShape.width + selectedShape.x - x;
     final newY = y - selectedShape.y;
 
-    selectedShape.resize(newX, newY);
-    selectedShape.move(x, selectedShape.y);
+    selectedShape
+      ..resize(newX, newY)
+      ..move(x, selectedShape.y);
   }
 
   @override
