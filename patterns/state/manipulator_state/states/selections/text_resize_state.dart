@@ -6,7 +6,7 @@ import '../_/sub_states/parent_state.dart';
 
 class TextResizeState extends ParentState<TextShape> {
   TextResizeState({required super.selectedShape}) {
-    addMarkers([
+    addChildren([
       TextSizeMarkerState(parentState: this),
     ]);
   }
@@ -17,7 +17,7 @@ class TextResizeState extends ParentState<TextShape> {
   }
 }
 
-class TextSizeMarkerState extends CornerMarker<TextShape> {
+class TextSizeMarkerState extends Marker<TextShape> {
   TextSizeMarkerState({required super.parentState});
 
   @override

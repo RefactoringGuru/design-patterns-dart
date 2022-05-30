@@ -1,6 +1,6 @@
 import '../../_/corner_marker.dart';
 
-class TopLeftMarkerState extends CornerMarker {
+class TopLeftMarkerState extends Marker {
   TopLeftMarkerState({
     required super.parentState,
   });

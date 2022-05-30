@@ -7,7 +7,7 @@ import '../../shapes/shape.dart';
 
 class ResizableState<T extends Shape> extends ParentState<T> {
   ResizableState({required super.selectedShape}) {
-    addMarkers([
+    addChildren([
       TopLeftMarkerState(parentState: this),
       TopRightMarkerState(parentState: this),
       BottomRightMarkerState(parentState: this),

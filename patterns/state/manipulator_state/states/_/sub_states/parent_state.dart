@@ -9,21 +9,21 @@ class ParentState<T extends Shape> extends SelectionState<T> {
     required super.selectedShape,
   });
 
-  void addMarkers(List<ChildState> markers) {
-    _markers.addAll(markers);
+  void addChildren(List<ChildState> markers) {
+    _children.addAll(markers);
   }
 
-  void updateMarkers() {
-    for (final marker in _markers) {
-      marker.updatePosition();
+  void updateKids() {
+    for (final child in _children) {
+      child.updatePosition();
     }
   }
 
   @override
   void mouseDown(double x, double y) {
-    for (final marker in _markers) {
-      marker.mouseDown(x, y);
-      if (context.state == marker) {
+    for (final child in _children) {
+      child.mouseDown(x, y);
+      if (context.state == child) {
         return;
       }
     }
@@ -35,9 +35,9 @@ class ParentState<T extends Shape> extends SelectionState<T> {
   void mouseMove(double x, double y) {
     super.mouseMove(x, y);
 
-    for (final marker in _markers) {
-      marker.mouseMove(x, y);
-      if (marker.isHover) {
+    for (final child in _children) {
+      child.mouseMove(x, y);
+      if (child.isHover) {
         return;
       }
     }
@@ -47,10 +47,10 @@ class ParentState<T extends Shape> extends SelectionState<T> {
   void paint(Canvas canvas) {
     super.paint(canvas);
 
-    for (final marker in _markers) {
-      context.paintStyle.paintMarker(canvas, marker.markerShape);
+    for (final child in _children) {
+      context.paintStyle.paintMarker(canvas, child.markerShape);
     }
   }
 
-  final _markers = <ChildState>[];
+  final _children = <ChildState>[];
 }

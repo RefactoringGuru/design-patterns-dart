@@ -48,7 +48,7 @@ abstract class ChildState<T extends Shape> extends ManipulationState
     super.mouseMove(x, y);
     if (_isDown) {
       mouseDragAction(x, y);
-      parentState.updateMarkers();
+      parentState.updateKids();
       context.cursor = hoverCursor;
       context.update();
     }

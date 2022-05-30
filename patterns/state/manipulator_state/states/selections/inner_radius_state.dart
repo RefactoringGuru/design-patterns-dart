@@ -6,7 +6,7 @@ import 'resizable_state.dart';
 
 class InnerRadiusState extends ResizableState<CircleShape> {
   InnerRadiusState({required super.selectedShape}) {
-    addMarkers([
+    addChildren([
       InnerRadiusMarkerState(parentState: this),
     ]);
   }

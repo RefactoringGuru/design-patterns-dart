@@ -3,7 +3,7 @@ import 'package:flutter/src/services/mouse_cursor.dart';
 import '../../../shapes/circle_shape.dart';
 import '../../_/corner_marker.dart';
 
-class InnerRadiusMarkerState extends CornerMarker<CircleShape> {
+class InnerRadiusMarkerState extends Marker<CircleShape> {
   InnerRadiusMarkerState({required super.parentState});
 
   @override

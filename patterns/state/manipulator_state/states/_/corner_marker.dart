@@ -5,8 +5,8 @@ import '../../shapes/shape.dart';
 import 'sub_states/child_state.dart';
 import 'sub_states/parent_state.dart';
 
-abstract class CornerMarker<T extends Shape> extends ChildState<T> {
-  CornerMarker({
+abstract class Marker<T extends Shape> extends ChildState<T> {
+  Marker({
     required ParentState<T> parentState,
   }) : super(
           parentState: parentState,
