@@ -9,7 +9,9 @@ class FreeState extends ManipulationState with HoverShapeMixin {
   }
 
   bool tryToSelectAndStartMovingShape(double x, double y) {
-    if (hoverShape == null) {
+    final selectedShape = context.shapes.findShapeByCoordinates(x, y);
+
+    if (selectedShape == null) {
       return false;
     }
 
@@ -17,7 +19,7 @@ class FreeState extends ManipulationState with HoverShapeMixin {
       MovingState(
         startX: x,
         startY: y,
-        selectedShape: hoverShape!,
+        selectedShape: selectedShape,
       ),
     );
 
