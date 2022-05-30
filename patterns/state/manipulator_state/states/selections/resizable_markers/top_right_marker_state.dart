@@ -7,11 +7,11 @@ class TopRightMarkerState extends Marker {
 
   @override
   void mouseDragAction(double x, double y) {
-    final newX = x - selectedShape.x;
-    final newY = selectedShape.height + selectedShape.y - y;
+    final width = x - selectedShape.x;
+    final height = selectedShape.height + selectedShape.y - y;
 
-    selectedShape.resize(newX, newY);
-    selectedShape.move(selectedShape.x, newY);
+    selectedShape.resize(width, height);
+    selectedShape.move(selectedShape.x, y);
   }
 
   @override
