@@ -9,6 +9,13 @@ class TextShape extends BaseShape {
     _buildParagraph();
   }
 
+  set text(String newText) {
+    _text = newText;
+    _buildParagraph();
+  }
+
+  String get text => _text;
+
   @override
   void paint(Canvas can) {
     can.drawParagraph(_paragraph, Offset(x, y));
@@ -49,10 +56,11 @@ class TextShape extends BaseShape {
     );
     _paragraph = (ParagraphBuilder(style)
           ..pushStyle(tStyle)
-          ..addText('Text'))
+          ..addText(_text))
         .build();
     _paragraph.layout(ParagraphConstraints(width: double.infinity));
   }
 
   late Paragraph _paragraph;
+  String _text = 'Text';
 }

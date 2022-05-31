@@ -1,5 +1,6 @@
 import '../../shapes/text_shape.dart';
 import '../_/sub_states/parent_state.dart';
+import 'text_change_state.dart';
 import 'text_resize_marker/text_resize_marker_state.dart';
 
 class TextResizeState extends ParentState<TextShape> {
@@ -7,6 +8,15 @@ class TextResizeState extends ParentState<TextShape> {
     addChildren([
       TextSizeMarkerState(parentState: this),
     ]);
+  }
+
+  @override
+  void mouseDoubleClick() {
+    context.changeState(
+      TextChangeState(
+        selectedShape: selectedShape,
+      ),
+    );
   }
 
   @override
