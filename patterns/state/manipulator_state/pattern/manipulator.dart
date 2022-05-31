@@ -32,6 +32,8 @@ abstract class Manipulator {
 
   void mouseUp();
 
+  void mouseDoubleClick();
+
   void keyDown(String key);
 
   void paint(Canvas canvas);

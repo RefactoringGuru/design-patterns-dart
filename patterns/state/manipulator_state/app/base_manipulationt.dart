@@ -59,6 +59,11 @@ class BaseManipulator implements Manipulator {
   }
 
   @override
+  void mouseDoubleClick() {
+    _state.mouseDoubleClick();
+  }
+
+  @override
   void keyDown(String key) {
     _state.keyDown(key);
   }

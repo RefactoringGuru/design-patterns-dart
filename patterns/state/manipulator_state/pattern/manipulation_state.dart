@@ -9,6 +9,8 @@ class ManipulationState {
 
   void mouseUp() {}
 
+  void mouseDoubleClick() {}
+
   void keyDown(String key) {}
 
   void paint(Canvas canvas) {}
