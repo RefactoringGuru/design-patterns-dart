@@ -64,8 +64,8 @@ class BaseManipulator implements Manipulator {
   }
 
   @override
-  void keyDown(String key) {
-    _state.keyDown(key);
+  void keyDown(KeyEvent keyEvent) {
+    _state.keyDown(keyEvent);
   }
 
   @override

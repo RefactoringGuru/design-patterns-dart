@@ -34,7 +34,7 @@ abstract class Manipulator {
 
   void mouseDoubleClick();
 
-  void keyDown(String key);
+  void keyDown(KeyEvent keyEvent);
 
   void paint(Canvas canvas);
 }

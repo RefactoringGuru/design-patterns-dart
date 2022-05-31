@@ -3,51 +3,78 @@ import 'package:flutter/material.dart';
 import '../../../abstract_factory/tool_panel_factory/widgets/independent/event_listenable_builder.dart';
 import '../app/app.dart';
 
-class DrawingBoard extends StatelessWidget {
+class DrawingBoard extends StatefulWidget {
   final App app;
 
   const DrawingBoard({Key? key, required this.app}) : super(key: key);
 
   @override
+  State<DrawingBoard> createState() => _DrawingBoardState();
+}
+
+class _DrawingBoardState extends State<DrawingBoard> {
+  late FocusNode focusNode;
+
+  @override
+  void initState() {
+    focusNode = FocusNode(skipTraversal: true);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onDoubleTap: app.manipulator.mouseDoubleClick,
-      child: Listener(
-        onPointerDown: (e) => app.manipulator.mouseDown(
-          e.localPosition.dx,
-          e.localPosition.dy,
-        ),
-        onPointerHover: (e) => app.manipulator.mouseMove(
-          e.localPosition.dx,
-          e.localPosition.dy,
-        ),
-        onPointerMove: (e) => app.manipulator.mouseMove(
-          e.localPosition.dx,
-          e.localPosition.dy,
-        ),
-        onPointerUp: (e) => app.manipulator.mouseUp(),
-        child: Container(
-          constraints: BoxConstraints.expand(),
-          color: Color(0xff1f1f1f),
-          child: EventListenableBuilder(
-            event: app.shapes.onChange,
-            builder: (_) {
-              return EventListenableBuilder(
-                event: app.manipulator.onUpdate,
-                builder: (_) {
-                  return MouseRegion(
-                    cursor: app.manipulator.cursor,
-                    child: CustomPaint(
-                      painter: _Painter(app),
-                    ),
-                  );
-                },
-              );
-            },
+    return KeyboardListener(
+      autofocus: true,
+      focusNode: focusNode,
+      onKeyEvent: widget.app.manipulator.keyDown,
+      child: GestureDetector(
+        onDoubleTap: widget.app.manipulator.mouseDoubleClick,
+        child: Listener(
+          onPointerDown: (e) {
+            FocusScope.of(context).requestFocus(focusNode);
+            widget.app.manipulator.mouseDown(
+              e.localPosition.dx,
+              e.localPosition.dy,
+            );
+          },
+          onPointerHover: (e) => widget.app.manipulator.mouseMove(
+            e.localPosition.dx,
+            e.localPosition.dy,
+          ),
+          onPointerMove: (e) => widget.app.manipulator.mouseMove(
+            e.localPosition.dx,
+            e.localPosition.dy,
+          ),
+          onPointerUp: (e) => widget.app.manipulator.mouseUp(),
+          child: Container(
+            constraints: BoxConstraints.expand(),
+            color: Color(0xff1f1f1f),
+            child: EventListenableBuilder(
+              event: widget.app.shapes.onChange,
+              builder: (_) {
+                return EventListenableBuilder(
+                  event: widget.app.manipulator.onUpdate,
+                  builder: (_) {
+                    return MouseRegion(
+                      cursor: widget.app.manipulator.cursor,
+                      child: CustomPaint(
+                        painter: _Painter(widget.app),
+                      ),
+                    );
+                  },
+                );
+              },
+            ),
           ),
         ),
       ),
     );
+  }
+
+  @override
+  void dispose() {
+    focusNode.dispose();
+    super.dispose();
   }
 }
 
