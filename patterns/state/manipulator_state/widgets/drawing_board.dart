@@ -14,6 +14,7 @@ class DrawingBoard extends StatefulWidget {
 
 class _DrawingBoardState extends State<DrawingBoard> {
   late FocusNode focusNode;
+  late Offset _lastMouseDown;
 
   @override
   void initState() {
@@ -28,9 +29,13 @@ class _DrawingBoardState extends State<DrawingBoard> {
       focusNode: focusNode,
       onKeyEvent: widget.app.manipulator.keyDown,
       child: GestureDetector(
-        onDoubleTap: widget.app.manipulator.mouseDoubleClick,
+        onDoubleTap: () => widget.app.manipulator.mouseDoubleClick(
+          _lastMouseDown.dx,
+          _lastMouseDown.dy,
+        ),
         child: Listener(
           onPointerDown: (e) {
+            _lastMouseDown = e.localPosition;
             FocusScope.of(context).requestFocus(focusNode);
             widget.app.manipulator.mouseDown(
               e.localPosition.dx,
