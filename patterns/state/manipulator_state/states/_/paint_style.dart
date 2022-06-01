@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 import '../../shapes/circle_shape.dart';
 import '../../shapes/shape.dart';
+import '../../shapes/text_shape.dart';
+import '../selections/text_change_state.dart';
 
 class PaintStyle {
   PaintStyle(this.color)
@@ -58,6 +60,25 @@ class PaintStyle {
     );
 
     canvas.restore();
+  }
+
+  void paintSelectedText(TextShape selectedShape, Canvas canvas) {
+    canvas.drawRect(
+      selectedShape.rect,
+      Paint()..color = color.withOpacity(0.3),
+    );
+  }
+
+  void paintTextCursor(
+      TextCursor cursor, TextShape selectedShape, Canvas canvas) {
+    canvas.drawRect(
+      Rect.fromLTWH(
+          cursor.xCoordinate,
+          selectedShape.y + (selectedShape.height - selectedShape.userHeight),
+          1.5,
+          selectedShape.userHeight),
+      Paint()..color = Colors.white,
+    );
   }
 
   final Paint _selectStroke;

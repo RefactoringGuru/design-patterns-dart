@@ -8,8 +8,10 @@ class TextSizeMarkerState extends Marker<TextShape> {
 
   @override
   void mouseDragAction(double x, double y) {
-    final newHeight = y - selectedShape.y;
-    selectedShape.resize(-1, newHeight);
+    final newHeight =
+        y - selectedShape.y - (selectedShape.height - selectedShape.userHeight);
+
+    selectedShape.resize(0, newHeight);
   }
 
   @override

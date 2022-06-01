@@ -5,7 +5,7 @@ import '../_/creation_state.dart';
 class TextCreationState extends CreationState {
   @override
   Shape createShape(double x, double y) {
-    return TextShape(x, y, 2, 2);
+    return TextShape(x, y, 2);
   }
 
   @override
