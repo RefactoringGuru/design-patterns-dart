@@ -35,6 +35,7 @@ class BaseManipulator implements Manipulator {
 
     _state = newState;
     _state._context = this;
+    _state.init();
     onStateChange._emit();
   }
 

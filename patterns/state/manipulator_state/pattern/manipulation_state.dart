@@ -3,6 +3,8 @@ part of manipulator;
 class ManipulationState {
   Manipulator get context => _context;
 
+  void init() {}
+
   void mouseMove(double x, double y) {}
 
   void mouseDown(double x, double y) {}
