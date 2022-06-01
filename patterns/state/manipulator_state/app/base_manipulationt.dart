@@ -59,8 +59,8 @@ class BaseManipulator implements Manipulator {
   }
 
   @override
-  void mouseDoubleClick() {
-    _state.mouseDoubleClick();
+  void mouseDoubleClick(double x, double y) {
+    _state.mouseDoubleClick(x, y);
   }
 
   @override

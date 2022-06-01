@@ -9,7 +9,7 @@ class ManipulationState {
 
   void mouseUp() {}
 
-  void mouseDoubleClick() {}
+  void mouseDoubleClick(double x, double y) {}
 
   void keyDown(KeyEvent keyEvent) {}
 

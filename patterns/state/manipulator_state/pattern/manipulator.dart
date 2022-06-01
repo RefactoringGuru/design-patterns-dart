@@ -32,7 +32,7 @@ abstract class Manipulator {
 
   void mouseUp();
 
-  void mouseDoubleClick();
+  void mouseDoubleClick(double x, double y);
 
   void keyDown(KeyEvent keyEvent);
 
