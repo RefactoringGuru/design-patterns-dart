@@ -62,13 +62,12 @@ class TextChangeState extends SelectionState<TextShape> {
     context.cursor = SystemMouseCursors.basic;
   }
 
-  double xx0 = 0;
-  int len = 0;
-  final Offset _startPointer;
-  final TextCursor _textCursor;
 
   @override
   String toString() {
     return '${super.toString()} + Text Change State';
   }
+
+  final Offset _startPointer;
+  final TextCursor _textCursor;
 }
