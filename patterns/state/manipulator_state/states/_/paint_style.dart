@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../shapes/circle_shape.dart';
 import '../../shapes/shape.dart';
 import '../../shapes/text_shape.dart';
-import '../selections/text_change_state.dart';
+import '../selections/text/text_cursor.dart';
 
 class PaintStyle {
   PaintStyle(this.color)
@@ -70,7 +70,10 @@ class PaintStyle {
   }
 
   void paintTextCursor(
-      TextCursor cursor, TextShape selectedShape, Canvas canvas) {
+    TextCursor cursor,
+    TextShape selectedShape,
+    Canvas canvas,
+  ) {
     canvas.drawRect(
       Rect.fromLTWH(
           cursor.xCoordinate,
