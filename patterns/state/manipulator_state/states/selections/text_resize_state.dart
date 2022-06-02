@@ -2,7 +2,7 @@ import 'dart:ui';
 
 import '../../shapes/text_shape.dart';
 import '../_/sub_states/parent_state.dart';
-import 'text_change_state.dart';
+import 'text_edit_state.dart';
 import 'text/text_resize_marker_state.dart';
 
 class TextResizeState extends ParentState<TextShape> {
@@ -15,7 +15,7 @@ class TextResizeState extends ParentState<TextShape> {
   @override
   void mouseDoubleClick(double x, double y) {
     context.changeState(
-      TextChangeState(
+      TextEditState(
         startPointer: Offset(x, y),
         selectedShape: selectedShape,
       ),

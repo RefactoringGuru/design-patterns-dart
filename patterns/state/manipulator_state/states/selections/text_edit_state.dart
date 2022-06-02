@@ -7,8 +7,8 @@ import 'text/keyboard_actions.dart';
 import 'text/text_cursor.dart';
 import 'text/text_cursor_animation.dart';
 
-class TextChangeState extends SelectionState<TextShape> {
-  TextChangeState({
+class TextEditState extends SelectionState<TextShape> {
+  TextEditState({
     required Offset startPointer,
     required super.selectedShape,
   }) : _startPointer = startPointer;
@@ -77,7 +77,7 @@ class TextChangeState extends SelectionState<TextShape> {
 
   @override
   String toString() {
-    return '${super.toString()} + Text Change State';
+    return '${super.toString()} + Text Edit State';
   }
 
   final Offset _startPointer;
