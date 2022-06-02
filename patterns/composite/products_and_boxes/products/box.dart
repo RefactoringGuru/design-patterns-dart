@@ -9,8 +9,8 @@ class Box implements Product {
   @override
   String get content {
     final places = size > 1 ? "places: $size, " : "";
-    final _price = size > 1 ? "price: $price\$" : "$price\$";
-    return 'Box($places$_price)';
+    final localPrice = size > 1 ? "price: $price\$" : "$price\$";
+    return 'Box($places$localPrice)';
   }
 
   @override

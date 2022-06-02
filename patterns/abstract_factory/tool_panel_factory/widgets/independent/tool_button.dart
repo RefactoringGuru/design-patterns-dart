@@ -10,7 +10,7 @@ class ToolButton extends StatelessWidget {
   const ToolButton({
     Key? key,
     required this.onTap,
-    required this.active,
+    this.active = false,
     required this.icon,
   }) : super(key: key);
 

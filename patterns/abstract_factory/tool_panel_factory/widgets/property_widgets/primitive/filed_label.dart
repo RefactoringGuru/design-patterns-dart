@@ -15,7 +15,7 @@ class FieldLabel extends StatelessWidget {
     return Row(
       children: [
         SizedBox(width: 10),
-        Text(text + ':'),
+        Text('$text:'),
         SizedBox(width: 10),
         child,
         SizedBox(width: 20),

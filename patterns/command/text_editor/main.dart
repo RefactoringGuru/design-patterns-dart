@@ -32,5 +32,5 @@ void log({
 }) {
   final addOrUndo = isUndo ? 'Undo_' : '[➕] ';
   final description = '$addOrUndo$command';
-  print(description.padRight(72, '_') + '"$editorText"');
+  print('${description.padRight(72, '_')}"$editorText"');
 }
