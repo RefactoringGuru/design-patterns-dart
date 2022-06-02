@@ -11,14 +11,14 @@ class TextCursor {
     x = x - _shape.x;
 
     final pos = _shape.paragraph.getPositionForOffset(Offset(x, _shape.y));
+
     _charIndex = pos.offset;
+    _xPosition = _shape.x;
 
     final range = _shape.paragraph.getBoxesForRange(
       pos.offset - 1,
       pos.offset,
     );
-
-    _xPosition = _shape.x;
 
     if (range.isNotEmpty) {
       _xPosition += range.first.right;

@@ -74,13 +74,18 @@ class PaintStyle {
     TextShape selectedShape,
     Canvas canvas,
   ) {
-    canvas.drawRect(
-      Rect.fromLTWH(
-          cursor.xCoordinate,
-          selectedShape.y + (selectedShape.height - selectedShape.userHeight),
-          1.5,
-          selectedShape.userHeight),
-      Paint()..color = Colors.white,
+    canvas.drawLine(
+      Offset(
+        cursor.xCoordinate,
+        selectedShape.y + (selectedShape.height - selectedShape.userHeight) + 2,
+      ),
+      Offset(
+        cursor.xCoordinate,
+        selectedShape.y + (selectedShape.height) - 2,
+      ),
+      Paint()
+        ..strokeWidth = 2.2
+        ..color = Colors.white,
     );
   }
 

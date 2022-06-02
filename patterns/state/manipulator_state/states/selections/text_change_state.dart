@@ -1,29 +1,37 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 import '../../shapes/text_shape.dart';
 import 'selection_state.dart';
+import 'text/keyboard_actions.dart';
 import 'text/text_cursor.dart';
+import 'text/text_cursor_animation.dart';
 
 class TextChangeState extends SelectionState<TextShape> {
   TextChangeState({
     required Offset startPointer,
     required super.selectedShape,
-  })  : _startPointer = startPointer,
-        _textCursor = TextCursor(selectedShape);
+  }) : _startPointer = startPointer;
 
   @override
   void init() {
-    _textCursor.changePosition(_startPointer.dx);
+    _textCursor = TextCursor(selectedShape)..changePosition(_startPointer.dx);
+
+    _keyboardActions = KeyboardActions(
+      actions: {
+        PhysicalKeyboardKey.backspace: _textCursor.backspace,
+        PhysicalKeyboardKey.arrowLeft: _textCursor.moveLeft,
+        PhysicalKeyboardKey.arrowRight: _textCursor.moveRight,
+      },
+      inputCharAction: _textCursor.inputText,
+    );
+
+    _animationCursor = TextCursorAnimation(
+      speed: Duration(milliseconds: 400),
+      onBlink: context.update,
+    );
+
     context.cursor = SystemMouseCursors.text;
-
-    _cursorAnimateTimer = Timer.periodic(Duration(milliseconds: 500), (_) {
-      _isShowCursor = !_isShowCursor;
-      context.update();
-    });
-
     context.update();
   }
 
@@ -31,31 +39,18 @@ class TextChangeState extends SelectionState<TextShape> {
   void mouseDown(double x, double y) {
     if (selectedShape.rect.contains(Offset(x, y))) {
       _textCursor.changePosition(x);
-      _isShowCursor = true;
-      context.update();
+      _animationCursor.touch();
       return;
     }
 
-    _cursorAnimateTimer.cancel();
+    _animationCursor.dispose();
     super.mouseDown(x, y);
   }
 
   @override
   void keyDown(KeyEvent keyEvent) {
-    if (keyEvent is KeyDownEvent || keyEvent is KeyRepeatEvent) {
-      if (keyEvent.physicalKey == PhysicalKeyboardKey.backspace) {
-        _textCursor.backspace();
-      } else if (keyEvent.physicalKey == PhysicalKeyboardKey.arrowLeft) {
-        _textCursor.moveLeft();
-      } else if (keyEvent.physicalKey == PhysicalKeyboardKey.arrowRight) {
-        _textCursor.moveRight();
-      } else if (keyEvent.character != null) {
-        _textCursor.inputText(keyEvent.character!);
-      }
-
-      _isShowCursor = true;
-      context.update();
-    }
+    _keyboardActions.keyDown(keyEvent);
+    _animationCursor.touch();
   }
 
   @override
@@ -63,7 +58,7 @@ class TextChangeState extends SelectionState<TextShape> {
     context.paintStyle.paintSelectedText(selectedShape, canvas);
     super.paint(canvas);
 
-    if (_isShowCursor) {
+    if (_animationCursor.isVisible) {
       context.paintStyle.paintTextCursor(_textCursor, selectedShape, canvas);
     }
   }
@@ -86,7 +81,7 @@ class TextChangeState extends SelectionState<TextShape> {
   }
 
   final Offset _startPointer;
-  final TextCursor _textCursor;
-  bool _isShowCursor = true;
-  late Timer _cursorAnimateTimer;
+  late final TextCursor _textCursor;
+  late final KeyboardActions _keyboardActions;
+  late final TextCursorAnimation _animationCursor;
 }
