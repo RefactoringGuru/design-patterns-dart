@@ -17,7 +17,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] **Mediator**
     - [x] **Memento** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/conceptual)] [[Memento Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/memento_editor)] 
     - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
-    - [ ] **State**
+    - [x] **State** - [[State Manipulator](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/state/manipulator_state)]
     - [ ] **Template Method**
     - [X] **Visitor**  [[Shape XML Exporter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/visitor/shapes_exporter)]
     - [X] **Strategy** [[Reservation Cargo Spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
@@ -32,8 +32,8 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 
 ## Requirements
 
-The examples were written in **Dart 2.15**.
-Some complex examples require **Flutter 2.12**.
+The examples were written in **Dart 2.17**.
+Some complex examples require **Flutter 3.0.0**.
 
 ## Contributor's Guide
 
