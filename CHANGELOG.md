@@ -1,3 +1,6 @@
+## 0.24.0
+- Add state pattern: State Manipulator.
+
 ## 0.23.14
 - Replace web renderer html to canvakit (deploy_flutter_demo.dart).
 
