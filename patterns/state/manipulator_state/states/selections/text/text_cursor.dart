@@ -3,19 +3,19 @@ import 'dart:ui';
 import '../../../shapes/text_shape.dart';
 
 class TextCursor {
-  TextCursor(this._shape);
+  TextCursor(this._textShape) : _xPosition = _textShape.x;
 
   double get xCoordinate => _xPosition;
 
   void changePosition(double x) {
-    x = x - _shape.x;
+    x = x - _textShape.x;
 
-    final pos = _shape.paragraph.getPositionForOffset(Offset(x, _shape.y));
+    final pos = _textShape.paragraph.getPositionForOffset(Offset(x, _textShape.y));
 
     _charIndex = pos.offset;
-    _xPosition = _shape.x;
+    _xPosition = _textShape.x;
 
-    final range = _shape.paragraph.getBoxesForRange(
+    final range = _textShape.paragraph.getBoxesForRange(
       pos.offset - 1,
       pos.offset,
     );
@@ -41,14 +41,14 @@ class TextCursor {
 
   void moveLeft() {
     _charIndex--;
-    _xPosition = _shape.x;
+    _xPosition = _textShape.x;
 
     if (_charIndex <= 0) {
       _charIndex = 0;
       return;
     }
 
-    final range = _shape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
+    final range = _textShape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
 
     if (range.isNotEmpty) {
       _xPosition += range.first.right;
@@ -57,15 +57,15 @@ class TextCursor {
 
   void moveRight() {
     _charIndex++;
-    _xPosition = _shape.x;
+    _xPosition = _textShape.x;
 
-    if (_charIndex >= _shape.text.length) {
-      _charIndex = _shape.text.length;
-      _xPosition += _shape.width;
+    if (_charIndex >= _textShape.text.length) {
+      _charIndex = _textShape.text.length;
+      _xPosition += _textShape.width;
       return;
     }
 
-    final range = _shape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
+    final range = _textShape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
 
     if (range.isNotEmpty) {
       _xPosition += range.first.right;
@@ -73,14 +73,14 @@ class TextCursor {
   }
 
   void _changeText({String char = '', int removeChars = 0}) {
-    final start = _shape.text.substring(0, _charIndex + removeChars);
-    final end = _shape.text.length > start.length
-        ? _shape.text.substring(_charIndex)
+    final start = _textShape.text.substring(0, _charIndex + removeChars);
+    final end = _textShape.text.length > start.length
+        ? _textShape.text.substring(_charIndex)
         : '';
-    _shape.text = '$start$char$end';
+    _textShape.text = '$start$char$end';
   }
 
-  final TextShape _shape;
+  final TextShape _textShape;
   int _charIndex = 0;
-  double _xPosition = 0;
+  late double _xPosition = 0;
 }
