@@ -5,7 +5,7 @@ import '../states/_/paint_style.dart';
 import '../app/shapes.dart';
 
 part 'manipulation_state.dart';
-part '../app/base_manipulationt.dart';
+part '../app/base_manipulation.dart';
 
 abstract class Manipulator {
   ManipulationState get state;

@@ -1,6 +1,6 @@
 import '../pattern/manipulator.dart';
 import '_/mixins/hover_shape_mixin.dart';
-import 'selections/moving_state.dart';
+import 'selections/move_state.dart';
 
 class FreeState extends ManipulationState with HoverShapeMixin {
   @override
@@ -16,7 +16,7 @@ class FreeState extends ManipulationState with HoverShapeMixin {
     }
 
     context.changeState(
-      MovingState(
+      MoveState(
         startX: x,
         startY: y,
         selectedShape: selectedShape,

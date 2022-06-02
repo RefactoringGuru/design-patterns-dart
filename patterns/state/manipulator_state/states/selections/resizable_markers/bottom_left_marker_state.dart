@@ -1,4 +1,4 @@
-import '../../_/corner_marker.dart';
+import '../../_/marker.dart';
 
 class BottomLeftMarkerState extends Marker {
   BottomLeftMarkerState({

@@ -1,7 +1,7 @@
 import 'package:flutter/services.dart';
 
 import '../../../shapes/text_shape.dart';
-import '../../_/corner_marker.dart';
+import '../../_/marker.dart';
 
 class TextSizeMarkerState extends Marker<TextShape> {
   TextSizeMarkerState({required super.parentState});

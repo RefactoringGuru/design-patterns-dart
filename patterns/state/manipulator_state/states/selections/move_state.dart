@@ -1,10 +1,10 @@
 import 'selection_state.dart';
 
-class MovingState extends SelectionState {
+class MoveState extends SelectionState {
   final double startX;
   final double startY;
 
-  MovingState({
+  MoveState({
     required double startX,
     required double startY,
     required super.selectedShape,

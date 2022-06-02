@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import '../../shapes/shape.dart';
 import '../free_sate.dart';
 
-class SelectionState<T extends Shape> extends FreeState {
-  final T selectedShape;
+class SelectionState<TShape extends Shape> extends FreeState {
+  final TShape selectedShape;
 
   SelectionState({required this.selectedShape});
 

@@ -10,7 +10,8 @@ class TextCursor {
   void changePosition(double x) {
     x = x - _textShape.x;
 
-    final pos = _textShape.paragraph.getPositionForOffset(Offset(x, _textShape.y));
+    final pos =
+        _textShape.paragraph.getPositionForOffset(Offset(x, _textShape.y));
 
     _charIndex = pos.offset;
     _xPosition = _textShape.x;
@@ -48,7 +49,8 @@ class TextCursor {
       return;
     }
 
-    final range = _textShape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
+    final range =
+        _textShape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
 
     if (range.isNotEmpty) {
       _xPosition += range.first.right;
@@ -65,7 +67,8 @@ class TextCursor {
       return;
     }
 
-    final range = _textShape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
+    final range =
+        _textShape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
 
     if (range.isNotEmpty) {
       _xPosition += range.first.right;
