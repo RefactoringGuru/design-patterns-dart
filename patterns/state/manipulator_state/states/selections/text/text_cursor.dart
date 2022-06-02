@@ -7,11 +7,10 @@ class TextCursor {
 
   double get xCoordinate => _xPosition;
 
-  void changePosition(double x, double y) {
+  void changePosition(double x) {
     x = x - _shape.x;
-    y = y - _shape.y;
 
-    final pos = _shape.paragraph.getPositionForOffset(Offset(x, y));
+    final pos = _shape.paragraph.getPositionForOffset(Offset(x, _shape.y));
     _charIndex = pos.offset;
 
     final range = _shape.paragraph.getBoxesForRange(
@@ -26,18 +25,9 @@ class TextCursor {
     }
   }
 
-  String inputText(String char) {
-    final start = _shape.text.substring(0, _charIndex);
-    final end = _shape.text.substring(_charIndex);
-    _shape.text = '$start$char$end';
-    final range = _shape.paragraph.getBoxesForRange(_charIndex, ++_charIndex);
-    _xPosition = _shape.x;
-
-    if (range.isNotEmpty) {
-      _xPosition += range.first.right;
-    }
-
-    return '$start$char$end';
+  void inputText(String char) {
+    _changeText(char: char);
+    moveRight();
   }
 
   void backspace() {
@@ -45,22 +35,49 @@ class TextCursor {
       return;
     }
 
-    final start = _shape.text.substring(0, _charIndex - 1);
+    _changeText(removeChars: -1);
+    moveLeft();
+  }
+
+  void moveLeft() {
+    _charIndex--;
+    _xPosition = _shape.x;
+
+    if (_charIndex <= 0) {
+      _charIndex = 0;
+      return;
+    }
+
+    final range = _shape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
+
+    if (range.isNotEmpty) {
+      _xPosition += range.first.right;
+    }
+  }
+
+  void moveRight() {
+    _charIndex++;
+    _xPosition = _shape.x;
+
+    if (_charIndex >= _shape.text.length) {
+      _charIndex = _shape.text.length;
+      _xPosition += _shape.width;
+      return;
+    }
+
+    final range = _shape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
+
+    if (range.isNotEmpty) {
+      _xPosition += range.first.right;
+    }
+  }
+
+  void _changeText({String char = '', int removeChars = 0}) {
+    final start = _shape.text.substring(0, _charIndex + removeChars);
     final end = _shape.text.length > start.length
         ? _shape.text.substring(_charIndex)
         : '';
-
-    _shape.text = '$start$end';
-
-    final range = _shape.paragraph.getBoxesForRange(_charIndex - 1, _charIndex);
-    _xPosition = _shape.x;
-
-    if (range.isNotEmpty) {
-      _xPosition += range.first.left;
-    } else {
-      _xPosition += _shape.width;
-    }
-    _charIndex--;
+    _shape.text = '$start$char$end';
   }
 
   final TextShape _shape;

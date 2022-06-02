@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -14,19 +16,27 @@ class TextChangeState extends SelectionState<TextShape> {
 
   @override
   void init() {
-    _textCursor.changePosition(_startPointer.dx, _startPointer.dy);
+    _textCursor.changePosition(_startPointer.dx);
     context.cursor = SystemMouseCursors.text;
+
+    _cursorAnimateTimer = Timer.periodic(Duration(milliseconds: 500), (_) {
+      _isShowCursor = !_isShowCursor;
+      context.update();
+    });
+
     context.update();
   }
 
   @override
   void mouseDown(double x, double y) {
     if (selectedShape.rect.contains(Offset(x, y))) {
-      _textCursor.changePosition(x, y);
+      _textCursor.changePosition(x);
+      _isShowCursor = true;
       context.update();
       return;
     }
 
+    _cursorAnimateTimer.cancel();
     super.mouseDown(x, y);
   }
 
@@ -35,11 +45,16 @@ class TextChangeState extends SelectionState<TextShape> {
     if (keyEvent is KeyDownEvent || keyEvent is KeyRepeatEvent) {
       if (keyEvent.physicalKey == PhysicalKeyboardKey.backspace) {
         _textCursor.backspace();
-        context.update();
+      } else if (keyEvent.physicalKey == PhysicalKeyboardKey.arrowLeft) {
+        _textCursor.moveLeft();
+      } else if (keyEvent.physicalKey == PhysicalKeyboardKey.arrowRight) {
+        _textCursor.moveRight();
       } else if (keyEvent.character != null) {
         _textCursor.inputText(keyEvent.character!);
-        context.update();
       }
+
+      _isShowCursor = true;
+      context.update();
     }
   }
 
@@ -47,7 +62,10 @@ class TextChangeState extends SelectionState<TextShape> {
   void paint(Canvas canvas) {
     context.paintStyle.paintSelectedText(selectedShape, canvas);
     super.paint(canvas);
-    context.paintStyle.paintTextCursor(_textCursor, selectedShape, canvas);
+
+    if (_isShowCursor) {
+      context.paintStyle.paintTextCursor(_textCursor, selectedShape, canvas);
+    }
   }
 
   @override
@@ -62,7 +80,6 @@ class TextChangeState extends SelectionState<TextShape> {
     context.cursor = SystemMouseCursors.basic;
   }
 
-
   @override
   String toString() {
     return '${super.toString()} + Text Change State';
@@ -70,4 +87,6 @@ class TextChangeState extends SelectionState<TextShape> {
 
   final Offset _startPointer;
   final TextCursor _textCursor;
+  bool _isShowCursor = true;
+  late Timer _cursorAnimateTimer;
 }
