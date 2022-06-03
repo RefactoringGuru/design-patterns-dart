@@ -4,7 +4,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 
 # Implementation checklist:
 - [ ] **Creation**
-    - [x] **Abstract Factory** [[Conceptual Gui Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/conceptual_gui_factory)] [[Tool Panel Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/tool_panel_factory)]
+    - [x] **Abstract Factory** [[Conceptual Gui Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/conceptual_gui_factory)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Tool Panel Factory](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/abstract_factory/tool_panel_factory)]
     - [x] **Builder** - [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/builder/color_text_format)]
     - [x] **Factory Method** [[Conceptual Platform Dialog](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/factory_method/conceptual_platform_dialog)]
     - [x] **Prototype** - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/prototype/shapes)] 
@@ -15,14 +15,14 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] Interpreter
     - [ ] **Iterator**
     - [ ] **Mediator**
-    - [x] **Memento** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/conceptual)] [[Memento Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/memento_editor)] 
-    - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)] [[Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
-    - [x] **State** - [[State Manipulator](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/state/manipulator_state)]
+    - [x] **Memento** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/conceptual)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Memento Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/memento_editor)] 
+    - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
+    - [x] **State** - [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) State Manipulator](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/state/manipulator_state)]
     - [ ] **Template Method**
     - [X] **Visitor**  [[Shape XML Exporter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/visitor/shapes_exporter)]
     - [X] **Strategy** [[Reservation Cargo Spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
 - [ ] **Structural**
-    - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/square_round_conflict)] [[Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)] 
+    - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/square_round_conflict)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)] 
     - [x] **Bridge** - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/clock)] 
     - [x] **Composite** - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/products_and_boxes)] 
     - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/decorator/data_source_decoder)]
@@ -31,13 +31,13 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [ ] **Proxy**
 
 ## Requirements
-
 The examples were written in **Dart 2.17**.
 Some complex examples require **Flutter 3.0.0**.
 
 ## Contributor's Guide
-
-We appreciate any help, whether it's a simple fix of a typo or a whole new example. Just [make a fork](https://help.github.com/articles/fork-a-repo/), do your change and submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
+We appreciate any help, whether it's a simple fix of a typo or a whole new example. 
+Just [make a fork](https://help.github.com/articles/fork-a-repo/), 
+do your change and submit a [pull request](https://help.github.com/articles/creating-a-pull-request-from-a-fork/).
 
 ### Step-by-step instruction
 1. Just make a fork.
@@ -75,7 +75,7 @@ Here's a style guide which might help you to keep your changes consistent with o
 ### Build Flutter examples
 ```batch
 cd root directory
-flutter build web -t bin\main.dart --web-renderer html
+flutter build web -t bin\main.dart
 ```
 
 ### Deploy flutter demos

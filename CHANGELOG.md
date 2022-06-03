@@ -1,3 +1,6 @@
+## 0.24.1
+- Add flutter icon to project links.
+
 ## 0.24.0
 - Add state pattern: State Manipulator.
 
