@@ -20,3 +20,11 @@ void main() {
   switcher.call(); // call:(4) One
 }
 ```
+
+### Output:
+```
+call(1): One
+call(2): Two
+call(3): Three
+call(4): One
+```
