@@ -1,3 +1,6 @@
+## 0.25.0
+- Add conceptual state pattern: Three State.
+
 ## 0.24.1
 - Add flutter icon to project links.
 
