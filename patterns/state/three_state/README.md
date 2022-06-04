@@ -5,7 +5,7 @@ changes. It appears as if the object changed its class.
 Tutorial: [here](https://refactoring.guru/design-patterns/state).
 
 ### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/172000870-a96c6dd2-5b6a-4a64-b3a9-4edb75dd8076.png)
+![image](https://user-images.githubusercontent.com/8049534/172001291-8d87a3c8-b694-45c3-bd46-40211cd9ac45.png)
 
 ### Client code:
 ```dart
