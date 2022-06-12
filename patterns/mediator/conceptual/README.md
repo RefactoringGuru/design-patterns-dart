@@ -1,10 +1,11 @@
-# State Pattern
-State is a behavioral design pattern that lets an object alter its behavior when its internal state 
-changes. It appears as if the object changed its class.
+# Mediator Pattern
+Mediator is a behavioral design pattern that lets you reduce chaotic dependencies between objects. 
+The pattern restricts direct communications between the objects and forces them to collaborate only 
+via a mediator object.
 
 Tutorial: [here](https://refactoring.guru/design-patterns/mediator).
 
-## Diagram:
+## Conceptual diagram:
 ![image](https://user-images.githubusercontent.com/8049534/173237874-971dd4e7-2e74-4cac-bcea-77b88255adad.png)
 
 ### Client code:
