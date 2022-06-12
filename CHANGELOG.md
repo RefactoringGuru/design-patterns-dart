@@ -1,3 +1,6 @@
+## 0.26.0
+- Add conceptual mediator pattern.
+
 ## 0.25.0
 - Add conceptual state pattern: Three State.
 
