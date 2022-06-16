@@ -1,3 +1,6 @@
+## 0.27.0
+- Add template method pattern: Data Miner.
+
 ## 0.26.0
 - Add conceptual mediator pattern.
 
