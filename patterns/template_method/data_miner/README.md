@@ -60,7 +60,7 @@ CsvMiner
  sum:                 145.25
  len:                     10
 
-GuruMiner
+ZipMiner
  Name                  Index
 -------------------------------
  Dmitry Zhart           62.4
