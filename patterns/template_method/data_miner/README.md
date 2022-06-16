@@ -18,7 +18,7 @@ void main() {
   CsvMiner('twitter_workers.csv').mine();
 
   print('GuruMiner');
-  GuruMiner('refactoring_guru_workers.guru').mine();
+  ZipMiner('refactoring_guru_workers.zip').mine();
 }
 ```
 
