@@ -1,3 +1,6 @@
+## 0.28.0
+- Add conceptual flyweight pattern.
+
 ## 0.27.0
 - Add template method pattern: Data Miner.
 

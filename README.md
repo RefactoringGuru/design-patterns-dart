@@ -27,7 +27,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Composite** - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/products_and_boxes)] 
     - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/decorator/data_source_decoder)]
     - [ ] **Facade**
-    - [ ] **Flyweight**
+    - [x] **Flyweight** [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/flyweight/conceptual)]
     - [ ] **Proxy**
 
 ## Requirements
