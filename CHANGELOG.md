@@ -1,3 +1,6 @@
+## 0.29.0
+- Add conceptual visitor pattern.
+
 ## 0.28.0
 - Add conceptual flyweight pattern.
 
