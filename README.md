@@ -19,7 +19,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Observer** - [[Open-Close Editor Events](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/open_close_editor_events)] [[AppObserver](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/app_observer)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Subscriber Flutter Widget](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/observer/subscriber_flutter_widget)]
     - [x] **State** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/state/three_state)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) State Manipulator](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/state/manipulator_state)]
     - [x] **Template Method** - [[Data Miner](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/template_method/data_miner)] 
-    - [X] **Visitor**  [[Shape XML Exporter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/visitor/shapes_exporter)]
+    - [X] **Visitor** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/visitor/conceptual)] [[Shape XML Exporter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/visitor/shapes_exporter)]
     - [X] **Strategy** [[Reservation Cargo Spaces](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/strategy/reservation_cargo_spaces)]
 - [ ] **Structural**
     - [x] **Adapter** - [[Text Graphics](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/text_graphics)] [[Square Round conflict](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/square_round_conflict)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Flutter Adapter](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/adapter/flutter_adapter)] 
@@ -27,7 +27,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Composite** - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/products_and_boxes)] 
     - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/decorator/data_source_decoder)]
     - [ ] **Facade**
-    - [x] **Flyweight** [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/flyweight/conceptual)]
+    - [x] **Flyweight** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/flyweight/conceptual)]
     - [ ] **Proxy**
 
 ## Requirements
