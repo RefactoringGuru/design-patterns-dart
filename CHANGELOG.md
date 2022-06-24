@@ -1,3 +1,6 @@
+## 0.30.0
+- Add strategy pattern: View Strategy.
+
 ## 0.29.0
 - Add conceptual visitor pattern.
 
