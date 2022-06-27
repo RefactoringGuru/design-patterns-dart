@@ -6,7 +6,7 @@ before or after the request gets through to the original object.
 Tutorial: [here](https://refactoring.guru/design-patterns/proxy).
 
 ### Diagram:
-![image](https://user-images.githubusercontent.com/8049534/175924643-8d4f9ee4-80fc-4377-864c-d115a94a720c.png)
+![image](https://user-images.githubusercontent.com/8049534/175926828-d4fed7c6-ea82-4717-a24b-8ad2b23910ba.png)
 
 ### Client code:
 ```dart
