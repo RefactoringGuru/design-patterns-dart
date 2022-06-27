@@ -1,3 +1,6 @@
+## 0.31.0
+- Add conceptual proxy pattern.
+
 ## 0.30.0
 - Add strategy pattern: View Strategy.
 
