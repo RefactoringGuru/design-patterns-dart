@@ -28,7 +28,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/decorator/data_source_decoder)]
     - [ ] **Facade**
     - [x] **Flyweight** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/flyweight/conceptual)]
-    - [ ] **Proxy**
+    - [x] **Proxy** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/proxy/conceptual)]
 
 ## Requirements
 The examples were written in **Dart 2.17**.
