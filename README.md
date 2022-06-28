@@ -12,7 +12,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
 - [ ]  **Behavioral**
     - [x] **Chain of Responsibility** - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/chain_of_responsibility/server_middleware)]
     - [x] **Command** - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/command/text_editor)] 
-    - [ ] Interpreter
+    - [x] **Interpreter**  - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/interpreter/conceptual)]
     - [ ] **Iterator**
     - [x] **Mediator** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/mediator/conceptual)]
     - [x] **Memento** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/conceptual)] [[![16x16](https://user-images.githubusercontent.com/8049534/171852337-57db0faf-1f5e-489a-a79a-22ed4f47b4ed.png) Memento Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/memento/memento_editor)] 
