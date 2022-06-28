@@ -1,4 +1,4 @@
-import '../variable/variable.dart';
+import '../variable/bool_variable.dart';
 
 class Context {
   void assign(BoolVariable variable, bool value) {

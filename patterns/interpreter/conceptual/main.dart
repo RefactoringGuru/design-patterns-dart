@@ -2,7 +2,7 @@ import 'operations/and.dart';
 import 'operations/or.dart';
 import 'operations/xor.dart';
 import 'pattern/context.dart';
-import 'variable/variable.dart';
+import 'variable/bool_variable.dart';
 
 void main() {
   final context = Context();
@@ -17,7 +17,7 @@ void main() {
   context.assign(variable4, false);
 
   final expression = And(
-    variable1, // false
+    variable1, // true
     Xor(
       variable2, // false
       Or(
@@ -27,6 +27,6 @@ void main() {
     ),
   );
 
-  print(expression.evaluate(context));
   print(expression.toDebugString(context));
+  print('result: ${expression.evaluate(context)}');
 }
