@@ -1,3 +1,6 @@
+## 0.32.0
+- Add conceptual interpreter pattern.
+
 ## 0.31.0
 - Add conceptual proxy pattern.
 
