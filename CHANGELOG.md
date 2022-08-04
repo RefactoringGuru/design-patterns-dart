@@ -1,3 +1,6 @@
+## 0.34.0
+- Add conceptual single pattern.
+
 ## 0.33.0
 - Add conceptual builder pattern.
 
