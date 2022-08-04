@@ -8,7 +8,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Builder** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/builder/conceptual)] [[Color Text Format](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/builder/color_text_format)]
     - [x] **Factory Method** [[Conceptual Platform Dialog](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/factory_method/conceptual_platform_dialog)]
     - [x] **Prototype** - [[Shapes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/prototype/shapes)] 
-    - [ ] **Singleton**
+    - [x] **Singleton** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/singleton/conceptual)]
 - [ ]  **Behavioral**
     - [x] **Chain of Responsibility** - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/chain_of_responsibility/server_middleware)]
     - [x] **Command** - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/command/text_editor)] 
