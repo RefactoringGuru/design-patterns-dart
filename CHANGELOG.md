@@ -1,3 +1,6 @@
+## 0.36.0
+- Add iterator pattern: Github Commit.
+
 ## 0.35.0
 - Add conceptual command pattern.
 
