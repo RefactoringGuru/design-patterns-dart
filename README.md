@@ -11,7 +11,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Singleton** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/singleton/conceptual)]
 - [ ]  **Behavioral**
     - [x] **Chain of Responsibility** - [[Server Middleware](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/chain_of_responsibility/server_middleware)]
-    - [x] **Command** - [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/command/text_editor)] 
+    - [x] **Command** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/command/conceptual)] [[Text Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/command/text_editor)] 
     - [x] **Interpreter**  - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/interpreter/conceptual)]
     - [ ] **Iterator**
     - [x] **Mediator** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/mediator/conceptual)]

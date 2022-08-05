@@ -1,5 +1,8 @@
+## 0.35.0
+- Add conceptual command pattern.
+
 ## 0.34.0
-- Add conceptual single pattern.
+- Add conceptual singleton pattern.
 
 ## 0.33.0
 - Add conceptual builder pattern.
