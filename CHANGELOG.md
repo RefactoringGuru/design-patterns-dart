@@ -1,3 +1,6 @@
+## 0.37.0
+- Add iterator pattern: Word Iterator.
+
 ## 0.36.0
 - Add iterator pattern: Github Commit.
 
