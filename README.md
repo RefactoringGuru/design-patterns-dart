@@ -26,7 +26,7 @@ It contains **Dart** examples for all classic **GoF** design patterns.
     - [x] **Bridge** - [[Remote Device Control](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/devices_remote_control)] [[Clock](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/bridge/clock)] 
     - [x] **Composite** - [[Image Editor](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/image_editor)] [[Products and Boxes](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/composite/products_and_boxes)] 
     - [x] **Decorator** - [[Data Source Decoder](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/decorator/data_source_decoder)]
-    - [ ] **Facade** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/facade/conceptul)]
+    - [x] **Facade** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/facade/conceptual)]
     - [x] **Flyweight** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/flyweight/conceptual)]
     - [x] **Proxy** - [[Conceptual](https://github.com/RefactoringGuru/design-patterns-dart/tree/main/patterns/proxy/conceptual)]
 
