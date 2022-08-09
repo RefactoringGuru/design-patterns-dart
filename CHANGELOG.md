@@ -1,3 +1,6 @@
+## 0.38.0
+- Add conceptual facade pattern.
+
 ## 0.37.0
 - Add iterator pattern: Word Iterator.
 
