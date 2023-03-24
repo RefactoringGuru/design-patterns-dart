@@ -1,4 +1,6 @@
-abstract class Shape {
+import 'cloneable.dart';
+
+abstract class Shape implements Cloneable<Shape> {
   final int x;
   final int y;
 
@@ -7,7 +9,6 @@ abstract class Shape {
     required this.y,
   });
 
-  Shape clone();
 
   @override
   String toString() => '$runtimeType(address: 0x${hashCode.toRadixString(16)})';
