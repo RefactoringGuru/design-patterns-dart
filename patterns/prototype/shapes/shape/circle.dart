@@ -1,19 +1,17 @@
-import 'rectangle.dart';
+import 'shape.dart';
 
-class Circle extends Rectangle {
+class Circle extends Shape {
   final int radius;
+  final String color;
 
   Circle({
     required int x,
     required int y,
     required this.radius,
-    required String color,
+    required this.color,
   }) : super(
           x: x,
           y: y,
-          width: radius,
-          height: radius,
-          color: color,
         );
 
   @override
