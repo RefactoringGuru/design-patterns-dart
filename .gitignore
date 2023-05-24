@@ -1,0 +1,7 @@
+.dart_tool/
+.idea/
+build/
+windows/
+
+.packages
+pubspec.lock
