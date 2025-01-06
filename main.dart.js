@@ -76995,7 +76995,7 @@ $0(){},
 $S:0}
 A.HQ.prototype={
 H(a){var s=null,r="/state/manipulator_state",q=A.oD(s,s,new A.cP(32,s,s,s,s,B.k,s,s,s),B.e8,s,s)
-return new A.wZ(A.an(["/observer/subscriber_flutter_widget",new A.a47(),"/adapter/flutter_adapter",new A.a48(),"/memento/flutter_memento_editor",new A.a49(),"/abstract_factory/tool_panel_factory",new A.a4a(),r,new A.a4b()],t.N,t.Ab),r,"Refactoring Guru: Flutter launcher",q,s)}}
+return new A.wZ(A.an(["/observer/subscriber_flutter_widget",new A.a47(),"/adapter/flutter_adapter",new A.a48(),"/memento/flutter_memento_editor",new A.a49(),"/abstract_factory/tool_panel_factory",new A.a4a(),r,new A.a4b()],t.N,t.Ab),r,"Gof Pattern: Flutter launcher",q,s)}}
 A.a47.prototype={
 $1(a){return new A.ou(null)},
 $S:477}
